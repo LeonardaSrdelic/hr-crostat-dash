@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "indikatori.html",
+    "href": "indikatori.html",
+    "title": "Indikatori",
+    "section": "",
+    "text": "Makrofiskalni indikatori obuhvaćaju osnovne pokazatelje ekonomskog rasta i stabilnosti, uključujući realni BDP, inflaciju i porezne prihode.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za osobnu potrošnju. Podaci se preuzimaju iz HICP baze Eurostata.\n\n\n\nPrikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata."
+  },
+  {
+    "objectID": "indikatori.html#inflacija",
+    "href": "indikatori.html#inflacija",
+    "title": "Indikatori",
+    "section": "",
+    "text": "Inflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za osobnu potrošnju. Podaci se preuzimaju iz HICP baze Eurostata."
+  },
+  {
+    "objectID": "indikatori.html#porezni-prihodi",
+    "href": "indikatori.html#porezni-prihodi",
+    "title": "Indikatori",
+    "section": "",
+    "text": "Prikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata."
+  },
+  {
+    "objectID": "indikatori.html#stanovništvo",
+    "href": "indikatori.html#stanovništvo",
+    "title": "Indikatori",
+    "section": "2.1 Stanovništvo",
+    "text": "2.1 Stanovništvo"
+  },
+  {
+    "objectID": "indikatori.html#migracije",
+    "href": "indikatori.html#migracije",
+    "title": "Indikatori",
+    "section": "2.2 Migracije",
+    "text": "2.2 Migracije"
+  },
+  {
+    "objectID": "indikatori.html#zaposlenost-i-nezaposlenost",
+    "href": "indikatori.html#zaposlenost-i-nezaposlenost",
+    "title": "Indikatori",
+    "section": "2.3 Zaposlenost i nezaposlenost",
+    "text": "2.3 Zaposlenost i nezaposlenost"
+  },
+  {
+    "objectID": "indikatori.html#emisije-stakleničkih-plinova",
+    "href": "indikatori.html#emisije-stakleničkih-plinova",
+    "title": "Indikatori",
+    "section": "3.1 Emisije stakleničkih plinova",
+    "text": "3.1 Emisije stakleničkih plinova"
+  },
+  {
+    "objectID": "indikatori.html#energija-i-cijene-energije",
+    "href": "indikatori.html#energija-i-cijene-energije",
+    "title": "Indikatori",
+    "section": "3.2 Energija i cijene energije",
+    "text": "3.2 Energija i cijene energije"
+  },
+  {
+    "objectID": "indikatori.html#saldo-opće-države",
+    "href": "indikatori.html#saldo-opće-države",
+    "title": "Indikatori",
+    "section": "4.1 Saldo opće države",
+    "text": "4.1 Saldo opće države"
+  },
+  {
+    "objectID": "indikatori.html#javni-dug",
+    "href": "indikatori.html#javni-dug",
+    "title": "Indikatori",
+    "section": "4.2 Javni dug",
+    "text": "4.2 Javni dug"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Naslovnica",
+    "section": "",
+    "text": "Dobro došli. Ovdje objavljujem grafikone koji se automatski osvježavaju iz Eurostata."
+  }
+]
