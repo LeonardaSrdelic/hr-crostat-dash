@@ -3,9 +3,10 @@ name: Render and Publish
 on:
   push:
     branches: ["main"]
-  schedule:
-    - cron: "0 6 * * 1"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
@@ -18,17 +19,16 @@ jobs:
       - name: Setup R (RSPM binaries)
         uses: r-lib/actions/setup-r@v2
         with:
-          use-public-rspm: true      # binarni CRAN paketi (nema kompilacije)
+          use-public-rspm: true
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Ako .Rprofile automatski aktivira renv, ovo ga gasi na CI
+      # ako .Rprofile aktivira renv, ugasi ga na CI
       - name: Disable renv autoloader
         run: echo "RENV_CONFIG_AUTOLOADER_ENABLED=false" >> $GITHUB_ENV
 
-      # Instaliraj potrebne R pakete bez renv-a
-      - name: Install R packages
+      - name: Install R packages (no renv)
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
@@ -47,8 +47,8 @@ jobs:
         run: quarto render
 
       - name: Publish to GitHub Pages (gh-pages)
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
+          publish_branch: gh-pages
