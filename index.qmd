@@ -2,4 +2,4 @@
 title: "Naslovnica"
 ---
 
-Dobro došli. Ovo je Quarto stranica koja automatski koristi Eurostat podatke.
+Dobro došli. Ovdje objavljujem grafikone koji se automatski osvježavaju iz Eurostata.

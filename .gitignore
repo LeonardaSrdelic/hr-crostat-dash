@@ -3,6 +3,9 @@
 .RData
 .renv/
 renv/library/
- data/.eurostat_cache/
+data/.eurostat_cache/
 _site/
 .DS_Store
+
+/.quarto/
+**/*.quarto_ipynb
