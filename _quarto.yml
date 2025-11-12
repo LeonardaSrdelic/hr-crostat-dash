@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "HR Crostat Dash"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Naslovnica
+      - href: indikatori.qmd
+        text: Indikatori
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+lang: hr

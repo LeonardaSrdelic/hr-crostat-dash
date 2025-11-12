@@ -1,0 +1,17 @@
+---
+title: "Indikatori"
+format: html
+---
+
+```{r}
+#| message: false
+#| warning: false
+
+source("R/indicators.R")
+
+gdp <- get_gdp_pps()
+tax <- get_env_taxes_share()
+
+plot_gdp(gdp)
+plot_tax(tax)
+```

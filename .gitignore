@@ -1,0 +1,8 @@
+.Rhistory
+.Rproj.user
+.RData
+.renv/
+renv/library/
+ data/.eurostat_cache/
+_site/
+.DS_Store
