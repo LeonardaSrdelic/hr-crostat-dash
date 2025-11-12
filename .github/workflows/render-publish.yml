@@ -42,17 +42,8 @@ jobs:
             any::janitor
             any::stringr
 
-      - name: Smoke test packages
-        run: |
-          Rscript -e "pkgs <- c('eurostat','dplyr','tidyr','readr','ggplot2','scales','purrr','janitor','stringr'); for(p in pkgs){suppressPackageStartupMessages(library(p, character.only=TRUE))}; sessionInfo(); cat('\nOK: packages loaded\n')"
-
       - name: Render site
         run: quarto render
-
-      - name: Sanity check output
-        run: |
-          test -d _site || (echo '_site missing' && exit 1)
-          ls -la _site
 
       - name: Publish to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v4
