@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "0 6 * * 1"   # ponedjeljkom u 06:00 UTC
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -18,32 +18,21 @@ jobs:
       - name: Setup R (with RSPM binaries)
         uses: r-lib/actions/setup-r@v2
         with:
+          r-version: "PUT_R_VERSION_HERE"   # npr. "4.4.1" prema renv.lock
           use-public-rspm: true
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Ako koristiš renv, ovaj korak instalira pakete prema renv.lock
+      - name: System libs for source builds
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libssl-dev libcurl4-openssl-dev libxml2-dev
+
       - name: Restore renv
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-
-      # Ako NE koristiš renv, odkomentiraj blok ispod i makni 'Restore renv' korak.
-      # - name: Install R packages (no renv)
-      #   uses: r-lib/actions/setup-r-dependencies@v2
-      #   with:
-      #     extra-packages: |
-      #       any::knitr
-      #       any::eurostat
-      #       any::dplyr
-      #       any::tidyr
-      #       any::readr
-      #       any::ggplot2
-      #       any::scales
-      #       any::purrr
-      #       any::janitor
-      #       any::stringr
 
       - name: Render site
         run: quarto render
