@@ -1,73 +1,80 @@
 [
   {
-    "objectID": "indikatori.html",
-    "href": "indikatori.html",
-    "title": "Indikatori",
-    "section": "",
-    "text": "Makrofiskalni indikatori obuhvaćaju osnovne pokazatelje ekonomskog rasta i stabilnosti, uključujući realni BDP, inflaciju i porezne prihode.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za osobnu potrošnju. Podaci se preuzimaju iz HICP baze Eurostata.\n\n\n\nPrikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata."
-  },
-  {
-    "objectID": "indikatori.html#inflacija",
-    "href": "indikatori.html#inflacija",
-    "title": "Indikatori",
+    "objectID": "Inflacija.html",
+    "href": "Inflacija.html",
+    "title": "Inflacija",
     "section": "",
     "text": "Inflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za osobnu potrošnju. Podaci se preuzimaju iz HICP baze Eurostata."
   },
   {
-    "objectID": "indikatori.html#porezni-prihodi",
-    "href": "indikatori.html#porezni-prihodi",
-    "title": "Indikatori",
+    "objectID": "Inflacija.html#stanovništvo",
+    "href": "Inflacija.html#stanovništvo",
+    "title": "Inflacija",
+    "section": "3.1 Stanovništvo",
+    "text": "3.1 Stanovništvo"
+  },
+  {
+    "objectID": "Inflacija.html#migracije",
+    "href": "Inflacija.html#migracije",
+    "title": "Inflacija",
+    "section": "3.2 Migracije",
+    "text": "3.2 Migracije"
+  },
+  {
+    "objectID": "Inflacija.html#zaposlenost-i-nezaposlenost",
+    "href": "Inflacija.html#zaposlenost-i-nezaposlenost",
+    "title": "Inflacija",
+    "section": "3.3 Zaposlenost i nezaposlenost",
+    "text": "3.3 Zaposlenost i nezaposlenost"
+  },
+  {
+    "objectID": "Inflacija.html#emisije-stakleničkih-plinova",
+    "href": "Inflacija.html#emisije-stakleničkih-plinova",
+    "title": "Inflacija",
+    "section": "4.1 Emisije stakleničkih plinova",
+    "text": "4.1 Emisije stakleničkih plinova"
+  },
+  {
+    "objectID": "Inflacija.html#energija-i-cijene-energije",
+    "href": "Inflacija.html#energija-i-cijene-energije",
+    "title": "Inflacija",
+    "section": "4.2 Energija i cijene energije",
+    "text": "4.2 Energija i cijene energije"
+  },
+  {
+    "objectID": "Inflacija.html#saldo-opće-države",
+    "href": "Inflacija.html#saldo-opće-države",
+    "title": "Inflacija",
+    "section": "5.1 Saldo opće države",
+    "text": "5.1 Saldo opće države"
+  },
+  {
+    "objectID": "Inflacija.html#javni-dug",
+    "href": "Inflacija.html#javni-dug",
+    "title": "Inflacija",
+    "section": "5.2 Javni dug",
+    "text": "5.2 Javni dug"
+  },
+  {
+    "objectID": "Platna bilanca.html",
+    "href": "Platna bilanca.html",
+    "title": "Platna bilanca",
+    "section": "",
+    "text": "Okolišni pokazatelji odražavaju napredak u smanjenju emisija stakleničkih plinova, učinkovitosti korištenja resursa i prelasku na obnovljive izvore energije."
+  },
+  {
+    "objectID": "Fiskalna pozicija i dug.html",
+    "href": "Fiskalna pozicija i dug.html",
+    "title": "Javni dug",
+    "section": "",
+    "text": "Pokazatelji fiskalne održivosti, uključujući saldo opće države i javni dug, temeljni su za procjenu fiskalne politike.\n\n\nPrikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata."
+  },
+  {
+    "objectID": "Fiskalna pozicija i dug.html#porezni-prihodi",
+    "href": "Fiskalna pozicija i dug.html#porezni-prihodi",
+    "title": "Javni dug",
     "section": "",
     "text": "Prikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata."
-  },
-  {
-    "objectID": "indikatori.html#stanovništvo",
-    "href": "indikatori.html#stanovništvo",
-    "title": "Indikatori",
-    "section": "2.1 Stanovništvo",
-    "text": "2.1 Stanovništvo"
-  },
-  {
-    "objectID": "indikatori.html#migracije",
-    "href": "indikatori.html#migracije",
-    "title": "Indikatori",
-    "section": "2.2 Migracije",
-    "text": "2.2 Migracije"
-  },
-  {
-    "objectID": "indikatori.html#zaposlenost-i-nezaposlenost",
-    "href": "indikatori.html#zaposlenost-i-nezaposlenost",
-    "title": "Indikatori",
-    "section": "2.3 Zaposlenost i nezaposlenost",
-    "text": "2.3 Zaposlenost i nezaposlenost"
-  },
-  {
-    "objectID": "indikatori.html#emisije-stakleničkih-plinova",
-    "href": "indikatori.html#emisije-stakleničkih-plinova",
-    "title": "Indikatori",
-    "section": "3.1 Emisije stakleničkih plinova",
-    "text": "3.1 Emisije stakleničkih plinova"
-  },
-  {
-    "objectID": "indikatori.html#energija-i-cijene-energije",
-    "href": "indikatori.html#energija-i-cijene-energije",
-    "title": "Indikatori",
-    "section": "3.2 Energija i cijene energije",
-    "text": "3.2 Energija i cijene energije"
-  },
-  {
-    "objectID": "indikatori.html#saldo-opće-države",
-    "href": "indikatori.html#saldo-opće-države",
-    "title": "Indikatori",
-    "section": "4.1 Saldo opće države",
-    "text": "4.1 Saldo opće države"
-  },
-  {
-    "objectID": "indikatori.html#javni-dug",
-    "href": "indikatori.html#javni-dug",
-    "title": "Indikatori",
-    "section": "4.2 Javni dug",
-    "text": "4.2 Javni dug"
   },
   {
     "objectID": "index.html",
@@ -75,5 +82,61 @@
     "title": "Naslovnica",
     "section": "",
     "text": "Dobro došli. Ovdje objavljujem grafikone koji se automatski osvježavaju iz Eurostata."
+  },
+  {
+    "objectID": "BDP.html#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine",
+    "href": "BDP.html#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine",
+    "title": "Gospodarski rast",
+    "section": "2.1 Kretanje realnog BDP-a: Hrvatska i referentne europske skupine",
+    "text": "2.1 Kretanje realnog BDP-a: Hrvatska i referentne europske skupine"
+  },
+  {
+    "objectID": "BDP.html#godišnje-stope-rasta-realnog-bdp-a",
+    "href": "BDP.html#godišnje-stope-rasta-realnog-bdp-a",
+    "title": "Gospodarski rast",
+    "section": "3.1 Godišnje stope rasta realnog BDP-a",
+    "text": "3.1 Godišnje stope rasta realnog BDP-a"
+  },
+  {
+    "objectID": "BDP.html#tromjesečne-stope-rasta-realnog-bdp-a",
+    "href": "BDP.html#tromjesečne-stope-rasta-realnog-bdp-a",
+    "title": "Gospodarski rast",
+    "section": "3.2 Tromjesečne stope rasta realnog BDP-a",
+    "text": "3.2 Tromjesečne stope rasta realnog BDP-a"
+  },
+  {
+    "objectID": "BDP.html#cee-bez-hrvatske",
+    "href": "BDP.html#cee-bez-hrvatske",
+    "title": "Gospodarski rast",
+    "section": "4.1 CEE bez Hrvatske",
+    "text": "4.1 CEE bez Hrvatske"
+  },
+  {
+    "objectID": "BDP.html#eu-27-bez-hrvatske",
+    "href": "BDP.html#eu-27-bez-hrvatske",
+    "title": "Gospodarski rast",
+    "section": "4.2 EU 27 bez Hrvatske",
+    "text": "4.2 EU 27 bez Hrvatske"
+  },
+  {
+    "objectID": "BDP.html#područje-eura-bez-hrvatske",
+    "href": "BDP.html#područje-eura-bez-hrvatske",
+    "title": "Gospodarski rast",
+    "section": "4.3 Područje eura bez Hrvatske",
+    "text": "4.3 Područje eura bez Hrvatske"
+  },
+  {
+    "objectID": "Demografija i tržište rada.html",
+    "href": "Demografija i tržište rada.html",
+    "title": "Demografija i tržište rada",
+    "section": "",
+    "text": "Demografski pokazatelji i pokazatelji tržišta rada važni su za razumijevanje dugoročnih fiskalnih i makroekonomskih trendova."
+  },
+  {
+    "objectID": "Okolišni indikatori.html",
+    "href": "Okolišni indikatori.html",
+    "title": "Okolišni indikatori",
+    "section": "",
+    "text": "Okolišni pokazatelji odražavaju napredak u smanjenju emisija stakleničkih plinova, učinkovitosti korištenja resursa i prelasku na obnovljive izvore energije."
   }
 ]

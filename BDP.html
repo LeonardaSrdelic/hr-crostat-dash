@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Naslovnica – HR CroStat Dash</title>
+<title>Gospodarski rast – HR CroStat Dash</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Naslovnica</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./BDP.html"> 
+    <a class="nav-link active" href="./BDP.html" aria-current="page"> 
 <span class="menu-text">Gospodarski rast</span></a>
   </li>  
   <li class="nav-item">
@@ -128,15 +128,45 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sadržaj</h2>
+   
+  <ul>
+  <li><a href="#najnovija-kretanja-bdp-a-u-eu-27" id="toc-najnovija-kretanja-bdp-a-u-eu-27" class="nav-link active" data-scroll-target="#najnovija-kretanja-bdp-a-u-eu-27"><span class="header-section-number">1</span> Najnovija kretanja BDP-a u EU 27</a>
+  <ul class="collapse">
+  <li><a href="#nominalni-bdp-yoy" id="toc-nominalni-bdp-yoy" class="nav-link" data-scroll-target="#nominalni-bdp-yoy"><span class="header-section-number">1.1</span> Nominalni BDP yoy</a></li>
+  <li><a href="#realni-bdp-yoy" id="toc-realni-bdp-yoy" class="nav-link" data-scroll-target="#realni-bdp-yoy"><span class="header-section-number">1.2</span> Realni BDP yoy</a></li>
+  <li><a href="#realni-bdp-qoq" id="toc-realni-bdp-qoq" class="nav-link" data-scroll-target="#realni-bdp-qoq"><span class="header-section-number">1.3</span> Realni BDP qoq</a></li>
+  <li><a href="#nominalni-bdp" id="toc-nominalni-bdp" class="nav-link" data-scroll-target="#nominalni-bdp"><span class="header-section-number">1.4</span> Nominalni BDP</a></li>
+  <li><a href="#realni-bdp" id="toc-realni-bdp" class="nav-link" data-scroll-target="#realni-bdp"><span class="header-section-number">1.5</span> Realni BDP</a></li>
+  <li><a href="#bdp-po-stanovniku-u-pps-cee-eu-27-100" id="toc-bdp-po-stanovniku-u-pps-cee-eu-27-100" class="nav-link" data-scroll-target="#bdp-po-stanovniku-u-pps-cee-eu-27-100"><span class="header-section-number">1.6</span> BDP po stanovniku u PPS (CEE, EU 27 = 100)</a></li>
+  </ul></li>
+  <li><a href="#dugoročni-trendovi-trend-realnog-bdp-a" id="toc-dugoročni-trendovi-trend-realnog-bdp-a" class="nav-link" data-scroll-target="#dugoročni-trendovi-trend-realnog-bdp-a"><span class="header-section-number">2</span> Dugoročni trendovi trend realnog BDP-a</a>
+  <ul class="collapse">
+  <li><a href="#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine" id="toc-kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine" class="nav-link" data-scroll-target="#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine"><span class="header-section-number">2.1</span> Kretanje realnog BDP-a: Hrvatska i referentne europske skupine</a></li>
+  </ul></li>
+  <li><a href="#dinamika-rasta-realnog-bdp-a" id="toc-dinamika-rasta-realnog-bdp-a" class="nav-link" data-scroll-target="#dinamika-rasta-realnog-bdp-a"><span class="header-section-number">3</span> Dinamika rasta realnog BDP-a</a>
+  <ul class="collapse">
+  <li><a href="#godišnje-stope-rasta-realnog-bdp-a" id="toc-godišnje-stope-rasta-realnog-bdp-a" class="nav-link" data-scroll-target="#godišnje-stope-rasta-realnog-bdp-a"><span class="header-section-number">3.1</span> Godišnje stope rasta realnog BDP-a</a></li>
+  <li><a href="#tromjesečne-stope-rasta-realnog-bdp-a" id="toc-tromjesečne-stope-rasta-realnog-bdp-a" class="nav-link" data-scroll-target="#tromjesečne-stope-rasta-realnog-bdp-a"><span class="header-section-number">3.2</span> Tromjesečne stope rasta realnog BDP-a</a></li>
+  </ul></li>
+  <li><a href="#distribucija-realnog-bdp-a-unutar-skupina" id="toc-distribucija-realnog-bdp-a-unutar-skupina" class="nav-link" data-scroll-target="#distribucija-realnog-bdp-a-unutar-skupina"><span class="header-section-number">4</span> Distribucija realnog BDP-a unutar skupina</a>
+  <ul class="collapse">
+  <li><a href="#cee-bez-hrvatske" id="toc-cee-bez-hrvatske" class="nav-link" data-scroll-target="#cee-bez-hrvatske"><span class="header-section-number">4.1</span> CEE bez Hrvatske</a></li>
+  <li><a href="#eu-27-bez-hrvatske" id="toc-eu-27-bez-hrvatske" class="nav-link" data-scroll-target="#eu-27-bez-hrvatske"><span class="header-section-number">4.2</span> EU 27 bez Hrvatske</a></li>
+  <li><a href="#područje-eura-bez-hrvatske" id="toc-područje-eura-bez-hrvatske" class="nav-link" data-scroll-target="#područje-eura-bez-hrvatske"><span class="header-section-number">4.3</span> Područje eura bez Hrvatske</a></li>
+  </ul></li>
+  <li><a href="#napomene" id="toc-napomene" class="nav-link" data-scroll-target="#napomene"><span class="header-section-number">5</span> Napomene</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Naslovnica</h1>
+<h1 class="title">Gospodarski rast</h1>
 </div>
 
 
@@ -153,9 +183,199 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Dobro došli. Ovdje objavljujem grafikone koji se automatski osvježavaju iz Eurostata.</p>
+<section id="najnovija-kretanja-bdp-a-u-eu-27" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Najnovija kretanja BDP-a u EU 27</h1>
+<section id="nominalni-bdp-yoy" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="nominalni-bdp-yoy"><span class="header-section-number">1.1</span> Nominalni BDP yoy</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="realni-bdp-yoy" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="realni-bdp-yoy"><span class="header-section-number">1.2</span> Realni BDP yoy</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="realni-bdp-qoq" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="realni-bdp-qoq"><span class="header-section-number">1.3</span> Realni BDP qoq</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="nominalni-bdp" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="nominalni-bdp"><span class="header-section-number">1.4</span> Nominalni BDP</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="realni-bdp" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="realni-bdp"><span class="header-section-number">1.5</span> Realni BDP</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bdp-po-stanovniku-u-pps-cee-eu-27-100" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="bdp-po-stanovniku-u-pps-cee-eu-27-100"><span class="header-section-number">1.6</span> BDP po stanovniku u PPS (CEE, EU 27 = 100)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dugoročni-trendovi-trend-realnog-bdp-a" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Dugoročni trendovi trend realnog BDP-a</h1>
+<section id="kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine"><span class="header-section-number">2.1</span> Kretanje realnog BDP-a: Hrvatska i referentne europske skupine</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dinamika-rasta-realnog-bdp-a" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Dinamika rasta realnog BDP-a</h1>
+<section id="godišnje-stope-rasta-realnog-bdp-a" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="godišnje-stope-rasta-realnog-bdp-a"><span class="header-section-number">3.1</span> Godišnje stope rasta realnog BDP-a</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tromjesečne-stope-rasta-realnog-bdp-a" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="tromjesečne-stope-rasta-realnog-bdp-a"><span class="header-section-number">3.2</span> Tromjesečne stope rasta realnog BDP-a</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribucija-realnog-bdp-a-unutar-skupina" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Distribucija realnog BDP-a unutar skupina</h1>
+<section id="cee-bez-hrvatske" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="cee-bez-hrvatske"><span class="header-section-number">4.1</span> CEE bez Hrvatske</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="eu-27-bez-hrvatske" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="eu-27-bez-hrvatske"><span class="header-section-number">4.2</span> EU 27 bez Hrvatske</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="područje-eura-bez-hrvatske" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="područje-eura-bez-hrvatske"><span class="header-section-number">4.3</span> Područje eura bez Hrvatske</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BDP_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="napomene" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Napomene</h1>
+<ul>
+<li>Izvori podataka: Eurostat, AMECO, Copernicus, DZS<br>
+</li>
+<li>Metodološke napomene: svi grafovi izrađeni su na temelju javno dostupnih serija<br>
+</li>
+<li>Ažuriranje: podaci se automatski osvježavaju prilikom ponovnog renderiranja Quarto dokumenta</li>
+</ul>
+<hr>
+<div style="text-align:center; font-size:0.85em; color:grey; margin-top:1em;">
+<p>© Leonarda Srdelić, 2025</p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
