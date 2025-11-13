@@ -1,0 +1,123 @@
+---
+title: "Gospodarski rast"
+format:
+  html:
+    toc: true
+    toc-title: "Sadržaj"
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  message: false
+  warning: false
+  error: false
+---
+
+
+```{r}
+# Inicijalni setup
+source("R/indicators.R")
+
+# Jednokratno učitaj podatke
+dat   <- prepare_gdp_data()
+panel <- build_panel_real(dat$gdp_real)
+```
+
+
+# Najnovija kretanja BDP-a u EU 27
+
+## Nominalni BDP yoy
+
+```{r}
+print(plot_gdp_nominal_q_yoy_eu27_tminus1())
+```
+
+## Realni BDP yoy
+
+```{r}
+print(plot_gdp_real_q_yoy_eu27_tminus1())
+```
+
+## Realni BDP qoq
+
+```{r}
+print(plot_gdp_real_q_qoq_eu27_tminus1())
+```
+
+
+## Nominalni BDP
+
+```{r}
+print(plot_gdp_nominal_growth_eu27_latest())
+```
+
+## Realni BDP
+
+```{r}
+print(plot_gdp_real_growth_eu27_latest())
+```
+
+## BDP po stanovniku u PPS (CEE, EU 27 = 100)
+
+```{r}
+print(plot_gdp_pc_cee_pps_last())
+```
+
+# Dugoročni trendovi trend realnog BDP-a
+
+## Kretanje realnog BDP-a: Hrvatska i referentne europske skupine
+
+```{r}
+print(plot_gdp_index(panel, meta = dat))
+```
+
+# Dinamika rasta realnog BDP-a
+
+## Godišnje stope rasta realnog BDP-a
+
+```{r}
+print(plot_gdp_yoy(panel, meta = dat))
+```
+
+## Tromjesečne stope rasta realnog BDP-a
+
+```{r}
+print(plot_gdp_qoq_hr())
+```
+
+# Distribucija realnog BDP-a unutar skupina
+
+## CEE bez Hrvatske
+
+```{r}
+print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat))
+print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat))
+```
+
+## EU 27 bez Hrvatske
+
+```{r}
+print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat))
+print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat))
+```
+
+## Područje eura bez Hrvatske
+
+```{r}
+print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat))
+print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat))
+```
+
+
+
+# Napomene
+
+- Izvori podataka: Eurostat, AMECO, Copernicus, DZS  
+- Metodološke napomene: svi grafovi izrađeni su na temelju javno dostupnih serija  
+- Ažuriranje: podaci se automatski osvježavaju prilikom ponovnog renderiranja Quarto dokumenta
+
+<hr>
+
+<div style="text-align:center; font-size:0.85em; color:grey; margin-top:1em;">
+© Leonarda Srdelić, 2025
+</div>

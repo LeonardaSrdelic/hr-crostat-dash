@@ -1,0 +1,65 @@
+---
+title: "Platna bilanca"
+format:
+  html:
+    toc: true
+    toc-title: "Sadržaj"
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  message: false
+  warning: false
+  error: false
+---
+
+
+```{r}
+# Inicijalni setup
+source("R/indicators.R")
+
+# Jednokratno učitaj podatke
+dat   <- prepare_gdp_data()
+panel <- build_panel_real(dat$gdp_real)
+```
+
+
+# Platna bilanca
+
+Okolišni pokazatelji odražavaju napredak u smanjenju emisija stakleničkih plinova, učinkovitosti korištenja resursa i prelasku na obnovljive izvore energije.
+
+## Robna razmjena
+
+```{r}
+# dat_ghg <- prepare_ghg_data()
+# print(plot_ghg_total(dat_ghg, meta = dat_ghg))
+# print(plot_ghg_intensity(dat_ghg, meta = dat_ghg))
+```
+
+## Usluge
+
+```{r}
+# dat_energy <- prepare_energy_data()
+# print(plot_energy_mix(dat_energy, meta = dat_energy))
+# print(plot_energy_prices(dat_energy, meta = dat_energy))
+```
+
+### Turizam
+
+```{r}
+# dat_energy <- prepare_energy_data()
+# print(plot_energy_mix(dat_energy, meta = dat_energy))
+# print(plot_energy_prices(dat_energy, meta = dat_energy))
+```
+
+# Napomene
+
+- Izvori podataka: Eurostat, AMECO, Copernicus, DZS  
+- Metodološke napomene: svi grafovi izrađeni su na temelju javno dostupnih serija  
+- Ažuriranje: podaci se automatski osvježavaju prilikom ponovnog renderiranja Quarto dokumenta
+
+<hr>
+
+<div style="text-align:center; font-size:0.85em; color:grey; margin-top:1em;">
+© Leonarda Srdelić, 2025
+</div>

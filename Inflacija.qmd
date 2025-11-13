@@ -1,5 +1,5 @@
 ---
-title: "Indikatori"
+title: "Inflacija"
 format:
   html:
     toc: true
@@ -23,23 +23,8 @@ dat   <- prepare_gdp_data()
 panel <- build_panel_real(dat$gdp_real)
 ```
 
-# Makrofiskalni okvir
 
-Makrofiskalni indikatori obuhvaćaju osnovne pokazatelje ekonomskog rasta i stabilnosti, uključujući realni BDP, inflaciju i porezne prihode.
-
-## BDP u stalnim cijenama
-
-```{r}
-print(plot_gdp_index(panel, meta = dat))
-```
-
-## Godišnja stopa rasta BDP-a
-
-```{r}
-print(plot_gdp_yoy(panel, meta = dat))
-```
-
-## Inflacija
+# Inflacija
 
 Inflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za osobnu potrošnju. Podaci se preuzimaju iz HICP baze Eurostata.
 
@@ -49,7 +34,7 @@ Inflacija mjeri promjenu razine cijena dobara i usluga koje kućanstva kupuju za
 # print(plot_hicp_yoy(dat_hicp, meta = dat_hicp))
 ```
 
-## Porezni prihodi
+# Porezni prihodi
 
 Prikaz udjela poreznih prihoda u BDP-u te strukture prihoda po vrstama poreza. Podaci su iz baze gov_10a_taxag Eurostata.
 

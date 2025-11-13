@@ -3,13 +3,23 @@ project:
   output-dir: _site
 
 website:
-  title: "HR Crostat Dash"
+  title: "HR CroStat Dash"
   navbar:
     left:
       - href: index.qmd
         text: Naslovnica
-      - href: indikatori.qmd
-        text: Indikatori
+      - href: BDP.qmd
+        text: Gospodarski rast
+      - href: Inflacija.qmd
+        text: Inflacija
+      - href: Demografija i tržište rada.qmd
+        text: Tržište rada
+      - href: Fiskalna pozicija i dug.qmd
+        text: Fiskalna pozicija i dug
+      - href: Platna bilanca.qmd
+        text: Platna bilanca
+      - href: Okolišni indikatori.qmd
+        text: Okoliš
 
 format:
   html:
