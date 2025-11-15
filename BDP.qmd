@@ -24,9 +24,7 @@ panel <- build_panel_real(dat$gdp_real)
 ```
 
 
-# Posljednje ažuriranje
-
-> Stranica se automatski renderira ponedjeljkom u 06:00 (CET). Posljednji render: `r format(lubridate::with_tz(Sys.time(), "Europe/Zagreb"), "%d.%m.%Y. u %H:%M")`.
+> Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: `r format(lubridate::with_tz(Sys.time(), "Europe/Zagreb"), "%d.%m.%Y. u %H:%M")`.
 
 
 # Najnovija kretanja BDP-a u EU 27
@@ -107,22 +105,22 @@ plot_gdp_qoq_hr()
 ## CEE bez Hrvatske
 
 ```{r}
-plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
-plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
+plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
+plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
 ```
 
 ## EU 27 bez Hrvatske
 
 ```{r}
-plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
-plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
+plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
+plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
 ```
 
 ## Područje eura bez Hrvatske
 
 ```{r}
-plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
-plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
+plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
+plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
 ```
 
 

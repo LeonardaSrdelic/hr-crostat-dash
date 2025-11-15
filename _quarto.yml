@@ -12,13 +12,13 @@ website:
         text: Gospodarski rast
       - href: Inflacija.qmd
         text: Inflacija
-      - href: Demografija i tržište rada.qmd
+      - href: Demografija i trziste rada.qmd
         text: Tržište rada
       - href: Fiskalna pozicija i dug.qmd
         text: Fiskalna pozicija i dug
       - href: Platna bilanca.qmd
         text: Platna bilanca
-      - href: Okolišni indikatori.qmd
+      - href: Okolisni indikatori.qmd
         text: Okoliš
 
 format:

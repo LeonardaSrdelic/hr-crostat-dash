@@ -1,5 +1,6 @@
 # ========================================================= 
 # HR Crostat Dash — BDP grafovi s izvorom 
+# Encoding: UTF-8
 # =========================================================
 
 suppressPackageStartupMessages({
@@ -50,6 +51,35 @@ cols_named <- c(
 )
 
 `%||%` <- function(x, y) if (is.null(x) || identical(x, "")) y else x
+
+# Helper to place caption/note lines below chart (left aligned).
+add_caption_bottom <- function(e, caption) {
+  if (is.null(caption) || identical(caption, "")) return(e)
+  lines <- if (is.list(caption)) unlist(caption) else as.character(caption)
+  lines <- trimws(lines)
+  lines <- lines[nzchar(lines)]
+  if (!length(lines)) return(e)
+
+  base_bottom <- -4
+  step        <- 20
+  bottoms <- base_bottom + step * rev(seq_along(lines) - 1)
+
+  for (i in seq_along(lines)) {
+    e <- e |>
+      echarts4r::e_title(
+        text      = lines[i],
+        bottom    = bottoms[i],
+        left      = "left",
+        textStyle = list(
+          fontSize   = 11,
+          fontWeight = "normal",
+          color      = "#555555"
+        ),
+        new_title = TRUE
+      )
+  }
+  e
+}
 
 echarts_bar_tooltip <- htmlwidgets::JS("
   function(params){
@@ -217,7 +247,7 @@ col_other <- "grey80"
 default_caption <- function(meta) {
   paste0("Izvor: Eurostat ", dataset_id, 
          ", jedinica ", meta$real_unit,
-         " · © Leonarda Srdelić")
+         " © Leonarda Srdelić")
 }
 
 # pronalazak najnovije CLVxx_MEUR jedinice
@@ -502,6 +532,123 @@ build_real_by_geo <- function(gdp_real) {
     dplyr::filter(has_base)
 }
 
+plot_distribution_core_echarts <- function(country_series,
+                                           group_series,
+                                           hr_series,
+                                           yvar,
+                                           grp_name,
+                                           ylab_txt,
+                                           percent  = FALSE,
+                                           caption  = NULL,
+                                           meta     = NULL) {
+
+  caption <- caption %||%
+    if (!is.null(meta)) default_caption(meta) else
+      paste0("Izvor: Eurostat ", dataset_id)
+
+  range_df <- country_series |>
+    dplyr::group_by(year) |>
+    dplyr::summarise(
+      y_min = min(.data[[yvar]], na.rm = TRUE),
+      y_max = max(.data[[yvar]], na.rm = TRUE),
+      .groups = "drop"
+    )
+
+  plot_df <- range_df |>
+    dplyr::left_join(
+      group_series |>
+        dplyr::transmute(year, grp_value = .data[[yvar]]),
+      by = "year"
+    ) |>
+    dplyr::left_join(
+      hr_series |>
+        dplyr::transmute(year, hr_value = .data[[yvar]]),
+      by = "year"
+    )
+
+  col_group <- cols_named[[grp_name]] %||% "#303030"
+  val_fmt   <- if (percent) " + ' %'" else ""
+
+  tooltip_fmt <- htmlwidgets::JS(sprintf("
+    function(params){
+      if (!params || !params.length) { return ''; }
+      var year = params[0].axisValue;
+      var rows = [];
+      params.forEach(function(p){
+        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;
+        if (raw === null || raw === undefined || isNaN(raw)) { return; }
+        var txt = Number(raw).toFixed(1).replace('.', ',')%s;
+        rows.push(p.seriesName + ': ' + txt);
+      });
+      return year + '.<br/>' + rows.join('<br/>');
+    }
+  ", val_fmt))
+
+  axis_fmt <- if (percent) {
+    htmlwidgets::JS("function(x){return x.toFixed(1).replace('.', ',') + ' %';}")
+  } else {
+    htmlwidgets::JS("function(x){return x.toFixed(1).replace('.', ',');}")
+  }
+
+  plot_df |>
+    echarts4r::e_charts(year) |>
+    echarts4r::e_band2(
+      y_min,
+      y_max,
+      name      = "Raspon zemalja",
+      color     = "rgba(160,160,160,0.25)",
+      itemStyle = list(borderWidth = 0)
+    ) |>
+    echarts4r::e_line(
+      grp_value,
+      name       = grp_name,
+      symbol     = "circle",
+      showSymbol = FALSE,
+      lineStyle  = list(width = 2),
+      itemStyle  = list(color = col_group),
+      emphasis   = list(itemStyle = list(color = col_group))
+    ) |>
+    echarts4r::e_line(
+      hr_value,
+      name       = "HR",
+      symbol     = "circle",
+      showSymbol = FALSE,
+      lineStyle  = list(width = 2),
+      itemStyle  = list(color = cols_named[["HR"]]),
+      emphasis   = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "cross"),
+      formatter   = tooltip_fmt
+    ) |>
+    echarts4r::e_x_axis(
+      min  = first_year,
+      max  = end_label_year,
+      type = "value",
+      axisLabel = list(
+        formatter = htmlwidgets::JS("function(x){return x + '.';}"),
+        rotate    = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_y_axis(
+      name = ylab_txt,
+      axisLabel = list(
+        formatter = axis_fmt
+      )
+    ) |>
+    echarts4r::e_legend(bottom = 0) |>
+    echarts4r::e_title(text = grp_name) |>
+    add_caption_bottom(caption) |>
+    echarts4r::e_grid(
+      top    = 70,
+      bottom = 70,
+      left   = 70,
+      right  = 30
+    )
+}
+
 plot_distribution_core <- function(country_series,
                                    group_series,
                                    hr_series,
@@ -656,6 +803,39 @@ plot_gdp_index_distribution <- function(gdp_real,
   )
 }
 
+plot_gdp_index_distribution_echarts <- function(gdp_real,
+                                                panel_df,
+                                                group_key,
+                                                caption = NULL,
+                                                meta    = NULL) {
+  grp_name    <- group_display_name(group_key)
+  real_by_geo <- build_real_by_geo(gdp_real)
+
+  country_idx <- real_by_geo |>
+    dplyr::filter(geo %in% groups[[group_key]]) |>
+    dplyr::select(geo, year, index_2000)
+
+  grp_idx <- panel_df |>
+    dplyr::filter(group == group_key) |>
+    dplyr::select(year, index_2000)
+
+  hr_idx <- panel_df |>
+    dplyr::filter(group == "Croatia") |>
+    dplyr::select(year, index_2000)
+
+  plot_distribution_core_echarts(
+    country_series = country_idx,
+    group_series   = grp_idx,
+    hr_series      = hr_idx,
+    yvar           = "index_2000",
+    grp_name       = grp_name,
+    ylab_txt       = "Indeks 2000 = 100",
+    percent        = FALSE,
+    caption        = caption,
+    meta           = meta
+  )
+}
+
 plot_gdp_yoy_distribution <- function(gdp_real,
                                       panel_df,
                                       group_key,
@@ -680,6 +860,42 @@ plot_gdp_yoy_distribution <- function(gdp_real,
     dplyr::filter(!is.na(yoy_pct))
 
   plot_distribution_core(
+    country_series = country_yoy,
+    group_series   = grp_yoy,
+    hr_series      = hr_yoy,
+    yvar           = "yoy_pct",
+    grp_name       = grp_name,
+    ylab_txt       = "%",
+    percent        = TRUE,
+    caption        = caption,
+    meta           = meta
+  )
+}
+
+plot_gdp_yoy_distribution_echarts <- function(gdp_real,
+                                              panel_df,
+                                              group_key,
+                                              caption = NULL,
+                                              meta    = NULL) {
+  grp_name    <- group_display_name(group_key)
+  real_by_geo <- build_real_by_geo(gdp_real)
+
+  country_yoy <- real_by_geo |>
+    dplyr::filter(geo %in% groups[[group_key]]) |>
+    dplyr::select(geo, year, yoy_pct) |>
+    dplyr::filter(!is.na(yoy_pct))
+
+  grp_yoy <- panel_df |>
+    dplyr::filter(group == group_key) |>
+    dplyr::select(year, yoy_pct) |>
+    dplyr::filter(!is.na(yoy_pct))
+
+  hr_yoy <- panel_df |>
+    dplyr::filter(group == "Croatia") |>
+    dplyr::select(year, yoy_pct) |>
+    dplyr::filter(!is.na(yoy_pct))
+
+  plot_distribution_core_echarts(
     country_series = country_yoy,
     group_series   = grp_yoy,
     hr_series      = hr_yoy,
@@ -765,7 +981,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     u_used,
     ", geo = ",
     hr_code,
-    " · © Leonarda Srdelić"
+    " © Leonarda Srdelić"
   )
 
   hr_q |>
@@ -868,7 +1084,7 @@ plot_gdp_pc_cee_pps_last <- function(start_year = 2010) {
 
   caption_txt <- paste0(
     "Izvor: Eurostat nama_10_pc, B1GQ, unit = ", units_pps,
-    ", EU27_2020 = 100 · © Leonarda Srdelić"
+    ", EU27_2020 = 100 © Leonarda Srdelić"
   )
 
   build_echarts_bar_highlight(
@@ -938,7 +1154,7 @@ plot_gdp_nominal_growth_eu27_2023_vs_2022 <- function() {
 
   caption_txt <- paste0(
     "Izvor: Eurostat ", dataset_id,
-    ", B1GQ, CP_MEUR, stopa promjene 2023 u odnosu na 2022 · © Leonarda Srdelić"
+    ", B1GQ, CP_MEUR, stopa promjene 2023 u odnosu na 2022 © Leonarda Srdelić"
   )
 
   ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = stopa, fill = is_hr)) +
@@ -1080,7 +1296,7 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
     "Izvor: Eurostat ", dataset_id,
     ", B1GQ, CP_MEUR, stopa promjene ",
     year_t, " u odnosu na ", year_tm1,
-    " · © Leonarda Srdelić"
+    " © Leonarda Srdelić"
   )
 
   build_echarts_bar_highlight(
@@ -1164,7 +1380,7 @@ plot_gdp_real_growth_eu27_latest <- function() {
     ", B1GQ, jedinica ", real_unit,
     ", stopa promjene ",
     year_t, " u odnosu na ", year_tm1,
-    " · © Leonarda Srdelić"
+    " © Leonarda Srdelić"
   )
 
   build_echarts_bar_highlight(
@@ -1254,7 +1470,7 @@ plot_gdp_nominal_q_yoy_eu27_latest <- function() {
     s_used,
     ", stopa promjene u odnosu na isti kvartal prethodne godine, ",
     format(last_date, "%Y Q%q"),
-    " · © Leonarda Srdelić"
+    " © Leonarda Srdelić"
   )
 
   build_echarts_bar_highlight(
@@ -1355,7 +1571,7 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
 caption_txt <- paste0(
   "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR",
   "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
-  " · © Leonarda Srdelić"
+  " © Leonarda Srdelić"
 )
 
   title_txt <- paste0(
@@ -1526,7 +1742,7 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
   caption_txt <- paste0(
   "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR ",
   "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
-  " · © Leonarda Srdelić"
+  " © Leonarda Srdelić"
 )
 
   title_txt <- paste0(
