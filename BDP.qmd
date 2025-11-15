@@ -24,6 +24,11 @@ panel <- build_panel_real(dat$gdp_real)
 ```
 
 
+# Posljednje ažuriranje
+
+> Stranica se automatski renderira ponedjeljkom u 06:00 (CET). Posljednji render: `r format(lubridate::with_tz(Sys.time(), "Europe/Zagreb"), "%d.%m.%Y. u %H:%M")`.
+
+
 # Najnovija kretanja BDP-a u EU 27
 
 ## Nominalni BDP yoy
@@ -35,32 +40,44 @@ print(plot_gdp_nominal_q_yoy_eu27_tminus1())
 ## Realni BDP yoy
 
 ```{r}
-print(plot_gdp_real_q_yoy_eu27_tminus1())
+plot_gdp_real_q_yoy_eu27_tminus1()
 ```
 
-## Realni BDP qoq
+## Realni BDP yoy (posljednji kvartal)
 
 ```{r}
-print(plot_gdp_real_q_qoq_eu27_tminus1())
+plot_gdp_real_q_yoy_eu27_latest()
+```
+
+## Realni BDP qoq (posljednji kvartal)
+
+```{r}
+plot_gdp_real_q_qoq_eu27_latest_echarts()
+```
+
+## Realni BDP qoq (zadnji kompletni kvartal)
+
+```{r}
+plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 ```
 
 
 ## Nominalni BDP
 
 ```{r}
-print(plot_gdp_nominal_growth_eu27_latest())
+plot_gdp_nominal_growth_eu27_latest()
 ```
 
 ## Realni BDP
 
 ```{r}
-print(plot_gdp_real_growth_eu27_latest())
+plot_gdp_real_growth_eu27_latest()
 ```
 
 ## BDP po stanovniku u PPS (CEE, EU 27 = 100)
 
 ```{r}
-print(plot_gdp_pc_cee_pps_last())
+plot_gdp_pc_cee_pps_last()
 ```
 
 # Dugoročni trendovi trend realnog BDP-a
@@ -68,7 +85,7 @@ print(plot_gdp_pc_cee_pps_last())
 ## Kretanje realnog BDP-a: Hrvatska i referentne europske skupine
 
 ```{r}
-print(plot_gdp_index(panel, meta = dat))
+plot_gdp_index(panel, meta = dat)
 ```
 
 # Dinamika rasta realnog BDP-a
@@ -76,13 +93,13 @@ print(plot_gdp_index(panel, meta = dat))
 ## Godišnje stope rasta realnog BDP-a
 
 ```{r}
-print(plot_gdp_yoy(panel, meta = dat))
+plot_gdp_yoy(panel, meta = dat)
 ```
 
 ## Tromjesečne stope rasta realnog BDP-a
 
 ```{r}
-print(plot_gdp_qoq_hr())
+plot_gdp_qoq_hr()
 ```
 
 # Distribucija realnog BDP-a unutar skupina
@@ -90,22 +107,22 @@ print(plot_gdp_qoq_hr())
 ## CEE bez Hrvatske
 
 ```{r}
-print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat))
-print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat))
+plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
+plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
 ```
 
 ## EU 27 bez Hrvatske
 
 ```{r}
-print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat))
-print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat))
+plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
+plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
 ```
 
 ## Područje eura bez Hrvatske
 
 ```{r}
-print(plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat))
-print(plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat))
+plot_gdp_index_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
+plot_gdp_yoy_distribution(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
 ```
 
 

@@ -1,5 +1,5 @@
 # ========================================================= 
-# HR Crostat Dash — BDP grafovi s izvorom (bez naslova)
+# HR Crostat Dash — BDP grafovi s izvorom 
 # =========================================================
 
 suppressPackageStartupMessages({
@@ -48,6 +48,125 @@ cols_named <- c(
   "EA isklj. HR"    = "#E69F00",
   "CEE isklj. HR"   = "#009E73"
 )
+
+`%||%` <- function(x, y) if (is.null(x) || identical(x, "")) y else x
+
+echarts_bar_tooltip <- htmlwidgets::JS("
+  function(params){
+    if (!params || !params.length) {
+      return '';
+    }
+    for (var i = 0; i < params.length; i++) {
+      var candidate = params[i];
+      var raw = Array.isArray(candidate.value)
+        ? candidate.value[candidate.value.length - 1]
+        : candidate.value;
+      if (raw !== null && raw !== undefined && !isNaN(raw)) {
+        return candidate.name + ': ' + Number(raw).toFixed(1).replace('.', ',') + ' %';
+      }
+    }
+    return '';
+  }
+")
+
+build_echarts_bar_highlight <- function(df,
+                                        value_col,
+                                        y_axis_name = "%",
+                                        title = NULL,
+                                        caption = NULL,
+                                        axis_rotate = 90,
+                                        avg_line = NULL,
+                                        avg_label = NULL) {
+  axis_labels <- as.character(df$geo)
+  values <- df[[value_col]]
+
+  df <- df |>
+    dplyr::mutate(
+      val_other = dplyr::if_else(is_hr, NA_real_, values),
+      val_hr    = dplyr::if_else(is_hr, values, NA_real_)
+    )
+
+  chart <- df |>
+    echarts4r::e_charts(geo) |>
+    echarts4r::e_bar(
+      val_other,
+      name      = "Ostale zemlje",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      val_hr,
+      name      = "Hrvatska",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval = 0,
+        rotate   = axis_rotate
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = 80,
+      bottom = 80,
+      left   = 80,
+      right  = 30
+    ) |>
+    echarts4r::e_y_axis(
+      name = y_axis_name,
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = echarts_bar_tooltip
+    ) |>
+    echarts4r::e_legend(show = FALSE) |>
+    echarts4r::e_title(
+      text    = title %||% "",
+      subtext = caption %||% ""
+    )
+
+  if (!is.null(avg_line)) {
+    label_cfg <- if (is.null(avg_label)) {
+      list(show = FALSE)
+    } else {
+      list(
+        show      = TRUE,
+        formatter = avg_label,
+        position  = "insideEndTop",
+        color     = "#303030",
+        padding   = c(0, 0, 4, 0)
+      )
+    }
+
+    chart <- chart |>
+      echarts4r::e_mark_line(
+        data      = list(yAxis = avg_line, name = avg_label %||% ""),
+        lineStyle = list(
+          type  = "dashed",
+          color = "#303030"
+        ),
+        label  = label_cfg,
+        symbol = "none"
+      )
+  }
+
+  chart
+}
 
 # pomoćne boje usklađene
 col_hr    <- cols_named[["HR"]]
@@ -162,28 +281,73 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
     if (!is.null(meta)) default_caption(meta) else
       paste0("Izvor: Eurostat ", dataset_id)
 
-  ggplot(panel_df, aes(year, yoy_pct, color = group_label)) +
-    geom_hline(yintercept = 0, color = "grey50", linewidth = 0.4) +
-    geom_line(linewidth = 1) +
-    scale_color_manual(values = cols_named, name = NULL) +
-    labs(x = NULL, y = "%", caption = caption) +
-    scale_x_continuous(
-      limits = c(first_year, end_label_year + 0.5),
-      breaks = seq(first_year, end_label_year, by = 1),
-      labels = function(x) paste0(x, "."),
-      expand = expansion(mult = c(0, 0))
-    ) +
-    scale_y_continuous(labels = scales::label_number(decimal.mark = ",")) +
-    theme_minimal(base_size = 12) +
-    theme(
-      legend.position = "bottom",
-      panel.grid.minor = element_blank(),
-      axis.title.y = element_text(angle = 0, vjust = 0.5,
-                                  margin = margin(r = 8)),
-      axis.text.y  = element_text(angle = 0, vjust = 0.5, hjust = 0.5),
-      axis.text.x  = element_text(angle = 90, vjust = 1, hjust = 1),
-      plot.caption = element_text(size = 9, hjust = 0,
-                                  margin = margin(t = 8))
+  level_order <- names(cols_named)
+  panel_df <- panel_df |>
+    dplyr::mutate(
+      group_label = factor(as.character(group_label), levels = level_order)
+    )
+
+  color_keys <- levels(panel_df$group_label)
+  color_keys <- color_keys[!is.na(color_keys)]
+  color_vec  <- unname(cols_named[color_keys])
+
+  panel_df |>
+    dplyr::group_by(group_label) |>
+    echarts4r::e_charts(year) |>
+    echarts4r::e_line(yoy_pct, symbol = "circle", showSymbol = FALSE) |>
+    echarts4r::e_color(color_vec) |>
+    echarts4r::e_x_axis(
+      min  = first_year,
+      max  = end_label_year,
+      type = "value",
+      axisLabel = list(
+        formatter = htmlwidgets::JS("function(x){return x + '.';}"),
+        rotate    = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_y_axis(
+      name = "%",
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = 0),
+      lineStyle = list(color = "grey60", type = "dashed"),
+      label     = list(show = FALSE),
+      symbol    = "none"
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "cross"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) { return ''; }
+          var year = Math.round(params[0].axisValue);
+          var lines = [];
+          for (var i = 0; i < params.length; i++) {
+            var p = params[i];
+            if (p.data == null || isNaN(p.data[1])) { continue; }
+            lines.push(p.seriesName + ': ' +
+              Number(p.data[1]).toFixed(1).replace('.', ',') + ' %');
+          }
+          return year + '.<br/>' + lines.join('<br/>');
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(bottom = 0, type = "scroll") |>
+    echarts4r::e_title(
+      text    = "Godišnje stope rasta realnog BDP-a",
+      subtext = caption
+    ) |>
+    echarts4r::e_grid(
+      top    = 70,
+      bottom = 70,
+      left   = 70,
+      right  = 30
     )
 }
 
@@ -192,27 +356,70 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
     if (!is.null(meta)) default_caption(meta) else
       paste0("Izvor: Eurostat ", dataset_id)
 
-  ggplot(panel_df, aes(year, index_2000, color = group_label)) +
-    geom_line(linewidth = 1) +
-    scale_color_manual(values = cols_named, name = NULL) +
-    labs(x = NULL, y = "Indeks 2000 = 100", caption = caption) +
-    scale_x_continuous(
-      limits = c(first_year, end_label_year + 0.5),
-      breaks = seq(first_year, end_label_year, by = 1),
-      labels = function(x) paste0(x, "."),
-      expand = expansion(mult = c(0, 0))
-    ) +
-    scale_y_continuous(labels = scales::label_number(decimal.mark = ",")) +
-    theme_minimal(base_size = 12) +
-    theme(
-      legend.position = "bottom",
-      panel.grid.minor = element_blank(),
-      axis.title.y = element_text(angle = 90, vjust = 0.5,
-                                  margin = margin(r = 8)),
-      axis.text.y  = element_text(angle = 0, vjust = 0.5, hjust = 0.5),
-      axis.text.x  = element_text(angle = 90, vjust = 1, hjust = 1),
-      plot.caption = element_text(size = 9, hjust = 0,
-                                  margin = margin(t = 8))
+  level_order <- names(cols_named)
+  panel_df <- panel_df |>
+    dplyr::mutate(
+      group_label = factor(as.character(group_label), levels = level_order)
+    )
+
+  color_keys <- levels(panel_df$group_label)
+  color_keys <- color_keys[!is.na(color_keys)]
+  color_vec  <- unname(cols_named[color_keys])
+
+  panel_df |>
+    dplyr::group_by(group_label) |>
+    echarts4r::e_charts(year) |>
+    echarts4r::e_line(index_2000, symbol = "circle", showSymbol = FALSE) |>
+    echarts4r::e_color(color_vec) |>
+    echarts4r::e_x_axis(
+      min  = first_year,
+      max  = end_label_year,
+      type = "value",
+      axisLabel = list(
+        formatter = htmlwidgets::JS("function(x){return x + '.';}"),
+        rotate    = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_y_axis(
+      name = "Indeks 2000 = 100",
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(0).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "cross"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) { return ''; }
+          var lines = [];
+          var year  = Math.round(params[0].axisValue);
+          for (var i = 0; i < params.length; i++) {
+            var p = params[i];
+            if (p.data == null || isNaN(p.data[1])) { continue; }
+            lines.push(p.seriesName + ': ' +
+              Number(p.data[1]).toFixed(1).replace('.', ','));
+          }
+          return year + '.<br/>' + lines.join('<br/>');
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(
+      bottom = 0,
+      type   = "scroll"
+    ) |>
+    echarts4r::e_title(
+      text    = "Indeks realnog BDP-a (2000 = 100)",
+      subtext = caption
+    ) |>
+    echarts4r::e_grid(
+      top    = 70,
+      bottom = 70,
+      left   = 70,
+      right  = 30
     )
 }
 
@@ -269,7 +476,6 @@ plot_distribution_core <- function(country_series,
 
   x_limits <- c(first_year, end_label_year + 0.5)
 
-  # Raspon
   range_df <- country_series |>
     dplyr::group_by(year) |>
     dplyr::summarise(
@@ -278,7 +484,6 @@ plot_distribution_core <- function(country_series,
       .groups = "drop"
     )
 
-  # Zadnje vrijednosti HR i grupe
   hr_last <- hr_series |>
     dplyr::filter(year == max(year)) |>
     dplyr::mutate(
@@ -293,7 +498,6 @@ plot_distribution_core <- function(country_series,
                     format = "f", decimal.mark=",")
     )
 
-  # BOJE: HR = crvena, grupa = antracit
   col_group <- "#303030"
 
   col_values <- c(cols_named[["HR"]], col_group)
@@ -522,47 +726,53 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     " · © Leonarda Srdelić"
   )
 
-  ggplot2::ggplot(hr_q, ggplot2::aes(x = yq, y = qoq)) +
-    ggplot2::geom_col(
-      fill  = col_hr,
-      width = 0.72
-    ) +
-    ggplot2::geom_hline(yintercept = 0, color = "grey60") +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label_qoq),
-      vjust = ifelse(hr_q$qoq >= 0, -0.35, 1.2),
-      size  = 3.0
-    ) +
-    ggplot2::scale_x_discrete(drop = FALSE) +
-    ggplot2::scale_y_continuous(
-      labels = scales::label_number(
-        accuracy = 0.1,
-        decimal.mark = ","
+  hr_q |>
+    echarts4r::e_charts(yq) |>
+    echarts4r::e_bar(
+      qoq,
+      name      = "Hrvatska",
+      barWidth  = 14,
+      itemStyle = list(color = col_hr),
+      emphasis  = list(itemStyle = list(color = col_hr))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = as.character(hr_q$yq),
+      axisLabel = list(
+        interval = 0,
+        rotate   = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_y_axis(
+      name = "%",
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
       )
-    ) +
-    ggplot2::labs(
-      x = NULL,
-      y = "%",
-      caption = caption
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.major.x = ggplot2::element_blank(),
-      axis.text.x  = ggplot2::element_text(
-        angle = 90, vjust = 1, hjust = 1
-      ),
-      axis.text.y  = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y = ggplot2::element_text(
-        angle = 0,
-        vjust = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = 0),
+      lineStyle = list(color = "grey70"),
+      label     = list(show = FALSE),
+      symbol    = "none"
+    ) |>
+    echarts4r::e_grid(
+      top    = 60,
+      bottom = 80,
+      left   = 70,
+      right  = 30
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = echarts_bar_tooltip
+    ) |>
+    echarts4r::e_legend(show = FALSE) |>
+    echarts4r::e_title(
+      text    = "",
+      subtext = caption
     )
 }
 
@@ -575,9 +785,6 @@ plot_gdp_pc_cee_pps_last <- function(start_year = 2010) {
   eu_code   <- "EU27_2020"
   cee_codes <- c("BG","CZ","EE","HU","LT","LV","PL","RO","SI","SK","HR")
   units_pps <- "CP_PPS_EU27_2020_HAB"
-
-  col_hr    <- cols_named[["HR"]]
-  col_other <- "grey80"
 
   pc_pps <- eurostat::get_eurostat(
     id = "nama_10_pc",
@@ -613,7 +820,8 @@ plot_gdp_pc_cee_pps_last <- function(start_year = 2010) {
     ) |>
     dplyr::arrange(ratio) |>
     dplyr::mutate(
-      geo = factor(geo, levels = geo)
+      geo   = factor(geo, levels = geo),
+      is_hr = geo == hr_code
     )
 
   caption_txt <- paste0(
@@ -621,41 +829,14 @@ plot_gdp_pc_cee_pps_last <- function(start_year = 2010) {
     ", EU27_2020 = 100 · © Leonarda Srdelić"
   )
 
-  ggplot2::ggplot(last_df, ggplot2::aes(x = geo, y = ratio, fill = geo == hr_code)) +
-    ggplot2::geom_col(width = 0.7) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = sprintf("%.0f", ratio)),
-      vjust = -0.3,
-      size  = 3.5
-    ) +
-    ggplot2::scale_fill_manual(
-      values = c("TRUE" = col_hr, "FALSE" = col_other),
-      guide  = "none"
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "EU27 = 100",
-      caption = caption_txt
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.major.x = ggplot2::element_blank(),
-      axis.text.x        = ggplot2::element_text(
-        angle = 0, vjust = 1, hjust = 1
-      ),
-      axis.text.y        = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y       = ggplot2::element_text(
-        angle  = 90,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption       = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
-    )
+  build_echarts_bar_highlight(
+    df          = last_df,
+    value_col   = "ratio",
+    y_axis_name = "EU27 = 100",
+    title       = paste0("CEE zemlje, ", last_year),
+    caption     = caption_txt,
+    axis_rotate = 0
+  )
 }
 
 # ======================================================
@@ -860,77 +1041,20 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
     " · © Leonarda Srdelić"
   )
 
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = stopa, fill = is_hr)) +
-    ggplot2::geom_col(show.legend = FALSE) +
-    ggplot2::scale_fill_manual(
-      values = c(
-        "TRUE"  = cols_named[["HR"]],
-        "FALSE" = "grey80"
-      )
-    ) +
-    ggplot2::geom_hline(
-      yintercept = eu_avg,
-      colour     = "grey30",
-      linewidth  = 0.6
-    ) +
-    ggplot2::annotate(
-      "text",
-      x     = Inf,
-      y     = eu_avg,
-      label = paste0(
-        "Prosjek EU-27: ",
-        scales::number(
-          eu_avg,
-          accuracy     = 0.1,
-          decimal.mark = ","
-        ),
-        " %"
-      ),
-      hjust  = 1.1,
-      vjust  = -0.3,
-      size   = 3.5,
-      colour = "grey30"
-    ) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label),
-      vjust = -0.5,
-      size  = 3
-    ) +
-    ggplot2::scale_y_continuous(
-      labels = function(x) scales::number(
-        x,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      )
-    ) +
-    ggplot2::expand_limits(
-      y = max(plot_df$stopa, na.rm = TRUE) * 1.15
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "%",
-      caption = caption_txt
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 0,
-        hjust = 1
-      ),
-      axis.text.y      = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y     = ggplot2::element_text(
-        angle  = 0,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption     = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+  build_echarts_bar_highlight(
+    df          = plot_df,
+    value_col   = "stopa",
+    y_axis_name = "%",
+    title       = paste0("Nominalni BDP – ", year_t, " vs ", year_tm1),
+    caption     = caption_txt,
+    axis_rotate = 0,
+    avg_line    = eu_avg,
+    avg_label   = paste0(
+      "EU-27: ",
+      scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
+      " %"
     )
+  )
 }
 
 plot_gdp_real_growth_eu27_latest <- function() {
@@ -1001,77 +1125,20 @@ plot_gdp_real_growth_eu27_latest <- function() {
     " · © Leonarda Srdelić"
   )
 
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = stopa, fill = is_hr)) +
-    ggplot2::geom_col(show.legend = FALSE) +
-    ggplot2::scale_fill_manual(
-      values = c(
-        "TRUE"  = cols_named[["HR"]],
-        "FALSE" = "grey80"
-      )
-    ) +
-    ggplot2::geom_hline(
-      yintercept = eu_avg,
-      colour     = "grey30",
-      linewidth  = 0.6
-    ) +
-    ggplot2::annotate(
-      "text",
-      x     = Inf,
-      y     = eu_avg,
-      label = paste0(
-        "Prosjek EU-27: ",
-        scales::number(
-          eu_avg,
-          accuracy     = 0.1,
-          decimal.mark = ","
-        ),
-        " %"
-      ),
-      hjust  = 1.1,
-      vjust  = -0.3,
-      size   = 3.5,
-      colour = "grey30"
-    ) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label),
-      vjust = -0.5,
-      size  = 3
-    ) +
-    ggplot2::scale_y_continuous(
-      labels = function(x) scales::number(
-        x,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      )
-    ) +
-    ggplot2::expand_limits(
-      y = max(plot_df$stopa, na.rm = TRUE) * 1.15
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "%",
-      caption = caption_txt
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 0,
-        hjust = 1
-      ),
-      axis.text.y      = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y     = ggplot2::element_text(
-        angle  = 0,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption     = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+  build_echarts_bar_highlight(
+    df          = plot_df,
+    value_col   = "stopa",
+    y_axis_name = "%",
+    title       = paste0("Realni BDP – ", year_t, " vs ", year_tm1),
+    caption     = caption_txt,
+    axis_rotate = 0,
+    avg_line    = eu_avg,
+    avg_label   = paste0(
+      "EU-27: ",
+      scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
+      " %"
     )
+  )
 }
 
 
@@ -1148,82 +1215,25 @@ plot_gdp_nominal_q_yoy_eu27_latest <- function() {
     " · © Leonarda Srdelić"
   )
 
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = yoy, fill = is_hr)) +
-    ggplot2::geom_col(show.legend = FALSE) +
-    ggplot2::scale_fill_manual(
-      values = c(
-        "TRUE"  = cols_named[["HR"]],
-        "FALSE" = "grey80"
-      )
-    ) +
-    ggplot2::geom_hline(
-      yintercept = eu_avg,
-      colour     = "grey30",
-      linewidth  = 0.6
-    ) +
-    ggplot2::annotate(
-      "text",
-      x     = Inf,
-      y     = eu_avg,
-      label = paste0(
-        "Prosjek EU 27: ",
-        scales::number(
-          eu_avg,
-          accuracy     = 0.1,
-          decimal.mark = ","
-        ),
-        " %"
-      ),
-      hjust  = 1.1,
-      vjust  = -0.3,
-      size   = 3.5,
-      colour = "grey30"
-    ) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label),
-      vjust = -0.5,
-      size  = 3
-    ) +
-    ggplot2::scale_y_continuous(
-      labels = function(x) scales::number(
-        x,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      )
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "%",
-      caption = caption_txt
-    ) +
-    ggplot2::expand_limits(
-      y = max(plot_df$yoy, na.rm = TRUE) * 1.15
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 90,
-        hjust = 1
-      ),
-      axis.text.y      = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y     = ggplot2::element_text(
-        angle  = 90,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption     = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+  build_echarts_bar_highlight(
+    df          = plot_df,
+    value_col   = "yoy",
+    y_axis_name = "%",
+    title       = paste0("Realni BDP yoy (", format(last_date, "%Y Q%q"), ")"),
+    caption     = caption_txt,
+    axis_rotate = 90,
+    avg_line    = eu_avg,
+    avg_label   = paste0(
+      "EU-27: ",
+      scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
+      " %"
     )
+  )
 }
 
-# ======================================================
-# EU 27: kvartalne godišnje stope rasta realnog BDP a
-# ======================================================
+plot_gdp_nominal_q_yoy_eu27_tminus1 <- function() {
+  plot_gdp_nominal_q_yoy_eu27_latest()
+}
 
 # ======================================================
 # EU 27: REALNI kvartalni BDP, yoy stope za t-1
@@ -1240,7 +1250,7 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
       na_item = "B1GQ",
       s_adj   = "SCA",
       unit    = "CLV20_MEUR",
-      geo     = eu27_codes
+      geo     = c(eu27_codes, "EU27_2020")
     ),
     time_format = "raw"
   ) |>
@@ -1265,7 +1275,11 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
 
   # Ako za t-1 nema izračunate yoy za neke zemlje, filtrira ih se van
   plot_df <- qdat |>
-    dplyr::filter(date == t_minus1, !is.na(yoy)) |>
+    dplyr::filter(
+      date == t_minus1,
+      !is.na(yoy),
+      geo != "EU27_2020"
+    ) |>
     dplyr::arrange(dplyr::desc(yoy)) |>
     dplyr::mutate(
       label = scales::number(
@@ -1281,98 +1295,49 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
     stop("Za t-1 nema yoy stopa za nijednu zemlju.")
   }
 
-  eu_avg <- mean(plot_df$yoy, na.rm = TRUE)
+  # Službeni EU-27 agregat (EU27_2020) za t-1
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == t_minus1,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(yoy)
 
   year_q <- lubridate::year(t_minus1)
   q_q    <- lubridate::quarter(t_minus1)
 
-  caption_txt <- paste0(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR, ",
-    "stopa promjene u odnosu na isti kvartal prethodne godine, ",
-    year_q, " Q", q_q,
-    " · © Leonarda Srdelić"
+  prev_date <- t_minus1 %m-% months(12)
+  prev_year <- lubridate::year(prev_date)
+  prev_q    <- lubridate::quarter(prev_date)
+
+caption_txt <- paste0(
+  "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR",
+  "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
+  " · © Leonarda Srdelić"
+)
+
+  title_txt <- paste0(
+    year_q, "Q", q_q, " / ",
+    prev_year, "Q", prev_q
   )
 
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = yoy, fill = is_hr)) +
-    ggplot2::geom_col(show.legend = FALSE) +
-    ggplot2::scale_fill_manual(
-      values = c(
-        "TRUE"  = cols_named[["HR"]],
-        "FALSE" = "grey80"
-      )
-    ) +
-    ggplot2::geom_hline(
-      yintercept = eu_avg,
-      colour     = "grey30",
-      linewidth  = 0.6
-    ) +
-    ggplot2::annotate(
-      "text",
-      x     = Inf,
-      y     = eu_avg,
-      label = paste0(
-        "Prosjek EU-27: ",
-        scales::number(
-          eu_avg,
-          accuracy     = 0.1,
-          decimal.mark = ","
-        ),
-        " %"
-      ),
-      hjust  = 1.1,
-      vjust  = -0.3,
-      size   = 3.5,
-      colour = "grey30"
-    ) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label),
-      vjust = -0.5,
-      size  = 3
-    ) +
-    ggplot2::scale_y_continuous(
-      labels = function(x) scales::number(
-        x,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      )
-    ) +
-    ggplot2::expand_limits(
-      y = max(plot_df$yoy, na.rm = TRUE) * 1.15
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "%"
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 90,
-        hjust = 1
-      ),
-      axis.text.y      = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y     = ggplot2::element_text(
-        angle  = 0,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption     = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+  build_echarts_bar_highlight(
+    df          = plot_df,
+    value_col   = "yoy",
+    y_axis_name = "%",
+    title       = title_txt,
+    caption     = caption_txt,
+    axis_rotate = 90,
+    avg_line    = eu_avg,
+    avg_label   = paste0(
+      "EU-27: ",
+      scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
+      " %"
     )
+  )
 }
 
-
-
-# ======================================================
-# EU 27: NOMINALNI kvartalni BDP, yoy stope za t-1
-# B1GQ, SCA, CP_MEUR
-# ======================================================
-
-plot_gdp_nominal_q_yoy_eu27_tminus1 <- function() {
+plot_gdp_real_q_yoy_eu27_latest <- function() {
   use_cache()
 
   qdat <- eurostat::get_eurostat(
@@ -1380,8 +1345,8 @@ plot_gdp_nominal_q_yoy_eu27_tminus1 <- function() {
     filters = list(
       na_item = "B1GQ",
       s_adj   = "SCA",
-      unit    = "CP_MEUR",
-      geo     = eu27_codes
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
     ),
     time_format = "raw"
   ) |>
@@ -1397,111 +1362,50 @@ plot_gdp_nominal_q_yoy_eu27_tminus1 <- function() {
     dplyr::ungroup()
 
   if (nrow(qdat) == 0L) {
-    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CP_MEUR za EU 27.")
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU-27.")
   }
 
-  last_date_all <- max(qdat$date, na.rm = TRUE)
-  t_minus1      <- last_date_all %m-% months(3)
+  latest_date <- max(qdat$date, na.rm = TRUE)
 
   plot_df <- qdat |>
-    dplyr::filter(date == t_minus1, !is.na(yoy)) |>
+    dplyr::filter(
+      date == latest_date,
+      !is.na(yoy),
+      geo != "EU27_2020"
+    ) |>
     dplyr::arrange(dplyr::desc(yoy)) |>
     dplyr::mutate(
-      label = scales::number(
-        yoy,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      ),
       geo   = factor(geo, levels = geo),
       is_hr = geo == hr_code
     )
 
   if (nrow(plot_df) == 0L) {
-    stop("Za t minus 1 nema yoy stopa ni za jednu zemlju.")
+    stop("Nema zemalja s dostupnim yoy stopama za posljednji kvartal.")
   }
 
-  eu_avg <- mean(plot_df$yoy, na.rm = TRUE)
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == latest_date,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(yoy)
 
-  year_q <- lubridate::year(t_minus1)
-  q_q    <- lubridate::quarter(t_minus1)
-
-  caption_txt <- paste0(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CP_MEUR, ",
-    "stopa promjene u odnosu na isti kvartal prethodne godine, ",
-    year_q, " Q", q_q,
-    " · © Leonarda Srdelić"
-  )
-
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = yoy, fill = is_hr)) +
-    ggplot2::geom_col(show.legend = FALSE) +
-    ggplot2::scale_fill_manual(
-      values = c(
-        "TRUE"  = cols_named[["HR"]],
-        "FALSE" = "grey80"
-      )
-    ) +
-    ggplot2::geom_hline(
-      yintercept = eu_avg,
-      colour     = "grey30",
-      linewidth  = 0.6
-    ) +
-    ggplot2::annotate(
-      "text",
-      x     = Inf,
-      y     = eu_avg,
-      label = paste0(
-        "Prosjek EU 27: ",
-        scales::number(
-          eu_avg,
-          accuracy     = 0.1,
-          decimal.mark = ","
-        ),
-        " %"
-      ),
-      hjust  = 1.1,
-      vjust  = -0.3,
-      size   = 3.5,
-      colour = "grey30"
-    ) +
-    ggplot2::geom_text(
-      ggplot2::aes(label = label),
-      vjust = -0.5,
-      size  = 3
-    ) +
-    ggplot2::scale_y_continuous(
-      labels = function(x) scales::number(
-        x,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      )
-    ) +
-    ggplot2::expand_limits(
-      y = max(plot_df$yoy, na.rm = TRUE) * 1.15
-    ) +
-    ggplot2::labs(
-      x       = NULL,
-      y       = "%"
-    ) +
-    ggplot2::theme_minimal(base_size = 12) +
-    ggplot2::theme(
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 90,
-        hjust = 1
-      ),
-      axis.text.y      = ggplot2::element_text(
-        angle = 0, vjust = 0.5, hjust = 0.5
-      ),
-      axis.title.y     = ggplot2::element_text(
-        angle  = 0,
-        vjust  = 0.5,
-        margin = ggplot2::margin(r = 8)
-      ),
-      plot.caption     = ggplot2::element_text(
-        hjust = 0,
-        size  = 9
-      )
+  build_echarts_bar_highlight(
+    df          = plot_df,
+    value_col   = "yoy",
+    y_axis_name = "%",
+    title       = paste0(
+      "Realni BDP yoy (", format(latest_date, "%Y Q%q"), ", posljednji dostupni)"
+    ),
+    caption = "Napomena: Prikazane su samo zemlje s objavljenim podatkom za najnoviji kvartal",
+    axis_rotate = 90,
+    avg_line    = eu_avg,
+    avg_label   = paste0(
+      "EU-27: ",
+      scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
+      " %"
     )
+  )
 }
 
 # ======================================================
@@ -1518,7 +1422,7 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
       na_item = "B1GQ",
       s_adj   = "SCA",
       unit    = "CLV20_MEUR",
-      geo     = eu27_codes
+      geo     = c(eu27_codes, "EU27_2020")
     ),
     time_format = "raw"
   ) |>
@@ -1542,7 +1446,11 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
   t_minus1      <- last_date_all %m-% months(3)
 
   plot_df <- qdat |>
-    dplyr::filter(date == t_minus1, !is.na(qoq)) |>
+    dplyr::filter(
+      date == t_minus1,
+      !is.na(qoq),
+      geo != "EU27_2020"
+    ) |>
     dplyr::arrange(dplyr::desc(qoq)) |>
     dplyr::mutate(
       label = scales::number(
@@ -1558,19 +1466,46 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
     stop("Za t minus 1 nema qoq stopa ni za jednu zemlju.")
   }
 
-  eu_avg <- mean(plot_df$qoq, na.rm = TRUE)
+  # Službeni EU-27 agregat (EU27_2020) za t-1
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == t_minus1,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(qoq)
 
   year_q <- lubridate::year(t_minus1)
   q_q    <- lubridate::quarter(t_minus1)
 
+  prev_date <- t_minus1 %m-% months(3)
+  prev_year <- lubridate::year(prev_date)
+  prev_q    <- lubridate::quarter(prev_date)
+
   caption_txt <- paste0(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR, ",
-    "stopa promjene u odnosu na prethodno tromjesečje, ",
-    year_q, " Q", q_q,
-    " · © Leonarda Srdelić"
+  "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR ",
+  "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
+  " · © Leonarda Srdelić"
+)
+
+  title_txt <- paste0(
+    year_q, "Q", q_q,
+    " / ",
+    prev_year, "Q", prev_q
   )
 
-  ggplot2::ggplot(plot_df, ggplot2::aes(x = geo, y = qoq, fill = is_hr)) +
+    ggplot2::ggplot(
+      plot_df,
+      ggplot2::aes(
+        x    = geo,
+        y    = qoq,
+        fill = is_hr,
+        text = paste0(
+          geo, ": ",
+          scales::number(qoq, accuracy = 0.1, decimal.mark = ","),
+          " %"
+        )
+      )
+    ) +
     ggplot2::geom_col(show.legend = FALSE) +
     ggplot2::scale_fill_manual(
       values = c(
@@ -1588,7 +1523,7 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
       x     = Inf,
       y     = eu_avg,
       label = paste0(
-        "Prosjek EU 27: ",
+        "EU-27: ",
         scales::number(
           eu_avg,
           accuracy     = 0.1,
@@ -1617,6 +1552,7 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
       y = max(plot_df$qoq, na.rm = TRUE) * 1.15
     ) +
     ggplot2::labs(
+      title   = title_txt,
       x       = NULL,
       y       = "%",
       caption = caption_txt
@@ -1624,9 +1560,10 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
     ggplot2::theme_minimal(base_size = 12) +
     ggplot2::theme(
       panel.grid.minor = ggplot2::element_blank(),
-      axis.text.x      = ggplot2::element_text(
-        angle = 90,
-        hjust = 1
+      axis.text.x = ggplot2::element_text(
+      angle = 90,
+      hjust = 0.5,
+      vjust = 0.5
       ),
       axis.text.y      = ggplot2::element_text(
         angle = 0, vjust = 0.5, hjust = 0.5
@@ -1641,4 +1578,826 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
         size  = 9
       )
     )
+}
+
+plot_gdp_real_q_qoq_eu27_tminus1_plotly <- function() {
+  # pretpostavka: plot_gdp_real_q_qoq_eu27_tminus1 već postoji
+  p <- plot_gdp_real_q_qoq_eu27_tminus1()
+
+  plotly::ggplotly(
+    p,
+    tooltip = "text"  # koristi aes(text = ...) iz ggplota
+  )
+}
+
+# Helpers for QoQ ECharts
+get_qoq_dataset <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date = lubridate::yq(gsub("Q", "-Q", time_raw))
+    ) |>
+    dplyr::arrange(geo, date) |>
+    dplyr::group_by(geo) |>
+    dplyr::mutate(
+      qoq = 100 * (value / dplyr::lag(value, 1) - 1)
+    ) |>
+    dplyr::ungroup()
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
+  }
+
+  latest_date <- max(qdat$date, na.rm = TRUE)
+
+  coverage <- qdat |>
+    dplyr::filter(!is.na(qoq), geo %in% eu27_codes) |>
+    dplyr::count(date, name = "n_countries")
+
+  complete_date <- coverage |>
+    dplyr::filter(n_countries == length(eu27_codes)) |>
+    dplyr::summarise(max_date = max(date)) |>
+    dplyr::pull(max_date)
+
+  list(
+    data          = qdat,
+    latest_date   = latest_date,
+    complete_date = complete_date
+  )
+}
+
+build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption_source) {
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == target_date,
+      !is.na(qoq),
+      geo != "EU27_2020"
+    ) |>
+    dplyr::arrange(dplyr::desc(qoq)) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    )
+
+  if (nrow(plot_df) == 0L) {
+    return(NULL)
+  }
+
+  axis_labels <- plot_df$geo_label
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      qoq_oth = dplyr::if_else(is_hr, NA_real_, qoq),
+      qoq_hr  = dplyr::if_else(is_hr, qoq, NA_real_)
+    )
+
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == target_date,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(qoq)
+
+  eu_label <- paste0(
+    "EU-27: ",
+    gsub("\\.", ",", sprintf("%.1f", eu_avg))
+  )
+
+  plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      qoq_oth,
+      name      = "Ostale zemlje",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      qoq_hr,
+      name      = "Hrvatska",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval = 0,
+        rotate   = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = 90,
+      bottom = 90,
+      left   = 80,
+      right  = 30
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = eu_avg, name = eu_label),
+      lineStyle = list(
+        type  = "dashed",
+        color = "#303030"
+      ),
+      label = list(
+        show      = TRUE,
+        formatter = paste0(eu_label, " %"),
+        position  = "insideEndTop",
+        color     = "#303030",
+        padding   = c(0, 0, 4, 0)
+      ),
+      symbol = "none"
+    ) |>
+    echarts4r::e_title(
+      text = title_text
+    ) |>
+    echarts4r::e_title(
+      text      = caption_note,
+      bottom    = 16,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_title(
+      text      = caption_source,
+      bottom    = -4,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_y_axis(
+      name          = "%",
+      nameLocation  = "middle",
+      nameGap       = 40,
+      nameRotate    = 0,
+      nameTextStyle = list(
+        align   = "center",
+        color   = "#555555",
+        padding = c(0, 0, 0, -10)
+      ),
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) {
+            return '';
+          }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var candidate = params[i];
+            var raw       = candidate.value;
+            var val       = Array.isArray(raw) ? raw[raw.length - 1] : raw;
+            if (val !== null && val !== undefined && !isNaN(val)) {
+              point = { name: candidate.name, value: raw };
+              break;
+            }
+          }
+          if (!point) {
+            return '';
+          }
+          var val = Number(point.value).toFixed(1).replace('.', ',');
+          return point.name + ': ' + val + ' %';
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(show = FALSE)
+}
+
+plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date = lubridate::yq(gsub("Q", "-Q", time_raw))
+    ) |>
+    dplyr::arrange(geo, date) |>
+    dplyr::group_by(geo) |>
+    dplyr::mutate(
+      qoq = 100 * (value / dplyr::lag(value, 1) - 1)
+    ) |>
+    dplyr::ungroup()
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
+  }
+
+  # zadnji dostupni kvartal = t, pa t minus 1
+  last_date_all <- max(qdat$date, na.rm = TRUE)
+  t_minus1      <- last_date_all %m-% months(3)
+
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == t_minus1,
+      !is.na(qoq),
+      geo != "EU27_2020"
+    ) |>
+    dplyr::arrange(dplyr::desc(qoq)) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    )
+
+  if (nrow(plot_df) == 0L) {
+    stop("Za t minus 1 nema qoq stopa ni za jednu zemlju.")
+  }
+
+  # službeni EU-27 agregat za t-1
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == t_minus1,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(qoq)
+
+  eu_label <- paste0(
+    "EU-27: ",
+    gsub("\\.", ",", sprintf("%.1f", eu_avg))
+  )
+
+  year_q <- lubridate::year(t_minus1)
+  q_q    <- lubridate::quarter(t_minus1)
+
+  prev_date <- t_minus1 %m-% months(3)
+  prev_year <- lubridate::year(prev_date)
+  prev_q    <- lubridate::quarter(prev_date)
+
+  caption_txt <- list(
+    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata",
+    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+  )
+
+  title_txt <- paste0(
+    year_q, "Q", q_q,
+    " / ",
+    prev_year, "Q", prev_q
+  )
+
+  axis_labels <- plot_df$geo_label
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      qoq_oth = dplyr::if_else(is_hr, NA_real_, qoq),
+      qoq_hr  = dplyr::if_else(is_hr, qoq, NA_real_)
+    )
+
+    plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      qoq_oth,
+      name      = "Ostale zemlje",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      qoq_hr,
+      name      = "Hrvatska",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval = 0,
+        rotate   = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = 90,
+      bottom = 90,
+      left   = 80,
+      right  = 30
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = eu_avg, name = eu_label),
+      lineStyle = list(
+        type  = "dashed",
+        color = "#303030"
+      ),
+      label = list(
+        show      = TRUE,
+        formatter = paste0(eu_label, " %"),
+        position  = "insideEndTop",
+        color     = "#303030",
+        padding   = c(0, 0, 4, 0)
+      ),
+      symbol = "none"
+    ) |>
+    echarts4r::e_title(
+      text = title_txt
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$note,
+      bottom    = 16,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$source,
+      bottom    = -4,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_y_axis(
+      name          = "%",
+      nameLocation  = "middle",
+      nameGap       = 40,
+      nameRotate    = 0,
+      nameTextStyle = list(
+        align   = "center",
+        color   = "#555555",
+        padding = c(0, 0, 0, -10)
+      ),
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) {
+            return '';
+          }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var candidate = params[i];
+            var raw       = Array.isArray(candidate.value)
+              ? candidate.value[candidate.value.length - 1]
+              : candidate.value;
+            if (raw !== null && raw !== undefined && !isNaN(raw)) {
+              point = { name: candidate.name, value: raw };
+              break;
+            }
+          }
+          if (!point) {
+            return '';
+          }
+          var val = Number(point.value).toFixed(1).replace('.', ',');
+          return point.name + ': ' + val + ' %';
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(show = FALSE)
+}
+
+plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date = lubridate::yq(gsub("Q", "-Q", time_raw))
+    ) |>
+    dplyr::arrange(geo, date) |>
+    dplyr::group_by(geo) |>
+    dplyr::mutate(
+      qoq = 100 * (value / dplyr::lag(value, 1) - 1)
+    ) |>
+    dplyr::ungroup()
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
+  }
+
+  last_date_all <- max(qdat$date, na.rm = TRUE)
+
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == last_date_all,
+      !is.na(qoq),
+      geo != "EU27_2020"
+    ) |>
+    dplyr::arrange(dplyr::desc(qoq)) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    )
+
+  if (nrow(plot_df) == 0L) {
+    stop("Za t nema qoq stopa ni za jednu zemlju.")
+  }
+
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == last_date_all,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(qoq)
+
+  eu_label <- paste0(
+    "EU-27: ",
+    gsub("\\.", ",", sprintf("%.1f", eu_avg))
+  )
+
+  caption_txt <- list(
+    note   = "Napomena: Prikazane su samo zemlje s dostupnim podatkom za najnoviji kvartal",
+    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+  )
+
+  title_txt <- paste0(
+    lubridate::year(last_date_all), "Q", lubridate::quarter(last_date_all),
+    " (posljednji dostupni podaci)"
+  )
+
+  axis_labels <- plot_df$geo_label
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      qoq_oth = dplyr::if_else(is_hr, NA_real_, qoq),
+      qoq_hr  = dplyr::if_else(is_hr, qoq, NA_real_)
+    )
+
+    plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      qoq_oth,
+      name      = "Ostale zemlje",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      qoq_hr,
+      name      = "Hrvatska",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval = 0,
+        rotate   = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = 90,
+      bottom = 90,
+      left   = 80,
+      right  = 30
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = eu_avg, name = eu_label),
+      lineStyle = list(
+        type  = "dashed",
+        color = "#303030"
+      ),
+      label = list(
+        show      = TRUE,
+        formatter = paste0(eu_label, " %"),
+        position  = "insideEndTop",
+        color     = "#303030",
+        padding   = c(0, 0, 4, 0)
+      ),
+      symbol = "none"
+    ) |>
+    echarts4r::e_title(
+      text = title_txt
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$note,
+      bottom    = 16,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$source,
+      bottom    = -4,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_y_axis(
+      name          = "%",
+      nameLocation  = "middle",
+      nameGap       = 40,
+      nameRotate    = 0,
+      nameTextStyle = list(
+        align   = "center",
+        color   = "#555555",
+        padding = c(0, 0, 0, -10)
+      ),
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) {
+            return '';
+          }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var candidate = params[i];
+            var raw       = Array.isArray(candidate.value)
+              ? candidate.value[candidate.value.length - 1]
+              : candidate.value;
+            if (raw !== null && raw !== undefined && !isNaN(raw)) {
+              point = { name: candidate.name, value: raw };
+              break;
+            }
+          }
+          if (!point) {
+            return '';
+          }
+          var num = Number(point.value);
+          if (isNaN(num)) {
+            return '';
+          }
+          return point.name + ': ' + num.toFixed(1).replace('.', ',') + ' %';
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(show = FALSE)
+}
+
+plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date = lubridate::yq(gsub("Q", "-Q", time_raw))
+    ) |>
+    dplyr::arrange(geo, date) |>
+    dplyr::group_by(geo) |>
+    dplyr::mutate(
+      qoq = 100 * (value / dplyr::lag(value, 1) - 1)
+    ) |>
+    dplyr::ungroup()
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
+  }
+
+  last_date_all <- max(qdat$date, na.rm = TRUE)
+
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == last_date_all,
+      !is.na(qoq),
+      geo != "EU27_2020"
+    ) |>
+    dplyr::arrange(dplyr::desc(qoq)) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    )
+
+  if (nrow(plot_df) == 0L) {
+    stop("Za t nema qoq stopa ni za jednu zemlju.")
+  }
+
+  eu_avg <- qdat |>
+    dplyr::filter(
+      date == last_date_all,
+      geo == "EU27_2020"
+    ) |>
+    dplyr::pull(qoq)
+
+  eu_label <- paste0(
+    "EU-27: ",
+    gsub("\\.", ",", sprintf("%.1f", eu_avg))
+  )
+
+  caption_txt <- list(
+    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata",
+    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+  )
+
+  title_txt <- paste0(
+    lubridate::year(last_date_all), "Q", lubridate::quarter(last_date_all),
+    " (posljednji dostupni)"
+  )
+
+  axis_labels <- plot_df$geo_label
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      qoq_oth = dplyr::if_else(is_hr, NA_real_, qoq),
+      qoq_hr  = dplyr::if_else(is_hr, qoq, NA_real_)
+    )
+
+    plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      qoq_oth,
+      name      = "Ostale zemlje",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      qoq_hr,
+      name      = "Hrvatska",
+      barWidth  = 18,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval = 0,
+        rotate   = 90
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = 90,
+      bottom = 90,
+      left   = 80,
+      right  = 30
+    ) |>
+    echarts4r::e_mark_line(
+      data      = list(yAxis = eu_avg, name = eu_label),
+      lineStyle = list(
+        type  = "dashed",
+        color = "#303030"
+      ),
+      label = list(
+        show      = TRUE,
+        formatter = paste0(eu_label, " %"),
+        position  = "insideEndTop",
+        color     = "#303030",
+        padding   = c(0, 0, 4, 0)
+      ),
+      symbol = "none"
+    ) |>
+    echarts4r::e_title(
+      text = title_txt
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$note,
+      bottom    = 16,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_title(
+      text      = caption_txt$source,
+      bottom    = -4,
+      left      = "left",
+      textStyle = list(
+        fontSize   = 11,
+        fontWeight = "normal",
+        color      = "#555555"
+      ),
+      new_title = TRUE
+    ) |>
+    echarts4r::e_y_axis(
+      name          = "%",
+      nameLocation  = "middle",
+      nameGap       = 40,
+      nameRotate    = 0,
+      nameTextStyle = list(
+        align   = "center",
+        color   = "#555555",
+        padding = c(0, 0, 0, -10)
+      ),
+      axisLabel = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(1).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) {
+            return '';
+          }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var candidate = params[i];
+            var raw       = Array.isArray(candidate.value)
+              ? candidate.value[candidate.value.length - 1]
+              : candidate.value;
+            if (raw !== null && raw !== undefined && !isNaN(raw)) {
+              point = { name: candidate.name, value: raw };
+              break;
+            }
+          }
+          if (!point) {
+            return '';
+          }
+          var val = Number(point.value).toFixed(1).replace('.', ',');
+          return point.name + ': ' + val + ' %';
+        }
+      ")
+    ) |>
+    echarts4r::e_legend(show = FALSE)
+}
+plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
+   plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 }
