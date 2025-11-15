@@ -21,7 +21,7 @@ use_cache <- function() {
 dataset_id     <- "nama_10_gdp"
 hr_code        <- "HR"
 first_year     <- 2000
-end_label_year <- 2025
+end_label_year <- lubridate::year(Sys.Date())
 
 eu27_codes   <- c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE",
                   "GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT",
