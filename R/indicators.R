@@ -69,16 +69,57 @@ echarts_bar_tooltip <- htmlwidgets::JS("
   }
 ")
 
+resolve_echarts_bar_layout <- function(n_bars, axis_rotate = NULL) {
+  rotate <- axis_rotate
+  if (is.null(rotate) || is.na(rotate)) {
+    rotate <- dplyr::case_when(
+      n_bars <= 10 ~ 0,
+      n_bars <= 18 ~ 35,
+      n_bars <= 26 ~ 55,
+      TRUE        ~ 65
+    )
+  }
+
+  axis_interval <- if (n_bars > 26) "auto" else 0
+  base_width    <- floor(260 / max(1, n_bars))
+  bar_width <- dplyr::case_when(
+    n_bars <= 8  ~ 28,
+    n_bars <= 15 ~ 22,
+    n_bars <= 25 ~ 16,
+    TRUE         ~ max(8, base_width)
+  )
+
+  grid_bottom <- dplyr::case_when(
+    rotate >= 70 ~ "32%",
+    rotate >= 45 ~ "24%",
+    rotate >= 20 ~ "18%",
+    TRUE         ~ "12%"
+  )
+
+  list(
+    bar_width     = bar_width,
+    axis_rotate   = rotate,
+    axis_interval = axis_interval,
+    grid = list(
+      top    = 60,
+      bottom = grid_bottom,
+      left   = if (n_bars > 20) "10%" else "8%",
+      right  = if (n_bars > 20) "4%" else "3%"
+    )
+  )
+}
+
 build_echarts_bar_highlight <- function(df,
                                         value_col,
                                         y_axis_name = "%",
                                         title = NULL,
                                         caption = NULL,
-                                        axis_rotate = 90,
+                                        axis_rotate = NULL,
                                         avg_line = NULL,
                                         avg_label = NULL) {
   axis_labels <- as.character(df$geo)
   values <- df[[value_col]]
+  layout <- resolve_echarts_bar_layout(length(axis_labels), axis_rotate)
 
   df <- df |>
     dplyr::mutate(
@@ -91,7 +132,7 @@ build_echarts_bar_highlight <- function(df,
     echarts4r::e_bar(
       val_other,
       name      = "Ostale zemlje",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = "#d9d9d9"),
@@ -100,7 +141,7 @@ build_echarts_bar_highlight <- function(df,
     echarts4r::e_bar(
       val_hr,
       name      = "Hrvatska",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = cols_named[["HR"]]),
@@ -110,16 +151,17 @@ build_echarts_bar_highlight <- function(df,
       type = "category",
       data = axis_labels,
       axisLabel = list(
-        interval = 0,
-        rotate   = axis_rotate
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
-      top    = 80,
-      bottom = 80,
-      left   = 80,
-      right  = 30
+      top    = layout$grid$top,
+      bottom = layout$grid$bottom,
+      left   = layout$grid$left,
+      right  = layout$grid$right
     ) |>
     echarts4r::e_y_axis(
       name = y_axis_name,
@@ -1655,6 +1697,8 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
   }
 
   axis_labels <- plot_df$geo_label
+  layout <- resolve_echarts_bar_layout(length(axis_labels))
+  layout <- resolve_echarts_bar_layout(length(axis_labels))
 
   plot_df <- plot_df |>
     dplyr::mutate(
@@ -1679,7 +1723,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
     echarts4r::e_bar(
       qoq_oth,
       name      = "Ostale zemlje",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = "#d9d9d9"),
@@ -1688,7 +1732,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
     echarts4r::e_bar(
       qoq_hr,
       name      = "Hrvatska",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = cols_named[["HR"]]),
@@ -1698,16 +1742,17 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
       type = "category",
       data = axis_labels,
       axisLabel = list(
-        interval = 0,
-        rotate   = 90
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
-      top    = 90,
-      bottom = 90,
-      left   = 80,
-      right  = 30
+      top    = layout$grid$top,
+      bottom = layout$grid$bottom,
+      left   = layout$grid$left,
+      right  = layout$grid$right
     ) |>
     echarts4r::e_mark_line(
       data      = list(yAxis = eu_avg, name = eu_label),
@@ -1874,6 +1919,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
   )
 
   axis_labels <- plot_df$geo_label
+  layout <- resolve_echarts_bar_layout(length(axis_labels))
 
   plot_df <- plot_df |>
     dplyr::mutate(
@@ -1886,7 +1932,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
     echarts4r::e_bar(
       qoq_oth,
       name      = "Ostale zemlje",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = "#d9d9d9"),
@@ -1895,7 +1941,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
     echarts4r::e_bar(
       qoq_hr,
       name      = "Hrvatska",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = cols_named[["HR"]]),
@@ -1905,16 +1951,17 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
       type = "category",
       data = axis_labels,
       axisLabel = list(
-        interval = 0,
-        rotate   = 90
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
-      top    = 90,
-      bottom = 90,
-      left   = 80,
-      right  = 30
+      top    = layout$grid$top,
+      bottom = layout$grid$bottom,
+      left   = layout$grid$left,
+      right  = layout$grid$right
     ) |>
     echarts4r::e_mark_line(
       data      = list(yAxis = eu_avg, name = eu_label),
@@ -2071,6 +2118,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
   )
 
   axis_labels <- plot_df$geo_label
+  layout <- resolve_echarts_bar_layout(length(axis_labels))
 
   plot_df <- plot_df |>
     dplyr::mutate(
@@ -2083,7 +2131,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
     echarts4r::e_bar(
       qoq_oth,
       name      = "Ostale zemlje",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = "#d9d9d9"),
@@ -2092,7 +2140,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
     echarts4r::e_bar(
       qoq_hr,
       name      = "Hrvatska",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = cols_named[["HR"]]),
@@ -2102,16 +2150,17 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
       type = "category",
       data = axis_labels,
       axisLabel = list(
-        interval = 0,
-        rotate   = 90
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
-      top    = 90,
-      bottom = 90,
-      left   = 80,
-      right  = 30
+      top    = layout$grid$top,
+      bottom = layout$grid$bottom,
+      left   = layout$grid$left,
+      right  = layout$grid$right
     ) |>
     echarts4r::e_mark_line(
       data      = list(yAxis = eu_avg, name = eu_label),
@@ -2283,7 +2332,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
     echarts4r::e_bar(
       qoq_oth,
       name      = "Ostale zemlje",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = "#d9d9d9"),
@@ -2292,7 +2341,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
     echarts4r::e_bar(
       qoq_hr,
       name      = "Hrvatska",
-      barWidth  = 18,
+      barWidth  = layout$bar_width,
       barGap    = "-100%",
       barCategoryGap = "0%",
       itemStyle = list(color = cols_named[["HR"]]),
@@ -2302,16 +2351,17 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
       type = "category",
       data = axis_labels,
       axisLabel = list(
-        interval = 0,
-        rotate   = 90
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
-      top    = 90,
-      bottom = 90,
-      left   = 80,
-      right  = 30
+      top    = layout$grid$top,
+      bottom = layout$grid$bottom,
+      left   = layout$grid$left,
+      right  = layout$grid$right
     ) |>
     echarts4r::e_mark_line(
       data      = list(yAxis = eu_avg, name = eu_label),
