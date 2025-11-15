@@ -31,38 +31,38 @@ panel <- build_panel_real(dat$gdp_real)
 
 ## Nominalni BDP yoy
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 print(plot_gdp_nominal_q_yoy_eu27_tminus1())
 ```
 
 ## Realni BDP yoy
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 plot_gdp_real_q_yoy_eu27_tminus1()
 ```
 
 ## Realni BDP yoy (posljednji kvartal)
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 plot_gdp_real_q_yoy_eu27_latest()
 ```
 
 ## Realni BDP qoq (posljednji kvartal)
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 plot_gdp_real_q_qoq_eu27_latest_echarts()
 ```
 
 ## Realni BDP qoq (zadnji kompletni kvartal)
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 ```
 
 
 ## Nominalni BDP
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 plot_gdp_nominal_growth_eu27_latest()
 ```
 
