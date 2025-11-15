@@ -9,3 +9,6 @@ _site/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Local backups
+R/indicators.R.bak
