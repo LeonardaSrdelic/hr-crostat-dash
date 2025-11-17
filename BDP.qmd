@@ -14,6 +14,11 @@ execute:
 ---
 
 
+
+```{r}
+knitr::opts_chunk$set(fig.width = 10, fig.height = 6)
+```
+
 ```{r}
 # Inicijalni setup
 source("R/indicators.R")
@@ -29,40 +34,34 @@ panel <- build_panel_real(dat$gdp_real)
 
 # Najnovija kretanja BDP-a u EU 27
 
-## Nominalni BDP yoy
-
-```{r, fig.width=10, fig.height=5}
-print(plot_gdp_nominal_q_yoy_eu27_tminus1())
-```
-
 ## Realni BDP yoy
 
-```{r, fig.width=10, fig.height=5}
+```{r}
 plot_gdp_real_q_yoy_eu27_tminus1()
 ```
 
 ## Realni BDP yoy (posljednji kvartal)
 
-```{r, fig.width=10, fig.height=5}
+```{r}
 plot_gdp_real_q_yoy_eu27_latest()
 ```
 
 ## Realni BDP qoq (posljednji kvartal)
 
-```{r, fig.width=10, fig.height=5}
+```{r}
 plot_gdp_real_q_qoq_eu27_latest_echarts()
 ```
 
 ## Realni BDP qoq (zadnji kompletni kvartal)
 
-```{r, fig.width=10, fig.height=5}
+```{r}
 plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 ```
 
 
 ## Nominalni BDP
 
-```{r, fig.width=10, fig.height=5}
+```{r}
 plot_gdp_nominal_growth_eu27_latest()
 ```
 
@@ -78,7 +77,7 @@ plot_gdp_real_growth_eu27_latest()
 plot_gdp_pc_cee_pps_last()
 ```
 
-# Dugoročni trendovi trend realnog BDP-a
+# Dugoročni trendovi realnog BDP-a
 
 ## Kretanje realnog BDP-a: Hrvatska i referentne europske skupine
 
@@ -104,21 +103,21 @@ plot_gdp_qoq_hr()
 
 ## CEE bez Hrvatske
 
-```{r}
+```{r, fig.height=6}
 plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
 plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "CEE_exHR", meta = dat)
 ```
 
 ## EU 27 bez Hrvatske
 
-```{r}
+```{r, fig.height=6}
 plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
 plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EU27_exHR", meta = dat)
 ```
 
 ## Područje eura bez Hrvatske
 
-```{r}
+```{r, fig.height=6}
 plot_gdp_index_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
 plot_gdp_yoy_distribution_echarts(gdp_real = dat$gdp_real, panel_df = panel, group_key = "EA_exHR", meta = dat)
 ```
