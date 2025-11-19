@@ -39,98 +39,70 @@
     "href": "BDP.html",
     "title": "Gospodarski rast",
     "section": "",
-    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 17.11.2025. u 19:28."
+    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 19.11.2025. u 16:17."
   },
   {
-    "objectID": "BDP.html#realni-bdp-yoy",
-    "href": "BDP.html#realni-bdp-yoy",
+    "objectID": "BDP.html#qoq",
+    "href": "BDP.html#qoq",
     "title": "Gospodarski rast",
-    "section": "1.1 Realni BDP yoy",
-    "text": "1.1 Realni BDP yoy"
+    "section": "1.1 qoq",
+    "text": "1.1 qoq\n\n\n\n\n\n\n\n\n\n\n\n\nNotePrikaži / sakrij graf (podaci privremeni)\n\n\n\n\n\nGraf je privremen dok ne stignu svi podaci; klikni za prikaz ili skrivanje."
   },
   {
-    "objectID": "BDP.html#realni-bdp-yoy-posljednji-kvartal",
-    "href": "BDP.html#realni-bdp-yoy-posljednji-kvartal",
+    "objectID": "BDP.html#qoq-duža-serija",
+    "href": "BDP.html#qoq-duža-serija",
     "title": "Gospodarski rast",
-    "section": "1.2 Realni BDP yoy (posljednji kvartal)",
-    "text": "1.2 Realni BDP yoy (posljednji kvartal)"
+    "section": "1.2 qoq duža serija",
+    "text": "1.2 qoq duža serija"
   },
   {
-    "objectID": "BDP.html#realni-bdp-qoq-posljednji-kvartal",
-    "href": "BDP.html#realni-bdp-qoq-posljednji-kvartal",
+    "objectID": "BDP.html#yoy",
+    "href": "BDP.html#yoy",
     "title": "Gospodarski rast",
-    "section": "1.3 Realni BDP qoq (posljednji kvartal)",
-    "text": "1.3 Realni BDP qoq (posljednji kvartal)"
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-qoq-zadnji-kompletni-kvartal",
-    "href": "BDP.html#realni-bdp-qoq-zadnji-kompletni-kvartal",
-    "title": "Gospodarski rast",
-    "section": "1.4 Realni BDP qoq (zadnji kompletni kvartal)",
-    "text": "1.4 Realni BDP qoq (zadnji kompletni kvartal)"
-  },
-  {
-    "objectID": "BDP.html#nominalni-bdp",
-    "href": "BDP.html#nominalni-bdp",
-    "title": "Gospodarski rast",
-    "section": "1.5 Nominalni BDP",
-    "text": "1.5 Nominalni BDP"
+    "section": "1.3 yoy",
+    "text": "1.3 yoy\n\n\n\n\n\n\n\n\n\n\n\n\nNotePrikaži / sakrij graf (podaci privremeni)\n\n\n\n\n\nGraf je privremen dok ne stignu svi podaci; klikni za prikaz ili skrivanje."
   },
   {
     "objectID": "BDP.html#realni-bdp",
     "href": "BDP.html#realni-bdp",
     "title": "Gospodarski rast",
-    "section": "1.6 Realni BDP",
-    "text": "1.6 Realni BDP"
+    "section": "2.1 realni BDP",
+    "text": "2.1 realni BDP"
   },
   {
-    "objectID": "BDP.html#bdp-po-stanovniku-u-pps-cee-eu-27-100",
-    "href": "BDP.html#bdp-po-stanovniku-u-pps-cee-eu-27-100",
+    "objectID": "BDP.html#nominalni-bdp-a",
+    "href": "BDP.html#nominalni-bdp-a",
     "title": "Gospodarski rast",
-    "section": "1.7 BDP po stanovniku u PPS (CEE, EU 27 = 100)",
-    "text": "1.7 BDP po stanovniku u PPS (CEE, EU 27 = 100)"
+    "section": "2.2 nominalni BDP-a",
+    "text": "2.2 nominalni BDP-a"
   },
   {
-    "objectID": "BDP.html#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine",
-    "href": "BDP.html#kretanje-realnog-bdp-a-hrvatska-i-referentne-europske-skupine",
+    "objectID": "BDP.html#bdp-po-stanovniku-pps-eu-27-100",
+    "href": "BDP.html#bdp-po-stanovniku-pps-eu-27-100",
     "title": "Gospodarski rast",
-    "section": "2.1 Kretanje realnog BDP-a: Hrvatska i referentne europske skupine",
-    "text": "2.1 Kretanje realnog BDP-a: Hrvatska i referentne europske skupine"
+    "section": "2.3 BDP po stanovniku (PPS, EU 27 = 100)",
+    "text": "2.3 BDP po stanovniku (PPS, EU 27 = 100)"
   },
   {
-    "objectID": "BDP.html#godišnje-stope-rasta-realnog-bdp-a",
-    "href": "BDP.html#godišnje-stope-rasta-realnog-bdp-a",
+    "objectID": "BDP.html#cee",
+    "href": "BDP.html#cee",
     "title": "Gospodarski rast",
-    "section": "3.1 Godišnje stope rasta realnog BDP-a",
-    "text": "3.1 Godišnje stope rasta realnog BDP-a"
+    "section": "3.1 CEE",
+    "text": "3.1 CEE\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić"
   },
   {
-    "objectID": "BDP.html#tromjesečne-stope-rasta-realnog-bdp-a",
-    "href": "BDP.html#tromjesečne-stope-rasta-realnog-bdp-a",
+    "objectID": "BDP.html#eu-27",
+    "href": "BDP.html#eu-27",
     "title": "Gospodarski rast",
-    "section": "3.2 Tromjesečne stope rasta realnog BDP-a",
-    "text": "3.2 Tromjesečne stope rasta realnog BDP-a"
+    "section": "3.2 EU 27",
+    "text": "3.2 EU 27\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić"
   },
   {
-    "objectID": "BDP.html#cee-bez-hrvatske",
-    "href": "BDP.html#cee-bez-hrvatske",
+    "objectID": "BDP.html#europodručje",
+    "href": "BDP.html#europodručje",
     "title": "Gospodarski rast",
-    "section": "4.1 CEE bez Hrvatske",
-    "text": "4.1 CEE bez Hrvatske"
-  },
-  {
-    "objectID": "BDP.html#eu-27-bez-hrvatske",
-    "href": "BDP.html#eu-27-bez-hrvatske",
-    "title": "Gospodarski rast",
-    "section": "4.2 EU 27 bez Hrvatske",
-    "text": "4.2 EU 27 bez Hrvatske"
-  },
-  {
-    "objectID": "BDP.html#područje-eura-bez-hrvatske",
-    "href": "BDP.html#područje-eura-bez-hrvatske",
-    "title": "Gospodarski rast",
-    "section": "4.3 Područje eura bez Hrvatske",
-    "text": "4.3 Područje eura bez Hrvatske"
+    "section": "3.3 Europodručje",
+    "text": "3.3 Europodručje\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić\n\n\n\n\nIzvor: Eurostat nama_10_gdp, jedinica CLV20_MEUR © Leonarda Srdelić"
   },
   {
     "objectID": "Demografija i trziste rada.html",
