@@ -83,13 +83,12 @@ plot_gdp_real_q_yoy_eu27_latest()
 
 
 # Godišnji podaci 
-
 ## realni BDP
 ```{r}
 plot_gdp_real_growth_eu27_latest()
 ```
 
-## nominalni BDP-a
+## nominalni BDP
 
 ```{r}
 plot_gdp_nominal_growth_eu27_latest()
