@@ -28,12 +28,19 @@ eu27_codes   <- c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE",
                   "RO","SK","SI","ES","SE")
 ea20_members <- c("AT","BE","CY","DE","EE","ES","FI","FR","GR","IE","IT",
                   "LV","LT","LU","MT","NL","PT","SI","SK","HR")
+eu_aggregate_code <- "EU27_2020"
+ea_aggregate_code <- "EA20"
 cee_all      <- c("BG","CZ","EE","HU","LT","LV","PL","RO","SI","SK","HR")
 
 groups <- list(
   EU27_exHR = setdiff(eu27_codes, hr_code),
   EA_exHR   = setdiff(ea20_members, hr_code),
   CEE_exHR  = setdiff(cee_all, hr_code)
+)
+
+aggregate_group_codes <- c(
+  EU27_exHR = eu_aggregate_code,
+  EA_exHR   = ea_aggregate_code
 )
 
 label_map <- c(
@@ -328,24 +335,43 @@ prepare_gdp_data <- function() {
   gdp_real <- fetch_gdp(real_unit, eu27_codes) |>
     filter(year >= first_year)
 
+  gdp_real_aggregates <- fetch_gdp(real_unit, unique(aggregate_group_codes)) |>
+    filter(year >= first_year)
+
   last_year <- min(max(gdp_nominal$year, na.rm = TRUE),
                    max(gdp_real$year, na.rm = TRUE))
 
   gdp_nominal <- gdp_nominal |> filter(year <= last_year)
   gdp_real    <- gdp_real    |> filter(year <= last_year)
+  gdp_real_aggregates <- gdp_real_aggregates |> filter(year <= last_year)
 
   list(
     gdp_nominal = gdp_nominal,
     gdp_real    = gdp_real,
+    gdp_real_aggregates = gdp_real_aggregates,
     last_year   = last_year,
     real_unit   = real_unit
   )
 }
 
 # panel za realni BDP
-build_panel_real <- function(gdp_real) {
+build_panel_real <- function(gdp_real, agg_real = NULL) {
   group_means <- imap_dfr(groups, ~ make_group_mean(gdp_real, .x, .y)) |>
     mutate(group = as.character(group))
+
+  if (!is.null(agg_real)) {
+    for (grp in names(aggregate_group_codes)) {
+      agg_code <- aggregate_group_codes[[grp]]
+      series <- agg_real |>
+        filter(geo == agg_code) |>
+        select(year, value)
+      if (nrow(series)) {
+        group_means <- group_means |>
+          filter(group != grp) |>
+          bind_rows(series |> mutate(group = grp))
+      }
+    }
+  }
 
   group_real <- group_means |>
     group_by(group) |>
@@ -381,7 +407,7 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
   color_keys <- color_keys[!is.na(color_keys)]
   color_vec  <- unname(cols_named[color_keys])
 
-  panel_df |>
+  chart <- panel_df |>
     dplyr::group_by(group_label) |>
     echarts4r::e_charts(year) |>
     echarts4r::e_line(yoy_pct, symbol = "circle", showSymbol = FALSE) |>
@@ -394,16 +420,33 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
         formatter = htmlwidgets::JS("function(x){return x + '.';}"),
         rotate    = 90
       ),
+      axisPointer = list(
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              return Math.round(params.value) + '.';
+            }
+          ")
+        )
+      ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_y_axis(
-      name         = "%",
-      nameLocation = "middle",
-      nameGap      = 40,
-      nameRotate   = 0,
+      name         = NULL,
       axisLabel    = list(
         formatter = htmlwidgets::JS(
           "function(x){return x.toFixed(0).replace('.', ',');}"
+        )
+      ),
+      axisPointer = list(
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              var val = Number(params.value);
+              if (isNaN(val)) { return params.value; }
+              return val.toFixed(1).replace('.', ',') + ' %';
+            }
+          ")
         )
       )
     ) |>
@@ -415,7 +458,21 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
     ) |>
     echarts4r::e_tooltip(
       trigger     = "axis",
-      axisPointer = list(type = "cross"),
+      axisPointer = list(
+        type  = "cross",
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              if (params.axisDimension === 'x') {
+                return Math.round(params.value) + '.';
+              }
+              var val = Number(params.value);
+              if (isNaN(val)) { return params.value; }
+              return val.toFixed(1).replace('.', ',') + ' %';
+            }
+          ")
+        )
+      ),
       formatter   = htmlwidgets::JS("
         function(params){
           if (!params || !params.length) { return ''; }
@@ -433,7 +490,7 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
     ) |>
     echarts4r::e_legend(bottom = 60, type = "scroll") |>
     echarts4r::e_title(
-      text = "Godišnje stope rasta realnog BDP-a"
+      text = "%"
     ) |>
     add_caption_bottom(caption) |>
     echarts4r::e_grid(
@@ -442,6 +499,11 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
       left   = 70,
       right  = 30
     )
+
+  htmltools::tagList(
+    chart,
+    htmltools::div(style = "height: 20px;")
+  )
 }
 
 plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
@@ -450,7 +512,7 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
       paste0("Izvor: Eurostat ", dataset_id)
 
   note <- paste(
-    "Napomena: CEE uključuje BG, CZ, EE, HU, LT, LV, PL, RO, SI, SK."
+    "Napomena: Zemlje srednje i istočne europe (CEE) uključuju BG, CZ, EE, HU, LT, LV, PL, RO, SI, SK."
   )
   caption <- c(note, caption)
 
@@ -464,7 +526,7 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
   color_keys <- color_keys[!is.na(color_keys)]
   color_vec  <- unname(cols_named[color_keys])
 
-  panel_df |>
+  chart <- panel_df |>
     dplyr::group_by(group_label) |>
     echarts4r::e_charts(year) |>
     echarts4r::e_line(index_2000, symbol = "circle", showSymbol = FALSE) |>
@@ -477,22 +539,53 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
         formatter = htmlwidgets::JS("function(x){return x + '.';}"),
         rotate    = 90
       ),
+      axisPointer = list(
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              return Math.round(params.value) + '.';
+            }
+          ")
+        )
+      ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_y_axis(
-      name         = "Indeks 2000. = 100",
-      nameLocation = "middle",
-      nameGap      = 50,
-      nameRotate   = 90,
+      name         = NULL,
       axisLabel    = list(
         formatter = htmlwidgets::JS(
           "function(x){return x.toFixed(0).replace('.', ',');}"
+        )
+      ),
+      axisPointer = list(
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              var val = Number(params.value);
+              if (isNaN(val)) { return params.value; }
+              return val.toFixed(1).replace('.', ',');
+            }
+          ")
         )
       )
     ) |>
     echarts4r::e_tooltip(
       trigger     = "axis",
-      axisPointer = list(type = "cross"),
+      axisPointer = list(
+        type  = "cross",
+        label = list(
+          formatter = htmlwidgets::JS("
+            function(params){
+              if (params.axisDimension === 'x') {
+                return Math.round(params.value) + '.';
+              }
+              var val = Number(params.value);
+              if (isNaN(val)) { return params.value; }
+              return val.toFixed(1).replace('.', ',');
+            }
+          ")
+        )
+      ),
       formatter   = htmlwidgets::JS("
         function(params){
           if (!params || !params.length) { return ''; }
@@ -513,7 +606,7 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
       type   = "scroll"
     ) |>
     echarts4r::e_title(
-      text = "Indeks realnog BDP-a (2000. = 100)"
+      text = "Indeks 2000. = 100"
     ) |>
     add_caption_bottom(caption) |>
     echarts4r::e_grid(
@@ -522,6 +615,11 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
       left   = 70,
       right  = 30
     )
+
+  htmltools::tagList(
+    chart,
+    htmltools::div(style = "height: 20px;")
+  )
 }
 
 
@@ -639,7 +737,7 @@ plot_distribution_core_echarts <- function(country_series,
 
   caption <- base_caption
 
-  plot_df |>
+  chart <- plot_df |>
     echarts4r::e_charts(year) |>
     echarts4r::e_band2(
       y_min,
@@ -671,15 +769,17 @@ plot_distribution_core_echarts <- function(country_series,
       axisPointer = list(
         type  = "cross",
         label = list(
-          formatter = htmlwidgets::JS("
+          formatter = htmlwidgets::JS(sprintf("
             function(params){
               var v = params.value;
               if (params.axisDimension === 'x') {
                 return Math.round(v) + '.';
               }
-              return Number(v).toFixed(0).replace('.', ',');
+              var num = Number(v);
+              if (isNaN(num)) { return params.value; }
+              return num.toFixed(%d).replace('.', ',')%s;
             }
-          ")
+          ", digits, val_fmt))
         )
       ),
       formatter   = tooltip_fmt
@@ -695,23 +795,28 @@ plot_distribution_core_echarts <- function(country_series,
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_y_axis(
-      name         = ylab_txt,
-      nameLocation = "middle",
-      nameGap      = if (percent) 40 else 50,
-      nameRotate   = if (percent) 0 else 90,
+      name         = NULL,
       axisLabel    = list(
         formatter = axis_fmt
       )
     ) |>
-    echarts4r::e_legend(bottom = 3) |>
-    echarts4r::e_title(text = grp_name) |>
-    add_caption_bottom(caption, base_bottom = -10) |>
+    echarts4r::e_legend(bottom = 60) |>
+    echarts4r::e_title(text = ylab_txt) |>
+    add_caption_bottom(caption, base_bottom = -20) |>
     echarts4r::e_grid(
       top    = 70,
-      bottom = 85,
+      bottom = 130,
       left   = 70,
       right  = 30
     )
+
+  htmltools::tagList(
+    chart,
+    htmltools::div(
+      style = "font-size: 0.85em; color: #555; text-align: left; margin-top: 4px; margin-bottom: 18px;",
+      caption
+    )
+  )
 }
 
 plot_distribution_core <- function(country_series,
@@ -1367,7 +1472,7 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
     df          = plot_df,
     value_col   = "stopa",
     y_axis_name = "%",
-    title       = paste0("Nominalni BDP – ", fmt_year(year_t), " vs ", fmt_year(year_tm1)),
+    title       = paste0(fmt_year(year_t), " / ", fmt_year(year_tm1)),
     caption     = caption_txt,
     avg_line    = eu_avg,
     avg_label   = paste0(
@@ -1448,7 +1553,7 @@ plot_gdp_real_growth_eu27_latest <- function() {
     df          = plot_df,
     value_col   = "stopa",
     y_axis_name = "%",
-    title       = paste0("Realni BDP – ", year_t, " vs ", year_tm1),
+    title       = paste0(fmt_year(year_t), " / ", fmt_year(year_tm1)),
     caption     = caption_txt,
     axis_rotate = 0,
     avg_line    = eu_avg,
@@ -1527,7 +1632,8 @@ plot_gdp_nominal_q_yoy_eu27_latest <- function() {
   eu_avg <- mean(plot_df$yoy, na.rm = TRUE)
 
   caption_txt <- paste0(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, CP_MEUR, s_adj = ",
+    "Napomena: Prikazane su samo zemlje s dostupnim podatkom za najnovije tromjesečje.",
+    "\n\nIzvor: Eurostat namq_10_gdp, B1GQ, CP_MEUR, s_adj = ",
     s_used,
     format(last_date, "%Y Q%q"),
     " © Leonarda Srdelić"
@@ -1629,8 +1735,8 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
   prev_q    <- lubridate::quarter(prev_date)
 
 caption_txt <- paste0(
-  "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR",
-  "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
+  "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
+  "\n\nIzvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR",
   " © Leonarda Srdelić"
 )
 
@@ -1714,7 +1820,7 @@ plot_gdp_real_q_yoy_eu27_latest <- function() {
     title       = paste0(
       "Realni BDP yoy (", format(latest_date, "%Y Q%q"), ", posljednji dostupni)"
     ),
-    caption = "Napomena: Prikazane su samo zemlje s objavljenim podatkom za najnoviji kvartal",
+    caption = "Napomena: Prikazane su samo zemlje s objavljenim podatkom za najnovije tromjesečje.",
     axis_rotate = 90,
     avg_line    = eu_avg,
     avg_label   = paste0(
@@ -1799,8 +1905,8 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
   prev_q    <- lubridate::quarter(prev_date)
 
   caption_txt <- paste0(
-  "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR ",
-  "\n\nNapomena: EU-27 je službeni ponderirani agregat Eurostata",
+  "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
+  "\n\nIzvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR ",
   " © Leonarda Srdelić"
 )
 
@@ -2183,7 +2289,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
   prev_q    <- lubridate::quarter(prev_date)
 
   caption_txt <- list(
-    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata",
+    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
     source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
   )
 
@@ -2383,13 +2489,13 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
   )
 
   caption_txt <- list(
-    note   = "Napomena: Prikazane su samo zemlje s dostupnim podatkom za najnoviji kvartal",
+    note   = "Napomena: Prikazane su samo zemlje s dostupnim podatkom za najnovije tromjesečje.",
     source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
   )
 
   title_txt <- paste0(
     lubridate::year(last_date_all), "Q", lubridate::quarter(last_date_all),
-    " (posljednji dostupni podaci)"
+    " (posljednje dostupni podaci)"
   )
 
   axis_labels <- plot_df$geo_label
@@ -2585,7 +2691,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
   )
 
   caption_txt <- list(
-    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata",
+    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
     source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
   )
 

@@ -20,7 +20,7 @@ source("R/indicators.R")
 
 # Jednokratno učitaj podatke
 dat   <- prepare_gdp_data()
-panel <- build_panel_real(dat$gdp_real)
+panel <- build_panel_real(dat$gdp_real, dat$gdp_real_aggregates)
 ```
 
 
