@@ -1193,7 +1193,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     ) |>
     echarts4r::e_grid(
       top    = 60,
-      bottom = 80,
+      bottom = 50,
       left   = 40,
       right  = 30
     ) |>
@@ -1216,7 +1216,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
               opt.xAxis[0].axisLabel.interval = 0;
             }
             if (opt.grid && opt.grid.length) {
-              opt.grid[0].bottom = '26%';
+              opt.grid[0].bottom = '18%';
             }
             chart.setOption(opt, true);
           }
