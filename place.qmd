@@ -2,4 +2,4 @@
 title: "Pla?e"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Pla?e.
+> Radni nacrt.

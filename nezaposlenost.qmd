@@ -2,4 +2,4 @@
 title: "Nezaposlenost"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Nezaposlenost.
+> Radni nacrt.

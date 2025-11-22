@@ -2,4 +2,4 @@
 title: "Graditeljstvo"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Graditeljstvo.
+> Radni nacrt.

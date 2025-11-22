@@ -2,4 +2,4 @@
 title: "Zaposlenost"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Zaposlenost.
+> Radni nacrt.

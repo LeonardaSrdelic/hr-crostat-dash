@@ -2,4 +2,4 @@
 title: "Komponente cijena"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Komponente cijena.
+> Radni nacrt.

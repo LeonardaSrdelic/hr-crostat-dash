@@ -2,4 +2,4 @@
 title: "Emisije po sektorima"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: Emisije po sektorima.
+> Radni nacrt.

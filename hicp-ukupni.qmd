@@ -2,4 +2,4 @@
 title: "HICP ukupni"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: HICP ukupni.
+> Radni nacrt.

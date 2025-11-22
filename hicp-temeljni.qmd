@@ -2,4 +2,4 @@
 title: "HICP temeljni"
 ---
 
-> Radni nacrt. Dodaj grafove i analize za: HICP temeljni.
+> Radni nacrt.
