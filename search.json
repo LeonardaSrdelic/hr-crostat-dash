@@ -67,26 +67,54 @@
     "href": "index.html",
     "title": "Naslovnica",
     "section": "",
-    "text": "Dobro doĹˇli. Ovdje objavljujem grafikone koji se automatski osvjeĹľavaju iz Eurostata."
+    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+  },
+  {
+    "objectID": "index.html#što-je-crostat-dash",
+    "href": "index.html#što-je-crostat-dash",
+    "title": "Naslovnica",
+    "section": "",
+    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+  },
+  {
+    "objectID": "index.html#za-koga-je-namijenjen",
+    "href": "index.html#za-koga-je-namijenjen",
+    "title": "Naslovnica",
+    "section": "2. Za koga je namijenjen",
+    "text": "2. Za koga je namijenjen\nCroStat Dash je razvijen prije svega za korisnike koji donose ili pripremaju odluke unutar financijskog i realnog sektora, a nemaju vlastite kapacitete za kontinuiranu makro analizu:\n\nbanke i leasing društva\ninvesticijska društva i fondovi\nodjeli riznice, upravljanja rizicima i strateškog planiranja\nveće korporacije koje redovito rade budžetiranje i scenarije\nkonzultantske i analitičke kuće\nistraživačke i policy institucije\n\nJavna verzija servisa istodobno omogućuje i širem stručnom krugu uvid u osnovne pokazatelje i dugoročne trendove gospodarstva."
+  },
+  {
+    "objectID": "index.html#što-crostat-dash-pruža",
+    "href": "index.html#što-crostat-dash-pruža",
+    "title": "Naslovnica",
+    "section": "3. Što CroStat Dash pruža",
+    "text": "3. Što CroStat Dash pruža\nServis obuhvaća tri elementa:\n\nstrukturirane vremenske serije\ninteraktivne grafikone\nanalitičke bilješke\n\nVremenske serije pripremaju se u obliku pogodnom za daljnju upotrebu u internim modelima i alatima. Grafički prikazi olakšavaju brzu orijentaciju u trenutnom ciklusu i usporedbama kroz vrijeme i između zemalja. Analitičke bilješke nude interpretaciju koja korisnicima može poslužiti kao podloga za interne dokumente, kreditne i investicijske komitete, izvještaje ili komunikaciju prema upravi."
+  },
+  {
+    "objectID": "index.html#opis-metodologije",
+    "href": "index.html#opis-metodologije",
+    "title": "Naslovnica",
+    "section": "4. Metodologija i izvori podataka",
+    "text": "4. Metodologija i izvori podataka\nCroStat Dash se oslanja na javno dostupne statističke izvore, prije svega:\n\nDržavni zavod za statistiku\nHrvatska narodna banka\nEurostat\nEuropska središnja banka\nEuropska komisija\nEuropska agencija za okoliš i povezane klimatske baze podataka\nrelevantne energetske i tržišne reference za cijene energije i CO₂\n\nPodaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasno razlikovanju službeno prilagođenih i neprilagođenih podataka.\nMetodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama i u tablicama za pretplatnike."
+  },
+  {
+    "objectID": "index.html#pretplatnicke-pogodnosti",
+    "href": "index.html#pretplatnicke-pogodnosti",
+    "title": "Naslovnica",
+    "section": "5. Pretplatničke pogodnosti",
+    "text": "5. Pretplatničke pogodnosti\nJavni dio CroStat Dasha pruža osnovne grafičke prikaze ključnih pokazatelja i sažete tekstualne opise. Pretplatnički dio proširuje taj okvir i uključuje:\n\npristup proširenom skupu pokazatelja po temama\nduže vremenske nizove i dodatne geografske usporedbe\nmogućnost preuzimanja podataka u Excel ili CSV formatu\nproširene analitičke bilješke uz pojedine grafikone\nperiodične sažetke makroekonomskih i klimatsko energetskih kretanja\n\nNa taj način pretplatnici dobivaju i podatke i interpretaciju koja se može izravno ugraditi u interne materijale i modele, bez dodatnog prikupljanja i čišćenja podataka."
+  },
+  {
+    "objectID": "index.html#o-autoru-i-pristupu",
+    "href": "index.html#o-autoru-i-pristupu",
+    "title": "Naslovnica",
+    "section": "6. O autoru i pristupu",
+    "text": "6. O autoru i pristupu\nServis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i interpretaciji koja se oslanja na vidljive obrasce, a ne na kratkoročni šum u podacima.\nKrajnji je cilj pružiti korisnicima stabilan okvir za promatranje gospodarstva i tranzicijskih procesa, koji može poduprijeti unutarnju raspravu, procjenu ranjivosti i oblikovanje scenarija."
   },
   {
     "objectID": "nezaposlenost.html",
     "href": "nezaposlenost.html",
     "title": "Nezaposlenost",
-    "section": "",
-    "text": "Radni nacrt."
-  },
-  {
-    "objectID": "usluge-turizam.html",
-    "href": "usluge-turizam.html",
-    "title": "Usluge i turizam",
-    "section": "",
-    "text": "Radni nacrt."
-  },
-  {
-    "objectID": "prinosi-obveznica.html",
-    "href": "prinosi-obveznica.html",
-    "title": "Prinosi obveznica",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -98,53 +126,18 @@
     "text": "Radni nacrt."
   },
   {
-    "objectID": "o-servisu.html",
-    "href": "o-servisu.html",
-    "title": "O servisu",
+    "objectID": "prinosi-obveznica.html",
+    "href": "prinosi-obveznica.html",
+    "title": "Prinosi obveznica",
     "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+    "text": "Radni nacrt."
   },
   {
-    "objectID": "o-servisu.html#što-je-crostat-dash",
-    "href": "o-servisu.html#što-je-crostat-dash",
-    "title": "O servisu",
+    "objectID": "usluge-turizam.html",
+    "href": "usluge-turizam.html",
+    "title": "Usluge i turizam",
     "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
-  },
-  {
-    "objectID": "o-servisu.html#za-koga-je-namijenjen",
-    "href": "o-servisu.html#za-koga-je-namijenjen",
-    "title": "O servisu",
-    "section": "2. Za koga je namijenjen",
-    "text": "2. Za koga je namijenjen\nCroStat Dash je razvijen prije svega za korisnike koji donose ili pripremaju odluke unutar financijskog i realnog sektora, a nemaju vlastite kapacitete za kontinuiranu makro analizu:\n\nbanke i leasing društva\ninvesticijska društva i fondovi\nodjeli riznice, upravljanja rizicima i strateškog planiranja\nveće korporacije koje redovito rade budžetiranje i scenarije\nkonzultantske i analitičke kuće\nistraživačke i policy institucije\n\nJavna verzija servisa istodobno omogućuje i širem stručnom krugu uvid u osnovne pokazatelje i dugoročne trendove gospodarstva."
-  },
-  {
-    "objectID": "o-servisu.html#što-crostat-dash-pruža",
-    "href": "o-servisu.html#što-crostat-dash-pruža",
-    "title": "O servisu",
-    "section": "3. Što CroStat Dash pruža",
-    "text": "3. Što CroStat Dash pruža\nServis obuhvaća tri elementa:\n\nstrukturirane vremenske serije\ninteraktivne grafikone\nanalitičke bilješke\n\nVremenske serije pripremaju se u obliku pogodnom za daljnju upotrebu u internim modelima i alatima. Grafički prikazi olakšavaju brzu orijentaciju u trenutnom ciklusu i usporedbama kroz vrijeme i između zemalja. Analitičke bilješke nude interpretaciju koja korisnicima može poslužiti kao podloga za interne dokumente, kreditne i investicijske komitete, izvještaje ili komunikaciju prema upravi."
-  },
-  {
-    "objectID": "o-servisu.html#opis-metodologije",
-    "href": "o-servisu.html#opis-metodologije",
-    "title": "O servisu",
-    "section": "4. Metodologija i izvori podataka",
-    "text": "4. Metodologija i izvori podataka\nCroStat Dash se oslanja na javno dostupne statističke izvore, prije svega:\n\nDržavni zavod za statistiku\nHrvatska narodna banka\nEurostat\nEuropska središnja banka\nEuropska komisija\nEuropska agencija za okoliš i povezane klimatske baze podataka\nrelevantne energetske i tržišne reference za cijene energije i CO2\n\nPodaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasno razlikovanju službeno prilagođenih i neprilagođenih podataka.\nMetodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama i u tablicama za pretplatnike."
-  },
-  {
-    "objectID": "o-servisu.html#pretplatnicke-pogodnosti",
-    "href": "o-servisu.html#pretplatnicke-pogodnosti",
-    "title": "O servisu",
-    "section": "5. Pretplatničke pogodnosti",
-    "text": "5. Pretplatničke pogodnosti\nJavni dio CroStat Dasha pruža osnovne grafičke prikaze ključnih pokazatelja i sažete tekstualne opise. Pretplatnički dio proširuje taj okvir i uključuje:\n\npristup proširenom skupu pokazatelja po temama\nduže vremenske nizove i dodatne geografske usporedbe\nmogućnost preuzimanja podataka u Excel ili CSV formatu\nproširene analitičke bilješke uz pojedine grafikone\nperiodične sažetke makroekonomskih i klimatsko energetskih kretanja\n\nNa taj način pretplatnici dobivaju i podatke i interpretaciju koja se može izravno ugraditi u interne materijale i modele, bez dodatnog prikupljanja i čišćenja podataka."
-  },
-  {
-    "objectID": "o-servisu.html#o-autoru-i-pristupu",
-    "href": "o-servisu.html#o-autoru-i-pristupu",
-    "title": "O servisu",
-    "section": "6. O autoru i pristupu",
-    "text": "6. O autoru i pristupu\nServis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i interpretaciji koja se oslanja na vidljive obrasce, a ne na kratkoročni šum u podacima.\nKrajnji je cilj pružiti korisnicima stabilan okvir za promatranje gospodarstva i tranzicijskih procesa, koji može poduprijeti unutarnju raspravu, procjenu ranjivosti i oblikovanje scenarija."
+    "text": "Radni nacrt."
   },
   {
     "objectID": "place.html",
@@ -158,7 +151,7 @@
     "href": "BDP.html",
     "title": "Gospodarski rast",
     "section": "",
-    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 22.11.2025. u 18:22."
+    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 22.11.2025. u 18:26."
   },
   {
     "objectID": "BDP.html#mlrd.-eur-realni-bdp",
