@@ -70,7 +70,7 @@ axis_name_props <- function(name) {
   }
   list(
     rotate = rotate,
-    gap    = if (rotate == 0) 40 else 50
+    gap    = if (rotate == 0) 30 else 40
   )
 }
 
@@ -155,7 +155,7 @@ resolve_echarts_bar_layout <- function(n_bars, axis_rotate = NULL) {
     grid = list(
       top    = 60,
       bottom = grid_bottom,
-      left   = if (n_bars > 20) "10%" else "8%",
+      left   = if (n_bars > 20) "7%" else "6%",
       right  = if (n_bars > 20) "4%" else "3%"
     )
   )
@@ -498,7 +498,7 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
     echarts4r::e_grid(
       top    = 70,
       bottom = 140,
-      left   = 70,
+      left   = 50,
       right  = 30
     )
 
@@ -614,7 +614,7 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
     echarts4r::e_grid(
       top    = 70,
       bottom = 140,
-      left   = 70,
+      left   = 50,
       right  = 30
     )
 
@@ -808,7 +808,7 @@ plot_distribution_core_echarts <- function(country_series,
     echarts4r::e_grid(
       top    = 70,
       bottom = 130,
-      left   = 70,
+      left   = 50,
       right  = 30
     )
 
@@ -1177,7 +1177,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     echarts4r::e_y_axis(
       name         = "",
       nameLocation = "middle",
-      nameGap      = 40,
+      nameGap      = 30,
       nameRotate   = 0,
       axisLabel    = list(
         formatter = htmlwidgets::JS(
@@ -1194,7 +1194,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     echarts4r::e_grid(
       top    = 60,
       bottom = 80,
-      left   = 70,
+      left   = 50,
       right  = 30
     ) |>
     # Make the layout responsive for narrow screens via JS hook (keeps desktop the same).
@@ -1331,9 +1331,9 @@ plot_gdp_real_q_level_eu27_latest_echarts <- function() {
       right  = layout$grid$right
     ) |>
     echarts4r::e_y_axis(
-      name         = "mlrd. EUR",
+      name         = "",
       nameLocation = "middle",
-      nameGap      = 50,
+      nameGap      = 35,
       nameRotate   = 90,
       axisLabel    = list(
         formatter = htmlwidgets::JS(
@@ -1464,7 +1464,7 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
     echarts4r::e_y_axis(
       name         = "",
       nameLocation = "middle",
-      nameGap      = 50,
+      nameGap      = 35,
       nameRotate   = 90,
       axisLabel    = list(
         formatter = htmlwidgets::JS(
@@ -2474,7 +2474,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
     echarts4r::e_y_axis(
       name          = "",
       nameLocation  = "middle",
-      nameGap       = 40,
+      nameGap       = 30,
       nameRotate    = 0,
       nameTextStyle = list(
         align   = "center",
@@ -2683,7 +2683,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
     echarts4r::e_y_axis(
       name          = "",
       nameLocation  = "middle",
-      nameGap       = 40,
+      nameGap       = 30,
       nameRotate    = 0,
       nameTextStyle = list(
         align   = "center",
@@ -2882,7 +2882,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
     echarts4r::e_y_axis(
       name          = "",
       nameLocation  = "middle",
-      nameGap       = 40,
+      nameGap       = 30,
       nameRotate    = 0,
       nameTextStyle = list(
         align   = "center",
@@ -3083,7 +3083,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
     echarts4r::e_y_axis(
       name          = "",
       nameLocation  = "middle",
-      nameGap       = 40,
+      nameGap       = 30,
       nameRotate    = 0,
       nameTextStyle = list(
         align   = "center",
