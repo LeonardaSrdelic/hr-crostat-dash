@@ -218,7 +218,7 @@ build_echarts_bar_highlight <- function(df,
       right  = layout$grid$right
     ) |>
     echarts4r::e_y_axis(
-      name         = y_axis_name,
+      name         = "",
       nameLocation = "middle",
       nameGap      = name_cfg$gap,
       nameRotate   = name_cfg$rotate,
@@ -1175,7 +1175,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_y_axis(
-      name         = "%",
+      name         = "",
       nameLocation = "middle",
       nameGap      = 40,
       nameRotate   = 0,
@@ -1462,7 +1462,7 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
       right  = layout$grid$right
     ) |>
     echarts4r::e_y_axis(
-      name         = "mlrd. EUR",
+      name         = "",
       nameLocation = "middle",
       nameGap      = 50,
       nameRotate   = 90,
@@ -2472,7 +2472,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
       new_title = TRUE
     ) |>
     echarts4r::e_y_axis(
-      name          = "%",
+      name          = "",
       nameLocation  = "middle",
       nameGap       = 40,
       nameRotate    = 0,
@@ -2681,7 +2681,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
       new_title = TRUE
     ) |>
     echarts4r::e_y_axis(
-      name          = "%",
+      name          = "",
       nameLocation  = "middle",
       nameGap       = 40,
       nameRotate    = 0,
@@ -2880,7 +2880,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
       new_title = TRUE
     ) |>
     echarts4r::e_y_axis(
-      name          = "%",
+      name          = "",
       nameLocation  = "middle",
       nameGap       = 40,
       nameRotate    = 0,
@@ -3081,7 +3081,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
       new_title = TRUE
     ) |>
     echarts4r::e_y_axis(
-      name          = "%",
+      name          = "",
       nameLocation  = "middle",
       nameGap       = 40,
       nameRotate    = 0,
