@@ -130,7 +130,9 @@ resolve_echarts_bar_layout <- function(n_bars, axis_rotate = NULL) {
     )
   }
 
-  axis_interval <- if (n_bars > 26) "auto" else 0
+  # Force showing every category label (even on small screens) instead of letting
+  # ECharts auto-skip when many bars are present.
+  axis_interval <- 0
   base_width    <- floor(260 / max(1, n_bars))
   bar_width <- dplyr::case_when(
     n_bars <= 8  ~ 28,
@@ -1195,6 +1197,21 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
       left   = 70,
       right  = 30
     ) |>
+    # On narrow screens, shrink bars and tilt labels a bit less to prevent overlap.
+    echarts4r::e_media(
+      query  = list(maxWidth = 768),
+      option = list(
+        series = list(list(barWidth = 9)),
+        xAxis  = list(
+          axisLabel = list(
+            fontSize = 9,
+            rotate   = 60,
+            interval = 0
+          )
+        ),
+        grid = list(bottom = "26%")
+      )
+    ) |>
     echarts4r::e_tooltip(
       trigger     = "axis",
       axisPointer = list(type = "shadow"),
@@ -1205,7 +1222,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
 }
 
 # ======================================================
-# Realni BDP, razina (zadnje tromjese��je), mlrd. EUR
+# Realni BDP, razina (zadnje tromjesečje), mlrd. EUR
 # ======================================================
 
 plot_gdp_real_q_level_eu27_latest_echarts <- function() {
@@ -1245,7 +1262,7 @@ plot_gdp_real_q_level_eu27_latest_echarts <- function() {
     dplyr::arrange(dplyr::desc(value))
 
   if (nrow(plot_df) == 0L) {
-    stop("Za posljednje tromjese��je nema podataka po zemljama.")
+    stop("Za posljednje tromjesečje nema podataka po zemljama.")
   }
 
   axis_labels <- plot_df$geo_label
