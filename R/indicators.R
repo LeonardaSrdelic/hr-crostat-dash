@@ -207,7 +207,7 @@ build_echarts_bar_highlight <- function(df,
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -1320,7 +1320,7 @@ plot_gdp_real_q_level_eu27_latest_echarts <- function() {
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -1451,7 +1451,7 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -2421,7 +2421,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -2630,7 +2630,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -2829,7 +2829,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -3030,7 +3030,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
       axisLabel = list(
         interval    = layout$axis_interval,
         rotate      = layout$axis_rotate,
-        hideOverlap = TRUE
+        hideOverlap = FALSE
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
