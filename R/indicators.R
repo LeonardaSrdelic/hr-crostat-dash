@@ -1775,7 +1775,8 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
       "EU-27: ",
       scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
       " %"
-    )
+    ),
+    axis_rotate = 90
   )
 }
 
