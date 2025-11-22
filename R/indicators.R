@@ -167,6 +167,7 @@ build_echarts_bar_highlight <- function(df,
                                         title = NULL,
                                         caption = NULL,
                                         axis_rotate = NULL,
+                                        axis_label_font_size = NULL,
                                         avg_line = NULL,
                                         avg_label = NULL,
                                         axis_digits = 0) {
@@ -174,6 +175,16 @@ build_echarts_bar_highlight <- function(df,
   values <- df[[value_col]]
   layout <- resolve_echarts_bar_layout(length(axis_labels), axis_rotate)
   name_cfg <- axis_name_props(y_axis_name)
+
+  axis_label <- list(
+    interval    = layout$axis_interval,
+    rotate      = layout$axis_rotate,
+    hideOverlap = FALSE,
+    margin      = 8
+  )
+  if (!is.null(axis_label_font_size)) {
+    axis_label$fontSize <- axis_label_font_size
+  }
 
   df <- df |>
     dplyr::mutate(
@@ -204,11 +215,7 @@ build_echarts_bar_highlight <- function(df,
     echarts4r::e_x_axis(
       type = "category",
       data = axis_labels,
-      axisLabel = list(
-        interval    = layout$axis_interval,
-        rotate      = layout$axis_rotate,
-        hideOverlap = FALSE
-      ),
+      axisLabel = axis_label,
       axisTick = list(alignWithLabel = TRUE)
     ) |>
     echarts4r::e_grid(
@@ -1776,7 +1783,8 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
       scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
       " %"
     ),
-    axis_rotate = 90
+    axis_rotate = 90,
+    axis_label_font_size = 10
   )
 }
 
