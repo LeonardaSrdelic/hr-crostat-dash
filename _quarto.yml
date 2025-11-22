@@ -64,15 +64,6 @@ website:
             text: Energetski miks
           - href: klimatski-makro.qmd
             text: Klimatski makro pokazatelji
-      - href: o-servisu.qmd
-        text: O servisu
-        menu:
-          - href: o-servisu.qmd#opis-metodologije
-            text: Opis metodologije
-          - href: o-servisu.qmd#izvori-podataka
-            text: Izvori podataka
-          - href: o-servisu.qmd#pretplatnicke-pogodnosti
-            text: Pretplatničke pogodnosti
 
 format:
   html:
