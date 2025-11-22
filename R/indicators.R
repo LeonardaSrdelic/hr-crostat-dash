@@ -1197,20 +1197,34 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
       left   = 70,
       right  = 30
     ) |>
-    # On narrow screens, shrink bars and tilt labels a bit less to prevent overlap.
-    echarts4r::e_media(
-      query  = list(maxWidth = 768),
-      option = list(
-        series = list(list(barWidth = 9)),
-        xAxis  = list(
-          axisLabel = list(
-            fontSize = 9,
-            rotate   = 60,
-            interval = 0
-          )
-        ),
-        grid = list(bottom = "26%")
-      )
+    # Make the layout responsive for narrow screens via JS hook (keeps desktop the same).
+    htmlwidgets::onRender(
+      "
+      function(el, x) {
+        var chart = echarts.getInstanceByDom(el);
+        if (!chart) return;
+        function tweak() {
+          if (!chart) return;
+          var w = el.clientWidth || 0;
+          var opt = chart.getOption();
+          if (w && w < 800) {
+            (opt.series || []).forEach(function(s) { s.barWidth = 9; });
+            if (opt.xAxis && opt.xAxis.length) {
+              opt.xAxis[0].axisLabel = opt.xAxis[0].axisLabel || {};
+              opt.xAxis[0].axisLabel.rotate = 60;
+              opt.xAxis[0].axisLabel.fontSize = 9;
+              opt.xAxis[0].axisLabel.interval = 0;
+            }
+            if (opt.grid && opt.grid.length) {
+              opt.grid[0].bottom = '26%';
+            }
+            chart.setOption(opt, true);
+          }
+        }
+        tweak();
+        chart.on('resize', tweak);
+      }
+      "
     ) |>
     echarts4r::e_tooltip(
       trigger     = "axis",
