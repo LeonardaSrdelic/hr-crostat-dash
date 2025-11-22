@@ -498,7 +498,7 @@ plot_gdp_yoy <- function(panel_df, caption = NULL, meta = NULL) {
     echarts4r::e_grid(
       top    = 70,
       bottom = 140,
-      left   = 50,
+      left   = 40,
       right  = 30
     )
 
@@ -614,7 +614,7 @@ plot_gdp_index <- function(panel_df, caption = NULL, meta = NULL) {
     echarts4r::e_grid(
       top    = 70,
       bottom = 140,
-      left   = 50,
+      left   = 40,
       right  = 30
     )
 
@@ -808,7 +808,7 @@ plot_distribution_core_echarts <- function(country_series,
     echarts4r::e_grid(
       top    = 70,
       bottom = 130,
-      left   = 50,
+      left   = 40,
       right  = 30
     )
 
@@ -1194,7 +1194,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     echarts4r::e_grid(
       top    = 60,
       bottom = 80,
-      left   = 50,
+      left   = 40,
       right  = 30
     ) |>
     # Make the layout responsive for narrow screens via JS hook (keeps desktop the same).
