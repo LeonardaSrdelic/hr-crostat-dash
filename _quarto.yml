@@ -8,18 +8,71 @@ website:
     left:
       - href: index.qmd
         text: Naslovnica
-      - href: BDP.qmd
-        text: Gospodarski rast
-      - href: Inflacija.qmd
-        text: Inflacija
-      - href: Demografija i trziste rada.qmd
-        text: Tržište rada
-      - href: Fiskalna pozicija i dug.qmd
-        text: Fiskalna pozicija i dug
-      - href: Platna bilanca.qmd
-        text: Platna bilanca
-      - href: Okolisni indikatori.qmd
-        text: Okoliš
+      - text: Realna aktivnost
+        menu:
+          - href: BDP.qmd
+            text: BDP i komponente
+          - href: indikatori-gospodarske-aktivnosti.qmd
+            text: Indikatori gospodarske aktivnosti
+          - href: trgovina-izvoz.qmd
+            text: Trgovina i izvoz
+          - href: graditeljstvo.qmd
+            text: Graditeljstvo
+          - href: usluge-turizam.qmd
+            text: Usluge i turizam
+          - href: dugorocni-trendovi.qmd
+            text: Dugoročni trendovi
+      - text: Tržište rada
+        menu:
+          - href: zaposlenost.qmd
+            text: Zaposlenost
+          - href: nezaposlenost.qmd
+            text: Nezaposlenost
+          - href: place.qmd
+            text: Plaće
+          - href: produktivnost.qmd
+            text: Produktivnost
+      - text: Cijene i inflacija
+        menu:
+          - href: hicp-ukupni.qmd
+            text: HICP ukupni
+          - href: hicp-temeljni.qmd
+            text: HICP temeljni
+          - href: komponente-cijena.qmd
+            text: Komponente cijena
+          - href: proizvodjacke-cijene.qmd
+            text: Proizvođačke cijene
+      - text: Financijski pokazatelji
+        menu:
+          - href: kamatne-stope.qmd
+            text: Kamatne stope
+          - href: prinosi-obveznica.qmd
+            text: Prinosi obveznica
+          - href: tecajevi.qmd
+            text: Tečajevi
+          - href: monetarni-agregati.qmd
+            text: Monetarni agregati
+      - text: Energija i klima
+        menu:
+          - href: co2-ets.qmd
+            text: Cijena CO₂ ETS
+          - href: cijene-energije.qmd
+            text: Cijene energije
+          - href: emisije-sektori.qmd
+            text: Emisije po sektorima
+          - href: energetski-miks.qmd
+            text: Energetski miks
+          - href: klimatski-makro.qmd
+            text: Klimatski makro pokazatelji
+      - href: o-servisu.qmd
+        text: O servisu
+        menu:
+          - href: o-servisu.qmd#opis-metodologije
+            text: Opis metodologije
+          - href: o-servisu.qmd#izvori-podataka
+            text: Izvori podataka
+          - href: o-servisu.qmd#pretplatnicke-pogodnosti
+            text: Pretplatničke pogodnosti
 
 format:
   html:
