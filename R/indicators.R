@@ -1205,6 +1205,271 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
 }
 
 # ======================================================
+# Realni BDP, razina (zadnje tromjese��je), mlrd. EUR
+# ======================================================
+
+plot_gdp_real_q_level_eu27_latest_echarts <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date  = lubridate::yq(gsub("Q", "-Q", time_raw)),
+      value = value / 1000 # mlrd. EUR
+    )
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR.")
+  }
+
+  last_date <- max(qdat$date, na.rm = TRUE)
+
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == last_date,
+      geo != "EU27_2020"
+    ) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    ) |>
+    dplyr::arrange(dplyr::desc(value))
+
+  if (nrow(plot_df) == 0L) {
+    stop("Za posljednje tromjese��je nema podataka po zemljama.")
+  }
+
+  axis_labels <- plot_df$geo_label
+  layout      <- resolve_echarts_bar_layout(length(axis_labels))
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      val_oth = dplyr::if_else(is_hr, NA_real_, value),
+      val_hr  = dplyr::if_else(is_hr, value, NA_real_)
+    )
+
+  title_txt <- paste0(lubridate::year(last_date), "Q", lubridate::quarter(last_date))
+
+  caption_txt <- list(
+    "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
+  )
+
+  plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      val_oth,
+      name      = "Ostale zemlje",
+      barWidth  = layout$bar_width,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      val_hr,
+      name      = "Hrvatska",
+      barWidth  = layout$bar_width,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = layout$grid$top,
+      bottom = "12%",
+      left   = layout$grid$left,
+      right  = layout$grid$right
+    ) |>
+    echarts4r::e_y_axis(
+      name         = "mlrd. EUR",
+      nameLocation = "middle",
+      nameGap      = 50,
+      nameRotate   = 90,
+      axisLabel    = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(0).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) { return ''; }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var cand = params[i];
+            var raw = Array.isArray(cand.value)
+              ? cand.value[cand.value.length - 1]
+              : cand.value;
+            if (raw !== null && raw !== undefined && !isNaN(raw)) {
+              point = { name: cand.name, value: raw };
+              break;
+            }
+          }
+          if (!point) { return ''; }
+          return point.name + ': ' +
+            Number(point.value).toFixed(1).replace('.', ',') + ' mlrd. EUR';
+        }
+      ")
+    ) |>
+    echarts4r::e_title(text = title_txt) |>
+    echarts4r::e_legend(show = FALSE) |>
+    add_caption_bottom(caption_txt)
+}
+
+plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
+  use_cache()
+
+  qdat <- eurostat::get_eurostat(
+    id = "namq_10_gdp",
+    filters = list(
+      na_item = "B1GQ",
+      s_adj   = "SCA",
+      unit    = "CLV20_MEUR",
+      geo     = c(eu27_codes, "EU27_2020")
+    ),
+    time_format = "raw"
+  ) |>
+    dplyr::rename(time_raw = time, value = values) |>
+    dplyr::mutate(
+      date  = lubridate::yq(gsub("Q", "-Q", time_raw)),
+      value = value / 1000 # mlrd. EUR
+    )
+
+  if (nrow(qdat) == 0L) {
+    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR.")
+  }
+
+  last_date_all <- max(qdat$date, na.rm = TRUE)
+  t_minus1      <- last_date_all %m-% months(3)
+
+  plot_df <- qdat |>
+    dplyr::filter(
+      date == t_minus1,
+      geo != "EU27_2020"
+    ) |>
+    dplyr::mutate(
+      geo_label = as.character(geo),
+      is_hr     = geo_label == hr_code
+    ) |>
+    dplyr::arrange(dplyr::desc(value))
+
+  if (nrow(plot_df) == 0L) {
+    stop("Za t-1 nema podataka po zemljama.")
+  }
+
+  axis_labels <- plot_df$geo_label
+  layout      <- resolve_echarts_bar_layout(length(axis_labels))
+
+  plot_df <- plot_df |>
+    dplyr::mutate(
+      val_oth = dplyr::if_else(is_hr, NA_real_, value),
+      val_hr  = dplyr::if_else(is_hr, value, NA_real_)
+    )
+
+  title_txt <- paste0(lubridate::year(t_minus1), "Q", lubridate::quarter(t_minus1))
+
+  caption_txt <- list(
+    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+  )
+
+  plot_df |>
+    echarts4r::e_charts(geo_label) |>
+    echarts4r::e_bar(
+      val_oth,
+      name      = "Ostale zemlje",
+      barWidth  = layout$bar_width,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = "#d9d9d9"),
+      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
+    ) |>
+    echarts4r::e_bar(
+      val_hr,
+      name      = "Hrvatska",
+      barWidth  = layout$bar_width,
+      barGap    = "-100%",
+      barCategoryGap = "0%",
+      itemStyle = list(color = cols_named[["HR"]]),
+      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
+    ) |>
+    echarts4r::e_x_axis(
+      type = "category",
+      data = axis_labels,
+      axisLabel = list(
+        interval    = layout$axis_interval,
+        rotate      = layout$axis_rotate,
+        hideOverlap = TRUE
+      ),
+      axisTick = list(alignWithLabel = TRUE)
+    ) |>
+    echarts4r::e_grid(
+      top    = layout$grid$top,
+      bottom = "12%",
+      left   = layout$grid$left,
+      right  = layout$grid$right
+    ) |>
+    echarts4r::e_y_axis(
+      name         = "mlrd. EUR",
+      nameLocation = "middle",
+      nameGap      = 50,
+      nameRotate   = 90,
+      axisLabel    = list(
+        formatter = htmlwidgets::JS(
+          "function(x){return x.toFixed(0).replace('.', ',');}"
+        )
+      )
+    ) |>
+    echarts4r::e_tooltip(
+      trigger     = "axis",
+      axisPointer = list(type = "shadow"),
+      formatter   = htmlwidgets::JS("
+        function(params){
+          if (!params || !params.length) { return ''; }
+          var point = null;
+          for (var i = 0; i < params.length; i++) {
+            var cand = params[i];
+            var raw = Array.isArray(cand.value)
+              ? cand.value[cand.value.length - 1]
+              : cand.value;
+            if (raw !== null && raw !== undefined && !isNaN(raw)) {
+              point = { name: cand.name, value: raw };
+              break;
+            }
+          }
+          if (!point) { return ''; }
+          return point.name + ': ' +
+            Number(point.value).toFixed(1).replace('.', ',') + ' mlrd. EUR';
+        }
+      ")
+    ) |>
+    echarts4r::e_title(text = title_txt) |>
+    echarts4r::e_legend(show = FALSE) |>
+    add_caption_bottom(caption_txt)
+}
+
+# ======================================================
 # BDP po stanovniku u PPS: CEE zemlje, zadnja godina
 # ======================================================
 
