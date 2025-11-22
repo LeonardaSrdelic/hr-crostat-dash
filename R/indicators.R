@@ -167,7 +167,6 @@ build_echarts_bar_highlight <- function(df,
                                         title = NULL,
                                         caption = NULL,
                                         axis_rotate = NULL,
-                                        axis_label_font_size = NULL,
                                         avg_line = NULL,
                                         avg_label = NULL,
                                         axis_digits = 0) {
@@ -182,9 +181,6 @@ build_echarts_bar_highlight <- function(df,
     hideOverlap = FALSE,
     margin      = 8
   )
-  if (!is.null(axis_label_font_size)) {
-    axis_label$fontSize <- axis_label_font_size
-  }
 
   df <- df |>
     dplyr::mutate(
@@ -1782,9 +1778,7 @@ plot_gdp_nominal_growth_eu27_latest <- function() {
       "EU-27: ",
       scales::number(eu_avg, accuracy = 0.1, decimal.mark = ","),
       " %"
-    ),
-    axis_rotate = 90,
-    axis_label_font_size = 10
+    )
   )
 }
 
