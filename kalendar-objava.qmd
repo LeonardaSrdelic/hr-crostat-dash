@@ -12,7 +12,7 @@ execute:
 ---
 
 ```{r}
-library(dplyr); library(tidyr); library(stringr); library(lubridate)
+library(dplyr); library(tidyr); library(stringr); library(lubridate); library(purrr)
 
 needs <- c("ical", "htmltools")
 missing_pkgs <- needs[!vapply(needs, requireNamespace, logical(1), quietly = TRUE)]
@@ -36,38 +36,36 @@ if (!has_pkgs) {
   library(ical)
 }
 
-ics_url <- "https://ec.europa.eu/eurostat/web/main/subscribe/ics.format"
-
-category_map <- list(
-  Inflacija   = "(hicp|inflation|flash)",
-  BDP         = "(gdp|b1gq|national accounts)",
-  Trgovina    = "(retail|trade)",
-  Industrija  = "(industrial production|ipi|industry)",
-  Trziste_rada = "(labour|employment|wage|unemployment)",
-  Energija    = "(energy|electricity|gas)",
-  Ostalo      = "."
-)
+# Eurostat release calendar (theme 2: Statistics, category 1: Eurostat events/releases)
+ics_url <- "https://ec.europa.eu/eurostat/o/calendars/eventsIcal?theme=2&category=1"
 
 load_ics_events <- function(url = ics_url) {
-  raw <- ical::ical_parse_df(url)
-  if (!nrow(raw)) return(tibble())
+  parsed <- tryCatch(
+    ical::ical_parse_df(url),
+    error = function(e) {
+      message("ICS fetch/parse failed: ", conditionMessage(e))
+      NULL
+    }
+  )
 
-  raw |>
+  if (is.null(parsed) || !nrow(parsed)) return(tibble())
+
+  if (!"start" %in% names(parsed)) {
+    message("ICS feed nema 'start' stupac.")
+    return(tibble())
+  }
+  if (!"location" %in% names(parsed)) {
+    parsed$location <- NA_character_
+  }
+
+  parsed |>
     mutate(
-      date     = as.Date(dtstart),
+      date     = as.Date(start),
       summary  = coalesce(summary, "Bez naziva"),
       location = coalesce(location, "")
     ) |>
-    filter(!is.na(date)) |>
-    mutate(
-      category = map_chr(summary, function(x) {
-        for (nm in names(category_map)) {
-          if (str_detect(tolower(x), category_map[[nm]])) return(nm)
-        }
-        "Ostalo"
-      })
-    ) |>
-    distinct(date, summary, category, location) |>
+    filter(!is.na(date), !is.na(summary)) |>
+    distinct(date, summary, location) |>
     arrange(date, summary)
 }
 
@@ -81,11 +79,16 @@ if (has_pkgs && nrow(events_all)) {
   if (!nrow(upcoming)) {
     upcoming <- tibble(
       date = Sys.Date(),
-      summary = "Nema najavljenih objava",
-      category = "Ostalo",
+      summary = "Nema najavljenih objava ili ICS feed trenutačno nije dostupan",
       location = ""
     )
   }
+} else if (has_pkgs) {
+  upcoming <- tibble(
+    date = Sys.Date(),
+    summary = "Nema najavljenih objava ili ICS feed trenutačno nije dostupan",
+    location = ""
+  )
 }
 ```
 
@@ -94,11 +97,10 @@ if (has_pkgs && nrow(events_all)) {
 ```{r}
 upcoming |>
   mutate(
-    Datum     = format(date, "%d.%m.%Y"),
-    Kategorija = category,
-    Opis      = summary
+    Datum = format(date, "%d.%m.%Y"),
+    Opis  = summary
   ) |>
-  select(Datum, Kategorija, Opis) |>
+  select(Datum, Opis) |>
   knitr::kable()
 ```
 
@@ -119,11 +121,7 @@ if (!has_pkgs) {
       ev_tags <- if (nrow(day_events)) {
         tags$ul(
           lapply(seq_len(nrow(day_events)), function(i) {
-            tags$li(
-              tags$span(style = "font-weight:600;", day_events$category[i]),
-              ": ",
-              day_events$summary[i]
-            )
+            tags$li(day_events$summary[i])
           })
         )
       } else {

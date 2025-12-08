@@ -24,9 +24,9 @@ first_year     <- 2000
 end_label_year <- lubridate::year(Sys.Date())
 
 eu27_codes   <- c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE",
-                  "GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT",
+                  "EL","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT",
                   "RO","SK","SI","ES","SE")
-ea20_members <- c("AT","BE","CY","DE","EE","ES","FI","FR","GR","IE","IT",
+ea20_members <- c("AT","BE","CY","DE","EE","ES","FI","FR","EL","IE","IT",
                   "LV","LT","LU","MT","NL","PT","SI","SK","HR")
 eu_aggregate_code <- "EU27_2020"
 ea_aggregate_code <- "EA20"
@@ -1428,7 +1428,10 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
       val_hr  = dplyr::if_else(is_hr, value, NA_real_)
     )
 
-  title_txt <- paste0(lubridate::year(chosen_date), "Q", lubridate::quarter(chosen_date))
+  title_txt <- paste0(
+    lubridate::year(chosen_date), "Q", lubridate::quarter(chosen_date),
+    " (mlrd. EUR)"
+  )
 
   caption_txt <- list(
     "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
@@ -2169,13 +2172,18 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
     stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
   }
 
-  # zadnji dostupni kvartal = t, pa t minus 1
+  # odaberi najnoviji kvartal samo ako su sve zemlje dostupne
   last_date_all <- max(qdat$date, na.rm = TRUE)
   t_minus1      <- last_date_all %m-% months(3)
 
+  n_last_obs <- qdat |>
+    dplyr::filter(date == last_date_all, geo != "EU27_2020", !is.na(qoq)) |>
+    nrow()
+  chosen_date <- if (n_last_obs >= length(eu27_codes)) last_date_all else t_minus1
+
   plot_df <- qdat |>
     dplyr::filter(
-      date == t_minus1,
+      date == chosen_date,
       !is.na(qoq),
       geo != "EU27_2020"
     ) |>
@@ -2197,15 +2205,15 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
   # Službeni EU-27 agregat (EU27_2020) za t-1
   eu_avg <- qdat |>
     dplyr::filter(
-      date == t_minus1,
+      date == chosen_date,
       geo == "EU27_2020"
     ) |>
     dplyr::pull(qoq)
 
-  year_q <- lubridate::year(t_minus1)
-  q_q    <- lubridate::quarter(t_minus1)
+  year_q <- lubridate::year(chosen_date)
+  q_q    <- lubridate::quarter(chosen_date)
 
-  prev_date <- t_minus1 %m-% months(3)
+  prev_date <- chosen_date %m-% months(3)
   prev_year <- lubridate::year(prev_date)
   prev_q    <- lubridate::quarter(prev_date)
 
@@ -2218,7 +2226,8 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
   title_txt <- paste0(
     year_q, "Q", q_q,
     " / ",
-    prev_year, "Q", prev_q
+    prev_year, "Q", prev_q,
+    " (%)"
   )
 
     ggplot2::ggplot(

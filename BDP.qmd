@@ -51,28 +51,12 @@ if (!window.__calloutResizeInit) {
 plot_gdp_real_q_level_eu27_tminus1_echarts()
 ```
 
-::: {.callout-note collapse=true title="Prikaži / sakrij graf (podaci privremeni)"}
-Graf je privremen dok ne stignu svi podaci; klikni za prikaz ili skrivanje.
-
-```{r}
-plot_gdp_real_q_level_eu27_latest_echarts()
-```
-:::
-
 
 ## qoq stopa promjene
 
 ```{r}
 plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 ```
-
-::: {.callout-note collapse=true title="Prikaži / sakrij graf (podaci privremeni)"}
-Graf je privremen dok ne stignu svi podaci; klikni za prikaz ili skrivanje.
-
-```{r}
-plot_gdp_real_q_qoq_eu27_latest_echarts()
-```
-:::
 
 
 ## qoq stopa promjene duža serija
