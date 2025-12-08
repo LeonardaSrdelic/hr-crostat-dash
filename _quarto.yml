@@ -21,15 +21,15 @@ website:
           - href: usluge-turizam.qmd
             text: Usluge i turizam
           - href: dugorocni-trendovi.qmd
-            text: Dugoročni trendovi
-      - text: Tržište rada
+            text: DugoroŽ›ni trendovi
+      - text: Tr‘–i‘óte rada
         menu:
           - href: zaposlenost.qmd
             text: Zaposlenost
           - href: nezaposlenost.qmd
             text: Nezaposlenost
           - href: place.qmd
-            text: Plaće
+            text: PlaŽÅe
           - href: produktivnost.qmd
             text: Produktivnost
       - text: Cijene i inflacija
@@ -41,7 +41,7 @@ website:
           - href: komponente-cijena.qmd
             text: Komponente cijena
           - href: proizvodjacke-cijene.qmd
-            text: Proizvođačke cijene
+            text: ProizvoŽ'aŽ›ke cijene
       - text: Financijski pokazatelji
         menu:
           - href: kamatne-stope.qmd
@@ -49,13 +49,13 @@ website:
           - href: prinosi-obveznica.qmd
             text: Prinosi obveznica
           - href: tecajevi.qmd
-            text: Tečajevi
+            text: TeŽ›ajevi
           - href: monetarni-agregati.qmd
             text: Monetarni agregati
       - text: Energija i klima
         menu:
           - href: co2-ets.qmd
-            text: Cijena CO₂ ETS
+            text: Cijena COƒ'' ETS
           - href: cijene-energije.qmd
             text: Cijene energije
           - href: emisije-sektori.qmd
@@ -64,6 +64,8 @@ website:
             text: Energetski miks
           - href: klimatski-makro.qmd
             text: Klimatski makro pokazatelji
+      - href: kalendar-objava.qmd
+        text: Kalendar objava
 
 format:
   html:

@@ -1,0 +1,179 @@
+---
+title: "Kalendar objava"
+format:
+  html:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  error: false
+---
+
+```{r}
+library(dplyr); library(tidyr); library(stringr); library(lubridate)
+
+needs <- c("ical", "htmltools")
+missing_pkgs <- needs[!vapply(needs, requireNamespace, logical(1), quietly = TRUE)]
+has_pkgs <- length(missing_pkgs) == 0
+
+if (!has_pkgs) {
+  knitr::asis_output(paste0(
+    "> Instaliraj pakete prije prikaza kalendara: ",
+    paste(missing_pkgs, collapse = ", "),
+    " (npr. `install.packages(c('",
+    paste(missing_pkgs, collapse = "','" ), "'))`)."
+  ))
+  upcoming <- tibble(
+    date = Sys.Date(),
+    summary = "Paketi nedostaju pa kalendar nije generiran",
+    category = "Ostalo",
+    location = ""
+  )
+} else {
+  library(htmltools)
+  library(ical)
+}
+
+ics_url <- "https://ec.europa.eu/eurostat/web/main/subscribe/ics.format"
+
+category_map <- list(
+  Inflacija   = "(hicp|inflation|flash)",
+  BDP         = "(gdp|b1gq|national accounts)",
+  Trgovina    = "(retail|trade)",
+  Industrija  = "(industrial production|ipi|industry)",
+  Trziste_rada = "(labour|employment|wage|unemployment)",
+  Energija    = "(energy|electricity|gas)",
+  Ostalo      = "."
+)
+
+load_ics_events <- function(url = ics_url) {
+  raw <- ical::ical_parse_df(url)
+  if (!nrow(raw)) return(tibble())
+
+  raw |>
+    mutate(
+      date     = as.Date(dtstart),
+      summary  = coalesce(summary, "Bez naziva"),
+      location = coalesce(location, "")
+    ) |>
+    filter(!is.na(date)) |>
+    mutate(
+      category = map_chr(summary, function(x) {
+        for (nm in names(category_map)) {
+          if (str_detect(tolower(x), category_map[[nm]])) return(nm)
+        }
+        "Ostalo"
+      })
+    ) |>
+    distinct(date, summary, category, location) |>
+    arrange(date, summary)
+}
+
+events_all <- if (has_pkgs) load_ics_events() else tibble()
+
+if (has_pkgs && nrow(events_all)) {
+  upcoming <- events_all |>
+    filter(date >= Sys.Date()) |>
+    slice_head(n = 80)
+
+  if (!nrow(upcoming)) {
+    upcoming <- tibble(
+      date = Sys.Date(),
+      summary = "Nema najavljenih objava",
+      category = "Ostalo",
+      location = ""
+    )
+  }
+}
+```
+
+# Nadolazeće objave (tablica)
+
+```{r}
+upcoming |>
+  mutate(
+    Datum     = format(date, "%d.%m.%Y"),
+    Kategorija = category,
+    Opis      = summary
+  ) |>
+  select(Datum, Kategorija, Opis) |>
+  knitr::kable()
+```
+
+# Kalendar (tekući i idući mjesec)
+
+```{r}
+if (!has_pkgs) {
+  knitr::asis_output("> Kalendar nije generiran jer paketi nedostaju.")
+} else {
+
+  render_month_calendar <- function(events, month_start) {
+    days <- seq(month_start, to = ceiling_date(month_start, "month") - days(1), by = "1 day")
+    week_starts <- floor_date(days, "week", week_start = 1)
+    weeks <- unique(week_starts)
+
+    make_cell <- function(day) {
+      day_events <- events |> filter(date == day)
+      ev_tags <- if (nrow(day_events)) {
+        tags$ul(
+          lapply(seq_len(nrow(day_events)), function(i) {
+            tags$li(
+              tags$span(style = "font-weight:600;", day_events$category[i]),
+              ": ",
+              day_events$summary[i]
+            )
+          })
+        )
+      } else {
+        NULL
+      }
+
+      tags$td(
+        style = "vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width:14%;",
+        tags$div(style = "font-weight:700; margin-bottom:4px;", day(day)),
+        ev_tags
+      )
+    }
+
+    rows <- lapply(weeks, function(w) {
+      row_days <- seq(w, by = "1 day", length.out = 7)
+      # mask days outside current month
+      row_cells <- lapply(row_days, function(d) {
+        if (month(d) != month(month_start)) {
+          tags$td(style = "background:#fafafa; border: 1px solid #e0e0e0; width:14%; padding:6px;")
+        } else {
+          make_cell(d)
+        }
+      })
+      tags$tr(row_cells)
+    })
+
+    tags$div(
+      tags$h3(sprintf("%s %s", month_start %>% format("%B"), year(month_start))),
+      tags$table(
+        style = "width:100%; border-collapse: collapse; margin-bottom: 18px; font-size: 0.95em;",
+        tags$thead(
+          tags$tr(
+            lapply(c("Pon", "Uto", "Sri", "Cet", "Pet", "Sub", "Ned"), function(nm) {
+              tags$th(style = "border: 1px solid #e0e0e0; padding: 6px; background:#f5f5f5;", nm)
+            })
+          )
+        ),
+        tags$tbody(rows)
+      )
+    )
+  }
+
+  month0 <- floor_date(Sys.Date(), "month")
+  month1 <- month0 %m+% months(1)
+
+  htmltools::browsable(
+    htmltools::tagList(
+      render_month_calendar(upcoming, month0),
+      render_month_calendar(upcoming, month1)
+    )
+  )
+}
+```

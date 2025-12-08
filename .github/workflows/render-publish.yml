@@ -44,6 +44,10 @@ jobs:
             any::purrr
             any::janitor
             any::stringr
+            any::lubridate
+            any::ical
+            any::htmltools
+            any::jsonlite
 
       - name: Render site
         run: quarto render
