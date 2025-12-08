@@ -1398,9 +1398,15 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
   last_date_all <- max(qdat$date, na.rm = TRUE)
   t_minus1      <- last_date_all %m-% months(3)
 
+  # ako je zadnje tromjesečje kompletno (sve zemlje), koristimo njega umjesto t-1
+  n_last_obs <- qdat |>
+    dplyr::filter(date == last_date_all, geo != "EU27_2020") |>
+    nrow()
+  chosen_date <- if (n_last_obs >= length(eu27_codes)) last_date_all else t_minus1
+
   plot_df <- qdat |>
     dplyr::filter(
-      date == t_minus1,
+      date == chosen_date,
       geo != "EU27_2020"
     ) |>
     dplyr::mutate(
@@ -1422,10 +1428,10 @@ plot_gdp_real_q_level_eu27_tminus1_echarts <- function() {
       val_hr  = dplyr::if_else(is_hr, value, NA_real_)
     )
 
-  title_txt <- paste0(lubridate::year(t_minus1), "Q", lubridate::quarter(t_minus1))
+  title_txt <- paste0(lubridate::year(chosen_date), "Q", lubridate::quarter(chosen_date))
 
   caption_txt <- list(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+    "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
   )
 
   plot_df |>
@@ -2035,7 +2041,7 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
 
 caption_txt <- paste0(
   "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-  "\n\nIzvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR",
+  "\n\nIzvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR)",
   " © Leonarda Srdelić"
 )
 
@@ -2205,7 +2211,7 @@ plot_gdp_real_q_qoq_eu27_tminus1 <- function() {
 
   caption_txt <- paste0(
   "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-  "\n\nIzvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR ",
+  "\n\nIzvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR)",
   " © Leonarda Srdelić"
 )
 
@@ -2589,7 +2595,7 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
 
   caption_txt <- list(
     note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+    source = "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
   )
 
   title_txt <- paste0(
@@ -2789,7 +2795,7 @@ plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
 
   caption_txt <- list(
     note   = "Napomena: Prikazane su samo zemlje s dostupnim podatkom za najnovije tromjesečje.",
-    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+    source = "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
   )
 
   title_txt <- paste0(
@@ -2991,7 +2997,7 @@ plot_gdp_real_q_qoq_eu27_t_echarts <- function() {
 
   caption_txt <- list(
     note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-    source = "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR"
+    source = "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
   )
 
   title_txt <- paste0(

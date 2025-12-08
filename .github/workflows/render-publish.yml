@@ -3,6 +3,9 @@ name: Render and Publish
 on:
   push:
     branches: ["main"]
+  schedule:
+    # Ponedjeljak 05:00 UTC ≈ 06:00 CET (07:00 CEST)
+    - cron: "0 5 * * 1"
   workflow_dispatch:
 
 permissions:
