@@ -45,48 +45,39 @@ if (!window.__calloutResizeInit) {
 
 # Tromjesečni podaci realnog BDP-a
 
-## mlrd. EUR realni BDP
+## qoq stopa promjene, HR (%)
 
 ```{r}
-plot_gdp_real_q_level_eu27_tminus1_echarts()
+plot_gdp_qoq_hr()
 ```
 
 
-## qoq stopa promjene
+## qoq stopa promjene, HR i EU-27 (%)
 
 ```{r}
 plot_gdp_real_q_qoq_eu27_tminus1_echarts()
 ```
 
 
-## qoq stopa promjene duža serija
+## realni BDP, HR i EU-27 (mlrd. EUR)
 
 ```{r}
-plot_gdp_qoq_hr()
+plot_gdp_real_q_level_eu27_tminus1_echarts()
 ```
 
-## yoy stopa promjene
+## godišnja stopa promjene
 
 ```{r}
 plot_gdp_real_q_yoy_eu27_tminus1()
 ```
 
-::: {.callout-note collapse=true title="Prikaži / sakrij graf (podaci privremeni)"}
-Graf je privremen dok ne stignu svi podaci; klikni za prikaz ili skrivanje.
-
-```{r}
-plot_gdp_real_q_yoy_eu27_latest()
-```
-:::
-
-
 # Godišnji podaci 
-## realni BDP
+## realni BDP, yoy (%)
 ```{r}
 plot_gdp_real_growth_eu27_latest()
 ```
 
-## nominalni BDP
+## nominalni BDP, yoy (%)
 
 ```{r}
 plot_gdp_nominal_growth_eu27_latest()

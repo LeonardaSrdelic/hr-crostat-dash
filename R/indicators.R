@@ -1091,7 +1091,8 @@ plot_gdp_yoy_distribution_echarts <- function(gdp_real,
 s_adj_try_q  <- c("SCA", "SA")
 unit_try_q   <- c("CLV_MEUR", "CLV15_MEUR")
 
-plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
+plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1"),
+                            zoom_start = lubridate::yq("2021-Q1")) {
   hr_q   <- NULL
   s_used <- NA_character_
   u_used <- NA_character_
@@ -1149,14 +1150,19 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
       )
     )
 
+  # slider/zoom fokus na novije razdoblje, ali omogući skrol unatrag
+  start_idx <- which(hr_q$date >= zoom_start)[1]
+  start_idx <- if (!is.na(start_idx)) start_idx - 1 else max(nrow(hr_q) - 20, 0)
+  end_idx   <- max(nrow(hr_q) - 1, 0)
+
   caption <- paste0(
-    "Izvor: Eurostat namq_10_gdp, B1GQ, s_adj = ",
+    "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = ",
     s_used,
     ", unit = ",
     u_used,
     ", geo = ",
     hr_code,
-    " © Leonarda Srdelić"
+    ") © Leonarda Srdelić"
   )
 
   hr_q |>
@@ -1164,7 +1170,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     echarts4r::e_bar(
       qoq,
       name      = "Hrvatska",
-      barWidth  = 14,
+      barWidth  = 18,
       itemStyle = list(color = col_hr),
       emphasis  = list(itemStyle = list(color = col_hr))
     ) |>
@@ -1173,7 +1179,8 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
       data = as.character(hr_q$yq),
       axisLabel = list(
         interval = 0,
-        rotate   = 90
+        rotate   = 65,
+        margin   = 10
       ),
       axisTick = list(alignWithLabel = TRUE)
     ) |>
@@ -1196,9 +1203,21 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
     ) |>
     echarts4r::e_grid(
       top    = 60,
-      bottom = 50,
-      left   = 40,
+      bottom = 80,
+      left   = 46,
       right  = 30
+    ) |>
+    echarts4r::e_datazoom(
+      type       = "slider",
+      startValue = start_idx,
+      endValue   = end_idx,
+      height     = 18,
+      bottom     = 28
+    ) |>
+    echarts4r::e_datazoom(
+      type       = "inside",
+      startValue = start_idx,
+      endValue   = end_idx
     ) |>
     # Make the layout responsive for narrow screens via JS hook (keeps desktop the same).
     htmlwidgets::onRender(
@@ -1211,7 +1230,7 @@ plot_gdp_qoq_hr <- function(start_cut = lubridate::yq("2019-Q1")) {
           var w = el.clientWidth || 0;
           var opt = chart.getOption();
           if (w && w < 800) {
-            (opt.series || []).forEach(function(s) { s.barWidth = 9; });
+            (opt.series || []).forEach(function(s) { s.barWidth = 12; });
             if (opt.xAxis && opt.xAxis.length) {
               opt.xAxis[0].axisLabel = opt.xAxis[0].axisLabel || {};
               opt.xAxis[0].axisLabel.rotate = 60;
@@ -2001,52 +2020,60 @@ plot_gdp_real_q_yoy_eu27_tminus1 <- function() {
     stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU-27.")
   }
 
-  # Zadnji dostupni kvartal uopće (t), pa t-1
-  last_date_all <- max(qdat$date, na.rm = TRUE)
-  t_minus1      <- last_date_all %m-% months(3)
+  latest_date <- max(qdat$date, na.rm = TRUE)
+  t_minus1    <- latest_date %m-% months(3)
 
-  # Ako za t-1 nema izračunate yoy za neke zemlje, filtrira ih se van
+  # provjera pokrivenosti zadnjeg kvartala
+  coverage <- qdat |>
+    dplyr::filter(!is.na(yoy), geo %in% eu27_codes) |>
+    dplyr::count(date, name = "n_countries")
+
+  has_full_latest <- coverage |>
+    dplyr::filter(date == latest_date, n_countries == length(eu27_codes)) |>
+    nrow() == 1
+
+  chosen_date <- if (has_full_latest) latest_date else t_minus1
+
   plot_df <- qdat |>
     dplyr::filter(
-      date == t_minus1,
+      date == chosen_date,
       !is.na(yoy),
       geo != "EU27_2020"
     ) |>
     dplyr::arrange(dplyr::desc(yoy)) |>
     dplyr::mutate(
-      label = scales::number(
-        yoy,
-        accuracy     = 0.1,
-        decimal.mark = ","
-      ),
       geo   = factor(geo, levels = geo),
       is_hr = geo == hr_code
     )
 
   if (nrow(plot_df) == 0L) {
-    stop("Za t-1 nema yoy stopa za nijednu zemlju.")
+    stop("Za odabrani kvartal nema yoy stopa za nijednu zemlju.")
   }
 
-  # Službeni EU-27 agregat (EU27_2020) za t-1
   eu_avg <- qdat |>
     dplyr::filter(
-      date == t_minus1,
+      date == chosen_date,
       geo == "EU27_2020"
     ) |>
     dplyr::pull(yoy)
 
-  year_q <- lubridate::year(t_minus1)
-  q_q    <- lubridate::quarter(t_minus1)
+  year_q <- lubridate::year(chosen_date)
+  q_q    <- lubridate::quarter(chosen_date)
 
-  prev_date <- t_minus1 %m-% months(12)
+  prev_date <- chosen_date %m-% months(12)
   prev_year <- lubridate::year(prev_date)
   prev_q    <- lubridate::quarter(prev_date)
 
-caption_txt <- paste0(
-  "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-  "\n\nIzvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR)",
-  " © Leonarda Srdelić"
-)
+  note_txt <- "Napomena: EU-27 je službeni ponderirani agregat Eurostata."
+  if (!has_full_latest) {
+    note_txt <- paste0(note_txt, " Zadnji kvartal nije potpun za sve zemlje; prikazan je t-1.")
+  }
+
+  caption_txt <- paste0(
+    note_txt,
+    "\n\nIzvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, jedinica CLV20_MEUR)",
+    " © Leonarda Srdelić"
+  )
 
   title_txt <- paste0(
     year_q, "Q", q_q, " / ",
@@ -2393,7 +2420,6 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
 
   axis_labels <- plot_df$geo_label
   layout <- resolve_echarts_bar_layout(length(axis_labels))
-  layout <- resolve_echarts_bar_layout(length(axis_labels))
 
   plot_df <- plot_df |>
     dplyr::mutate(
@@ -2519,7 +2545,7 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
             var raw       = candidate.value;
             var val       = Array.isArray(raw) ? raw[raw.length - 1] : raw;
             if (val !== null && val !== undefined && !isNaN(val)) {
-              point = { name: candidate.name, value: raw };
+              point = { name: candidate.name, value: val };
               break;
             }
           }
@@ -2535,77 +2561,35 @@ build_qoq_chart <- function(qdat, target_date, title_text, caption_note, caption
 }
 
 plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
-  use_cache()
+  ds <- get_qoq_dataset()
+  qdat <- ds$data
 
-  qdat <- eurostat::get_eurostat(
-    id = "namq_10_gdp",
-    filters = list(
-      na_item = "B1GQ",
-      s_adj   = "SCA",
-      unit    = "CLV20_MEUR",
-      geo     = c(eu27_codes, "EU27_2020")
-    ),
-    time_format = "raw"
-  ) |>
-    dplyr::rename(time_raw = time, value = values) |>
-    dplyr::mutate(
-      date = lubridate::yq(gsub("Q", "-Q", time_raw))
-    ) |>
-    dplyr::arrange(geo, date) |>
-    dplyr::group_by(geo) |>
-    dplyr::mutate(
-      qoq = 100 * (value / dplyr::lag(value, 1) - 1)
-    ) |>
-    dplyr::ungroup()
+  latest_date   <- ds$latest_date
+  complete_date <- ds$complete_date
 
-  if (nrow(qdat) == 0L) {
-    stop("Nema podataka za namq_10_gdp, B1GQ, SCA, CLV20_MEUR za EU 27.")
+  has_full_latest <- !is.na(complete_date) && !is.na(latest_date) && latest_date == complete_date
+
+  target_date <- if (has_full_latest) {
+    latest_date
+  } else {
+    complete_date %||% latest_date
   }
 
-  # zadnji dostupni kvartal = t, pa t minus 1
-  last_date_all <- max(qdat$date, na.rm = TRUE)
-  t_minus1      <- last_date_all %m-% months(3)
-
-  plot_df <- qdat |>
-    dplyr::filter(
-      date == t_minus1,
-      !is.na(qoq),
-      geo != "EU27_2020"
-    ) |>
-    dplyr::arrange(dplyr::desc(qoq)) |>
-    dplyr::mutate(
-      geo_label = as.character(geo),
-      is_hr     = geo_label == hr_code
-    )
-
-  if (nrow(plot_df) == 0L) {
-    stop("Za t minus 1 nema qoq stopa ni za jednu zemlju.")
+  if (is.null(target_date) || is.na(target_date)) {
+    stop("Nije pronadjen nijedan referentni kvartal za qoq graf.")
   }
 
-  # službeni EU-27 agregat za t-1
-  eu_avg <- qdat |>
-    dplyr::filter(
-      date == t_minus1,
-      geo == "EU27_2020"
-    ) |>
-    dplyr::pull(qoq)
+  chart_note <- "Napomena: EU-27 je sluzbeni ponderirani agregat Eurostata."
+  if (!has_full_latest && !is.na(latest_date) && !is.na(complete_date) && latest_date != complete_date) {
+    chart_note <- paste0(chart_note, " Zadnji kvartal nema podatke za sve zemlje, prikazan je t-1.")
+  }
 
-  eu_label <- paste0(
-    "EU-27: ",
-    gsub("\\.", ",", sprintf("%.1f", eu_avg))
-  )
+  year_q <- lubridate::year(target_date)
+  q_q    <- lubridate::quarter(target_date)
 
-  year_q <- lubridate::year(t_minus1)
-  q_q    <- lubridate::quarter(t_minus1)
-
-  prev_date <- t_minus1 %m-% months(3)
+  prev_date <- target_date %m-% months(3)
   prev_year <- lubridate::year(prev_date)
   prev_q    <- lubridate::quarter(prev_date)
-
-  caption_txt <- list(
-    note   = "Napomena: EU-27 je službeni ponderirani agregat Eurostata.",
-    source = "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
-  )
 
   title_txt <- paste0(
     year_q, "Q", q_q,
@@ -2613,135 +2597,13 @@ plot_gdp_real_q_qoq_eu27_tminus1_echarts <- function() {
     prev_year, "Q", prev_q
   )
 
-  axis_labels <- plot_df$geo_label
-  layout <- resolve_echarts_bar_layout(length(axis_labels))
-
-  plot_df <- plot_df |>
-    dplyr::mutate(
-      qoq_oth = dplyr::if_else(is_hr, NA_real_, qoq),
-      qoq_hr  = dplyr::if_else(is_hr, qoq, NA_real_)
-    )
-
-    plot_df |>
-    echarts4r::e_charts(geo_label) |>
-    echarts4r::e_bar(
-      qoq_oth,
-      name      = "Ostale zemlje",
-      barWidth  = layout$bar_width,
-      barGap    = "-100%",
-      barCategoryGap = "0%",
-      itemStyle = list(color = "#d9d9d9"),
-      emphasis  = list(itemStyle = list(color = "#d9d9d9"))
-    ) |>
-    echarts4r::e_bar(
-      qoq_hr,
-      name      = "Hrvatska",
-      barWidth  = layout$bar_width,
-      barGap    = "-100%",
-      barCategoryGap = "0%",
-      itemStyle = list(color = cols_named[["HR"]]),
-      emphasis  = list(itemStyle = list(color = cols_named[["HR"]]))
-    ) |>
-    echarts4r::e_x_axis(
-      type = "category",
-      data = axis_labels,
-      axisLabel = list(
-        interval    = layout$axis_interval,
-        rotate      = layout$axis_rotate,
-        hideOverlap = FALSE
-      ),
-      axisTick = list(alignWithLabel = TRUE)
-    ) |>
-    echarts4r::e_grid(
-      top    = layout$grid$top,
-      bottom = layout$grid$bottom,
-      left   = layout$grid$left,
-      right  = layout$grid$right
-    ) |>
-    echarts4r::e_mark_line(
-      data      = list(yAxis = eu_avg, name = eu_label),
-      lineStyle = list(
-        type  = "dashed",
-        color = "#303030"
-      ),
-      label = list(
-        show      = TRUE,
-        formatter = paste0(eu_label, " %"),
-        position  = "insideEndTop",
-        color     = "#303030",
-        padding   = c(0, 0, 4, 0)
-      ),
-      symbol = "none"
-    ) |>
-    echarts4r::e_title(
-      text = title_txt
-    ) |>
-    echarts4r::e_title(
-      text      = caption_txt$note,
-      bottom    = 16,
-      left      = "left",
-      textStyle = list(
-        fontSize   = 11,
-        fontWeight = "normal",
-        color      = "#555555"
-      ),
-      new_title = TRUE
-    ) |>
-    echarts4r::e_title(
-      text      = caption_txt$source,
-      bottom    = -4,
-      left      = "left",
-      textStyle = list(
-        fontSize   = 11,
-        fontWeight = "normal",
-        color      = "#555555"
-      ),
-      new_title = TRUE
-    ) |>
-    echarts4r::e_y_axis(
-      name          = "",
-      nameLocation  = "middle",
-      nameGap       = 30,
-      nameRotate    = 0,
-      nameTextStyle = list(
-        align   = "center",
-        color   = "#555555",
-        padding = c(0, 0, 0, -10)
-      ),
-      axisLabel = list(
-        formatter = htmlwidgets::JS(
-          "function(x){return x.toFixed(1).replace('.', ',');}"
-        )
-      )
-    ) |>
-    echarts4r::e_tooltip(
-      trigger     = "axis",
-      axisPointer = list(type = "shadow"),
-      formatter   = htmlwidgets::JS("
-        function(params){
-          if (!params || !params.length) {
-            return '';
-          }
-          var point = null;
-          for (var i = 0; i < params.length; i++) {
-            var candidate = params[i];
-            var raw       = Array.isArray(candidate.value)
-              ? candidate.value[candidate.value.length - 1]
-              : candidate.value;
-            if (raw !== null && raw !== undefined && !isNaN(raw)) {
-              point = { name: candidate.name, value: raw };
-              break;
-            }
-          }
-          if (!point) {
-            return '';
-          }
-          var val = Number(point.value).toFixed(1).replace('.', ',');
-          return point.name + ': ' + val + ' %';
-        }
-      ")
-    ) |>
-    echarts4r::e_legend(show = FALSE)
+  build_qoq_chart(
+    qdat           = qdat,
+    target_date    = target_date,
+    title_text     = title_txt,
+    caption_note   = chart_note,
+    caption_source = "Izvor: Eurostat (namq_10_gdp, B1GQ, s_adj = SCA, CLV20_MEUR)"
+  )
 }
 
 plot_gdp_real_q_qoq_eu27_latest_echarts <- function() {
