@@ -4,7 +4,7 @@
 .renv/
 renv/library/
 data/.eurostat_cache/
-_site/
+.quarto/
 .DS_Store
 
 /.quarto/
