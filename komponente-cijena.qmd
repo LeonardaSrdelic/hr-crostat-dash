@@ -1,5 +1,0 @@
----
-title: "Komponente cijena"
----
-
-> Radni nacrt.

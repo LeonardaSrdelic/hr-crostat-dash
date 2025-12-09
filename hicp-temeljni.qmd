@@ -1,5 +1,0 @@
----
-title: "HICP temeljni"
----
-
-> Radni nacrt.
