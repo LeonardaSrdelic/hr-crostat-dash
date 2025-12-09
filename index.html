@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Naslovnica – HR CroStat Dash</title>
+<title>Monitor – HR CroStat Dash</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles/eurostat-responsive.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -91,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Naslovnica</span></a>
+<span class="menu-text">Monitor</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-realna-aktivnost" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -224,6 +225,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./kalendar-objava.html"> 
 <span class="menu-text">Kalendar objava</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./info.html"> 
+<span class="menu-text">Info</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -240,12 +245,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#što-je-crostat-dash" id="toc-što-je-crostat-dash" class="nav-link active" data-scroll-target="#što-je-crostat-dash">1. Što je CroStat Dash</a></li>
-  <li><a href="#za-koga-je-namijenjen" id="toc-za-koga-je-namijenjen" class="nav-link" data-scroll-target="#za-koga-je-namijenjen">2. Za koga je namijenjen</a></li>
-  <li><a href="#što-crostat-dash-pruža" id="toc-što-crostat-dash-pruža" class="nav-link" data-scroll-target="#što-crostat-dash-pruža">3. Što CroStat Dash pruža</a></li>
-  <li><a href="#opis-metodologije" id="toc-opis-metodologije" class="nav-link" data-scroll-target="#opis-metodologije">4. Metodologija i izvori podataka</a></li>
-  <li><a href="#pretplatnicke-pogodnosti" id="toc-pretplatnicke-pogodnosti" class="nav-link" data-scroll-target="#pretplatnicke-pogodnosti">5. Pretplatničke pogodnosti</a></li>
-  <li><a href="#o-autoru-i-pristupu" id="toc-o-autoru-i-pristupu" class="nav-link" data-scroll-target="#o-autoru-i-pristupu">6. O autoru i pristupu</a></li>
+  <li><a href="#dobrodošli-u-monitor" id="toc-dobrodošli-u-monitor" class="nav-link active" data-scroll-target="#dobrodošli-u-monitor">Dobrodošli u Monitor</a></li>
   </ul>
 </nav>
     </div>
@@ -254,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Naslovnica</h1>
+<h1 class="title">Monitor</h1>
 </div>
 
 
@@ -270,73 +270,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><a href="https://cro-stat.com/premium/">Prijava za pretplatnike</a></p>
 
-
-<section id="što-je-crostat-dash" class="level2">
-<h2 class="anchored" data-anchor-id="što-je-crostat-dash">1. Što je CroStat Dash</h2>
-<p>CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.</p>
-<p>Servis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija.</p>
-</section>
-<section id="za-koga-je-namijenjen" class="level2">
-<h2 class="anchored" data-anchor-id="za-koga-je-namijenjen">2. Za koga je namijenjen</h2>
-<p>CroStat Dash je razvijen prije svega za korisnike koji donose ili pripremaju odluke unutar financijskog i realnog sektora, a nemaju vlastite kapacitete za kontinuiranu makro analizu:</p>
-<ul>
-<li>banke i leasing društva</li>
-<li>investicijska društva i fondovi</li>
-<li>odjeli riznice, upravljanja rizicima i strateškog planiranja</li>
-<li>veće korporacije koje redovito rade budžetiranje i scenarije</li>
-<li>konzultantske i analitičke kuće</li>
-<li>istraživačke i policy institucije</li>
-</ul>
-<p>Javna verzija servisa istodobno omogućuje i širem stručnom krugu uvid u osnovne pokazatelje i dugoročne trendove gospodarstva.</p>
-</section>
-<section id="što-crostat-dash-pruža" class="level2">
-<h2 class="anchored" data-anchor-id="što-crostat-dash-pruža">3. Što CroStat Dash pruža</h2>
-<p>Servis obuhvaća tri elementa:</p>
-<ul>
-<li>strukturirane vremenske serije</li>
-<li>interaktivne grafikone</li>
-<li>analitičke bilješke</li>
-</ul>
-<p>Vremenske serije pripremaju se u obliku pogodnom za daljnju upotrebu u internim modelima i alatima. Grafički prikazi olakšavaju brzu orijentaciju u trenutnom ciklusu i usporedbama kroz vrijeme i između zemalja. Analitičke bilješke nude interpretaciju koja korisnicima može poslužiti kao podloga za interne dokumente, kreditne i investicijske komitete, izvještaje ili komunikaciju prema upravi.</p>
-</section>
-<section id="opis-metodologije" class="level2">
-<h2 class="anchored" data-anchor-id="opis-metodologije">4. Metodologija i izvori podataka</h2>
-<p>CroStat Dash se oslanja na javno dostupne statističke izvore, prije svega:</p>
-<ul>
-<li>Državni zavod za statistiku</li>
-<li>Hrvatska narodna banka</li>
-<li>Eurostat</li>
-<li>Europska središnja banka</li>
-<li>Europska komisija</li>
-<li>Europska agencija za okoliš i povezane klimatske baze podataka</li>
-<li>relevantne energetske i tržišne reference za cijene energije i CO₂</li>
-</ul>
-<p>Podaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasno razlikovanju službeno prilagođenih i neprilagođenih podataka.</p>
-<p>Metodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama i u tablicama za pretplatnike.</p>
-</section>
-<section id="pretplatnicke-pogodnosti" class="level2">
-<h2 class="anchored" data-anchor-id="pretplatnicke-pogodnosti">5. Pretplatničke pogodnosti</h2>
-<p>Javni dio CroStat Dasha pruža osnovne grafičke prikaze ključnih pokazatelja i sažete tekstualne opise. Pretplatnički dio proširuje taj okvir i uključuje:</p>
-<ul>
-<li>pristup proširenom skupu pokazatelja po temama</li>
-<li>duže vremenske nizove i dodatne geografske usporedbe</li>
-<li>mogućnost preuzimanja podataka u Excel ili CSV formatu</li>
-<li>proširene analitičke bilješke uz pojedine grafikone</li>
-<li>periodične sažetke makroekonomskih i klimatsko energetskih kretanja</li>
-</ul>
-<p>Na taj način pretplatnici dobivaju i podatke i interpretaciju koja se može izravno ugraditi u interne materijale i modele, bez dodatnog prikupljanja i čišćenja podataka.</p>
-</section>
-<section id="o-autoru-i-pristupu" class="level2">
-<h2 class="anchored" data-anchor-id="o-autoru-i-pristupu">6. O autoru i pristupu</h2>
-<p>Servis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i interpretaciji koja se oslanja na vidljive obrasce, a ne na kratkoročni šum u podacima.</p>
-<p>Krajnji je cilj pružiti korisnicima stabilan okvir za promatranje gospodarstva i tranzicijskih procesa, koji može poduprijeti unutarnju raspravu, procjenu ranjivosti i oblikovanje scenarija.</p>
+<section id="dobrodošli-u-monitor" class="level3">
+<h3 class="anchored" data-anchor-id="dobrodošli-u-monitor">Dobrodošli u Monitor</h3>
+<p>Odaberite temu iz gornjeg izbornika za pregled pokazatelja i grafikona. O dodatnim informacijama i metodologiji pogledajte odjeljak <strong>Info</strong>.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<div class="cs-footer">
+  <div class="cs-footer-left">
+    © Leonarda Srdelić, 2025
+  </div>
+  <div class="cs-footer-links">
+    <a href="https://example.com/cookies" target="_blank" rel="noreferrer">Cookies policy</a>
+    <span class="cs-sep">|</span>
+    <a href="https://example.com/privacy" target="_blank" rel="noreferrer">Privacy policy</a>
+    <span class="cs-sep">|</span>
+    <a href="https://example.com/legal" target="_blank" rel="noreferrer">Legal notice</a>
+  </div>
+  <div class="cs-footer-feedback">
+    <a href="mailto:leonardasrdelic@windowslive.com">
+      <span class="cs-mail">✉️</span> Feedback
+    </a>
+  </div>
+</div>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
