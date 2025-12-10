@@ -68,6 +68,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script>
+
+<script src="site_libs/echarts4r-binding-0.4.6/echarts4r.js"></script>
+
 
 
 <link rel="stylesheet" href="styles/eurostat-responsive.css">
@@ -240,14 +252,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#dobrodošli-u-monitor" id="toc-dobrodošli-u-monitor" class="nav-link active" data-scroll-target="#dobrodošli-u-monitor">Dobrodošli u Monitor</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -271,12 +277,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="dobrodošli-u-monitor" class="level3">
-<h3 class="anchored" data-anchor-id="dobrodošli-u-monitor">Dobrodošli u Monitor</h3>
-<p>Odaberite temu iz gornjeg izbornika za pregled pokazatelja i grafikona. O dodatnim informacijama i metodologiji pogledajte odjeljak <strong>Info</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #d9d9d9; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); padding: 14px; max-width: 420px; background: #fff;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+<div>
+<div style="font-weight: 700; font-size: 18px;">BDP</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">% promjena na prethodno razdoblje</div>
+</div>
+<div style="text-align: right;">
+<div style="color: #C00000; font-weight: 700; font-size: 20px; line-height: 1.1;">0,3</div>
+<div style="font-size: 12px; color: #555;">Q3 2025</div>
+</div>
+</div>
+<div>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-a12c86d417b63058fbff" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-a12c86d417b63058fbff">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"","nameLocation":"middle","nameGap":30,"nameRotate":0,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["2019-Q1","2019-Q2","2019-Q3","2019-Q4","2020-Q1","2020-Q2","2020-Q3","2020-Q4","2021-Q1","2021-Q2","2021-Q3","2021-Q4","2022-Q1","2022-Q2","2022-Q3","2022-Q4","2023-Q1","2023-Q2","2023-Q3","2023-Q4","2024-Q1","2024-Q2","2024-Q3","2024-Q4","2025-Q1","2025-Q2","2025-Q3"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"margin":10},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["2019-Q1","  1.99105926"]},{"value":["2019-Q2","  0.53700768"]},{"value":["2019-Q3"," -0.18551872"]},{"value":["2019-Q4"," -0.36708047"]},{"value":["2020-Q1"," -1.42009903"]},{"value":["2020-Q2","-13.92458960"]},{"value":["2020-Q3","  5.14720701"]},{"value":["2020-Q4","  8.15960274"]},{"value":["2021-Q1","  5.78005815"]},{"value":["2021-Q2"," -0.51626855"]},{"value":["2021-Q3","  1.96633729"]},{"value":["2021-Q4","  3.21653230"]},{"value":["2022-Q1","  3.02393402"]},{"value":["2022-Q2","  0.89650645"]},{"value":["2022-Q3","  0.80038620"]},{"value":["2022-Q4"," -1.02099601"]},{"value":["2023-Q1","  1.95436313"]},{"value":["2023-Q2","  1.90108053"]},{"value":["2023-Q3","  0.00539975"]},{"value":["2023-Q4","  1.83716582"]},{"value":["2024-Q1","  0.34131955"]},{"value":["2024-Q2","  1.10832232"]},{"value":["2024-Q3","  0.99687741"]},{"value":["2024-Q4","  0.99609324"]},{"value":["2025-Q1","  0.38105851"]},{"value":["2025-Q2","  0.89894666"]},{"value":["2025-Q3","  0.27442649"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"Hrvatska","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":true,"lineStyle":{"width":3,"color":"#C00000"},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"color":"grey70","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}}],"grid":[{"top":10,"bottom":80,"left":40,"right":20}],"dataZoom":[{"type":"slider","startValue":8,"endValue":26,"height":14,"bottom":22},{"type":"inside","startValue":8,"endValue":26}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"line"},"formatter":"\n        function(params){\n          if (!params || !params.length) {\n            return '';\n          }\n          var p = params[0];\n          var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n          if (raw === null || raw === undefined || isNaN(raw)) {\n            return '';\n          }\n          var val = Number(raw).toFixed(1).replace('.', ',');\n          return p.name + ': ' + val + ' %';\n        }\n      "}},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <div class="cs-footer">
