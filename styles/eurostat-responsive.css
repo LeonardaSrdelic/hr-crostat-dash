@@ -92,6 +92,6 @@
 /* Navbar logo sizing */
 .navbar-brand-logo img,
 .navbar-brand-logo {
-  max-height: 88px;
+  max-height: 72px;
   width: auto !important;
 }
