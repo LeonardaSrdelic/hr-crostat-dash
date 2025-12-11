@@ -88,3 +88,10 @@
     margin-left: 0;
   }
 }
+
+/* Navbar logo sizing */
+.navbar-brand-logo img,
+.navbar-brand-logo {
+  max-height: 48px;
+  width: auto !important;
+}
