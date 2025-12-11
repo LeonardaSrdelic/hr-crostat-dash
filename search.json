@@ -16,7 +16,7 @@
   {
     "objectID": "proizvodjacke-cijene.html",
     "href": "proizvodjacke-cijene.html",
-    "title": "Proizvođačke cijene",
+    "title": "ProizvoĂ„â€aĂ„Ĺ¤ke cijene",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -49,18 +49,11 @@
     "text": "Radni nacrt."
   },
   {
-    "objectID": "info.html",
-    "href": "info.html",
-    "title": "Info",
-    "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
-  },
-  {
     "objectID": "info.html#što-je-crostat-dash",
     "href": "info.html#što-je-crostat-dash",
     "title": "Info",
-    "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+    "section": "1. Što je CroStat Dash",
+    "text": "1. Što je CroStat Dash\nCroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
   },
   {
     "objectID": "info.html#za-koga-je-namijenjen",
@@ -121,7 +114,7 @@
   {
     "objectID": "dugorocni-trendovi.html",
     "href": "dugorocni-trendovi.html",
-    "title": "Dugoročni trendovi",
+    "title": "DugoroĂ„Ĺ¤ni trendovi",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -133,53 +126,46 @@
     "text": "Radni nacrt."
   },
   {
-    "objectID": "BDP.html",
-    "href": "BDP.html",
+    "objectID": "BDP.html#realni-bdp-tromjesečna-stopa-promjene",
+    "href": "BDP.html#realni-bdp-tromjesečna-stopa-promjene",
     "title": "Gospodarski rast",
-    "section": "",
-    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 10.12.2025. u 14:35."
+    "section": "2.1 Realni BDP, tromjesečna stopa promjene (%)",
+    "text": "2.1 Realni BDP, tromjesečna stopa promjene (%)\nGrafikon prikazuje tromjesečne stope promjene realnog BDP-a Hrvatske u odnosu na prethodno tromjesečje, ističući kratkoročne promjene u aktivnosti i trenutni momentum rasta."
   },
   {
-    "objectID": "BDP.html#qoq-stopa-promjene-hr",
-    "href": "BDP.html#qoq-stopa-promjene-hr",
+    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
+    "href": "BDP.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
     "title": "Gospodarski rast",
-    "section": "1.1 qoq stopa promjene, HR (%)",
-    "text": "1.1 qoq stopa promjene, HR (%)"
+    "section": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)",
+    "text": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)\nGrafikon uspoređuje tromjesečne stope promjene realnog BDP-a država EU-27, naglašavajući raspored zemalja po brzini rasta i poziciju Hrvatske prema prosjeku EU."
   },
   {
-    "objectID": "BDP.html#qoq-stopa-promjene-hr-i-eu-27",
-    "href": "BDP.html#qoq-stopa-promjene-hr-i-eu-27",
+    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
+    "href": "BDP.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
     "title": "Gospodarski rast",
-    "section": "1.2 qoq stopa promjene, HR i EU-27 (%)",
-    "text": "1.2 qoq stopa promjene, HR i EU-27 (%)"
+    "section": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)",
+    "text": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)\nGrafikon prikazuje razine realnog BDP-a u milijardama eura za države članice u posljednjem dostupnom tromjesečju, omogućujući usporedbu veličine gospodarstava i mjesta Hrvatske među članicama."
   },
   {
-    "objectID": "BDP.html#realni-bdp-hr-i-eu-27-mlrd.-eur",
-    "href": "BDP.html#realni-bdp-hr-i-eu-27-mlrd.-eur",
+    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
+    "href": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
     "title": "Gospodarski rast",
-    "section": "1.3 realni BDP, HR i EU-27 (mlrd. EUR)",
-    "text": "1.3 realni BDP, HR i EU-27 (mlrd. EUR)"
+    "section": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)",
+    "text": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope promjene realnog BDP-a po državama članicama, fokusirajući se na usporedbu intenziteta rasta Hrvatske s ostalim članicama."
   },
   {
-    "objectID": "BDP.html#godišnja-stopa-promjene",
-    "href": "BDP.html#godišnja-stopa-promjene",
+    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
+    "href": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
     "title": "Gospodarski rast",
-    "section": "1.4 godišnja stopa promjene",
-    "text": "1.4 godišnja stopa promjene"
+    "section": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)",
+    "text": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope rasta realnog BDP-a za države EU-27, naglašavajući poziciju Hrvatske u odnosu na prosjek Unije."
   },
   {
-    "objectID": "BDP.html#realni-bdp-yoy",
-    "href": "BDP.html#realni-bdp-yoy",
+    "objectID": "BDP.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
+    "href": "BDP.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
     "title": "Gospodarski rast",
-    "section": "2.1 realni BDP, yoy (%)",
-    "text": "2.1 realni BDP, yoy (%)"
-  },
-  {
-    "objectID": "BDP.html#nominalni-bdp-yoy",
-    "href": "BDP.html#nominalni-bdp-yoy",
-    "title": "Gospodarski rast",
-    "section": "2.2 nominalni BDP, yoy (%)",
-    "text": "2.2 nominalni BDP, yoy (%)"
+    "section": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)",
+    "text": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope promjene nominalnog BDP-a u državama EU-27, omogućujući usporedbu kretanja u tekućim cijenama s realnim pokazateljima rasta."
   },
   {
     "objectID": "BDP.html#bdp-po-stanovniku-pps-eu-27-100",
@@ -189,25 +175,25 @@
     "text": "3.3 BDP po stanovniku (PPS, EU 27 = 100)\nGrafikon prikazuje BDP po stanovniku izražen u standardu kupovne moći (EU 27 = 100) za zemlje CEE i Hrvatsku, ističući relativnu razinu gospodarske razvijenosti."
   },
   {
-    "objectID": "BDP.html#cee",
-    "href": "BDP.html#cee",
+    "objectID": "BDP.html#cee-zemlje",
+    "href": "BDP.html#cee-zemlje",
     "title": "Gospodarski rast",
-    "section": "4.1 CEE",
-    "text": "4.1 CEE\n\n\nDetaljnija raspodjela realnog BDP-a za CEE\n\nGrafikon prikazuje kretanja indeksa realnog BDP-a za zemlje CEE i Hrvatsku, naglašavajući raspon i prosjek skupine u odnosu na kretanje Hrvatske.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a unutar CEE skupine, uspoređujući fluktuacije rasta Hrvatske s ostalim članicama."
+    "section": "4.1 CEE zemlje",
+    "text": "4.1 CEE zemlje\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje kretanja indeksa realnog BDP-a za zemlje CEE i Hrvatsku, naglašavajući raspon i prosjek skupine u odnosu na kretanje Hrvatske.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a unutar CEE skupine, uspoređujući fluktuacije rasta Hrvatske s ostalim članicama."
   },
   {
-    "objectID": "BDP.html#eu-27",
-    "href": "BDP.html#eu-27",
+    "objectID": "BDP.html#europska-unija-eu-27",
+    "href": "BDP.html#europska-unija-eu-27",
     "title": "Gospodarski rast",
-    "section": "4.2 EU 27",
-    "text": "4.2 EU 27\n\n\nDetaljnija raspodjela realnog BDP-a za EU 27\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za zemlje EU-27, ističući položaj Hrvatske u odnosu na raspon i prosjek Unije.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u EU-27, omogućujući usporedbu volatilnosti rasta Hrvatske s ostalim članicama."
+    "section": "4.2 Europska unija (EU-27)",
+    "text": "4.2 Europska unija (EU-27)\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za zemlje EU-27, ističući položaj Hrvatske u odnosu na raspon i prosjek Unije.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u EU-27, omogućujući usporedbu volatilnosti rasta Hrvatske s ostalim članicama."
   },
   {
-    "objectID": "BDP.html#europodručje",
-    "href": "BDP.html#europodručje",
+    "objectID": "BDP.html#europodručje-ea",
+    "href": "BDP.html#europodručje-ea",
     "title": "Gospodarski rast",
-    "section": "4.3 Europodručje",
-    "text": "4.3 Europodručje\n\n\nDetaljnija raspodjela realnog BDP-a za europodručje\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja (EA), uspoređujući kumulativni rast s Hrvatskom.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u europodručju (EA), ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju."
+    "section": "4.3 Europodručje (EA)",
+    "text": "4.3 Europodručje (EA)\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja (EA), uspoređujući kumulativni rast s Hrvatskom.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u europodručju (EA), ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju."
   },
   {
     "objectID": "co2-ets.html",
@@ -282,7 +268,7 @@
   {
     "objectID": "tecajevi.html",
     "href": "tecajevi.html",
-    "title": "Tečajevi",
+    "title": "TeĂ„Ĺ¤ajevi",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -292,187 +278,5 @@
     "title": "Usluge i turizam",
     "section": "",
     "text": "Radni nacrt."
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-hr-qoq",
-    "href": "BDP.html#realni-bdp-hr-qoq",
-    "title": "Gospodarski rast",
-    "section": "1.1 realni BDP, HR (qoq, %)",
-    "text": "1.1 realni BDP, HR (qoq, %)"
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-tromjesečna-stopa-promjene",
-    "href": "BDP.html#realni-bdp-tromjesečna-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.1 Realni BDP, tromjesečna stopa promjene (%)",
-    "text": "2.1 Realni BDP, tromjesečna stopa promjene (%)\nGrafikon prikazuje tromjesečne stope promjene realnog BDP-a Hrvatske u odnosu na prethodno tromjesečje, ističući kratkoročne promjene u aktivnosti i trenutni momentum rasta."
-  },
-  {
-    "objectID": "BDP.html#usporedba-s-europskim-okruženjem",
-    "href": "BDP.html#usporedba-s-europskim-okruženjem",
-    "title": "Gospodarski rast",
-    "section": "1.2 Usporedba s europskim okruženjem (%)",
-    "text": "1.2 Usporedba s europskim okruženjem (%)"
-  },
-  {
-    "objectID": "BDP.html#razina-realnog-bdp-a-u-eu-27-mlrd.-eur",
-    "href": "BDP.html#razina-realnog-bdp-a-u-eu-27-mlrd.-eur",
-    "title": "Gospodarski rast",
-    "section": "1.3 Razina realnog BDP-a u EU-27 (mlrd. EUR)",
-    "text": "1.3 Razina realnog BDP-a u EU-27 (mlrd. EUR)"
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
-    "href": "BDP.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)",
-    "text": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)\nGrafikon uspoređuje tromjesečne stope promjene realnog BDP-a država EU-27, naglašavajući raspored zemalja po brzini rasta i poziciju Hrvatske prema prosjeku EU."
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
-    "href": "BDP.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
-    "title": "Gospodarski rast",
-    "section": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)",
-    "text": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)\nGrafikon prikazuje razine realnog BDP-a u milijardama eura za države članice u posljednjem dostupnom tromjesečju, omogućujući usporedbu veličine gospodarstava i mjesta Hrvatske među članicama."
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "href": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)",
-    "text": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope promjene realnog BDP-a po državama članicama, fokusirajući se na usporedbu intenziteta rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
-    "href": "BDP.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
-    "title": "Gospodarski rast",
-    "section": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)",
-    "text": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope rasta realnog BDP-a za države EU-27, naglašavajući poziciju Hrvatske u odnosu na prosjek Unije."
-  },
-  {
-    "objectID": "BDP.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "href": "BDP.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)",
-    "text": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)\nGrafikon prikazuje godišnje stope promjene nominalnog BDP-a u državama EU-27, omogućujući usporedbu kretanja u tekućim cijenama s realnim pokazateljima rasta."
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-indeks-hrvatska-i-referentne-skupine",
-    "href": "BDP.html#realni-bdp-indeks-hrvatska-i-referentne-skupine",
-    "title": "Gospodarski rast",
-    "section": "3.1 Realni BDP, indeks, Hrvatska i referentne skupine",
-    "text": "3.1 Realni BDP, indeks, Hrvatska i referentne skupine"
-  },
-  {
-    "objectID": "BDP.html#realni-bdp-godišnja-stopa-promjene-hrvatska-i-referentne-skupine",
-    "href": "BDP.html#realni-bdp-godišnja-stopa-promjene-hrvatska-i-referentne-skupine",
-    "title": "Gospodarski rast",
-    "section": "3.2 Realni BDP, godišnja stopa promjene, Hrvatska i referentne skupine",
-    "text": "3.2 Realni BDP, godišnja stopa promjene, Hrvatska i referentne skupine"
-  },
-  {
-    "objectID": "_tmp_check.html",
-    "href": "_tmp_check.html",
-    "title": "Gospodarski rast",
-    "section": "",
-    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 10.12.2025. u 14:02."
-  },
-  {
-    "objectID": "_tmp_check.html#realni-bdp-tromjesečna-stopa-promjene",
-    "href": "_tmp_check.html#realni-bdp-tromjesečna-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.1 Realni BDP, tromjesečna stopa promjene (%)",
-    "text": "2.1 Realni BDP, tromjesečna stopa promjene (%)\n\n\n\n\n\n\nGrafikon prikazuje tromjesečne stope promjene realnog BDP-a Hrvatske u odnosu na prethodno tromjesečje, ističući kratkoročne promjene u aktivnosti i trenutni momentum rasta."
-  },
-  {
-    "objectID": "_tmp_check.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
-    "href": "_tmp_check.html#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)",
-    "text": "2.2 Realni BDP po državama EU-27, tromjesečna stopa promjene (%)\n\n\n\n\n\n\nGraf uspoređuje tromjesečne stope promjene realnog BDP-a država EU 27, naglašavajući raspored zemalja po brzini rasta i poziciju Hrvatske prema prosjeku EU."
-  },
-  {
-    "objectID": "_tmp_check.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
-    "href": "_tmp_check.html#realni-bdp-po-državama-eu-27-razina-mlrd.-eur",
-    "title": "Gospodarski rast",
-    "section": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)",
-    "text": "2.3 Realni BDP po državama EU 27, razina (mlrd. EUR)\n\n\n\n\n\n\nGraf prikazuje razine realnog BDP-a u milijardama eura za države EU 27 u posljednjem dostupnom tromjesečju, omogućujući usporedbu veličine gospodarstava i mjesta Hrvatske među članicama."
-  },
-  {
-    "objectID": "_tmp_check.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "href": "_tmp_check.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)",
-    "text": "2.4 Realni BDP po državama EU 27, godišnja stopa promjene (%)\n\n\n\n\n\n\nGraf prikazuje godišnje stope promjene realnog BDP-a po državama EU 27, fokusirajući se na usporedbu intenziteta rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "_tmp_check.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
-    "href": "_tmp_check.html#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1",
-    "title": "Gospodarski rast",
-    "section": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)",
-    "text": "3.1 Realni BDP po državama EU-27, godišnja stopa promjene (%)\n\n\n\n\n\n\nGraf prikazuje godišnje stope rasta realnog BDP-a za države EU 27, naglašavajući poziciju Hrvatske u odnosu na prosjek Unije."
-  },
-  {
-    "objectID": "_tmp_check.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "href": "_tmp_check.html#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene",
-    "title": "Gospodarski rast",
-    "section": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)",
-    "text": "3.2 Nominalni BDP po državama EU 27, godišnja stopa promjene (%)\n\n\n\n\n\n\nGraf prikazuje godišnje stope promjene nominalnog BDP-a u državama EU 27, omogućujući usporedbu kretanja u tekućim cijenama s realnim pokazateljima rasta."
-  },
-  {
-    "objectID": "_tmp_check.html#bdp-po-stanovniku-pps-eu-27-100",
-    "href": "_tmp_check.html#bdp-po-stanovniku-pps-eu-27-100",
-    "title": "Gospodarski rast",
-    "section": "3.3 BDP po stanovniku (PPS, EU 27 = 100)",
-    "text": "3.3 BDP po stanovniku (PPS, EU 27 = 100)\n\n\n\n\n\n\nGraf prikazuje BDP po stanovniku izražen u standardu kupovne moći (EU 27 = 100) za zemlje CEE i Hrvatsku, ističući relativnu razinu gospodarske razvijenosti."
-  },
-  {
-    "objectID": "_tmp_check.html#cee",
-    "href": "_tmp_check.html#cee",
-    "title": "Gospodarski rast",
-    "section": "4.1 CEE",
-    "text": "4.1 CEE\n\n\nDetaljnija raspodjela realnog BDP-a za CEE\n\n\n\n\n\n\n\n\nGraf prikazuje kretanja indeksa realnog BDP-a za zemlje CEE i Hrvatsku, naglašavajući raspon i prosjek skupine u odnosu na kretanje Hrvatske.\n\n\n\n\n\n\n\nGraf prikazuje godišnje stope promjene realnog BDP-a unutar CEE skupine, uspoređujući fluktuacije rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "_tmp_check.html#eu-27",
-    "href": "_tmp_check.html#eu-27",
-    "title": "Gospodarski rast",
-    "section": "4.2 EU 27",
-    "text": "4.2 EU 27\n\n\nDetaljnija raspodjela realnog BDP-a za EU 27\n\n\n\n\n\n\n\n\nGraf prikazuje raspodjelu indeksa realnog BDP-a za zemlje EU 27, ističući položaj Hrvatske u odnosu na raspon i prosjek Unije.\n\n\n\n\n\n\n\nGraf prikazuje godišnje stope promjene realnog BDP-a u EU 27, omogućujući usporedbu volatilnosti rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "_tmp_check.html#europodručje",
-    "href": "_tmp_check.html#europodručje",
-    "title": "Gospodarski rast",
-    "section": "4.3 Europodručje",
-    "text": "4.3 Europodručje\n\n\nDetaljnija raspodjela realnog BDP-a za europodručje\n\n\n\n\n\n\n\n\nGraf prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja, uspoređujući kumulativni rast s Hrvatskom.\n\n\n\n\n\n\n\nGraf prikazuje godišnje stope promjene realnog BDP-a u europodručju, ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju."
-  },
-  {
-    "objectID": "BDP.html#cee-zemlje",
-    "href": "BDP.html#cee-zemlje",
-    "title": "Gospodarski rast",
-    "section": "4.1 CEE zemlje",
-    "text": "4.1 CEE zemlje\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje kretanja indeksa realnog BDP-a za zemlje CEE i Hrvatsku, naglašavajući raspon i prosjek skupine u odnosu na kretanje Hrvatske.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a unutar CEE skupine, uspoređujući fluktuacije rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "BDP.html#europska-unija-eu-27",
-    "href": "BDP.html#europska-unija-eu-27",
-    "title": "Gospodarski rast",
-    "section": "4.2 Europska unija (EU-27)",
-    "text": "4.2 Europska unija (EU-27)\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za zemlje EU-27, ističući položaj Hrvatske u odnosu na raspon i prosjek Unije.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u EU-27, omogućujući usporedbu volatilnosti rasta Hrvatske s ostalim članicama."
-  },
-  {
-    "objectID": "BDP.html#europodručje-ea",
-    "href": "BDP.html#europodručje-ea",
-    "title": "Gospodarski rast",
-    "section": "4.3 Europodručje (EA)",
-    "text": "4.3 Europodručje (EA)\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja (EA), uspoređujući kumulativni rast s Hrvatskom.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u europodručju (EA), ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju."
-  },
-  {
-    "objectID": "index.html#realni-bdp-hrvatske-tromjesečna-stopa-promjene-linijski",
-    "href": "index.html#realni-bdp-hrvatske-tromjesečna-stopa-promjene-linijski",
-    "title": "Monitor",
-    "section": "Realni BDP Hrvatske, tromjesečna stopa promjene – linijski",
-    "text": "Realni BDP Hrvatske, tromjesečna stopa promjene – linijski\nLinijski prikaz tromjesečnih stopa promjene realnog BDP-a Hrvatske (QoQ), za brzi pregled najnovijeg momentuma.\n\n\n\n\n\nBDP\n% promjena na prethodno razdoblje\n\n\n0,3\nQ3 2025"
   }
 ]

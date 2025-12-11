@@ -16,7 +16,7 @@
   {
     "objectID": "proizvodjacke-cijene.html",
     "href": "proizvodjacke-cijene.html",
-    "title": "Proizvođačke cijene",
+    "title": "ProizvoĂ„â€aĂ„Ĺ¤ke cijene",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -49,18 +49,11 @@
     "text": "Radni nacrt."
   },
   {
-    "objectID": "info.html",
-    "href": "info.html",
-    "title": "Info",
-    "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
-  },
-  {
     "objectID": "info.html#što-je-crostat-dash",
     "href": "info.html#što-je-crostat-dash",
     "title": "Info",
-    "section": "",
-    "text": "CroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+    "section": "1. Što je CroStat Dash",
+    "text": "1. Što je CroStat Dash\nCroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
   },
   {
     "objectID": "info.html#za-koga-je-namijenjen",
@@ -121,7 +114,7 @@
   {
     "objectID": "dugorocni-trendovi.html",
     "href": "dugorocni-trendovi.html",
-    "title": "Dugoročni trendovi",
+    "title": "DugoroĂ„Ĺ¤ni trendovi",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -131,13 +124,6 @@
     "title": "Cijene energije",
     "section": "",
     "text": "Radni nacrt."
-  },
-  {
-    "objectID": "BDP.html",
-    "href": "BDP.html",
-    "title": "Gospodarski rast",
-    "section": "",
-    "text": "Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 11.12.2025. u 09:36."
   },
   {
     "objectID": "BDP.html#realni-bdp-tromjesečna-stopa-promjene",
@@ -282,7 +268,7 @@
   {
     "objectID": "tecajevi.html",
     "href": "tecajevi.html",
-    "title": "Tečajevi",
+    "title": "TeĂ„Ĺ¤ajevi",
     "section": "",
     "text": "Radni nacrt."
   },
