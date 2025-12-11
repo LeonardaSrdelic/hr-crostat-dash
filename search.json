@@ -28,100 +28,65 @@
     "text": "Radni nacrt."
   },
   {
-    "objectID": "nezaposlenost.html",
-    "href": "nezaposlenost.html",
-    "title": "Nezaposlenost",
+    "objectID": "place.html",
+    "href": "place.html",
+    "title": "Pla?e",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "komponente-cijena.html",
-    "href": "komponente-cijena.html",
-    "title": "Komponente cijena",
+    "objectID": "monetarni-agregati.html",
+    "href": "monetarni-agregati.html",
+    "title": "Monetarni agregati",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "kamatne-stope.html",
-    "href": "kamatne-stope.html",
-    "title": "Kamatne stope",
+    "objectID": "klimatski-makro.html",
+    "href": "klimatski-makro.html",
+    "title": "Klimatski makro pokazatelji",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "info.html#što-je-crostat-dash",
-    "href": "info.html#što-je-crostat-dash",
-    "title": "Info",
-    "section": "1. Što je CroStat Dash",
-    "text": "1. Što je CroStat Dash\nCroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
-  },
-  {
-    "objectID": "info.html#za-koga-je-namijenjen",
-    "href": "info.html#za-koga-je-namijenjen",
-    "title": "Info",
-    "section": "2. Za koga je namijenjen",
-    "text": "2. Za koga je namijenjen\nCroStat Dash je razvijen prije svega za korisnike koji donose ili pripremaju odluke unutar financijskog i realnog sektora, a nemaju vlastite kapacitete za kontinuiranu makro analizu:\n\nbanke i leasing društva\ninvesticijska društva i fondovi\nodjeli riznice, upravljanja rizicima i strateškog planiranja\nveće korporacije koje redovito rade budžetiranje i scenarije\nkonzultantske i analitičke kuće\nistraživačke i policy institucije\n\nJavna verzija servisa istodobno omogućuje i širem stručnom krugu uvid u osnovne pokazatelje i dugoročne trendove gospodarstva."
-  },
-  {
-    "objectID": "info.html#što-crostat-dash-pruža",
-    "href": "info.html#što-crostat-dash-pruža",
-    "title": "Info",
-    "section": "3. Što CroStat Dash pruža",
-    "text": "3. Što CroStat Dash pruža\nServis obuhvaća tri elementa:\n\nstrukturirane vremenske serije\ninteraktivne grafikone\nanalitičke bilješke\n\nVremenske serije pripremaju se u obliku pogodnom za daljnju upotrebu u internim modelima i alatima. Grafički prikazi olakšavaju brzu orijentaciju u trenutnom ciklusu i usporedbama kroz vrijeme i između zemalja. Analitičke bilješke nude interpretaciju koja korisnicima može poslužiti kao podloga za interne dokumente, kreditne i investicijske komitete, izvješća ili komunikaciju prema upravi."
-  },
-  {
-    "objectID": "info.html#opis-metodologije",
-    "href": "info.html#opis-metodologije",
-    "title": "Info",
-    "section": "4. Metodologija i izvori podataka",
-    "text": "4. Metodologija i izvori podataka\nCroStat Dash se oslanja na javno dostupne statističke izvore, prije svega:\n\nDržavni zavod za statistiku\nHrvatska narodna banka\nEurostat\nEuropska središnja banka\nEuropska komisija\nEuropska agencija za okoliš i povezane klimatske baze podataka\nrelevantne energetske i tržišne reference za cijene energije i CO₂\n\nPodaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasno razlikovanju službeno prilagođenih i neprilagođenih podataka.\nMetodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama i u tablicama za pretplatnike."
-  },
-  {
-    "objectID": "info.html#pretplatnicke-pogodnosti",
-    "href": "info.html#pretplatnicke-pogodnosti",
-    "title": "Info",
-    "section": "5. Pretplatničke pogodnosti",
-    "text": "5. Pretplatničke pogodnosti\nJavni dio CroStat Dasha pruža osnovne grafičke prikaze ključnih pokazatelja i sažete tekstualne opise. Pretplatnički dio proširuje taj okvir i uključuje:\n\npristup proširenom skupu pokazatelja po temama\nduže vremenske nizove i dodatne geografske usporedbe\nmogućnost preuzimanja podataka u Excel ili CSV formatu\nproširene analitičke bilješke uz pojedine grafikone\nperiodične sažetke makroekonomskih i klimatsko energetskih kretanja\n\nNa taj način pretplatnici dobivaju i podatke i interpretaciju koja se može izravno ugraditi u interne materijale i modele, bez dodatnog prikupljanja i čišćenja podataka."
-  },
-  {
-    "objectID": "info.html#o-autoru-i-pristupu",
-    "href": "info.html#o-autoru-i-pristupu",
-    "title": "Info",
-    "section": "6. O autoru i pristupu",
-    "text": "6. O autoru i pristupu\nServis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i interpretaciji koja se oslanja na vidljive obrasce, a ne na kratkoročni šum u podacima.\nKrajnji je cilj pružiti korisnicima stabilan okvir za promatranje gospodarstva i tranzicijskih procesa, koji može poduprijeti unutarnju raspravu, procjenu ranjivosti i oblikovanje scenarija."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Monitor",
+    "objectID": "kalendar-objava.html",
+    "href": "kalendar-objava.html",
+    "title": "Kalendar objava",
     "section": "",
-    "text": "BDP\n% promjena na prethodno razdoblje\n\n\n0,3\nQ3 2025"
+    "text": "1 Nadolazeće objave (tablica)\n\n\n\n\n\n\n\n\n\nDatum\nOpis\n\n\n\n\n15.12.2025\nPersonal transfers and compensation of employees\n\n\n15.12.2025\nStructure of government debt\n\n\n17.12.2025\nInflation (HICP)\n\n\n17.12.2025\nPurchasing power parities - results\n\n\n19.12.2025\nBalance of payments\n\n\n07.01.2026\nFlash estimate inflation euro area\n\n\n09.01.2026\nHouse price index\n\n\n09.01.2026\nHouse sales\n\n\n09.01.2026\nOwner-occupied house price index\n\n\n09.01.2026\nOwner-occupied housing price index\n\n\n13.01.2026\nBalance of payments\n\n\n13.01.2026\nFirst release sector accounts (households and businesses)\n\n\n19.01.2026\nInflation (HICP)\n\n\n20.01.2026\nBalance of payments\n\n\n20.01.2026\nGDP main aggregates and employment - update\n\n\n22.01.2026\nGovernment finance statistics, financial accounts\n\n\n22.01.2026\nQuarterly government debt\n\n\n22.01.2026\nQuarterly government deficit\n\n\n28.01.2026\nSecond release sector accounts (households)\n\n\n30.01.2026\nContingent liabilities and non-performing loans\n\n\n30.01.2026\nPreliminary flash estimate GDP - EU and euro area\n\n\n04.02.2026\nFlash estimate inflation euro area\n\n\n06.02.2026\nGovernment expenditure by function\n\n\n10.02.2026\nRegional accounts\n\n\n12.02.2026\n(Q1/2026) EU/EA aggregates for capital stocks\n\n\n13.02.2026\nFlash estimate GDP and employment - EU and euro area\n\n\n19.02.2026\nBalance of payments\n\n\n25.02.2026\nInflation (HICP)\n\n\n03.03.2026\nFlash estimate inflation euro area\n\n\n06.03.2026\nGDP main aggregates and employment\n\n\n18.03.2026\nAnnual national accounts - evolution of the income components of GDP\n\n\n18.03.2026\nEmployment statistics within national accounts\n\n\n18.03.2026\nInflation (HICP)\n\n\n20.03.2026\nBalance of payments\n\n\n23.03.2026\n(March/April) Quarterly labour productivity\n\n\n25.03.2026\nPurchasing power parities, preliminary estimates\n\n\n27.03.2026\nProductivity trends using key national accounts indicators\n\n\n31.03.2026\nFlash estimate inflation euro area\n\n\n07.04.2026\nHouse price index\n\n\n07.04.2026\nHouse sales\n\n\n07.04.2026\nOwner-occupied house price index\n\n\n09.04.2026\nBalance of payments\n\n\n09.04.2026\nFirst release sector accounts (households and businesses)\n\n\n16.04.2026\nInflation (HICP)\n\n\n17.04.2026\nBalance of payments\n\n\n20.04.2026\nGDP main aggregates and employment - update\n\n\n22.04.2026\nExcessive deficit procedure and annual Government finance statistics\n\n\n22.04.2026\nGeneral government deficit and debt\n\n\n22.04.2026\nGovernment finance statistics, financial accounts\n\n\n22.04.2026\nQuarterly government debt\n\n\n22.04.2026\nQuarterly government deficit\n\n\n28.04.2026\nSecond release sector accounts (households)\n\n\n30.04.2026\nFlash estimate inflation euro area\n\n\n30.04.2026\nPreliminary flash estimate GDP - EU and euro area\n\n\n13.05.2026\nFlash estimate GDP and employment - EU and euro area\n\n\n13.05.2026\nStatistics related to the Recovery and Resilience Facility\n\n\n20.05.2026\nInflation (HICP)\n\n\n21.05.2026\nBalance of payments\n\n\n22.05.2026\nStructure of government debt\n\n\n29.05.2026\nAnnual financial accounts (T+4)\n\n\n02.06.2026\nFlash estimate inflation euro area\n\n\n05.06.2026\nGDP main aggregates and employment\n\n\n17.06.2026\nInflation (HICP)\n\n\n17.06.2026\nPurchasing power parities, first estimates\n\n\n18.06.2026\nBalance of payments\n\n\n26.06.2026\nMain GDP and employment aggregates (expressed in PPS)\n\n\n01.07.2026\nAccounts of the EU institutions\n\n\n01.07.2026\nFlash estimate inflation euro area\n\n\n02.07.2026\nHouse price index\n\n\n02.07.2026\nHouse sales\n\n\n02.07.2026\nOwner-occupied house price index\n\n\n03.07.2026\nBalance of payments\n\n\n03.07.2026\nFirst release sector accounts (households and businesses)\n\n\n08.07.2026\n(first half July) FIGARO in current prices\n\n\n17.07.2026\nBalance of payments\n\n\n17.07.2026\nInflation (HICP)\n\n\n20.07.2026\nGDP main aggregates and employment - update\n\n\n21.07.2026\nGovernment finance statistics, financial accounts\n\n\n21.07.2026\nQuarterly government debt\n\n\n21.07.2026\nQuarterly government deficit\n\n\n\n\n\n\n\n2 Kalendar (tekući i idući mjesec)\nprosinac 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPon\nUto\nSri\nCet\nPet\nSub\nNed\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n7\n\n\n\n\n8\n\n\n9\n\n\n10\n\n\n11\n\n\n12\n\n\n13\n\n\n14\n\n\n\n\n15\n\n\nPersonal transfers and compensation of employees\nStructure of government debt\n\n\n16\n\n\n17\n\n\nInflation (HICP)\nPurchasing power parities - results\n\n\n18\n\n\n19\n\n\nBalance of payments\n\n\n20\n\n\n21\n\n\n\n\n22\n\n\n23\n\n\n24\n\n\n25\n\n\n26\n\n\n27\n\n\n28\n\n\n\n\n29\n\n\n30\n\n\n31\n\n\n\n\n\n\n\n\nsiječanj 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPon\nUto\nSri\nCet\nPet\nSub\nNed\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n\n\n5\n\n\n6\n\n\n7\n\n\nFlash estimate inflation euro area\n\n\n8\n\n\n9\n\n\nHouse price index\nHouse sales\nOwner-occupied house price index\nOwner-occupied housing price index\n\n\n10\n\n\n11\n\n\n\n\n12\n\n\n13\n\n\nBalance of payments\nFirst release sector accounts (households and businesses)\n\n\n14\n\n\n15\n\n\n16\n\n\n17\n\n\n18\n\n\n\n\n19\n\n\nInflation (HICP)\n\n\n20\n\n\nBalance of payments\nGDP main aggregates and employment - update\n\n\n21\n\n\n22\n\n\nGovernment finance statistics\\, financial accounts\nQuarterly government debt\nQuarterly government deficit\n\n\n23\n\n\n24\n\n\n25\n\n\n\n\n26\n\n\n27\n\n\n28\n\n\nSecond release sector accounts (households)\n\n\n29\n\n\n30\n\n\nContingent liabilities and non-performing loans\nPreliminary flash estimate GDP - EU and euro area\n\n\n31"
   },
   {
-    "objectID": "hicp-temeljni.html",
-    "href": "hicp-temeljni.html",
-    "title": "HICP temeljni",
+    "objectID": "indikatori-gospodarske-aktivnosti.html",
+    "href": "indikatori-gospodarske-aktivnosti.html",
+    "title": "Indikatori gospodarske aktivnosti",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "energetski-miks.html",
-    "href": "energetski-miks.html",
-    "title": "Energetski miks",
+    "objectID": "hicp-ukupni.html",
+    "href": "hicp-ukupni.html",
+    "title": "HICP ukupni",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "dugorocni-trendovi.html",
-    "href": "dugorocni-trendovi.html",
-    "title": "DugoroĂ„Ĺ¤ni trendovi",
+    "objectID": "graditeljstvo.html",
+    "href": "graditeljstvo.html",
+    "title": "Graditeljstvo",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "cijene-energije.html",
-    "href": "cijene-energije.html",
-    "title": "Cijene energije",
+    "objectID": "emisije-sektori.html",
+    "href": "emisije-sektori.html",
+    "title": "Emisije po sektorima",
+    "section": "",
+    "text": "Radni nacrt."
+  },
+  {
+    "objectID": "co2-ets.html",
+    "href": "co2-ets.html",
+    "title": "Cijena CO2 ETS",
     "section": "",
     "text": "Radni nacrt."
   },
@@ -196,67 +161,116 @@
     "text": "4.3 Europodručje (EA)\n\n\nPrikaži/sakrij\n\nGrafikon prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja (EA), uspoređujući kumulativni rast s Hrvatskom.\n\n\n\n\n\n\n\nGrafikon prikazuje godišnje stope promjene realnog BDP-a u europodručju (EA), ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju."
   },
   {
-    "objectID": "co2-ets.html",
-    "href": "co2-ets.html",
-    "title": "Cijena CO2 ETS",
+    "objectID": "cijene-energije.html",
+    "href": "cijene-energije.html",
+    "title": "Cijene energije",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "emisije-sektori.html",
-    "href": "emisije-sektori.html",
-    "title": "Emisije po sektorima",
+    "objectID": "dugorocni-trendovi.html",
+    "href": "dugorocni-trendovi.html",
+    "title": "DugoroĂ„Ĺ¤ni trendovi",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "graditeljstvo.html",
-    "href": "graditeljstvo.html",
-    "title": "Graditeljstvo",
+    "objectID": "energetski-miks.html",
+    "href": "energetski-miks.html",
+    "title": "Energetski miks",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "hicp-ukupni.html",
-    "href": "hicp-ukupni.html",
-    "title": "HICP ukupni",
+    "objectID": "hicp-temeljni.html",
+    "href": "hicp-temeljni.html",
+    "title": "HICP temeljni",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "indikatori-gospodarske-aktivnosti.html",
-    "href": "indikatori-gospodarske-aktivnosti.html",
-    "title": "Indikatori gospodarske aktivnosti",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Monitor",
+    "section": "",
+    "text": "BDP\n% promjena na prethodno razdoblje\n\n\n0,3\nQ3 2025"
+  },
+  {
+    "objectID": "info.html#što-je-crostat-dash",
+    "href": "info.html#što-je-crostat-dash",
+    "title": "Info",
+    "section": "1. Što je CroStat Dash",
+    "text": "1. Što je CroStat Dash\nCroStat Dash je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu, vizualizaciju i analitičku interpretaciju. Cilj je pružiti profesionalnim korisnicima jasan okvir za praćenje gospodarske dinamike i za pripremu internih analiza, odluka i scenarija."
+  },
+  {
+    "objectID": "info.html#za-koga-je-namijenjen",
+    "href": "info.html#za-koga-je-namijenjen",
+    "title": "Info",
+    "section": "2. Za koga je namijenjen",
+    "text": "2. Za koga je namijenjen\nCroStat Dash je razvijen prije svega za korisnike koji donose ili pripremaju odluke unutar financijskog i realnog sektora, a nemaju vlastite kapacitete za kontinuiranu makro analizu:\n\nbanke i leasing društva\ninvesticijska društva i fondovi\nodjeli riznice, upravljanja rizicima i strateškog planiranja\nveće korporacije koje redovito rade budžetiranje i scenarije\nkonzultantske i analitičke kuće\nistraživačke i policy institucije\n\nJavna verzija servisa istodobno omogućuje i širem stručnom krugu uvid u osnovne pokazatelje i dugoročne trendove gospodarstva."
+  },
+  {
+    "objectID": "info.html#što-crostat-dash-pruža",
+    "href": "info.html#što-crostat-dash-pruža",
+    "title": "Info",
+    "section": "3. Što CroStat Dash pruža",
+    "text": "3. Što CroStat Dash pruža\nServis obuhvaća tri elementa:\n\nstrukturirane vremenske serije\ninteraktivne grafikone\nanalitičke bilješke\n\nVremenske serije pripremaju se u obliku pogodnom za daljnju upotrebu u internim modelima i alatima. Grafički prikazi olakšavaju brzu orijentaciju u trenutnom ciklusu i usporedbama kroz vrijeme i između zemalja. Analitičke bilješke nude interpretaciju koja korisnicima može poslužiti kao podloga za interne dokumente, kreditne i investicijske komitete, izvješća ili komunikaciju prema upravi."
+  },
+  {
+    "objectID": "info.html#opis-metodologije",
+    "href": "info.html#opis-metodologije",
+    "title": "Info",
+    "section": "4. Metodologija i izvori podataka",
+    "text": "4. Metodologija i izvori podataka\nCroStat Dash se oslanja na javno dostupne statističke izvore, prije svega:\n\nDržavni zavod za statistiku\nHrvatska narodna banka\nEurostat\nEuropska središnja banka\nEuropska komisija\nEuropska agencija za okoliš i povezane klimatske baze podataka\nrelevantne energetske i tržišne reference za cijene energije i CO₂\n\nPodaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasno razlikovanju službeno prilagođenih i neprilagođenih podataka.\nMetodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama i u tablicama za pretplatnike."
+  },
+  {
+    "objectID": "info.html#pretplatnicke-pogodnosti",
+    "href": "info.html#pretplatnicke-pogodnosti",
+    "title": "Info",
+    "section": "5. Pretplatničke pogodnosti",
+    "text": "5. Pretplatničke pogodnosti\nJavni dio CroStat Dasha pruža osnovne grafičke prikaze ključnih pokazatelja i sažete tekstualne opise. Pretplatnički dio proširuje taj okvir i uključuje:\n\npristup proširenom skupu pokazatelja po temama\nduže vremenske nizove i dodatne geografske usporedbe\nmogućnost preuzimanja podataka u Excel ili CSV formatu\nproširene analitičke bilješke uz pojedine grafikone\nperiodične sažetke makroekonomskih i klimatsko energetskih kretanja\n\nNa taj način pretplatnici dobivaju i podatke i interpretaciju koja se može izravno ugraditi u interne materijale i modele, bez dodatnog prikupljanja i čišćenja podataka."
+  },
+  {
+    "objectID": "info.html#o-autoru-i-pristupu",
+    "href": "info.html#o-autoru-i-pristupu",
+    "title": "Info",
+    "section": "6. O autoru i pristupu",
+    "text": "6. O autoru i pristupu\nServis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i interpretaciji koja se oslanja na vidljive obrasce, a ne na kratkoročni šum u podacima.\nKrajnji je cilj pružiti korisnicima stabilan okvir za promatranje gospodarstva i tranzicijskih procesa, koji može poduprijeti unutarnju raspravu, procjenu ranjivosti i oblikovanje scenarija."
+  },
+  {
+    "objectID": "kamatne-stope.html",
+    "href": "kamatne-stope.html",
+    "title": "Kamatne stope",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "kalendar-objava.html",
-    "href": "kalendar-objava.html",
-    "title": "Kalendar objava",
-    "section": "",
-    "text": "1 Nadolazeće objave (tablica)\n\n\n\n\n\n\n\n\n\nDatum\nOpis\n\n\n\n\n15.12.2025\nPersonal transfers and compensation of employees\n\n\n15.12.2025\nStructure of government debt\n\n\n17.12.2025\nInflation (HICP)\n\n\n17.12.2025\nPurchasing power parities - results\n\n\n19.12.2025\nBalance of payments\n\n\n07.01.2026\nFlash estimate inflation euro area\n\n\n09.01.2026\nHouse price index\n\n\n09.01.2026\nHouse sales\n\n\n09.01.2026\nOwner-occupied house price index\n\n\n09.01.2026\nOwner-occupied housing price index\n\n\n13.01.2026\nBalance of payments\n\n\n13.01.2026\nFirst release sector accounts (households and businesses)\n\n\n19.01.2026\nInflation (HICP)\n\n\n20.01.2026\nBalance of payments\n\n\n20.01.2026\nGDP main aggregates and employment - update\n\n\n22.01.2026\nGovernment finance statistics, financial accounts\n\n\n22.01.2026\nQuarterly government debt\n\n\n22.01.2026\nQuarterly government deficit\n\n\n28.01.2026\nSecond release sector accounts (households)\n\n\n30.01.2026\nContingent liabilities and non-performing loans\n\n\n30.01.2026\nPreliminary flash estimate GDP - EU and euro area\n\n\n04.02.2026\nFlash estimate inflation euro area\n\n\n06.02.2026\nGovernment expenditure by function\n\n\n10.02.2026\nRegional accounts\n\n\n12.02.2026\n(Q1/2026) EU/EA aggregates for capital stocks\n\n\n13.02.2026\nFlash estimate GDP and employment - EU and euro area\n\n\n19.02.2026\nBalance of payments\n\n\n25.02.2026\nInflation (HICP)\n\n\n03.03.2026\nFlash estimate inflation euro area\n\n\n06.03.2026\nGDP main aggregates and employment\n\n\n18.03.2026\nAnnual national accounts - evolution of the income components of GDP\n\n\n18.03.2026\nEmployment statistics within national accounts\n\n\n18.03.2026\nInflation (HICP)\n\n\n20.03.2026\nBalance of payments\n\n\n23.03.2026\n(March/April) Quarterly labour productivity\n\n\n25.03.2026\nPurchasing power parities, preliminary estimates\n\n\n27.03.2026\nProductivity trends using key national accounts indicators\n\n\n31.03.2026\nFlash estimate inflation euro area\n\n\n07.04.2026\nHouse price index\n\n\n07.04.2026\nHouse sales\n\n\n07.04.2026\nOwner-occupied house price index\n\n\n09.04.2026\nBalance of payments\n\n\n09.04.2026\nFirst release sector accounts (households and businesses)\n\n\n16.04.2026\nInflation (HICP)\n\n\n17.04.2026\nBalance of payments\n\n\n20.04.2026\nGDP main aggregates and employment - update\n\n\n22.04.2026\nExcessive deficit procedure and annual Government finance statistics\n\n\n22.04.2026\nGeneral government deficit and debt\n\n\n22.04.2026\nGovernment finance statistics, financial accounts\n\n\n22.04.2026\nQuarterly government debt\n\n\n22.04.2026\nQuarterly government deficit\n\n\n28.04.2026\nSecond release sector accounts (households)\n\n\n30.04.2026\nFlash estimate inflation euro area\n\n\n30.04.2026\nPreliminary flash estimate GDP - EU and euro area\n\n\n13.05.2026\nFlash estimate GDP and employment - EU and euro area\n\n\n13.05.2026\nStatistics related to the Recovery and Resilience Facility\n\n\n20.05.2026\nInflation (HICP)\n\n\n21.05.2026\nBalance of payments\n\n\n22.05.2026\nStructure of government debt\n\n\n29.05.2026\nAnnual financial accounts (T+4)\n\n\n02.06.2026\nFlash estimate inflation euro area\n\n\n05.06.2026\nGDP main aggregates and employment\n\n\n17.06.2026\nInflation (HICP)\n\n\n17.06.2026\nPurchasing power parities, first estimates\n\n\n18.06.2026\nBalance of payments\n\n\n26.06.2026\nMain GDP and employment aggregates (expressed in PPS)\n\n\n01.07.2026\nAccounts of the EU institutions\n\n\n01.07.2026\nFlash estimate inflation euro area\n\n\n02.07.2026\nHouse price index\n\n\n02.07.2026\nHouse sales\n\n\n02.07.2026\nOwner-occupied house price index\n\n\n03.07.2026\nBalance of payments\n\n\n03.07.2026\nFirst release sector accounts (households and businesses)\n\n\n08.07.2026\n(first half July) FIGARO in current prices\n\n\n17.07.2026\nBalance of payments\n\n\n17.07.2026\nInflation (HICP)\n\n\n20.07.2026\nGDP main aggregates and employment - update\n\n\n21.07.2026\nGovernment finance statistics, financial accounts\n\n\n21.07.2026\nQuarterly government debt\n\n\n21.07.2026\nQuarterly government deficit\n\n\n\n\n\n\n\n2 Kalendar (tekući i idući mjesec)\nprosinac 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPon\nUto\nSri\nCet\nPet\nSub\nNed\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n7\n\n\n\n\n8\n\n\n9\n\n\n10\n\n\n11\n\n\n12\n\n\n13\n\n\n14\n\n\n\n\n15\n\n\nPersonal transfers and compensation of employees\nStructure of government debt\n\n\n16\n\n\n17\n\n\nInflation (HICP)\nPurchasing power parities - results\n\n\n18\n\n\n19\n\n\nBalance of payments\n\n\n20\n\n\n21\n\n\n\n\n22\n\n\n23\n\n\n24\n\n\n25\n\n\n26\n\n\n27\n\n\n28\n\n\n\n\n29\n\n\n30\n\n\n31\n\n\n\n\n\n\n\n\nsiječanj 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPon\nUto\nSri\nCet\nPet\nSub\nNed\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n\n\n5\n\n\n6\n\n\n7\n\n\nFlash estimate inflation euro area\n\n\n8\n\n\n9\n\n\nHouse price index\nHouse sales\nOwner-occupied house price index\nOwner-occupied housing price index\n\n\n10\n\n\n11\n\n\n\n\n12\n\n\n13\n\n\nBalance of payments\nFirst release sector accounts (households and businesses)\n\n\n14\n\n\n15\n\n\n16\n\n\n17\n\n\n18\n\n\n\n\n19\n\n\nInflation (HICP)\n\n\n20\n\n\nBalance of payments\nGDP main aggregates and employment - update\n\n\n21\n\n\n22\n\n\nGovernment finance statistics\\, financial accounts\nQuarterly government debt\nQuarterly government deficit\n\n\n23\n\n\n24\n\n\n25\n\n\n\n\n26\n\n\n27\n\n\n28\n\n\nSecond release sector accounts (households)\n\n\n29\n\n\n30\n\n\nContingent liabilities and non-performing loans\nPreliminary flash estimate GDP - EU and euro area\n\n\n31"
-  },
-  {
-    "objectID": "klimatski-makro.html",
-    "href": "klimatski-makro.html",
-    "title": "Klimatski makro pokazatelji",
+    "objectID": "komponente-cijena.html",
+    "href": "komponente-cijena.html",
+    "title": "Komponente cijena",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "monetarni-agregati.html",
-    "href": "monetarni-agregati.html",
-    "title": "Monetarni agregati",
+    "objectID": "nezaposlenost.html",
+    "href": "nezaposlenost.html",
+    "title": "Nezaposlenost",
     "section": "",
     "text": "Radni nacrt."
   },
   {
-    "objectID": "place.html",
-    "href": "place.html",
-    "title": "Pla?e",
-    "section": "",
-    "text": "Radni nacrt."
+    "objectID": "policy.html#kolačići-i-privatnost",
+    "href": "policy.html#kolačići-i-privatnost",
+    "title": "Kolačići, privatnost i pravne napomene",
+    "section": "Kolačići i privatnost",
+    "text": "Kolačići i privatnost\n\nVoditelj obrade\nLeonarda Srdelić\nPoslovna rješenja, obrt za poslovno savjetovanje i ostale usluge\nHrvatska\n\n\nPolitika kolačića\nInternetska stranica cro-stat.com koristi nužne i analitičke kolačiće radi tehničke funkcionalnosti i analize posjećenosti.\nNužni kolačići\nOmogućuju osnovno funkcioniranje stranice.\nAnalitički kolačići\nStranica koristi Google Analytics za prikupljanje agregiranih statističkih podataka.\nIP adrese korisnika anonimiziraju se prije obrade.\nPodaci se mogu prenositi na poslužitelje izvan EU uz primjenu standardnih ugovornih klauzula.\n\n\nPolitika privatnosti\n\nStranica ne prikuplja osobne podatke koji omogućuju izravnu identifikaciju korisnika.\n\nAutomatski se obrađuju tehnički podaci u statističke i sigurnosne svrhe.\n\nPravna osnova obrade je privola korisnika za analitičke kolačiće i legitimni interes za nužne kolačiće.\n\nKorisnici imaju pravo na pristup, brisanje, ograničenje obrade i prigovor u skladu s GDPR-om."
+  },
+  {
+    "objectID": "policy.html#pravne-napomene",
+    "href": "policy.html#pravne-napomene",
+    "title": "Kolačići, privatnost i pravne napomene",
+    "section": "Pravne napomene",
+    "text": "Pravne napomene\n\nSadržaj stranice ima isključivo informativni i analitički karakter.\n\nNe predstavlja financijski, investicijski niti pravni savjet.\n\nVlasnik stranice ne odgovara za odluke donesene na temelju prikazanih podataka.\n\nSav sadržaj zaštićen je autorskim pravom."
   },
   {
     "objectID": "produktivnost.html",
