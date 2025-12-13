@@ -95,3 +95,47 @@
   max-height: 72px;
   width: auto !important;
 }
+
+/* Floating feedback button */
+.cs-feedback-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #c00000;
+  color: #fff !important;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  text-decoration: none;
+  z-index: 2000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+.cs-feedback-fab:hover {
+  background: #a00000;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+  transform: translateY(-1px);
+}
+.cs-feedback-fab:active {
+  transform: translateY(0);
+}
+
+/* AI sažetak blok u Analizi */
+.ai-summary {
+  background: #f5f7fb;
+  border: 1px solid #dfe5f2;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 8px 0 16px 0;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+.ai-summary strong {
+  display: inline-block;
+  margin-right: 6px;
+}
+.ai-summary.muted {
+  color: #666;
+  background: #f9fafc;
+  border-color: #e6eaf2;
+}
