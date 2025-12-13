@@ -42,11 +42,12 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .cs-footer-left {
   color: #666;
   font-weight: 500;
-  margin-right: auto;
+  margin-right: 16px;
 }
 .cs-footer-links {
   display: flex;
@@ -66,16 +67,18 @@
 }
 .cs-footer-feedback {
   margin-left: auto;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   border: 1px solid #c00000;
-  color: #c00000;
-  font-weight: 600;
+  background: #c00000;
+  color: #fff;
+  font-weight: 700;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.12s ease-in-out;
 }
 .cs-footer-feedback:hover {
-  background: #c00000;
+  background: #a00000;
+  border-color: #a00000;
   color: #fff;
 }
 .cs-mail {
@@ -85,6 +88,7 @@
 @media (max-width: 768px) {
   .cs-footer {
     justify-content: center;
+    gap: 8px 12px;
   }
   .cs-footer-left {
     width: 100%;
@@ -98,6 +102,7 @@
     margin-left: 0;
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 }
 
