@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kalendar objava – HR CroStat Dash</title>
+<title>Kalendar objava – CroStat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./styles/crostat-logo-small.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -69,15 +70,42 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <!-- Google Tag Manager -->
+
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
 })(window,document,'script','dataLayer','GTM-TXQTDGVF');</script>
+
 <!-- End Google Tag Manager -->
 
+<!-- Google tag (gtag.js) -->
 
-<link rel="stylesheet" href="styles/eurostat-responsive.css">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XLPVBEXTF4"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+  // default: analytics off until consent
+
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+
+  gtag('config', 'G-XLPVBEXTF4', { anonymize_ip: true });
+
+</script>
+
+
+
+<link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -87,8 +115,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo light-content">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HR CroStat Dash</span>
+    <span class="navbar-title">CroStat</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -156,25 +188,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cijene-i-inflacija" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Cijene i inflacija</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cijene" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cijene</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-cijene-i-inflacija">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cijene">    
         <li>
-    <a class="dropdown-item" href="./hicp-ukupni.html">
- <span class="dropdown-text">HICP ukupni</span></a>
+    <a class="dropdown-item" href="./hicp.html">
+ <span class="dropdown-text">HICP</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./hicp-temeljni.html">
- <span class="dropdown-text">HICP temeljni</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./komponente-cijena.html">
- <span class="dropdown-text">Komponente cijena</span></a>
+    <a class="dropdown-item" href="./potrosacke-cijene.html">
+ <span class="dropdown-text">Indeks potrošačkih cijena</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./proizvodjacke-cijene.html">
- <span class="dropdown-text">Proizvođačke cijene</span></a>
+ <span class="dropdown-text">Indeks proizvođačkih cijena</span></a>
   </li>  
     </ul>
   </li>
@@ -260,8 +288,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <!-- Google Tag Manager (noscript) -->
+
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQTDGVF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <!-- End Google Tag Manager (noscript) -->
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -299,44 +330,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">15.12.2025</td>
-<td style="text-align: left;">Personal transfers and compensation of employees</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">15.12.2025</td>
-<td style="text-align: left;">Structure of government debt</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">17.12.2025</td>
-<td style="text-align: left;">Inflation (HICP)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">17.12.2025</td>
-<td style="text-align: left;">Purchasing power parities - results</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">19.12.2025</td>
-<td style="text-align: left;">Balance of payments</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">07.01.2026</td>
 <td style="text-align: left;">Flash estimate inflation euro area</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">09.01.2026</td>
 <td style="text-align: left;">House price index</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">09.01.2026</td>
 <td style="text-align: left;">House sales</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">09.01.2026</td>
-<td style="text-align: left;">Owner-occupied house price index</td>
-</tr>
 <tr class="even">
 <td style="text-align: left;">09.01.2026</td>
-<td style="text-align: left;">Owner-occupied housing price index</td>
+<td style="text-align: left;">Owner-occupied house price index</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">13.01.2026</td>
@@ -618,6 +625,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td style="text-align: left;">21.07.2026</td>
 <td style="text-align: left;">Quarterly government deficit</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">27.07.2026</td>
+<td style="text-align: left;">Second release sector accounts (households)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">30.07.2026</td>
+<td style="text-align: left;">Preliminary flash estimate GDP - EU and euro area</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">31.07.2026</td>
+<td style="text-align: left;">Flash estimate inflation euro area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14.08.2026</td>
+<td style="text-align: left;">Flash estimate GDP and employment - EU and euro area</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">19.08.2026</td>
+<td style="text-align: left;">Balance of payments</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">19.08.2026</td>
+<td style="text-align: left;">Inflation (HICP)</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -697,30 +728,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr class="odd">
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 15
-</div>
-<ul>
-<li>Personal transfers and compensation of employees</li>
-<li>Structure of government debt</li>
-</ul></td>
+</div></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 16
 </div></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 17
-</div>
-<ul>
-<li>Inflation (HICP)</li>
-<li>Purchasing power parities - results</li>
-</ul></td>
+</div></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 18
 </div></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 19
-</div>
-<ul>
-<li>Balance of payments</li>
-</ul></td>
+</div></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 20
 </div></td>
@@ -831,7 +851,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>House price index</li>
 <li>House sales</li>
 <li>Owner-occupied house price index</li>
-<li>Owner-occupied housing price index</li>
 </ul></td>
 <td style="vertical-align: top; border: 1px solid #e0e0e0; padding: 6px; width: 14%"><div style="font-weight:700; margin-bottom:4px;">
 10
@@ -937,23 +956,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 
 </main> <!-- /main -->
-<div class="cs-footer">
-  <div class="cs-footer-left">
-    © Leonarda Srdelić, 2025
-  </div>
-  <div class="cs-footer-links">
-    <a href="https://example.com/cookies" target="_blank" rel="noreferrer">Cookies policy</a>
-    <span class="cs-sep">|</span>
-    <a href="https://example.com/privacy" target="_blank" rel="noreferrer">Privacy policy</a>
-    <span class="cs-sep">|</span>
-    <a href="https://example.com/legal" target="_blank" rel="noreferrer">Legal notice</a>
-  </div>
-  <div class="cs-footer-feedback">
-    <a href="mailto:leonardasrdelic@windowslive.com">
-      <span class="cs-mail">✉️</span> Feedback
-    </a>
-  </div>
+<div id="cookie-banner" class="cs-cookie-banner">
+
+  <span>
+
+    Ova stranica koristi nužne i analitičke kolačiće (Google Analytics) radi funkcionalnosti i analize posjećenosti.
+
+  </span>
+
+  <button onclick="acceptCookies()" class="cs-cookie-button">
+
+    Prihvaćam
+
+  </button>
+
+  <a href="./policy.html" class="cs-cookie-link">
+
+    Više informacija
+
+  </a>
+
 </div>
+
+<script>
+
+  (function () {
+
+    const key = 'cs-cookie-consent';
+
+    const banner = document.getElementById('cookie-banner');
+
+    if (!banner) return;
+
+    if (localStorage.getItem(key) === 'accepted') {
+
+      banner.style.display = 'none';
+
+      if (typeof gtag === 'function') {
+
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+
+      }
+
+      return;
+
+    }
+
+    banner.style.display = 'block';
+
+    window.acceptCookies = function () {
+
+      localStorage.setItem(key, 'accepted');
+
+      if (typeof gtag === 'function') {
+
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+
+      }
+
+      banner.style.display = 'none';
+
+    };
+
+  })();
+
+</script>
+
+<div class="cs-footer" style="font-size: 0.85em; color: #555; margin-top: 60px;">
+
+  <div class="cs-footer-left">
+
+    © 2025 Leonarda Srdelic. Sva prava pridrzana.
+
+  </div>
+
+  <div class="cs-footer-links">
+
+    <a href="./policy.html">Kolačići i privatnost</a>
+
+    <span class="cs-sep">|</span>
+
+    <a href="./policy.html#legal">Pravne napomene</a>
+
+  </div>
+
+  <a class="cs-footer-feedback" href="mailto:leonardasrdelic@windowslive.com?subject=CroStat%20-%20Povratna%20informacija">
+
+    Pošalji povratnu informaciju
+
+  </a>
+
+</div>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
