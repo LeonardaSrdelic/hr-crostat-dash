@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr" xml:lang="hr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Harmonizirani indeks potrošačkih cijena (HICP) – CroStat</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./styles/crostat-logo-small.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-TXQTDGVF');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XLPVBEXTF4"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+  // default: analytics off until consent
+
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+
+  gtag('config', 'G-XLPVBEXTF4', { anonymize_ip: true });
+
+</script>
+
+<script>
+
+(function() {
+
+  var host = window.location && window.location.hostname;
+
+  var isLocal = !host || host === "localhost" || host === "127.0.0.1";
+
+  // Premium preusmjeravanje privremeno isključeno radi rada na sadržaju.
+
+  // if (!isLocal) {
+
+  //   window.location.replace("/premium/");
+
+  // }
+
+})();
+
+</script>
+
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script>
+
+<script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script>
+
+<script src="site_libs/echarts4r-binding-0.4.6/echarts4r.js"></script>
+
+
+
+<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo light-content">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">CroStat</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Monitor</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-realna-aktivnost" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Realna aktivnost</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-realna-aktivnost">    
+        <li>
+    <a class="dropdown-item" href="./BDP.html">
+ <span class="dropdown-text">BDP i komponente</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./indikatori-gospodarske-aktivnosti.html">
+ <span class="dropdown-text">Indikatori gospodarske aktivnosti</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./trgovina-izvoz.html">
+ <span class="dropdown-text">Trgovina i izvoz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./graditeljstvo.html">
+ <span class="dropdown-text">Graditeljstvo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./usluge-turizam.html">
+ <span class="dropdown-text">Usluge i turizam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./dugorocni-trendovi.html">
+ <span class="dropdown-text">Dugoročni trendovi</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tržište-rada" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tržište rada</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tržište-rada">    
+        <li>
+    <a class="dropdown-item" href="./zaposlenost.html">
+ <span class="dropdown-text">Zaposlenost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./nezaposlenost.html">
+ <span class="dropdown-text">Nezaposlenost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./place.html">
+ <span class="dropdown-text">Plaće</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./produktivnost.html">
+ <span class="dropdown-text">Produktivnost</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cijene" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cijene</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cijene">    
+        <li>
+    <a class="dropdown-item" href="./hicp.html">
+ <span class="dropdown-text">HICP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./potrosacke-cijene.html">
+ <span class="dropdown-text">Indeks potrošačkih cijena</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./proizvodjacke-cijene.html">
+ <span class="dropdown-text">Indeks proizvođačkih cijena</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-financijski-pokazatelji" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Financijski pokazatelji</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-financijski-pokazatelji">    
+        <li>
+    <a class="dropdown-item" href="./kamatne-stope.html">
+ <span class="dropdown-text">Kamatne stope</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./prinosi-obveznica.html">
+ <span class="dropdown-text">Prinosi obveznica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tecajevi.html">
+ <span class="dropdown-text">Tečajevi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./monetarni-agregati.html">
+ <span class="dropdown-text">Monetarni agregati</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-energija-i-klima" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Energija i klima</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-energija-i-klima">    
+        <li>
+    <a class="dropdown-item" href="./co2-ets.html">
+ <span class="dropdown-text">Cijena CO₂ ETS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cijene-energije.html">
+ <span class="dropdown-text">Cijene energije</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./emisije-sektori.html">
+ <span class="dropdown-text">Emisije po sektorima</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energetski-miks.html">
+ <span class="dropdown-text">Energetski miks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./klimatski-makro.html">
+ <span class="dropdown-text">Klimatski makro pokazatelji</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./kalendar-objava.html"> 
+<span class="menu-text">Kalendar objava</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./info.html"> 
+<span class="menu-text">Info</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sadržaj</h2>
+   
+  <ul>
+  <li><a href="#podaci-na-mjesečnoj-razini" id="toc-podaci-na-mjesečnoj-razini" class="nav-link active" data-scroll-target="#podaci-na-mjesečnoj-razini">Podaci na mjesečnoj razini</a></li>
+  <li><a href="#podaci-na-godišnjoj-razini" id="toc-podaci-na-godišnjoj-razini" class="nav-link" data-scroll-target="#podaci-na-godišnjoj-razini">Podaci na godišnjoj razini</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQTDGVF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Harmonizirani indeks potrošačkih cijena (HICP)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="podaci-na-mjesečnoj-razini" class="level2">
+<h2 class="anchored" data-anchor-id="podaci-na-mjesečnoj-razini">Podaci na mjesečnoj razini</h2>
+<div class="monitor-cards" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+<div style="border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="monitor-card__body">
+<div class="monitor-card__header">
+<div>
+<div style="font-weight: 700; font-size: 18px;">HICP yoy</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">godišnja stopa promjene (%)</div>
+</div>
+<div style="text-align: right;">
+<div style="font-weight: 700; color: #C00000; font-size: 18px; line-height: 1.1;">4,3</div>
+<div style="font-size: 12px; color: #555;">studeni 2025</div>
+</div>
+</div>
+<div style="margin-top: -4px;">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-b9dd42e2c7a3de297b65" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-b9dd42e2c7a3de297b65">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){\n      if(x===null || x===undefined) return '';\n      var v = Number(x);\n      if(!isFinite(v)) return '';\n      var s = v.toFixed(1).replace('.', ',');\n      \n      return s;\n    }"},"min":"function(v){ return Math.floor(v.min - 0.2); }","max":"function(v){ return Math.ceil(v.max + 0.2); }","scale":true}],"xAxis":[{"data":["2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01"],"type":"time","boundaryGap":true,"axisLabel":{"hideOverlap":true,"formatter":"function(value){\n            var d = new Date(value);\n            if(d.getMonth() === 0){\n              return d.toLocaleDateString('hr-HR', {month:'short', year:'numeric'});\n            }\n            return '';\n          }"}}],"legend":{"data":["HICP"],"show":false,"type":"plain"},"series":[{"data":[{"value":["2024-01-01","4.8"]},{"value":["2024-02-01","4.8"]},{"value":["2024-03-01","4.9"]},{"value":["2024-04-01","4.7"]},{"value":["2024-05-01","4.3"]},{"value":["2024-06-01","3.5"]},{"value":["2024-07-01","3.3"]},{"value":["2024-08-01","3.0"]},{"value":["2024-09-01","3.1"]},{"value":["2024-10-01","3.6"]},{"value":["2024-11-01","4.0"]},{"value":["2024-12-01","4.5"]},{"value":["2025-01-01","5.0"]},{"value":["2025-02-01","4.8"]},{"value":["2025-03-01","4.3"]},{"value":["2025-04-01","4.0"]},{"value":["2025-05-01","4.3"]},{"value":["2025-06-01","4.4"]},{"value":["2025-07-01","4.5"]},{"value":["2025-08-01","4.6"]},{"value":["2025-09-01","4.6"]},{"value":["2025-10-01","4.0"]},{"value":["2025-11-01","4.3"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HICP","type":"line","coordinateSystem":"cartesian2d","showSymbol":false,"smooth":true,"lineStyle":{"width":3},"itemStyle":{"color":"#C00000"}}],"color":["#C00000"],"dataZoom":[{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","triggerOn":"mousemove|click","axisPointer":{"type":"line"},"formatter":"\n    function(params){\n      if(!params || !params.length) return '';\n      var p = params[0];\n      var t = p.axisValue;\n      var d = new Date(t);\n      var label = d.toLocaleDateString('hr-HR', {month:'long', year:'numeric'});\n\n      var raw = (Array.isArray(p.value) && p.value.length > 1) ? p.value[1] : p.value;\n      var num = Number(raw);\n      if (!isFinite(num)) return '';\n\n      var val = num.toFixed(1).replace('.', ',');\n      var suf = \"\";\n\n      return label + ': ' + val + (suf ? (' ' + suf) : '');\n    }\n  "},"title":[[]],"grid":[{"top":10,"bottom":60,"left":40,"right":20}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.min","opts.yAxis.0.max","opts.xAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="monitor-card__body">
+<div class="monitor-card__header">
+<div>
+<div style="font-weight: 700; font-size: 18px;">HICP m/m</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">mjesečna stopa promjene (%)</div>
+</div>
+<div style="text-align: right;">
+<div style="font-weight: 700; color: #C00000; font-size: 18px; line-height: 1.1;">0,3</div>
+<div style="font-size: 12px; color: #555;">studeni 2025</div>
+</div>
+</div>
+<div style="margin-top: -4px;">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-4438251ddcccf7b93cb1" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-4438251ddcccf7b93cb1">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){\n      if(x===null || x===undefined) return '';\n      var v = Number(x);\n      if(!isFinite(v)) return '';\n      var s = v.toFixed(1).replace('.', ',');\n      \n      return s;\n    }"},"min":"function(v){ return Math.floor(v.min - 0.2); }","max":"function(v){ return Math.ceil(v.max + 0.2); }","scale":true}],"xAxis":[{"data":["2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01"],"type":"time","boundaryGap":true,"axisLabel":{"hideOverlap":true,"formatter":"function(value){\n            var d = new Date(value);\n            if(d.getMonth() === 0){\n              return d.toLocaleDateString('hr-HR', {month:'short', year:'numeric'});\n            }\n            return '';\n          }"}}],"legend":{"data":["HICP"],"show":false,"type":"plain"},"series":[{"data":[{"value":["2024-01-01","-0.28780336"]},{"value":["2024-02-01"," 0.29643498"]},{"value":["2024-03-01"," 0.91001011"]},{"value":["2024-04-01"," 1.01741945"]},{"value":["2024-05-01"," 0.19075233"]},{"value":["2024-06-01"," 0.78440332"]},{"value":["2024-07-01"," 1.02009974"]},{"value":["2024-08-01"," 0.11219987"]},{"value":["2024-09-01","-0.54542738"]},{"value":["2024-10-01"," 0.76628352"]},{"value":["2024-11-01","-0.02236636"]},{"value":["2024-12-01"," 0.18642804"]},{"value":["2025-01-01"," 0.23074060"]},{"value":["2025-02-01"," 0.01485222"]},{"value":["2025-03-01"," 0.44550045"]},{"value":["2025-04-01"," 0.72442342"]},{"value":["2025-05-01"," 0.53574050"]},{"value":["2025-06-01"," 0.81027812"]},{"value":["2025-07-01"," 1.20926865"]},{"value":["2025-08-01"," 0.20748372"]},{"value":["2025-09-01","-0.57832358"]},{"value":["2025-10-01"," 0.17953321"]},{"value":["2025-11-01"," 0.27240143"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HICP","type":"line","coordinateSystem":"cartesian2d","showSymbol":false,"smooth":true,"lineStyle":{"width":3},"itemStyle":{"color":"#C00000"}}],"color":["#C00000"],"dataZoom":[{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","triggerOn":"mousemove|click","axisPointer":{"type":"line"},"formatter":"\n    function(params){\n      if(!params || !params.length) return '';\n      var p = params[0];\n      var t = p.axisValue;\n      var d = new Date(t);\n      var label = d.toLocaleDateString('hr-HR', {month:'long', year:'numeric'});\n\n      var raw = (Array.isArray(p.value) && p.value.length > 1) ? p.value[1] : p.value;\n      var num = Number(raw);\n      if (!isFinite(num)) return '';\n\n      var val = num.toFixed(1).replace('.', ',');\n      var suf = \"\";\n\n      return label + ': ' + val + (suf ? (' ' + suf) : '');\n    }\n  "},"title":[[]],"grid":[{"top":10,"bottom":60,"left":40,"right":20}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.min","opts.yAxis.0.max","opts.xAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="grid-column: 1 / -1; border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="monitor-card__body">
+<div class="monitor-card__header">
+<div>
+<div style="font-weight: 700; font-size: 18px;">Inflacija (HICP)</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">godišnja stopa promjene (%)</div>
+</div>
+<div style="font-size: 12px; color: #555; text-align: right;">studeni 2025</div>
+</div>
+<div id="htmlwidget-2ee6115c378f2e617013" style="width:100%;height:400px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ee6115c378f2e617013">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return Number(x).toFixed(1).replace('.', ',');}"},"min":"function(v){ return Math.floor(v.min - 0.2); }","max":"function(v){ return Math.ceil(v.max + 0.2); }","interval":1,"scale":true}],"xAxis":[{"data":["RO","EE","HR","AT","SK","LV","BG","HU","LT","LU","ES","IE","EL","BE","DE","NL","PL","MT","EU 27","SI","SE","EA","PT","DK","CZ","FI","IT","FR","CY"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":90,"hideOverlap":false,"fontSize":10}}],"legend":{"data":["value"],"show":false,"type":"plain"},"series":[{"data":[{"value":["RO","8.6"]},{"value":["EE","4.7"]},{"value":["HR","4.3"]},{"value":["AT","4.0"]},{"value":["SK","3.9"]},{"value":["LV","3.8"]},{"value":["BG","3.7"]},{"value":["HU","3.7"]},{"value":["LT","3.6"]},{"value":["LU","3.6"]},{"value":["ES","3.2"]},{"value":["IE","3.1"]},{"value":["EL","2.8"]},{"value":["BE","2.6"]},{"value":["DE","2.6"]},{"value":["NL","2.6"]},{"value":["PL","2.6"]},{"value":["MT","2.5"]},{"value":["EU 27","2.4"]},{"value":["SI","2.4"]},{"value":["SE","2.2"]},{"value":["EA","2.1"]},{"value":["PT","2.1"]},{"value":["DK","2.0"]},{"value":["CZ","1.8"]},{"value":["FI","1.5"]},{"value":["IT","1.1"]},{"value":["FR","0.8"]},{"value":["CY","0.1"]}],"name":"value","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"color":"\n        function(p){\n          var name = p.name;\n          var map = {'HR': '#C00000', 'EU 27': '#444444', 'EA': '#777777'};\n          return map[name] || '#9fb5d0';\n        }\n      "}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n        function(params){\n          if(!params || !params.length) return '';\n          var p = params[0];\n          var raw = (Array.isArray(p.value) && p.value.length > 1) ? p.value[1] : p.value;\n          var num = Number(raw);\n          if(!isFinite(num)) return '';\n          var val = num.toFixed(1).replace('.', ',');\n          return p.name + ': ' + val;\n        }\n      "},"grid":[{"left":50,"right":20,"top":10,"bottom":40}],"title":[[]]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.min","opts.yAxis.0.max","opts.series.0.itemStyle.color","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="podaci-na-godišnjoj-razini" class="level2">
+<h2 class="anchored" data-anchor-id="podaci-na-godišnjoj-razini">Podaci na godišnjoj razini</h2>
+<div class="monitor-cards" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+<div style="grid-column: 1 / -1; border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="monitor-card" style="border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="monitor-card__header">
+<div>
+<div style="font-weight: 700; font-size: 18px;">Inflacija (HICP)</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">prosjecna godisnja stopa (%)</div>
+</div>
+<div style="text-align: right;">
+<div style="font-weight: 700; color: #C00000; font-size: 18px; line-height: 1.1;">4,0</div>
+<div style="font-size: 12px; color: #555;">2024 (ukupna)</div>
+</div>
+</div>
+<div>
+<div id="htmlwidget-bfeab9fd5949d10ee536" style="width:100%;height:400px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bfeab9fd5949d10ee536">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){ return Number(x).toFixed(0); }"},"min":-2,"max":12,"interval":2,"scale":false}],"xAxis":[{"type":"value","min":2000,"max":2025,"minInterval":1,"axisLabel":{"formatter":"function(x){ return Math.round(x); }","rotate":0,"hideOverlap":true},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ukupna","Temeljna"],"show":true,"type":"plain","bottom":36,"left":"center","orient":"horizontal"},"series":[{"data":[{"value":[2000,4.5]},{"value":[2001,4.3]},{"value":[2002,2.5]},{"value":[2003,2.4]},{"value":[2004,2.1]},{"value":[2005,3]},{"value":[2006,3.3]},{"value":[2007,2.7]},{"value":[2008,5.8]},{"value":[2009,2.2]},{"value":[2010,1.1]},{"value":[2011,2.2]},{"value":[2012,3.4]},{"value":[2013,2.3]},{"value":[2014,0.2]},{"value":[2015,-0.3]},{"value":[2016,-0.6]},{"value":[2017,1.3]},{"value":[2018,1.6]},{"value":[2019,0.8]},{"value":[2020,0]},{"value":[2021,2.7]},{"value":[2022,10.7]},{"value":[2023,8.4]},{"value":[2024,4]},{"value":[2025,null]}],"yAxisIndex":0,"xAxisIndex":0,"name":"Ukupna","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":true,"lineStyle":{"width":3},"itemStyle":{"color":"#C00000"},"markLine":{"lineStyle":{"color":"grey70","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}},{"data":[{"value":[2000,3.075]},{"value":[2001,3.816666666666667]},{"value":[2002,3.583333333333333]},{"value":[2003,1.975]},{"value":[2004,1.541666666666667]},{"value":[2005,1.55]},{"value":[2006,3.075]},{"value":[2007,2.95]},{"value":[2008,3.483333333333333]},{"value":[2009,2.6]},{"value":[2010,0.3916666666666667]},{"value":[2011,-0.1166666666666667]},{"value":[2012,1.1]},{"value":[2013,0.875]},{"value":[2014,0.5333333333333333]},{"value":[2015,0.8416666666666667]},{"value":[2016,0.2166666666666666]},{"value":[2017,1]},{"value":[2018,0.975]},{"value":[2019,0.75]},{"value":[2020,0.3833333333333334]},{"value":[2021,1.325]},{"value":[2022,7.566666666666666]},{"value":[2023,8.866666666666667]},{"value":[2024,4.775]},{"value":[2025,4.154545454545454]}],"yAxisIndex":0,"xAxisIndex":0,"name":"Temeljna","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":true,"lineStyle":{"width":3},"itemStyle":{"color":"#6375b7"},"markLine":{"lineStyle":{"color":"grey70","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}}],"color":["#C00000","#6375b7"],"grid":[{"top":20,"bottom":90,"left":40,"right":20}],"dataZoom":[{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"line"},"triggerOn":"mousemove|click","formatter":"\n        function(params){\n          if (!params || !params.length) { return ''; }\n          var year = Math.round(params[0].axisValue);\n          var lines = params.map(function(p){\n            var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n            var num = Number(raw);\n            if (!isFinite(num)) return '';\n            var val = num.toFixed(1).replace('.', ',');\n            return p.seriesName + ': ' + val;\n          }).filter(Boolean);\n          return year + '.<br/>' + lines.join('<br/>');\n        }\n      "}},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="grid-column: 1 / -1; border: none; box-shadow: none; padding: 0; background: transparent;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="monitor-card__body">
+<div class="monitor-card__header">
+<div>
+<div style="font-weight: 700; font-size: 18px;">Inflacija (HICP)</div>
+<div style="color: #555; font-size: 13px; margin-top: 2px;">prosječna godišnja stopa promjene (%)</div>
+</div>
+<div style="font-size: 12px; color: #555; text-align: right;">2024</div>
+</div>
+<div id="htmlwidget-15b78d4d28f444b581c4" style="width:100%;height:400px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15b78d4d28f444b581c4">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return Number(x).toFixed(1).replace('.', ',');}"},"min":"function(v){ return Math.floor(v.min - 0.2); }","max":"function(v){ return Math.ceil(v.max + 0.2); }","interval":1,"scale":true}],"xAxis":[{"data":["RO","BE","HR","EE","HU","PL","NL","SK","EL","ES","AT","CZ","PT","EU 27","BG","DE","EA","MT","FR","CY","LU","SI","SE","DK","IE","LV","IT","FI","LT"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":90,"hideOverlap":false,"fontSize":10}}],"legend":{"data":["value"],"show":false,"type":"plain"},"series":[{"data":[{"value":["RO","5.8"]},{"value":["BE","4.3"]},{"value":["HR","4.0"]},{"value":["EE","3.7"]},{"value":["HU","3.7"]},{"value":["PL","3.7"]},{"value":["NL","3.2"]},{"value":["SK","3.2"]},{"value":["EL","3.0"]},{"value":["ES","2.9"]},{"value":["AT","2.9"]},{"value":["CZ","2.7"]},{"value":["PT","2.7"]},{"value":["EU 27","2.6"]},{"value":["BG","2.6"]},{"value":["DE","2.5"]},{"value":["EA","2.4"]},{"value":["MT","2.4"]},{"value":["FR","2.3"]},{"value":["CY","2.3"]},{"value":["LU","2.3"]},{"value":["SI","2.0"]},{"value":["SE","2.0"]},{"value":["DK","1.3"]},{"value":["IE","1.3"]},{"value":["LV","1.3"]},{"value":["IT","1.1"]},{"value":["FI","1.0"]},{"value":["LT","0.9"]}],"name":"value","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"color":"\n        function(p){\n          var name = p.name;\n          var map = {'HR': '#C00000', 'EU 27': '#444444', 'EA': '#777777'};\n          return map[name] || '#9fb5d0';\n        }\n      "}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n        function(params){\n          if(!params || !params.length) return '';\n          var p = params[0];\n          var raw = (Array.isArray(p.value) && p.value.length > 1) ? p.value[1] : p.value;\n          var num = Number(raw);\n          if(!isFinite(num)) return '';\n          var val = num.toFixed(1).replace('.', ',');\n          return p.name + ': ' + val;\n        }\n      "},"grid":[{"left":50,"right":20,"top":10,"bottom":40}],"title":[[]]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.min","opts.yAxis.0.max","opts.series.0.itemStyle.color","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<div id="cookie-banner" class="cs-cookie-banner">
+
+  <span>
+
+    Ova stranica koristi nužne i analitičke kolačiće (Google Analytics) radi funkcionalnosti i analize posjećenosti.
+
+  </span>
+
+  <button onclick="acceptCookies()" class="cs-cookie-button">
+
+    Prihvaćam
+
+  </button>
+
+  <a href="./policy.html" class="cs-cookie-link">
+
+    Više informacija
+
+  </a>
+
+</div>
+
+<script>
+
+  (function () {
+
+    const key = 'cs-cookie-consent';
+
+    const banner = document.getElementById('cookie-banner');
+
+    if (!banner) return;
+
+    if (localStorage.getItem(key) === 'accepted') {
+
+      banner.style.display = 'none';
+
+      if (typeof gtag === 'function') {
+
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+
+      }
+
+      return;
+
+    }
+
+    banner.style.display = 'block';
+
+    window.acceptCookies = function () {
+
+      localStorage.setItem(key, 'accepted');
+
+      if (typeof gtag === 'function') {
+
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+
+      }
+
+      banner.style.display = 'none';
+
+    };
+
+  })();
+
+</script>
+
+<div class="cs-footer" style="font-size: 0.85em; color: #555; margin-top: 60px;">
+
+  <div class="cs-footer-left">
+
+    © 2025 Leonarda Srdelic. Sva prava pridrzana.
+
+  </div>
+
+  <div class="cs-footer-links">
+
+    <a href="./policy.html">Kolačići i privatnost</a>
+
+    <span class="cs-sep">|</span>
+
+    <a href="./policy.html#legal">Pravne napomene</a>
+
+  </div>
+
+  <a class="cs-footer-feedback" href="mailto:leonardasrdelic@windowslive.com?subject=CroStat%20-%20Povratna%20informacija">
+
+    Pošalji povratnu informaciju
+
+  </a>
+
+</div>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
