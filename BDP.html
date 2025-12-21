@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr" xml:lang="hr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Gospodarski rast – CroStat</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./styles/crostat-logo-small.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXQTDGVF');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XLPVBEXTF4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // default: analytics off until consent
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+  gtag('config', 'G-XLPVBEXTF4', { anonymize_ip: true });
+</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+<script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script>
+<script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script>
+<script src="site_libs/echarts4r-binding-0.4.6/echarts4r.js"></script>
+<script src="site_libs/echarts-renderers-1.0.2/renderers.js"></script>
+
+
+<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo light-content">
+    <img src="./styles/crostat-logo-nav.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">CroStat</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Monitor</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-realna-aktivnost" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Realna aktivnost</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-realna-aktivnost">    
+        <li>
+    <a class="dropdown-item" href="./BDP.html">
+ <span class="dropdown-text">Bruto domaći proizvod</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./indikatori-gospodarske-aktivnosti.html">
+ <span class="dropdown-text">Indikatori gospodarske aktivnosti</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./platna-bilanca-bpm6.html">
+ <span class="dropdown-text">Platna bilanca (BPM6)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./trgovina-izvoz.html">
+ <span class="dropdown-text">Robna razmjena</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./usluge-turizam.html">
+ <span class="dropdown-text">Usluge i turizam</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tržište-rada" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tržište rada</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tržište-rada">    
+        <li>
+    <a class="dropdown-item" href="./zaposlenost.html">
+ <span class="dropdown-text">Zaposlenost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./nezaposlenost.html">
+ <span class="dropdown-text">Nezaposlenost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./place.html">
+ <span class="dropdown-text">Plaće</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./produktivnost.html">
+ <span class="dropdown-text">Produktivnost</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cijene" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cijene</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cijene">    
+        <li>
+    <a class="dropdown-item" href="./hicp.html">
+ <span class="dropdown-text">HICP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hicp-doprinosi.html">
+ <span class="dropdown-text">HICP doprinosi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./proizvodjacke-cijene.html">
+ <span class="dropdown-text">Cijene hrane</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./priustivo-stanovanje.html">
+ <span class="dropdown-text">Priuštivo stanovanje</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-financijski-pokazatelji" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Financijski pokazatelji</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-financijski-pokazatelji">    
+        <li>
+    <a class="dropdown-item" href="./kamatne-stope.html">
+ <span class="dropdown-text">Kamatne stope</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./prinosi-obveznica.html">
+ <span class="dropdown-text">Prinosi obveznica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tecajevi.html">
+ <span class="dropdown-text">Tečajevi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./monetarni-agregati.html">
+ <span class="dropdown-text">Monetarni agregati</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-javne-financije" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Javne financije</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-javne-financije">    
+        <li>
+    <a class="dropdown-item" href="./porezni-prihodi.html">
+ <span class="dropdown-text">Porezni prihodi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./rashodi-opce-drzave.html">
+ <span class="dropdown-text">Rashodi opće države</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./primarni-saldo.html">
+ <span class="dropdown-text">Primarni saldo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./javni-dug.html">
+ <span class="dropdown-text">Javni dug</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-energija-i-klima" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Energija i klima</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-energija-i-klima">    
+        <li>
+    <a class="dropdown-item" href="./co2-ets.html">
+ <span class="dropdown-text">Cijena CO2 ETS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cijene-energije.html">
+ <span class="dropdown-text">Cijene energije</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./emisije-sektori.html">
+ <span class="dropdown-text">Emisije po sektorima</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energetski-miks.html">
+ <span class="dropdown-text">Energetski miks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./klimatski-makro.html">
+ <span class="dropdown-text">Klimatski makro pokazatelji</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./kalendar-objava.html"> 
+<span class="menu-text">Kalendar objava</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./info.html"> 
+<span class="menu-text">Info</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sadržaj</h2>
+   
+  <ul>
+  <li><a href="#analiza" id="toc-analiza" class="nav-link active" data-scroll-target="#analiza"><span class="header-section-number">1</span> Analiza</a></li>
+  <li><a href="#tromjesečni-podaci-o-bdp-u" id="toc-tromjesečni-podaci-o-bdp-u" class="nav-link" data-scroll-target="#tromjesečni-podaci-o-bdp-u"><span class="header-section-number">2</span> Tromjesečni podaci o BDP-u</a>
+  <ul class="collapse">
+  <li><a href="#realni-bdp-tromjesečna-stopa-promjene" id="toc-realni-bdp-tromjesečna-stopa-promjene" class="nav-link" data-scroll-target="#realni-bdp-tromjesečna-stopa-promjene"><span class="header-section-number">2.1</span> Realni BDP, tromjesečna stopa promjene (%)</a></li>
+  <li><a href="#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene" id="toc-realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene" class="nav-link" data-scroll-target="#realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene"><span class="header-section-number">2.2</span> Realni BDP po državama EU-27, tromjesečna stopa promjene (%)</a></li>
+  <li><a href="#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene" id="toc-realni-bdp-po-državama-eu-27-godišnja-stopa-promjene" class="nav-link" data-scroll-target="#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene"><span class="header-section-number">2.3</span> Realni BDP po državama EU 27, godišnja stopa promjene (%)</a></li>
+  </ul></li>
+  <li><a href="#godišnji-podaci-o-bdp-u" id="toc-godišnji-podaci-o-bdp-u" class="nav-link" data-scroll-target="#godišnji-podaci-o-bdp-u"><span class="header-section-number">3</span> Godišnji podaci o BDP-u</a>
+  <ul class="collapse">
+  <li><a href="#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1" id="toc-realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1" class="nav-link" data-scroll-target="#realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1"><span class="header-section-number">3.1</span> Realni BDP po državama EU-27, godišnja stopa promjene (%)</a></li>
+  <li><a href="#realni-bdp-po-državama-eu-27-razina-mlrd.-eur" id="toc-realni-bdp-po-državama-eu-27-razina-mlrd.-eur" class="nav-link" data-scroll-target="#realni-bdp-po-državama-eu-27-razina-mlrd.-eur"><span class="header-section-number">3.2</span> Realni BDP po državama EU 27, razina (mlrd. EUR)</a></li>
+  <li><a href="#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene" id="toc-nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene" class="nav-link" data-scroll-target="#nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene"><span class="header-section-number">3.3</span> Nominalni BDP po državama EU 27, godišnja stopa promjene (%)</a></li>
+  <li><a href="#nominalni-bdp-po-državama-eu-27-razina-mlrd.-eur" id="toc-nominalni-bdp-po-državama-eu-27-razina-mlrd.-eur" class="nav-link" data-scroll-target="#nominalni-bdp-po-državama-eu-27-razina-mlrd.-eur"><span class="header-section-number">3.4</span> Nominalni BDP po državama EU 27, razina (mlrd. EUR)</a></li>
+  <li><a href="#bdp-po-stanovniku-pps-eu-27-100" id="toc-bdp-po-stanovniku-pps-eu-27-100" class="nav-link" data-scroll-target="#bdp-po-stanovniku-pps-eu-27-100"><span class="header-section-number">3.5</span> BDP po stanovniku (PPS, EU 27 = 100)</a></li>
+  </ul></li>
+  <li><a href="#dugoročna-kretanja-realnog-bdp-a" id="toc-dugoročna-kretanja-realnog-bdp-a" class="nav-link" data-scroll-target="#dugoročna-kretanja-realnog-bdp-a"><span class="header-section-number">4</span> Dugoročna kretanja realnog BDP-a</a>
+  <ul class="collapse">
+  <li><a href="#cee-zemlje" id="toc-cee-zemlje" class="nav-link" data-scroll-target="#cee-zemlje"><span class="header-section-number">4.1</span> CEE zemlje</a></li>
+  <li><a href="#europska-unija-eu-27" id="toc-europska-unija-eu-27" class="nav-link" data-scroll-target="#europska-unija-eu-27"><span class="header-section-number">4.2</span> Europska unija (EU-27)</a></li>
+  <li><a href="#europodručje-ea" id="toc-europodručje-ea" class="nav-link" data-scroll-target="#europodručje-ea"><span class="header-section-number">4.3</span> Europodručje (EA)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQTDGVF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Gospodarski rast</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Stranica se automatski ažurira ponedjeljkom u 06:00 (CET). Posljednje ažuriranje: 21.12.2025. u 20:45.</p>
+</blockquote>
+<script>
+if (!window.__calloutResizeInit) {
+  window.__calloutResizeInit = true;
+  document.addEventListener('shown.bs.collapse', function() {
+    window.dispatchEvent(new Event('resize'));
+  });
+}
+</script>
+<section id="analiza" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Analiza</h1>
+<div class="ai-summary">
+Tromjesečna stopa rasta realnog BDP-a u Hrvatskoj za treće tromjesečje 2025. iznosi 0,3%. Godišnja stopa rasta realnog BDP-a u Hrvatskoj za 2024. godinu iznosi 3,8%, što je u skladu s prosječnom godišnjom stopom rasta od 3,8% u razdoblju od 2020. do 2024. godine. U usporedbi s Europskom unijom (EU-27), koja bilježi godišnju stopu rasta realnog BDP-a od 1,1% za 2024., Hrvatska ima višu stopu rasta od 2,7 postotnih bodova.
+</div>
+</section>
+<section id="tromjesečni-podaci-o-bdp-u" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Tromjesečni podaci o BDP-u</h1>
+<p>tba</p>
+<section id="realni-bdp-tromjesečna-stopa-promjene" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="realni-bdp-tromjesečna-stopa-promjene"><span class="header-section-number">2.1</span> Realni BDP, tromjesečna stopa promjene (%)</h2>
+<p><small><em>Grafikon prikazuje tromjesečne stope promjene realnog BDP-a Hrvatske u odnosu na prethodno tromjesečje, ističući kratkoročne promjene u aktivnosti i trenutni momentum rasta.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-edb9de2a8bb83727bc90" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-edb9de2a8bb83727bc90">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"","nameLocation":"middle","nameGap":30,"nameRotate":0,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["2019-Q1","2019-Q2","2019-Q3","2019-Q4","2020-Q1","2020-Q2","2020-Q3","2020-Q4","2021-Q1","2021-Q2","2021-Q3","2021-Q4","2022-Q1","2022-Q2","2022-Q3","2022-Q4","2023-Q1","2023-Q2","2023-Q3","2023-Q4","2024-Q1","2024-Q2","2024-Q3","2024-Q4","2025-Q1","2025-Q2","2025-Q3"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"margin":10},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Hrvatska"]},"series":[{"data":[{"value":["2019-Q1","  1.99105926"]},{"value":["2019-Q2","  0.53700768"]},{"value":["2019-Q3"," -0.18551872"]},{"value":["2019-Q4"," -0.36708047"]},{"value":["2020-Q1"," -1.42009903"]},{"value":["2020-Q2","-13.92458960"]},{"value":["2020-Q3","  5.14720701"]},{"value":["2020-Q4","  8.15960274"]},{"value":["2021-Q1","  5.78005815"]},{"value":["2021-Q2"," -0.51626855"]},{"value":["2021-Q3","  1.96633729"]},{"value":["2021-Q4","  3.21653230"]},{"value":["2022-Q1","  3.02393402"]},{"value":["2022-Q2","  0.89650645"]},{"value":["2022-Q3","  0.80038620"]},{"value":["2022-Q4"," -1.02099601"]},{"value":["2023-Q1","  1.95436313"]},{"value":["2023-Q2","  1.90108053"]},{"value":["2023-Q3","  0.00539975"]},{"value":["2023-Q4","  1.83716582"]},{"value":["2024-Q1","  0.34131955"]},{"value":["2024-Q2","  1.10832232"]},{"value":["2024-Q3","  0.99687741"]},{"value":["2024-Q4","  0.99609324"]},{"value":["2025-Q1","  0.38105851"]},{"value":["2025-Q2","  0.89894666"]},{"value":["2025-Q3","  0.27442649"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"Hrvatska","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":true,"lineStyle":{"width":3,"color":"#C00000"},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"color":"grey70","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}}],"grid":[{"top":60,"bottom":95,"left":46,"right":30}],"dataZoom":[{"type":"slider","startValue":8,"endValue":26,"height":14,"bottom":6},{"type":"inside","startValue":8,"endValue":26}],"toolbox":{"feature":{"dataZoom":[]}},"title":[{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (namq_10_gdp, na_item = B1GQ, unit = CLV15_MEUR, s_adj = SCA) geo = HR"}],"tooltip":{"trigger":"axis","axisPointer":{"type":"line"},"formatter":"\n        function(params){\n          if (!params || !params.length) {\n            return '';\n          }\n          var p = params[0];\n          var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n          if (raw === null || raw === undefined || isNaN(raw)) {\n            return '';\n          }\n          var val = Number(raw).toFixed(1).replace('.', ',');\n          return p.name + ': ' + val + ' %';\n        }\n      "}},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="realni-bdp-po-državama-eu-27-tromjesečna-stopa-promjene"><span class="header-section-number">2.2</span> Realni BDP po državama EU-27, tromjesečna stopa promjene (%)</h2>
+<p><small><em>Grafikon uspoređuje tromjesečne stope promjene realnog BDP-a država EU-27, naglašavajući raspored zemalja po brzini rasta i poziciju Hrvatske prema prosjeku EU.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-19fcf6e47a1e1566eaed" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-19fcf6e47a1e1566eaed">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"","nameLocation":"middle","nameGap":35,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(1).replace('.', ',');}"}}],"xAxis":[{"data":["DK","LU","SE","CY","PL","PT","SI","CZ","BG","ES","MT","EL","LV","FR","AT","EE","NL","HR","BE","SK","IT","DE","LT","HU","RO","FI","IE"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["DK"," 2.30483448"]},{"value":["LU"," 1.11281075"]},{"value":["SE"," 1.05356925"]},{"value":["CY"," 0.86529217"]},{"value":["PL"," 0.86084648"]},{"value":["PT"," 0.83067514"]},{"value":["SI"," 0.80775088"]},{"value":["CZ"," 0.79434896"]},{"value":["BG"," 0.72378874"]},{"value":["ES"," 0.63231373"]},{"value":["MT"," 0.61098191"]},{"value":["EL"," 0.60398762"]},{"value":["LV"," 0.56058862"]},{"value":["FR"," 0.53820130"]},{"value":["AT"," 0.42323378"]},{"value":["EE"," 0.40732637"]},{"value":["NL"," 0.37172400"]},{"value":["HR",null]},{"value":["BE"," 0.27474100"]},{"value":["SK"," 0.25310087"]},{"value":["IT"," 0.11798902"]},{"value":["DE"," 0.00000000"]},{"value":["LT","-0.01991457"]},{"value":["HU","-0.02524713"]},{"value":["RO","-0.22164770"]},{"value":["FI","-0.33261489"]},{"value":["IE","-0.34188981"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 0,4 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":0.3605799248293629,"name":"EU-27: 0,4"}]}},{"data":[{"value":["DK",null]},{"value":["LU",null]},{"value":["SE",null]},{"value":["CY",null]},{"value":["PL",null]},{"value":["PT",null]},{"value":["SI",null]},{"value":["CZ",null]},{"value":["BG",null]},{"value":["ES",null]},{"value":["MT",null]},{"value":["EL",null]},{"value":["LV",null]},{"value":["FR",null]},{"value":["AT",null]},{"value":["EE",null]},{"value":["NL",null]},{"value":["HR","0.2749679"]},{"value":["BE",null]},{"value":["SK",null]},{"value":["IT",null]},{"value":["DE",null]},{"value":["LT",null]},{"value":["HU",null]},{"value":["RO",null]},{"value":["FI",null]},{"value":["IE",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 0,4 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":0.3605799248293629,"name":"EU-27: 0,4"}]}}],"grid":[{"top":60,"bottom":"20%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":26},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"title":[{"text":"2025Q3 / 2025Q2"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Napomena: EU-27 je sluzbeni ponderirani agregat Eurostata."},{"bottom":-24,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (namq_10_gdp, na_item = B1GQ, unit = CLV20_MEUR, s_adj = SCA)"}],"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n        function(params){\n          if (!params || !params.length) {\n            return '';\n          }\n          var point = null;\n          for (var i = 0; i < params.length; i++) {\n            var candidate = params[i];\n            var raw       = candidate.value;\n            var val       = Array.isArray(raw) ? raw[raw.length - 1] : raw;\n            if (val !== null && val !== undefined && !isNaN(val)) {\n              point = { name: candidate.name, value: val };\n              break;\n            }\n          }\n          if (!point) {\n            return '';\n          }\n          var val = Number(point.value).toFixed(1).replace('.', ',');\n          return point.name + ': ' + val + ' %';\n        }\n      "}},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="realni-bdp-po-državama-eu-27-godišnja-stopa-promjene" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="realni-bdp-po-državama-eu-27-godišnja-stopa-promjene"><span class="header-section-number">2.3</span> Realni BDP po državama EU 27, godišnja stopa promjene (%)</h2>
+<p><small><em>Grafikon prikazuje godišnje stope promjene realnog BDP-a po državama članicama, fokusirajući se na usporedbu intenziteta rasta Hrvatske s ostalim članicama.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-878ad06f0e9f79233fc9" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-878ad06f0e9f79233fc9">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"type":"value","name":"","nameLocation":"middle","nameGap":30,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["IE","DK","PL","CY","BG","ES","CZ","MT","LU","HR","SE","PT","LT","EL","LV","SI","NL","RO","BE","AT","FR","EE","SK","HU","IT","DE","FI"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false,"margin":8},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["IE","10.9131050"]},{"value":["DK"," 3.8737138"]},{"value":["PL"," 3.8457828"]},{"value":["CY"," 3.5960172"]},{"value":["BG"," 3.1800222"]},{"value":["ES"," 2.8314836"]},{"value":["CZ"," 2.7543075"]},{"value":["MT"," 2.7308768"]},{"value":["LU"," 2.6829283"]},{"value":["HR",null]},{"value":["SE"," 2.4522768"]},{"value":["PT"," 2.4009188"]},{"value":["LT"," 2.1038901"]},{"value":["EL"," 1.9687945"]},{"value":["LV"," 1.7948750"]},{"value":["SI"," 1.5992704"]},{"value":["NL"," 1.4350259"]},{"value":["RO"," 1.4011804"]},{"value":["BE"," 1.0493339"]},{"value":["AT"," 0.9680369"]},{"value":["FR"," 0.9213202"]},{"value":["EE"," 0.9127999"]},{"value":["SK"," 0.8234239"]},{"value":["HU"," 0.6116057"]},{"value":["IT"," 0.5513532"]},{"value":["DE"," 0.2780472"]},{"value":["FI","-0.7199728"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 1,6 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":1.596494533205073,"name":"EU-27: 1,6 %"}]}},{"data":[{"value":["IE",null]},{"value":["DK",null]},{"value":["PL",null]},{"value":["CY",null]},{"value":["BG",null]},{"value":["ES",null]},{"value":["CZ",null]},{"value":["MT",null]},{"value":["LU",null]},{"value":["HR","2.5736"]},{"value":["SE",null]},{"value":["PT",null]},{"value":["LT",null]},{"value":["EL",null]},{"value":["LV",null]},{"value":["SI",null]},{"value":["NL",null]},{"value":["RO",null]},{"value":["BE",null]},{"value":["AT",null]},{"value":["FR",null]},{"value":["EE",null]},{"value":["SK",null]},{"value":["HU",null]},{"value":["IT",null]},{"value":["DE",null]},{"value":["FI",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 1,6 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":1.596494533205073,"name":"EU-27: 1,6 %"}]}}],"grid":[{"top":60,"bottom":"18%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":30},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n  function(params){\n    if (!params || !params.length) {\n      return '';\n    }\n    for (var i = 0; i < params.length; i++) {\n      var candidate = params[i];\n      var raw = Array.isArray(candidate.value)\n        ? candidate.value[candidate.value.length - 1]\n        : candidate.value;\n      if (raw !== null && raw !== undefined && !isNaN(raw)) {\n        return candidate.name + ': ' + Number(raw).toFixed(1).replace('.', ',') + ' %';\n      }\n    }\n    return '';\n  }\n"},"title":[{"text":"2025Q3 / 2024Q3"},{"bottom":-24,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Napomena: EU-27 je službeni ponderirani agregat Eurostata.\n\nIzvor: Eurostat (namq_10_gdp, na_item = B1GQ, unit = CLV20_MEUR, s_adj = SCA)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="godišnji-podaci-o-bdp-u" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Godišnji podaci o BDP-u</h1>
+<p>Godišnji pokazatelji daju širu sliku kretanja gospodarstva izvan kratkoročnih fluktuacija i pomažu procijeniti srednjoročne trendove. U nastavku su usporedbe godišnjeg rasta realnog i nominalnog BDP-a te BDP-a po stanovniku u odnosu na prosjek EU-27.</p>
+<section id="realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="realni-bdp-po-državama-eu-27-godišnja-stopa-promjene-1"><span class="header-section-number">3.1</span> Realni BDP po državama EU-27, godišnja stopa promjene (%)</h2>
+<p><small><em>Grafikon prikazuje godišnje stope rasta realnog BDP-a za države EU-27, naglašavajući poziciju Hrvatske u odnosu na prosjek Unije.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-2bc95debd2f6dbe3f626" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-2bc95debd2f6dbe3f626">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"type":"value","name":"","nameLocation":"middle","nameGap":30,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["MT","CY","HR","DK","ES","BG","LT","PL","IE","PT","EL","SK","SI","CZ","FR","NL","BE","SE","RO","IT","HU","FI","LU","LV","EE","DE","AT"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false,"margin":8},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["MT"," 6.99518320"]},{"value":["CY"," 3.94099240"]},{"value":["HR",null]},{"value":["DK"," 3.47784330"]},{"value":["ES"," 3.45525406"]},{"value":["BG"," 3.38702366"]},{"value":["LT"," 3.03029205"]},{"value":["PL"," 3.02840672"]},{"value":["IE"," 2.59948489"]},{"value":["PT"," 2.13965816"]},{"value":["EL"," 2.08655399"]},{"value":["SK"," 1.93862472"]},{"value":["SI"," 1.73128881"]},{"value":["CZ"," 1.23307799"]},{"value":["FR"," 1.19046798"]},{"value":["NL"," 1.08100863"]},{"value":["BE"," 1.07045413"]},{"value":["SE"," 0.94183630"]},{"value":["RO"," 0.91599886"]},{"value":["IT"," 0.69267695"]},{"value":["HU"," 0.56006830"]},{"value":["FI"," 0.37454750"]},{"value":["LU"," 0.35867123"]},{"value":["LV","-0.04595909"]},{"value":["EE","-0.09008760"]},{"value":["DE","-0.49585355"]},{"value":["AT","-0.65907403"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 1,8 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":1.806124060405795,"name":"EU-27: 1,8 %"}]}},{"data":[{"value":["MT",null]},{"value":["CY",null]},{"value":["HR","3.82691"]},{"value":["DK",null]},{"value":["ES",null]},{"value":["BG",null]},{"value":["LT",null]},{"value":["PL",null]},{"value":["IE",null]},{"value":["PT",null]},{"value":["EL",null]},{"value":["SK",null]},{"value":["SI",null]},{"value":["CZ",null]},{"value":["FR",null]},{"value":["NL",null]},{"value":["BE",null]},{"value":["SE",null]},{"value":["RO",null]},{"value":["IT",null]},{"value":["HU",null]},{"value":["FI",null]},{"value":["LU",null]},{"value":["LV",null]},{"value":["EE",null]},{"value":["DE",null]},{"value":["AT",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 1,8 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":1.806124060405795,"name":"EU-27: 1,8 %"}]}}],"grid":[{"top":60,"bottom":"18%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":26},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n  function(params){\n    if (!params || !params.length) {\n      return '';\n    }\n    for (var i = 0; i < params.length; i++) {\n      var candidate = params[i];\n      var raw = Array.isArray(candidate.value)\n        ? candidate.value[candidate.value.length - 1]\n        : candidate.value;\n      if (raw !== null && raw !== undefined && !isNaN(raw)) {\n        return candidate.name + ': ' + Number(raw).toFixed(1).replace('.', ',') + ' %';\n      }\n    }\n    return '';\n  }\n"},"title":[{"text":"2024. / 2023."},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="realni-bdp-po-državama-eu-27-razina-mlrd.-eur" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="realni-bdp-po-državama-eu-27-razina-mlrd.-eur"><span class="header-section-number">3.2</span> Realni BDP po državama EU 27, razina (mlrd. EUR)</h2>
+<p><small><em>Grafikon prikazuje razine realnog BDP-a u milijardama eura za države članice u posljednjoj dostupnoj godini, omogućujući usporedbu veličine gospodarstava i mjesta Hrvatske među članicama.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-a26039f06c7d30e9c2c0" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-a26039f06c7d30e9c2c0">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"","nameLocation":"middle","nameGap":35,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["DE","FR","IT","ES","NL","PL","BE","SE","IE","AT","DK","RO","FI","PT","CZ","EL","HU","SK","BG","LU","HR","LT","SI","LV","CY","EE","MT"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["DE","3600.8263"]},{"value":["FR","2612.5098"]},{"value":["IT","1938.8092"]},{"value":["ES","1358.3230"]},{"value":["NL"," 915.5005"]},{"value":["PL"," 618.2201"]},{"value":["BE"," 526.6086"]},{"value":["SE"," 513.1566"]},{"value":["IE"," 477.1111"]},{"value":["AT"," 414.2609"]},{"value":["DK"," 347.5828"]},{"value":["RO"," 249.5691"]},{"value":["FI"," 242.3155"]},{"value":["PT"," 239.0784"]},{"value":["CZ"," 238.7324"]},{"value":["EL"," 200.2880"]},{"value":["HU"," 154.7718"]},{"value":["SK"," 104.2983"]},{"value":["BG","  72.9809"]},{"value":["LU","  68.5247"]},{"value":["HR",null]},{"value":["LT","  56.8754"]},{"value":["SI","  54.1830"]},{"value":["LV","  31.5353"]},{"value":["CY","  29.0645"]},{"value":["EE","  28.9457"]},{"value":["MT","  19.7695"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}}},{"data":[{"value":["DE",null]},{"value":["FR",null]},{"value":["IT",null]},{"value":["ES",null]},{"value":["NL",null]},{"value":["PL",null]},{"value":["BE",null]},{"value":["SE",null]},{"value":["IE",null]},{"value":["AT",null]},{"value":["DK",null]},{"value":["RO",null]},{"value":["FI",null]},{"value":["PT",null]},{"value":["CZ",null]},{"value":["EL",null]},{"value":["HU",null]},{"value":["SK",null]},{"value":["BG",null]},{"value":["LU",null]},{"value":["HR","66.0308"]},{"value":["LT",null]},{"value":["SI",null]},{"value":["LV",null]},{"value":["CY",null]},{"value":["EE",null]},{"value":["MT",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"grid":[{"top":60,"bottom":"18%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":30},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n        function(params){\n          if (!params || !params.length) { return ''; }\n          var point = null;\n          for (var i = 0; i < params.length; i++) {\n            var cand = params[i];\n            var raw = Array.isArray(cand.value)\n              ? cand.value[cand.value.length - 1]\n              : cand.value;\n            if (raw !== null && raw !== undefined && !isNaN(raw)) {\n              point = { name: cand.name, value: raw };\n              break;\n            }\n          }\n          if (!point) { return ''; }\n          return '2024: ' + point.name + ': ' +\n            Number(point.value).toFixed(1).replace('.', ',') + ' mlrd. EUR';\n        }\n      "},"title":[{"text":"2024 (mlrd. EUR)"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="nominalni-bdp-po-državama-eu-27-godišnja-stopa-promjene"><span class="header-section-number">3.3</span> Nominalni BDP po državama EU 27, godišnja stopa promjene (%)</h2>
+<p><small><em>Grafikon prikazuje godišnje stope promjene nominalnog BDP-a u državama EU-27, omogućujući usporedbu kretanja u tekućim cijenama s realnim pokazateljima rasta.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-cc2cadbc4b15d59003f6" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-cc2cadbc4b15d59003f6">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"type":"value","name":"","nameLocation":"middle","nameGap":30,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["PL","BG","MT","RO","HR","IE","CY","PT","NL","ES","LT","SK","EL","SI","LU","DK","HU","SE","EE","AT","FR","BE","IT","DE","LV","FI","CZ"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false,"margin":8},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["PL","12.8414855"]},{"value":["BG","10.8352570"]},{"value":["MT","10.5221905"]},{"value":["RO"," 9.9680979"]},{"value":["HR",null]},{"value":["IE"," 7.2542997"]},{"value":["CY"," 7.1857506"]},{"value":["PT"," 7.0557487"]},{"value":["NL"," 6.8873181"]},{"value":["ES"," 6.4475574"]},{"value":["LT"," 6.2962714"]},{"value":["SK"," 5.3981465"]},{"value":["EL"," 5.3629462"]},{"value":["SI"," 5.2585480"]},{"value":["LU"," 4.9501008"]},{"value":["DK"," 4.8712950"]},{"value":["HU"," 4.4940960"]},{"value":["SE"," 4.3903248"]},{"value":["EE"," 3.8961344"]},{"value":["AT"," 3.4008019"]},{"value":["FR"," 3.3029198"]},{"value":["BE"," 2.9708174"]},{"value":["IT"," 2.6611432"]},{"value":["DE"," 2.5990032"]},{"value":["LV"," 2.0098978"]},{"value":["FI"," 1.0944854"]},{"value":["CZ"," 0.5147617"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 5,6 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":5.590900970275822,"name":"EU-27: 5,6 %"}]}},{"data":[{"value":["PL",null]},{"value":["BG",null]},{"value":["MT",null]},{"value":["RO",null]},{"value":["HR","8.484927"]},{"value":["IE",null]},{"value":["CY",null]},{"value":["PT",null]},{"value":["NL",null]},{"value":["ES",null]},{"value":["LT",null]},{"value":["SK",null]},{"value":["EL",null]},{"value":["SI",null]},{"value":["LU",null]},{"value":["DK",null]},{"value":["HU",null]},{"value":["SE",null]},{"value":["EE",null]},{"value":["AT",null]},{"value":["FR",null]},{"value":["BE",null]},{"value":["IT",null]},{"value":["DE",null]},{"value":["LV",null]},{"value":["FI",null]},{"value":["CZ",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}},"markLine":{"lineStyle":{"type":"dashed","color":"#303030"},"label":{"show":true,"formatter":"EU-27: 5,6 %","position":"insideEndTop","color":"#303030","padding":[0,0,4,0]},"symbol":"none","data":[{"yAxis":5.590900970275822,"name":"EU-27: 5,6 %"}]}}],"grid":[{"top":60,"bottom":"18%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":26},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n  function(params){\n    if (!params || !params.length) {\n      return '';\n    }\n    for (var i = 0; i < params.length; i++) {\n      var candidate = params[i];\n      var raw = Array.isArray(candidate.value)\n        ? candidate.value[candidate.value.length - 1]\n        : candidate.value;\n      if (raw !== null && raw !== undefined && !isNaN(raw)) {\n        return candidate.name + ': ' + Number(raw).toFixed(1).replace('.', ',') + ' %';\n      }\n    }\n    return '';\n  }\n"},"title":[{"text":"2024. / 2023."},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CP_MEUR)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="nominalni-bdp-po-državama-eu-27-razina-mlrd.-eur" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="nominalni-bdp-po-državama-eu-27-razina-mlrd.-eur"><span class="header-section-number">3.4</span> Nominalni BDP po državama EU 27, razina (mlrd. EUR)</h2>
+<p><small><em>Grafikon prikazuje razine nominalnog BDP-a u milijardama eura za države članice u posljednjoj dostupnoj godini, omogućujući usporedbu veličine gospodarstava i mjesta Hrvatske među članicama.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-119a261eaa907aebeed1" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-119a261eaa907aebeed1">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"name":"","nameLocation":"middle","nameGap":35,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["DE","FR","IT","ES","NL","PL","BE","IE","SE","AT","DK","RO","CZ","PT","FI","EL","HU","SK","BG","LU","HR","LT","SI","LV","EE","CY","MT"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":65,"hideOverlap":false},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["DE","4328.9700"]},{"value":["FR","2919.8999"]},{"value":["IT","2199.6194"]},{"value":["ES","1594.3300"]},{"value":["NL","1122.4590"]},{"value":["PL"," 848.4909"]},{"value":["BE"," 620.2718"]},{"value":["IE"," 562.7942"]},{"value":["SE"," 558.6728"]},{"value":["AT"," 494.0876"]},{"value":["DK"," 392.4007"]},{"value":["RO"," 353.6331"]},{"value":["CZ"," 320.7417"]},{"value":["PT"," 289.4280"]},{"value":["FI"," 275.9930"]},{"value":["EL"," 236.7360"]},{"value":["HU"," 206.0401"]},{"value":["SK"," 130.2075"]},{"value":["BG"," 104.7688"]},{"value":["LU","  86.1803"]},{"value":["HR",null]},{"value":["LT","  78.9962"]},{"value":["SI","  67.4181"]},{"value":["LV","  40.3594"]},{"value":["EE","  39.8477"]},{"value":["CY","  34.7702"]},{"value":["MT","  23.1250"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}}},{"data":[{"value":["DE",null]},{"value":["FR",null]},{"value":["IT",null]},{"value":["ES",null]},{"value":["NL",null]},{"value":["PL",null]},{"value":["BE",null]},{"value":["IE",null]},{"value":["SE",null]},{"value":["AT",null]},{"value":["DK",null]},{"value":["RO",null]},{"value":["CZ",null]},{"value":["PT",null]},{"value":["FI",null]},{"value":["EL",null]},{"value":["HU",null]},{"value":["SK",null]},{"value":["BG",null]},{"value":["LU",null]},{"value":["HR","85.9052"]},{"value":["LT",null]},{"value":["SI",null]},{"value":["LV",null]},{"value":["EE",null]},{"value":["CY",null]},{"value":["MT",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":14,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"grid":[{"top":60,"bottom":"18%","left":"7%","right":"4%"}],"dataZoom":[{"type":"slider","start":0,"end":100,"height":12,"bottom":30},{"type":"inside","start":0,"end":100}],"toolbox":{"feature":{"dataZoom":[]}},"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n        function(params){\n          if (!params || !params.length) { return ''; }\n          var point = null;\n          for (var i = 0; i < params.length; i++) {\n            var cand = params[i];\n            var raw = Array.isArray(cand.value)\n              ? cand.value[cand.value.length - 1]\n              : cand.value;\n            if (raw !== null && raw !== undefined && !isNaN(raw)) {\n              point = { name: cand.name, value: raw };\n              break;\n            }\n          }\n          if (!point) { return ''; }\n          return '2024: ' + point.name + ': ' +\n            Number(point.value).toFixed(1).replace('.', ',') + ' mlrd. EUR';\n        }\n      "},"title":[{"text":"2024 (mlrd. EUR)"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CP_MEUR)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":{"render":[{"code":"\n    function(el, x){\n      var chart = echarts.getInstanceByDom(el);\n      if (!chart) return;\n      function toggle(){\n        var w = el.clientWidth || 0;\n        var opt = chart.getOption();\n        if (!opt || !opt.dataZoom) return;\n        var dz = opt.dataZoom;\n        var n  = 0;\n        if (opt.xAxis && opt.xAxis.length && opt.xAxis[0].data) {\n          n = opt.xAxis[0].data.length || 0;\n        }\n        var sv_mobile = Math.max(0, n - 15);\n        var ev = n ? n - 1 : 0;\n        var needMobile = w < 640;\n        for (var i = 0; i < dz.length; i++) {\n          if (!dz[i]) continue;\n          if (needMobile) {\n            dz[i].start = null;\n            dz[i].end = null;\n            dz[i].startValue = sv_mobile;\n            dz[i].endValue   = ev;\n          } else {\n            dz[i].start = 0;\n            dz[i].end   = 100;\n            dz[i].startValue = null;\n            dz[i].endValue   = null;\n          }\n          if (dz[i].type === 'slider') {\n            dz[i].show = true;\n          }\n        }\n        chart.setOption({ dataZoom: dz }, false, true);\n      }\n      toggle();\n      window.addEventListener('resize', toggle);\n    }\n    ","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="bdp-po-stanovniku-pps-eu-27-100" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="bdp-po-stanovniku-pps-eu-27-100"><span class="header-section-number">3.5</span> BDP po stanovniku (PPS, EU 27 = 100)</h2>
+<p><small><em>Grafikon prikazuje BDP po stanovniku izražen u standardu kupovne moći (EU 27 = 100) za zemlje CEE i Hrvatsku, ističući relativnu razinu gospodarske razvijenosti.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-ea89a4d4106aa718453d" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-ea89a4d4106aa718453d">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"type":"value","name":"","nameLocation":"middle","nameGap":40,"nameRotate":90,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"data":["BG","LV","SK","HU","RO","HR","PL","EE","LT","SI","CZ"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":0,"hideOverlap":false,"margin":8},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Ostale zemlje","Hrvatska"],"show":false,"type":"plain"},"series":[{"data":[{"value":["BG","66.36534"]},{"value":["LV","70.28819"]},{"value":["SK","74.46139"]},{"value":["HU","76.08160"]},{"value":["RO","77.87580"]},{"value":["HR",null]},{"value":["PL","78.70493"]},{"value":["EE","79.37334"]},{"value":["LT","87.61960"]},{"value":["SI","90.94289"]},{"value":["CZ","91.21426"]}],"name":"Ostale zemlje","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":22,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#d9d9d9"},"emphasis":{"itemStyle":{"color":"#d9d9d9"}}},{"data":[{"value":["BG",null]},{"value":["LV",null]},{"value":["SK",null]},{"value":["HU",null]},{"value":["RO",null]},{"value":["HR","77.96342"]},{"value":["PL",null]},{"value":["EE",null]},{"value":["LT",null]},{"value":["SI",null]},{"value":["CZ",null]}],"name":"Hrvatska","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","barWidth":22,"barGap":"-100%","barCategoryGap":"0%","itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"grid":[{"top":60,"bottom":"12%","left":"6%","right":"3%"}],"tooltip":{"trigger":"axis","axisPointer":{"type":"shadow"},"formatter":"\n  function(params){\n    if (!params || !params.length) {\n      return '';\n    }\n    for (var i = 0; i < params.length; i++) {\n      var candidate = params[i];\n      var raw = Array.isArray(candidate.value)\n        ? candidate.value[candidate.value.length - 1]\n        : candidate.value;\n      if (raw !== null && raw !== undefined && !isNaN(raw)) {\n        return candidate.name + ': ' + Number(raw).toFixed(1).replace('.', ',') + ' %';\n      }\n    }\n    return '';\n  }\n"},"title":[{"text":"CEE zemlje, 2024"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_pc, na_item = B1GQ, unit = CP_PPS_EU27_2020_HAB)"}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="dugoročna-kretanja-realnog-bdp-a" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Dugoročna kretanja realnog BDP-a</h1>
+<p>Ova sekcija daje dugoročan pogled na kretanje realnog BDP-a kroz indekse i godišnje stope promjene, što pomaže razumjeti kumulativni rast i ciklička kretanja. Usporedbe Hrvatske s referentnim skupinama ilustriraju konvergenciju i strukturalne razlike u dinamici rasta.</p>
+<p><small><em>Graf prikazuje dugoročni indeks realnog BDP-a za Hrvatsku i referentne skupine, omogućujući usporedbu kumulativnog rasta u odnosu na baznu godinu.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-a6b729ea1bad51d717c2" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-a6b729ea1bad51d717c2">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"},"axisPointer":{"label":{"formatter":"\n            function(params){\n              var val = Number(params.value);\n              if (isNaN(val)) { return params.value; }\n              return val.toFixed(1).replace('.', ',');\n            }\n          "}}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisPointer":{"label":{"formatter":"\n            function(params){\n              return Math.round(params.value) + '.';\n            }\n          "}},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["HR","EU 27","EA","CEE"],"show":true,"type":"scroll","bottom":60},"series":[{"data":[{"value":[2000,100]},{"value":[2001,103.111160289697]},{"value":[2002,109.0950525464408]},{"value":[2003,115.1698373681728]},{"value":[2004,119.9729166502006]},{"value":[2005,125.1643311229315]},{"value":[2006,131.5088956158169]},{"value":[2007,138.1493219941565]},{"value":[2008,140.8747816602515]},{"value":[2009,131.2778440810498]},{"value":[2010,129.524012761843]},{"value":[2011,129.3804288548327]},{"value":[2012,126.4855665241366]},{"value":[2013,126.3164273162455]},{"value":[2014,125.6119440734096]},{"value":[2015,128.5263022006539]},{"value":[2016,132.9816186253356]},{"value":[2017,137.3486770521302]},{"value":[2018,141.3468960847698]},{"value":[2019,145.7308157410115]},{"value":[2020,133.6194473205135]},{"value":[2021,150.4983283671743]},{"value":[2022,161.4765694774863]},{"value":[2023,167.550563929088]},{"value":[2024,173.9625733397617]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false},{"data":[{"value":[2000,100]},{"value":[2001,102.1179740150299]},{"value":[2002,103.181694965744]},{"value":[2003,104.1044507203248]},{"value":[2004,106.7445419892206]},{"value":[2005,108.8141462273822]},{"value":[2006,112.6611572706223]},{"value":[2007,116.1742027747479]},{"value":[2008,116.8936793129486]},{"value":[2009,111.9072570193292]},{"value":[2010,114.2925017671052]},{"value":[2011,116.4809151457657]},{"value":[2012,115.5587674038857]},{"value":[2013,115.5114316126883]},{"value":[2014,117.3846131609301]},{"value":[2015,120.1369346544539]},{"value":[2016,122.4434827164107]},{"value":[2017,125.8886246703556]},{"value":[2018,128.4638160446287]},{"value":[2019,130.8731701343506]},{"value":[2020,123.5942031850654]},{"value":[2021,131.4441086236171]},{"value":[2022,136.1040362886737]},{"value":[2023,136.702474609872]},{"value":[2024,138.1521061368815]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EU 27","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false},{"data":[{"value":[2000,100]},{"value":[2001,102.1584040554947]},{"value":[2002,103.0905666665371]},{"value":[2003,103.8338061420162]},{"value":[2004,106.2187150927344]},{"value":[2005,108.0810588187718]},{"value":[2006,111.6624067749442]},{"value":[2007,115.0083156681559]},{"value":[2008,115.4789866190249]},{"value":[2009,110.3323511423915]},{"value":[2010,112.6199965340229]},{"value":[2011,114.5616421523367]},{"value":[2012,113.4688860557416]},{"value":[2013,113.2649940098205]},{"value":[2014,114.8979159799933]},{"value":[2015,117.3238896927406]},{"value":[2016,119.4374875278311]},{"value":[2017,122.5678871878917]},{"value":[2018,124.7483184641986]},{"value":[2019,126.7707295332048]},{"value":[2020,119.1338837700982]},{"value":[2021,126.7674229373162]},{"value":[2022,131.3795560088883]},{"value":[2023,131.9688982657366]},{"value":[2024,133.1477684164853]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EA","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false},{"data":[{"value":[2000,100]},{"value":[2001,103.0627170494857]},{"value":[2002,106.6367040475744]},{"value":[2003,110.8180971124742]},{"value":[2004,117.4811137446876]},{"value":[2005,123.370621229953]},{"value":[2006,131.7042522857917]},{"value":[2007,140.1452851055907]},{"value":[2008,145.8595622514289]},{"value":[2009,140.5543949448544]},{"value":[2010,142.8035602569923]},{"value":[2011,148.128716261412]},{"value":[2012,149.5613048016947]},{"value":[2013,150.5920722712037]},{"value":[2014,155.7051238086645]},{"value":[2015,162.0258812564429]},{"value":[2016,166.5240293355329]},{"value":[2017,175.1808305649487]},{"value":[2018,183.892956024604]},{"value":[2019,191.3395869836938]},{"value":[2020,185.3089590308624]},{"value":[2021,197.0036511644949]},{"value":[2022,204.629150327786]},{"value":[2023,205.8817884316943]},{"value":[2024,209.9415672860251]}],"yAxisIndex":0,"xAxisIndex":0,"name":"CEE","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false}],"color":["#C00000","#000000","#808080","#1f77b4"],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              if (params.axisDimension === 'x') {\n                return Math.round(params.value) + '.';\n              }\n              var val = Number(params.value);\n              if (isNaN(val)) { return params.value; }\n              return val.toFixed(1).replace('.', ',');\n            }\n          "}},"formatter":"\n        function(params){\n          if (!params || !params.length) { return ''; }\n          var lines = [];\n          var year  = Math.round(params[0].axisValue);\n          for (var i = 0; i < params.length; i++) {\n            var p = params[i];\n            if (p.data == null || isNaN(p.data[1])) { continue; }\n            lines.push(p.seriesName + ': ' +\n              Number(p.data[1]).toFixed(1).replace('.', ','));\n          }\n          return year + '.<br/>' + lines.join('<br/>');\n        }\n      "},"title":[{"text":"Indeks 2000. = 100"},{"bottom":16,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Napomena: Zemlje srednje i istočne europe (CEE) uključuju BG, CZ, EE, HU, LT, LV, PL, RO, SI, SK."},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.axisPointer.label.formatter","opts.xAxis.0.axisLabel.formatter","opts.xAxis.0.axisPointer.label.formatter","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+<p><small><em>Grafikon prikazuje godišnje stope promjene realnog BDP-a kroz dulje razdoblje za Hrvatsku i usporedne skupine, naglašavajući razlike u intenzitetu gospodarskih ciklusa.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-092a910e9379df0c997e" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-092a910e9379df0c997e">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"},"axisPointer":{"label":{"formatter":"\n            function(params){\n              var val = Number(params.value);\n              if (isNaN(val)) { return params.value; }\n              return val.toFixed(1).replace('.', ',') + ' %';\n            }\n          "}}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisPointer":{"label":{"formatter":"\n            function(params){\n              return Math.round(params.value) + '.';\n            }\n          "}},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["HR","EU 27","EA","CEE"],"show":true,"type":"scroll","bottom":60},"series":[{"data":[{"value":[2000,null]},{"value":[2001,3.111160289697001]},{"value":[2002,5.803341015591057]},{"value":[2003,5.568341258322462]},{"value":[2004,4.170431591974366]},{"value":[2005,4.327155342790645]},{"value":[2006,5.068987654840718]},{"value":[2007,5.049412320926661]},{"value":[2008,1.972836078204021]},{"value":[2009,-6.812388609301734]},{"value":[2010,-1.335969014027971]},{"value":[2011,-0.1108550483795878]},{"value":[2012,-2.237480858827756]},{"value":[2013,-0.1337221412205714]},{"value":[2014,-0.5577130843577582]},{"value":[2015,2.320128192221205]},{"value":[2016,3.466462777187873]},{"value":[2017,3.283956438444657]},{"value":[2018,2.910999303707995]},{"value":[2019,3.101532313530631]},{"value":[2020,-8.31078063957451]},{"value":[2021,12.63205422948155]},{"value":[2022,7.294593388125925]},{"value":[2023,3.76153300212918]},{"value":[2024,3.82691007437459]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"markLine":{"lineStyle":{"color":"grey60","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}},{"data":[{"value":[2000,null]},{"value":[2001,2.117974015029889]},{"value":[2002,1.041658886179619]},{"value":[2003,0.894301799255337]},{"value":[2004,2.536002304059348]},{"value":[2005,1.938838463863202]},{"value":[2006,3.53539606440616]},{"value":[2007,3.118240207391954]},{"value":[2008,0.6193083498887253]},{"value":[2009,-4.265775808347794]},{"value":[2010,2.131447782125551]},{"value":[2011,1.914747988559951]},{"value":[2012,-0.7916728167236542]},{"value":[2013,-0.04096252691232483]},{"value":[2014,1.621641704279564]},{"value":[2015,2.344703806921045]},{"value":[2016,1.919932507509903]},{"value":[2017,2.813658904103677]},{"value":[2018,2.04561085722903]},{"value":[2019,1.875511847542244]},{"value":[2020,-5.561848117389367]},{"value":[2021,6.351354057275227]},{"value":[2022,3.545178033349594]},{"value":[2023,0.4396918251043047]},{"value":[2024,1.060428153291681]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EU 27","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"markLine":{"lineStyle":{"color":"grey60","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}},{"data":[{"value":[2000,null]},{"value":[2001,2.158404055494745]},{"value":[2002,0.9124678675833664]},{"value":[2003,0.7209577942114187]},{"value":[2004,2.29685209406294]},{"value":[2005,1.753310350639681]},{"value":[2006,3.313575935796109]},{"value":[2007,2.996450631729086]},{"value":[2008,0.4092494948165548]},{"value":[2009,-4.456772290193911]},{"value":[2010,2.073413072362684]},{"value":[2011,1.724068263247736]},{"value":[2012,-0.9538586180024122]},{"value":[2013,-0.1796898277655168]},{"value":[2014,1.441682829234248]},{"value":[2015,2.111416636285823]},{"value":[2016,1.801506786576668]},{"value":[2017,2.620952370026353]},{"value":[2018,1.778958034060274]},{"value":[2019,1.621193050058256]},{"value":[2020,-6.024139634777659]},{"value":[2021,6.407529852673188]},{"value":[2022,3.638263652210316]},{"value":[2023,0.4485798816433961]},{"value":[2024,0.8932939247358718]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EA","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"markLine":{"lineStyle":{"color":"grey60","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}},{"data":[{"value":[2000,null]},{"value":[2001,3.062717049485664]},{"value":[2002,3.467778747160999]},{"value":[2003,3.921157449722301]},{"value":[2004,6.012570875902012]},{"value":[2005,5.013152580477365]},{"value":[2006,6.754955898540471]},{"value":[2007,6.40908146343091]},{"value":[2008,4.077395212784274]},{"value":[2009,-3.637174844546409]},{"value":[2010,1.60020987819014]},{"value":[2011,3.729007872658352]},{"value":[2012,0.9671241177534151]},{"value":[2013,0.689193953526801]},{"value":[2014,3.395299274620878]},{"value":[2015,4.059440879765486]},{"value":[2016,2.776191090095481]},{"value":[2017,5.198529764117699]},{"value":[2018,4.973218491748876]},{"value":[2019,4.049437846925197]},{"value":[2020,-3.151793127548297]},{"value":[2021,6.310915670129447]},{"value":[2022,3.870740018378616]},{"value":[2023,0.6121503714900056]},{"value":[2024,1.971897993142635]}],"yAxisIndex":0,"xAxisIndex":0,"name":"CEE","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"markLine":{"lineStyle":{"color":"grey60","type":"dashed"},"label":{"show":false},"symbol":"none","data":[{"yAxis":0}]}}],"color":["#C00000","#000000","#808080","#1f77b4"],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              if (params.axisDimension === 'x') {\n                return Math.round(params.value) + '.';\n              }\n              var val = Number(params.value);\n              if (isNaN(val)) { return params.value; }\n              return val.toFixed(1).replace('.', ',') + ' %';\n            }\n          "}},"formatter":"\n        function(params){\n          if (!params || !params.length) { return ''; }\n          var year = Math.round(params[0].axisValue);\n          var lines = [];\n          for (var i = 0; i < params.length; i++) {\n            var p = params[i];\n            if (p.data == null || isNaN(p.data[1])) { continue; }\n            lines.push(p.seriesName + ': ' +\n              Number(p.data[1]).toFixed(1).replace('.', ',') + ' %');\n          }\n          return year + '.<br/>' + lines.join('<br/>');\n        }\n      "},"title":[{"text":"%"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.yAxis.0.axisPointer.label.formatter","opts.xAxis.0.axisLabel.formatter","opts.xAxis.0.axisPointer.label.formatter","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+<section id="cee-zemlje" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="cee-zemlje"><span class="header-section-number">4.1</span> CEE zemlje</h2>
+<details>
+<summary>
+Prikaži/sakrij
+</summary>
+<p><small><em>Grafikon prikazuje kretanja indeksa realnog BDP-a za zemlje CEE i Hrvatsku, naglašavajući raspon i prosjek skupine u odnosu na kretanje Hrvatske.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-b618993be699fb2e874a" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-b618993be699fb2e874a">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","CEE","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2000,100,100]},{"value":[2001,101.2337395050381,106.4842259657149]},{"value":[2002,103.158403205768,114.6210388972859]},{"value":[2003,106.7930479042029,125.6308958918102]},{"value":[2004,112.2296589924461,135.1270524099265]},{"value":[2005,115.8892641732498,150.8222558100479]},{"value":[2006,123.0768305450144,170.1649678977897]},{"value":[2007,129.3188536778651,187.8870673952641]},{"value":[2008,130.6035020078891,181.5202366649873]},{"value":[2009,121.800622401097,157.3977696546517]},{"value":[2010,123.1014095292368,162.3110377892614]},{"value":[2011,125.4609018137783,166.4701678792338]},{"value":[2012,123.7803520706634,169.0824001408006]},{"value":[2013,126.2957785356211,174.2363987969216]},{"value":[2014,129.8868534654921,180.8092404803583]},{"value":[2015,132.9955872532009,185.9314908830578]},{"value":[2016,137.0312854481606,190.8992094430306]},{"value":[2017,144.1217164019338,199.7040322334217]},{"value":[2018,150.4331265956665,209.5264079204117]},{"value":[2019,155.7060554644887,219.3265205453141]},{"value":[2020,149.3454372325911,219.4203746305859]},{"value":[2021,161.9155347220225,233.4517786440485]},{"value":[2022,166.2362560990807,239.207434989676]},{"value":[2023,170.1859999936093,240.9762570990793]},{"value":[2024,172.2641954642186,248.2785414638618]}]},{"data":[{"value":[2000,100]},{"value":[2001,103.0627170494857]},{"value":[2002,106.6367040475744]},{"value":[2003,110.8180971124742]},{"value":[2004,117.4811137446876]},{"value":[2005,123.370621229953]},{"value":[2006,131.7042522857917]},{"value":[2007,140.1452851055907]},{"value":[2008,145.8595622514289]},{"value":[2009,140.5543949448544]},{"value":[2010,142.8035602569923]},{"value":[2011,148.128716261412]},{"value":[2012,149.5613048016947]},{"value":[2013,150.5920722712037]},{"value":[2014,155.7051238086645]},{"value":[2015,162.0258812564429]},{"value":[2016,166.5240293355329]},{"value":[2017,175.1808305649487]},{"value":[2018,183.892956024604]},{"value":[2019,191.3395869836938]},{"value":[2020,185.3089590308624]},{"value":[2021,197.0036511644949]},{"value":[2022,204.629150327786]},{"value":[2023,205.8817884316943]},{"value":[2024,209.9415672860251]}],"yAxisIndex":0,"xAxisIndex":0,"name":"CEE","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#1f77b4"},"emphasis":{"itemStyle":{"color":"#1f77b4"}}},{"data":[{"value":[2000,100]},{"value":[2001,103.111160289697]},{"value":[2002,109.0950525464408]},{"value":[2003,115.1698373681728]},{"value":[2004,119.9729166502006]},{"value":[2005,125.1643311229315]},{"value":[2006,131.5088956158169]},{"value":[2007,138.1493219941565]},{"value":[2008,140.8747816602515]},{"value":[2009,131.2778440810498]},{"value":[2010,129.524012761843]},{"value":[2011,129.3804288548327]},{"value":[2012,126.4855665241366]},{"value":[2013,126.3164273162455]},{"value":[2014,125.6119440734096]},{"value":[2015,128.5263022006539]},{"value":[2016,132.9816186253356]},{"value":[2017,137.3486770521302]},{"value":[2018,141.3468960847698]},{"value":[2019,145.7308157410115]},{"value":[2020,133.6194473205135]},{"value":[2021,150.4983283671743]},{"value":[2022,161.4765694774863]},{"value":[2023,167.550563929088]},{"value":[2024,173.9625733397617]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(0).replace('.', ',');\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(0).replace('.', ',');\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"Indeks 2000. = 100"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+<p><small><em>Grafikon prikazuje godišnje stope promjene realnog BDP-a unutar CEE skupine, uspoređujući fluktuacije rasta Hrvatske s ostalim članicama.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-95157cf03a63d4ffa8ec" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-95157cf03a63d4ffa8ec">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","CEE","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2001,1.233739505038156,6.484225965714874]},{"value":[2002,1.513491626239882,7.665331877199377]},{"value":[2003,2.341124293417796,10.55181023720351]},{"value":[2004,4.546170173065267,10.42811252703408]},{"value":[2005,3.260818230811924,11.61514524309157]},{"value":[2006,3.933971882763476,12.82483940042827]},{"value":[2007,0.3323765310563553,11.07793042772063]},{"value":[2008,-5.125444692226422,9.307517123100073]},{"value":[2009,-16.04015286841786,2.61514326308312]},{"value":[2010,-3.905769818928184,6.790472244195844]},{"value":[2011,0.6553963003797625,7.606914312470736]},{"value":[2012,-2.915596665246767,7.305347292196807]},{"value":[2013,-0.8236240964580421,4.047036865182196]},{"value":[2014,0.9495752915620548,4.334315667764144]},{"value":[2015,1.838051831398246,5.176864586705654]},{"value":[2016,1.947840843326554,3.093200267873186]},{"value":[2017,2.745925032213514,8.195470273147688]},{"value":[2018,2.330072219098978,6.245859211661431]},{"value":[2019,0.6753903197379563,5.077178377611968]},{"value":[2020,-5.304905253584103,0.04279194556069399]},{"value":[2021,4.029039002208701,8.416793791868415]},{"value":[2022,-1.22616797639179,5.255456610887199]},{"value":[2023,-2.743947470895503,2.375982223862461]},{"value":[2024,-0.09008760242718017,3.387023657741883]}]},{"data":[{"value":[2001,3.062717049485664]},{"value":[2002,3.467778747160999]},{"value":[2003,3.921157449722301]},{"value":[2004,6.012570875902012]},{"value":[2005,5.013152580477365]},{"value":[2006,6.754955898540471]},{"value":[2007,6.40908146343091]},{"value":[2008,4.077395212784274]},{"value":[2009,-3.637174844546409]},{"value":[2010,1.60020987819014]},{"value":[2011,3.729007872658352]},{"value":[2012,0.9671241177534151]},{"value":[2013,0.689193953526801]},{"value":[2014,3.395299274620878]},{"value":[2015,4.059440879765486]},{"value":[2016,2.776191090095481]},{"value":[2017,5.198529764117699]},{"value":[2018,4.973218491748876]},{"value":[2019,4.049437846925197]},{"value":[2020,-3.151793127548297]},{"value":[2021,6.310915670129447]},{"value":[2022,3.870740018378616]},{"value":[2023,0.6121503714900056]},{"value":[2024,1.971897993142635]}],"yAxisIndex":0,"xAxisIndex":0,"name":"CEE","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#1f77b4"},"emphasis":{"itemStyle":{"color":"#1f77b4"}}},{"data":[{"value":[2001,3.111160289697001]},{"value":[2002,5.803341015591057]},{"value":[2003,5.568341258322462]},{"value":[2004,4.170431591974366]},{"value":[2005,4.327155342790645]},{"value":[2006,5.068987654840718]},{"value":[2007,5.049412320926661]},{"value":[2008,1.972836078204021]},{"value":[2009,-6.812388609301734]},{"value":[2010,-1.335969014027971]},{"value":[2011,-0.1108550483795878]},{"value":[2012,-2.237480858827756]},{"value":[2013,-0.1337221412205714]},{"value":[2014,-0.5577130843577582]},{"value":[2015,2.320128192221205]},{"value":[2016,3.466462777187873]},{"value":[2017,3.283956438444657]},{"value":[2018,2.910999303707995]},{"value":[2019,3.101532313530631]},{"value":[2020,-8.31078063957451]},{"value":[2021,12.63205422948155]},{"value":[2022,7.294593388125925]},{"value":[2023,3.76153300212918]},{"value":[2024,3.82691007437459]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(1).replace('.', ',') + ' %';\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(1).replace('.', ',') + ' %';\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"%"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+</details>
+</section>
+<section id="europska-unija-eu-27" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="europska-unija-eu-27"><span class="header-section-number">4.2</span> Europska unija (EU-27)</h2>
+<details>
+<summary>
+Prikaži/sakrij
+</summary>
+<p><small><em>Grafikon prikazuje raspodjelu indeksa realnog BDP-a za zemlje EU-27, ističući položaj Hrvatske u odnosu na raspon i prosjek Unije.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-97b8f2e70e113d0843da" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-97b8f2e70e113d0843da">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","EU 27","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2000,100,100]},{"value":[2001,99.24339650798389,106.4842259657149]},{"value":[2002,101.4041521018936,114.6210388972859]},{"value":[2003,100.8669104361685,125.6308958918102]},{"value":[2004,102.039071175427,135.1270524099265]},{"value":[2005,102.942611081823,150.8222558100479]},{"value":[2006,106.100657979737,170.1649678977897]},{"value":[2007,108.0913314848921,187.8870673952641]},{"value":[2008,106.9854074445842,181.5202366649873]},{"value":[2009,101.3096668089196,157.3977696546517]},{"value":[2010,102.8587987316421,162.3110377892614]},{"value":[2011,103.5741437779204,166.4701678792338]},{"value":[2012,100.3372044779462,169.0824001408006]},{"value":[2013,98.51304890837564,174.2363987969216]},{"value":[2014,98.51168192426174,180.8092404803583]},{"value":[2015,99.38416800799629,186.3690502477354]},{"value":[2016,99.98438676732609,190.8992094430306]},{"value":[2017,101.4572541834279,207.7179936235411]},{"value":[2018,103.0713534639632,223.6886700858126]},{"value":[2019,103.5136970960908,234.8124731814997]},{"value":[2020,94.33387344269018,251.6102305451761]},{"value":[2021,102.7588902687395,292.5175148288592]},{"value":[2022,107.7130779426663,314.4888781083919]},{"value":[2023,108.7640288862949,306.5122404414087]},{"value":[2024,109.5174122425855,314.479979804145]}]},{"data":[{"value":[2000,100]},{"value":[2001,102.1179740150299]},{"value":[2002,103.181694965744]},{"value":[2003,104.1044507203248]},{"value":[2004,106.7445419892206]},{"value":[2005,108.8141462273822]},{"value":[2006,112.6611572706223]},{"value":[2007,116.1742027747479]},{"value":[2008,116.8936793129486]},{"value":[2009,111.9072570193292]},{"value":[2010,114.2925017671052]},{"value":[2011,116.4809151457657]},{"value":[2012,115.5587674038857]},{"value":[2013,115.5114316126883]},{"value":[2014,117.3846131609301]},{"value":[2015,120.1369346544539]},{"value":[2016,122.4434827164107]},{"value":[2017,125.8886246703556]},{"value":[2018,128.4638160446287]},{"value":[2019,130.8731701343506]},{"value":[2020,123.5942031850654]},{"value":[2021,131.4441086236171]},{"value":[2022,136.1040362886737]},{"value":[2023,136.702474609872]},{"value":[2024,138.1521061368815]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EU 27","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#000000"},"emphasis":{"itemStyle":{"color":"#000000"}}},{"data":[{"value":[2000,100]},{"value":[2001,103.111160289697]},{"value":[2002,109.0950525464408]},{"value":[2003,115.1698373681728]},{"value":[2004,119.9729166502006]},{"value":[2005,125.1643311229315]},{"value":[2006,131.5088956158169]},{"value":[2007,138.1493219941565]},{"value":[2008,140.8747816602515]},{"value":[2009,131.2778440810498]},{"value":[2010,129.524012761843]},{"value":[2011,129.3804288548327]},{"value":[2012,126.4855665241366]},{"value":[2013,126.3164273162455]},{"value":[2014,125.6119440734096]},{"value":[2015,128.5263022006539]},{"value":[2016,132.9816186253356]},{"value":[2017,137.3486770521302]},{"value":[2018,141.3468960847698]},{"value":[2019,145.7308157410115]},{"value":[2020,133.6194473205135]},{"value":[2021,150.4983283671743]},{"value":[2022,161.4765694774863]},{"value":[2023,167.550563929088]},{"value":[2024,173.9625733397617]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(0).replace('.', ',');\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(0).replace('.', ',');\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"Indeks 2000. = 100"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+<p><small><em>Grafikon prikazuje godišnje stope promjene realnog BDP-a u EU-27, omogućujući usporedbu volatilnosti rasta Hrvatske s ostalim članicama.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-03bcb0985f436a572577" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-03bcb0985f436a572577">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","EU 27","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2001,-0.7566034920161169,6.484225965714874]},{"value":[2002,-0.2282532811735516,7.665331877199377]},{"value":[2003,-0.9305255139657742,10.55181023720351]},{"value":[2004,0.4079097799545517,10.42811252703408]},{"value":[2005,0.7624106773064687,11.61514524309157]},{"value":[2006,1.625035822432963,12.82483940042827]},{"value":[2007,0.3323765310563553,11.07793042772063]},{"value":[2008,-5.125444692226422,9.307517123100073]},{"value":[2009,-16.04015286841786,2.61514326308312]},{"value":[2010,-5.693729672863013,6.790472244195844]},{"value":[2011,-9.876772171806003,7.606914312470736]},{"value":[2012,-8.33114881749184,7.305347292196807]},{"value":[2013,-6.587378009108646,6.292229262736515]},{"value":[2014,-1.77579414829302,9.385774048894513]},{"value":[2015,-0.2283006972705337,24.62397738376851]},{"value":[2016,-0.03179533446510119,6.573454958339942]},{"value":[2017,1.317236495592877,12.97105869594686]},{"value":[2018,0.8266467123441146,7.688634086855295]},{"value":[2019,0.4291625337803362,5.875833516523787]},{"value":[2020,-10.94007063503706,7.153690404977953]},{"value":[2021,2.676331608760218,16.25819593863391]},{"value":[2022,-1.22616797639179,8.273651183411769]},{"value":[2023,-2.743947470895503,10.6215088397823]},{"value":[2024,-0.659074030243445,6.995183200736044]}]},{"data":[{"value":[2001,2.117974015029889]},{"value":[2002,1.041658886179619]},{"value":[2003,0.894301799255337]},{"value":[2004,2.536002304059348]},{"value":[2005,1.938838463863202]},{"value":[2006,3.53539606440616]},{"value":[2007,3.118240207391954]},{"value":[2008,0.6193083498887253]},{"value":[2009,-4.265775808347794]},{"value":[2010,2.131447782125551]},{"value":[2011,1.914747988559951]},{"value":[2012,-0.7916728167236542]},{"value":[2013,-0.04096252691232483]},{"value":[2014,1.621641704279564]},{"value":[2015,2.344703806921045]},{"value":[2016,1.919932507509903]},{"value":[2017,2.813658904103677]},{"value":[2018,2.04561085722903]},{"value":[2019,1.875511847542244]},{"value":[2020,-5.561848117389367]},{"value":[2021,6.351354057275227]},{"value":[2022,3.545178033349594]},{"value":[2023,0.4396918251043047]},{"value":[2024,1.060428153291681]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EU 27","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#000000"},"emphasis":{"itemStyle":{"color":"#000000"}}},{"data":[{"value":[2001,3.111160289697001]},{"value":[2002,5.803341015591057]},{"value":[2003,5.568341258322462]},{"value":[2004,4.170431591974366]},{"value":[2005,4.327155342790645]},{"value":[2006,5.068987654840718]},{"value":[2007,5.049412320926661]},{"value":[2008,1.972836078204021]},{"value":[2009,-6.812388609301734]},{"value":[2010,-1.335969014027971]},{"value":[2011,-0.1108550483795878]},{"value":[2012,-2.237480858827756]},{"value":[2013,-0.1337221412205714]},{"value":[2014,-0.5577130843577582]},{"value":[2015,2.320128192221205]},{"value":[2016,3.466462777187873]},{"value":[2017,3.283956438444657]},{"value":[2018,2.910999303707995]},{"value":[2019,3.101532313530631]},{"value":[2020,-8.31078063957451]},{"value":[2021,12.63205422948155]},{"value":[2022,7.294593388125925]},{"value":[2023,3.76153300212918]},{"value":[2024,3.82691007437459]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(1).replace('.', ',') + ' %';\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(1).replace('.', ',') + ' %';\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"%"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+</details>
+</section>
+<section id="europodručje-ea" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="europodručje-ea"><span class="header-section-number">4.3</span> Europodručje (EA)</h2>
+<details>
+<summary>
+Prikaži/sakrij
+</summary>
+<p><small><em>Grafikon prikazuje raspodjelu indeksa realnog BDP-a za članice europodručja (EA), uspoređujući kumulativni rast s Hrvatskom.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-e4f6495bd02b902bb093" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-e4f6495bd02b902bb093">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","EA","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2000,100,100]},{"value":[2001,99.24339650798389,106.4842259657149]},{"value":[2002,101.4041521018936,114.6210388972859]},{"value":[2003,100.8669104361685,125.6308958918102]},{"value":[2004,102.039071175427,135.1270524099265]},{"value":[2005,102.942611081823,150.8222558100479]},{"value":[2006,106.100657979737,170.1649678977897]},{"value":[2007,108.0913314848921,187.8870673952641]},{"value":[2008,106.9854074445842,181.5202366649873]},{"value":[2009,101.3096668089196,152.4041132168094]},{"value":[2010,102.8587987316421,162.3110377892614]},{"value":[2011,103.5741437779204,166.4701678792338]},{"value":[2012,100.3372044779462,169.0824001408006]},{"value":[2013,98.51304890837564,174.2363987969216]},{"value":[2014,98.51168192426174,180.8092404803583]},{"value":[2015,99.38416800799629,186.3690502477354]},{"value":[2016,99.98438676732609,190.8992094430306]},{"value":[2017,101.4572541834279,207.7179936235411]},{"value":[2018,103.0713534639632,223.6886700858126]},{"value":[2019,103.5136970960908,234.8124731814997]},{"value":[2020,94.33387344269018,251.6102305451761]},{"value":[2021,102.7588902687395,292.5175148288592]},{"value":[2022,107.7130779426663,314.4888781083919]},{"value":[2023,108.7640288862949,306.5122404414087]},{"value":[2024,109.5174122425855,314.479979804145]}]},{"data":[{"value":[2000,100]},{"value":[2001,102.1584040554947]},{"value":[2002,103.0905666665371]},{"value":[2003,103.8338061420162]},{"value":[2004,106.2187150927344]},{"value":[2005,108.0810588187718]},{"value":[2006,111.6624067749442]},{"value":[2007,115.0083156681559]},{"value":[2008,115.4789866190249]},{"value":[2009,110.3323511423915]},{"value":[2010,112.6199965340229]},{"value":[2011,114.5616421523367]},{"value":[2012,113.4688860557416]},{"value":[2013,113.2649940098205]},{"value":[2014,114.8979159799933]},{"value":[2015,117.3238896927406]},{"value":[2016,119.4374875278311]},{"value":[2017,122.5678871878917]},{"value":[2018,124.7483184641986]},{"value":[2019,126.7707295332048]},{"value":[2020,119.1338837700982]},{"value":[2021,126.7674229373162]},{"value":[2022,131.3795560088883]},{"value":[2023,131.9688982657366]},{"value":[2024,133.1477684164853]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EA","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#808080"},"emphasis":{"itemStyle":{"color":"#808080"}}},{"data":[{"value":[2000,100]},{"value":[2001,103.111160289697]},{"value":[2002,109.0950525464408]},{"value":[2003,115.1698373681728]},{"value":[2004,119.9729166502006]},{"value":[2005,125.1643311229315]},{"value":[2006,131.5088956158169]},{"value":[2007,138.1493219941565]},{"value":[2008,140.8747816602515]},{"value":[2009,131.2778440810498]},{"value":[2010,129.524012761843]},{"value":[2011,129.3804288548327]},{"value":[2012,126.4855665241366]},{"value":[2013,126.3164273162455]},{"value":[2014,125.6119440734096]},{"value":[2015,128.5263022006539]},{"value":[2016,132.9816186253356]},{"value":[2017,137.3486770521302]},{"value":[2018,141.3468960847698]},{"value":[2019,145.7308157410115]},{"value":[2020,133.6194473205135]},{"value":[2021,150.4983283671743]},{"value":[2022,161.4765694774863]},{"value":[2023,167.550563929088]},{"value":[2024,173.9625733397617]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(0).replace('.', ',');\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(0).replace('.', ',');\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"Indeks 2000. = 100"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+<p><small><em>Grafikon prikazuje godišnje stope promjene realnog BDP-a u europodručju (EA), ističući gdje se Hrvatska nalazi u odnosu na monetarnu uniju.</em></small></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-bd36da95cb4258be9753" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-bd36da95cb4258be9753">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true,"axisLabel":{"formatter":"function(x){return x.toFixed(0).replace('.', ',');}"}}],"xAxis":[{"type":"value","min":2000,"max":2025,"axisLabel":{"formatter":"function(x){return x + '.';}","rotate":90},"axisTick":{"alignWithLabel":true}}],"legend":{"data":["Raspon zemalja","EA","HR"],"show":true,"type":"plain","bottom":60},"series":[{"name":"Raspon zemalja","type":"custom","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","itemStyle":{"borderWidth":0},"renderItem":"renderBand","encode":{"x":0,"y":[1,2]},"color":"rgba(160,160,160,0.25)","data":[{"value":[2001,-0.7566034920161169,6.484225965714874]},{"value":[2002,-0.2282532811735516,7.665331877199377]},{"value":[2003,-0.9305255139657742,10.55181023720351]},{"value":[2004,0.4079097799545517,8.725547263164458]},{"value":[2005,0.7624106773064687,11.61514524309157]},{"value":[2006,1.625035822432963,12.82483940042827]},{"value":[2007,1.462292052892922,11.07793042772063]},{"value":[2008,-5.125444692226422,5.36340350818707]},{"value":[2009,-16.04015286841786,-1.395195948331485]},{"value":[2010,-5.693729672863013,6.790472244195844]},{"value":[2011,-9.876772171806003,7.606914312470736]},{"value":[2012,-8.33114881749184,7.305347292196807]},{"value":[2013,-6.587378009108646,6.292229262736515]},{"value":[2014,-1.77579414829302,9.385774048894513]},{"value":[2015,-0.2283006972705337,24.62397738376851]},{"value":[2016,-0.03179533446510119,6.573454958339942]},{"value":[2017,1.317236495592877,12.97105869594686]},{"value":[2018,0.8266467123441146,7.688634086855295]},{"value":[2019,0.4291625337803362,5.875833516523787]},{"value":[2020,-10.94007063503706,7.153690404977953]},{"value":[2021,2.676331608760218,16.25819593863391]},{"value":[2022,-1.22616797639179,8.273651183411769]},{"value":[2023,-2.743947470895503,10.6215088397823]},{"value":[2024,-0.659074030243445,6.995183200736044]}]},{"data":[{"value":[2001,2.158404055494745]},{"value":[2002,0.9124678675833664]},{"value":[2003,0.7209577942114187]},{"value":[2004,2.29685209406294]},{"value":[2005,1.753310350639681]},{"value":[2006,3.313575935796109]},{"value":[2007,2.996450631729086]},{"value":[2008,0.4092494948165548]},{"value":[2009,-4.456772290193911]},{"value":[2010,2.073413072362684]},{"value":[2011,1.724068263247736]},{"value":[2012,-0.9538586180024122]},{"value":[2013,-0.1796898277655168]},{"value":[2014,1.441682829234248]},{"value":[2015,2.111416636285823]},{"value":[2016,1.801506786576668]},{"value":[2017,2.620952370026353]},{"value":[2018,1.778958034060274]},{"value":[2019,1.621193050058256]},{"value":[2020,-6.024139634777659]},{"value":[2021,6.407529852673188]},{"value":[2022,3.638263652210316]},{"value":[2023,0.4485798816433961]},{"value":[2024,0.8932939247358718]}],"yAxisIndex":0,"xAxisIndex":0,"name":"EA","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#808080"},"emphasis":{"itemStyle":{"color":"#808080"}}},{"data":[{"value":[2001,3.111160289697001]},{"value":[2002,5.803341015591057]},{"value":[2003,5.568341258322462]},{"value":[2004,4.170431591974366]},{"value":[2005,4.327155342790645]},{"value":[2006,5.068987654840718]},{"value":[2007,5.049412320926661]},{"value":[2008,1.972836078204021]},{"value":[2009,-6.812388609301734]},{"value":[2010,-1.335969014027971]},{"value":[2011,-0.1108550483795878]},{"value":[2012,-2.237480858827756]},{"value":[2013,-0.1337221412205714]},{"value":[2014,-0.5577130843577582]},{"value":[2015,2.320128192221205]},{"value":[2016,3.466462777187873]},{"value":[2017,3.283956438444657]},{"value":[2018,2.910999303707995]},{"value":[2019,3.101532313530631]},{"value":[2020,-8.31078063957451]},{"value":[2021,12.63205422948155]},{"value":[2022,7.294593388125925]},{"value":[2023,3.76153300212918]},{"value":[2024,3.82691007437459]}],"yAxisIndex":0,"xAxisIndex":0,"name":"HR","type":"line","coordinateSystem":"cartesian2d","symbol":"circle","showSymbol":false,"lineStyle":{"width":2},"itemStyle":{"color":"#C00000"},"emphasis":{"itemStyle":{"color":"#C00000"}}}],"tooltip":{"trigger":"axis","axisPointer":{"type":"cross","label":{"formatter":"\n            function(params){\n              var v = params.value;\n              if (params.axisDimension === 'x') {\n                return Math.round(v) + '.';\n              }\n              var num = Number(v);\n              if (isNaN(num)) { return params.value; }\n              return num.toFixed(1).replace('.', ',') + ' %';\n            }\n          "}},"formatter":"\n    function(params){\n      if (!params || !params.length) { return ''; }\n      var year = params[0].axisValue;\n      var rows = [];\n      params.forEach(function(p){\n        var raw = Array.isArray(p.value) ? p.value[p.value.length - 1] : p.value;\n        if (raw === null || raw === undefined || isNaN(raw)) { return; }\n        var txt = Number(raw).toFixed(1).replace('.', ',') + ' %';\n        rows.push(p.seriesName + ': ' + txt);\n      });\n      return year + '.<br/>' + rows.join('<br/>');\n    }\n  "},"title":[{"text":"%"},{"bottom":-4,"left":"left","textStyle":{"fontSize":11,"fontWeight":"normal","color":"#555555"},"new_title":true,"text":"Izvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR)"}],"grid":[{"top":70,"bottom":140,"left":40,"right":30}]},"dispose":true},"evals":["opts.yAxis.0.axisLabel.formatter","opts.xAxis.0.axisLabel.formatter","opts.series.0.renderItem","opts.tooltip.axisPointer.label.formatter","opts.tooltip.formatter"],"jsHooks":[]}</script>
+<div style="height: 20px;"></div>
+</div>
+</div>
+</details>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<div id="cookie-banner" class="cs-cookie-banner">
+  <span>
+    Ova stranica koristi nužne i analitičke kolačiće (Google Analytics) radi funkcionalnosti i analize posjećenosti.
+  </span>
+  <button onclick="acceptCookies()" class="cs-cookie-button">
+    Prihvaćam
+  </button>
+  <a href="./policy.html" class="cs-cookie-link">
+    Više informacija
+  </a>
+</div>
+<script>
+  (function () {
+    const key = 'cs-cookie-consent';
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    if (localStorage.getItem(key) === 'accepted') {
+      banner.style.display = 'none';
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      return;
+    }
+    banner.style.display = 'block';
+    window.acceptCookies = function () {
+      localStorage.setItem(key, 'accepted');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      banner.style.display = 'none';
+    };
+  })();
+</script>
+<div class="cs-footer" style="font-size: 0.85em; color: #555; margin-top: 60px;">
+  <div class="cs-footer-left">
+    © 2025 Leonarda Srdelic. Sva prava pridrzana.
+  </div>
+  <div class="cs-footer-links">
+    <a href="./policy.html">Kolačići i privatnost</a>
+    <span class="cs-sep">|</span>
+    <a href="./policy.html#legal">Pravne napomene</a>
+  </div>
+  <a class="cs-footer-feedback" href="mailto:leonardasrdelic@windowslive.com?subject=CroStat%20-%20Povratna%20informacija">
+    Pošalji povratnu informaciju
+  </a>
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
