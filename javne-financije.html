@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr" xml:lang="hr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Pregled javnih financija Hrvatske: porezni prihodi, rashodi opće države, proračunski saldo i javni dug, u odnosu na BDP i u usporedbi s Europskom unijom.">
+
+<title>Javne financije – CroStat</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./styles/crostat-logo-small.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a8fb0491b0b10ebbf670299b4de72fb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b8c291c0619fdaeee84fac74ac19cc9a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a8fb0491b0b10ebbf670299b4de72fb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXQTDGVF');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XLPVBEXTF4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // default: analytics off until consent
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+  gtag('config', 'G-XLPVBEXTF4', { anonymize_ip: true });
+</script>
+<!-- PWA: manifest, tema i Apple ikone/meta (aplikacija "CroStat"). -->
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0B4F8A">
+<link rel="apple-touch-icon" sizes="180x180" href="./styles/pwa/apple-touch-icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CroStat">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="canonical" href="https://cro-stat.com/javne-financije">
+
+
+<link rel="stylesheet" href="styles/main.css">
+<meta property="og:title" content="Javne financije – CroStat">
+<meta property="og:description" content="Pregled javnih financija Hrvatske: porezni prihodi, rashodi opće države, proračunski saldo i javni dug, u odnosu na BDP i u usporedbi s Europskom unijom.">
+<meta property="og:image" content="https://cro-stat.com/styles/crostat-logo.png">
+<meta property="og:site_name" content="CroStat">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1024">
+<meta name="twitter:title" content="Javne financije – CroStat">
+<meta name="twitter:description" content="Pregled javnih financija Hrvatske: porezni prihodi, rashodi opće države, proračunski saldo i javni dug, u odnosu na BDP i u usporedbi s Europskom unijom.">
+<meta name="twitter:image" content="https://cro-stat.com/styles/crostat-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1024">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./" class="navbar-brand navbar-brand-logo">
+    <img src="./styles/pwa/icon-192.png" alt="" class="navbar-logo light-content">
+    <img src="./styles/pwa/icon-192.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./">
+    <span class="navbar-title">CroStat</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./"> 
+<span class="menu-text">Monitor</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gospodarstvo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Gospodarstvo</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gospodarstvo">    
+        <li>
+    <a class="dropdown-item" href="./gospodarstvo">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./BDP">
+ <span class="dropdown-text">Bruto domaći proizvod</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./potrosnja-kucanstava">
+ <span class="dropdown-text">Potrošnja kućanstava</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./indikatori-gospodarske-aktivnosti">
+ <span class="dropdown-text">Indikatori gospodarske aktivnosti</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./produktivnost">
+ <span class="dropdown-text">Produktivnost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./platna-bilanca-bpm6">
+ <span class="dropdown-text">Odnosi s inozemstvom (BPM6)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./trgovina-izvoz">
+ <span class="dropdown-text">Robna razmjena</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./usluge-turizam">
+ <span class="dropdown-text">Usluge i turizam</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tržište-rada" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tržište rada</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tržište-rada">    
+        <li>
+    <a class="dropdown-item" href="./trziste-rada">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./zaposlenost">
+ <span class="dropdown-text">Zaposlenost i nezaposlenost</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./place">
+ <span class="dropdown-text">Plaće</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./porezni-klin">
+ <span class="dropdown-text">Porezni klin</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cijene" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cijene</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cijene">    
+        <li>
+    <a class="dropdown-item" href="./cijene">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./hicp">
+ <span class="dropdown-text">IPC i HICP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cijene-energenata">
+ <span class="dropdown-text">Cijene energenata</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cijene-hrane">
+ <span class="dropdown-text">Cijene hrane</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-nekretnine-i-stanovanje" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Nekretnine i stanovanje</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-nekretnine-i-stanovanje">    
+        <li>
+    <a class="dropdown-item" href="./nekretnine">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./priustivo-stanovanje">
+ <span class="dropdown-text">Priuštivo stanovanje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./nekretnine-karta">
+ <span class="dropdown-text">Karta cijena stanova</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-javne-financije" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Javne financije</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-javne-financije">    
+        <li>
+    <a class="dropdown-item" href="./javne-financije">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./porezni-prihodi">
+ <span class="dropdown-text">Porezni prihodi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./rashodi-opce-drzave">
+ <span class="dropdown-text">Rashodi opće države</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./primarni-saldo">
+ <span class="dropdown-text">Saldo proračuna</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./javni-dug">
+ <span class="dropdown-text">Javni dug</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-novac-i-tržišta" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Novac i tržišta</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-novac-i-tržišta">    
+        <li>
+    <a class="dropdown-item" href="./novac-trziste">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./kamatne-stope">
+ <span class="dropdown-text">Kamatne stope</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./prinosi-obveznica">
+ <span class="dropdown-text">Prinosi obveznica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./monetarni-agregati">
+ <span class="dropdown-text">Monetarni agregati</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-energetika" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Energetika</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-energetika">    
+        <li>
+    <a class="dropdown-item" href="./energija/">
+ <span class="dropdown-text">Pregled</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energija/ovisnost">
+ <span class="dropdown-text">Ovisnost o uvozu</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energija/tranzicija">
+ <span class="dropdown-text">Tranzicija i proizvodnja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energija/emisije">
+ <span class="dropdown-text">Emisije</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./energija/cijene">
+ <span class="dropdown-text">Cijene i konkurentnost</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./kalendar-objava"> 
+<span class="menu-text">Kalendar objava</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./kviz"> 
+<span class="menu-text">Kviz</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./info"> 
+<span class="menu-text">O projektu</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pretplata"> 
+<span class="menu-text">Pretplata</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sadržaj</h2>
+   
+  <ul>
+  <li><a href="#stranice-u-skupini" id="toc-stranice-u-skupini" class="nav-link active" data-scroll-target="#stranice-u-skupini">Stranice u skupini</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQTDGVF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Javne financije</h1>
+</div>
+
+<div>
+  <div class="description">
+    Pregled javnih financija Hrvatske: porezni prihodi, rashodi opće države, proračunski saldo i javni dug, u odnosu na BDP i u usporedbi s Europskom unijom.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="stranice-u-skupini" class="level2">
+<h2 class="anchored" data-anchor-id="stranice-u-skupini">Stranice u skupini</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="porezni-prihodi" class="level3 card quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 class="anchored" data-anchor-id="porezni-prihodi"><a href="./porezni-prihodi">Porezni prihodi</a></h3>
+<p>Ukupno porezno opterećenje prema BDP-u, struktura po vrstama poreza i usporedba s Europskom unijom. <span class="cs-freq">Godišnje</span></p>
+</section>
+<section id="rashodi-opće-države" class="level3 card quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 class="anchored" data-anchor-id="rashodi-opće-države"><a href="./rashodi-opce-drzave">Rashodi opće države</a></h3>
+<p>Ukupna razina rashoda kao postotak BDP-a, struktura po namjeni i usporedba sa zemljama EU-a. <span class="cs-freq">Godišnje</span></p>
+</section>
+</div>
+<div class="quarto-layout-row">
+<section id="saldo-proračuna" class="level3 card quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 class="anchored" data-anchor-id="saldo-proračuna"><a href="./primarni-saldo">Saldo proračuna</a></h3>
+<p>Ukupni i primarni saldo opće države prema BDP-u te maastrichtski kriterij od tri posto. <span class="cs-freq">Godišnje</span></p>
+</section>
+<section id="javni-dug" class="level3 card quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 class="anchored" data-anchor-id="javni-dug"><a href="./javni-dug">Javni dug</a></h3>
+<p>Kretanje javnog duga prema BDP-u, maastrichtski kriterij i usporedba sa zemljama Europske unije. <span class="cs-freq">Tromjesečno</span></p>
+</section>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<div id="cookie-banner" class="cs-cookie-banner">
+  <span>
+    Ova stranica koristi nužne i analitičke kolačiće (Google Analytics) radi funkcionalnosti i analize posjećenosti.
+  </span>
+  <button onclick="acceptCookies()" class="cs-cookie-button">
+    Prihvaćam
+  </button>
+  <a href="./politika-privatnosti" class="cs-cookie-link">
+    Više informacija
+  </a>
+</div>
+<script>
+  (function () {
+    const key = 'cs-cookie-consent';
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    if (localStorage.getItem(key) === 'accepted') {
+      banner.style.display = 'none';
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      return;
+    }
+    banner.style.display = 'block';
+    window.acceptCookies = function () {
+      localStorage.setItem(key, 'accepted');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      banner.style.display = 'none';
+    };
+  })();
+</script>
+<script>
+(function(){
+  var darkBg = '#222';
+  var lightBg = '#fff';
+  var darkText = '#ccc';
+  var lightText = '#333';
+  var darkAxis = '#555';
+  var lightAxis = '#ccc';
+
+  function applyTheme() {
+    var isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    var bg = isDark ? 'transparent' : lightBg;
+    var textColor = isDark ? darkText : lightText;
+    var axisColor = isDark ? darkAxis : lightAxis;
+
+    var widgets = document.querySelectorAll('.html-widget.echarts4r');
+    widgets.forEach(function(el) {
+      var ec = (window.echarts && window.echarts.getInstanceByDom) ?
+        window.echarts.getInstanceByDom(el) : null;
+      if (!ec) return;
+      ec.setOption({
+        backgroundColor: bg,
+        xAxis: [{ axisLabel: { color: textColor }, axisLine: { lineStyle: { color: axisColor } } }],
+        yAxis: [{ axisLabel: { color: textColor }, axisLine: { lineStyle: { color: axisColor } }, nameTextStyle: { color: textColor } }]
+      });
+    });
+  }
+
+  // Observe theme changes
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName === 'data-bs-theme') {
+        setTimeout(applyTheme, 100);
+      }
+    });
+  });
+  observer.observe(document.documentElement, { attributes: true });
+
+  // Apply on load
+  window.addEventListener('load', function() { setTimeout(applyTheme, 500); });
+})();
+</script>
+<!--
+  Globalna napomena o zumiranju. Umece se (include-after-body) skrivena,
+  a JS je PRESELI na DNO sadrzaja (uz napomenu o azuriranju) i prikaze SAMO
+  ako stranica ima zumabilan graf. Zumabilni grafovi (cs_zoom_inside) u svom
+  htmlwidgets JSON payloadu imaju marker "zoomOnMouseWheel"; JS ga trazi
+  i tek onda otkriva napomenu, inace je uklanja. Diskretno, neupecatljivo,
+  svijetlosivi .chart-note stil. Radi u obje teme.
+-->
+<div class="chart-zoom-hint-global chart-note" style="display: none; margin: 16px 0 0;">
+  Grafove možete zumirati zadržavanjem tipke Shift uz kotačić miša. Za povratak na početni prikaz upotrijebite ikonu obnove u kutu grafa.
+</div>
+<script>
+(function () {
+  function hasZoomableChart() {
+    var payloads = document.querySelectorAll('script[type="application/json"][data-for]');
+    for (var i = 0; i < payloads.length; i++) {
+      if (payloads[i].textContent.indexOf('zoomOnMouseWheel') !== -1) return true;
+    }
+    return false;
+  }
+  function init() {
+    var hint = document.querySelector('.chart-zoom-hint-global');
+    if (!hint) return;
+    if (!hasZoomableChart()) {
+      if (hint.parentNode) hint.parentNode.removeChild(hint);
+      return;
+    }
+    // Preseli na DNO glavnog sadrzaja, uz napomenu o azuriranju. Na mobitelu
+    // je CSS-om skrivena; na desktopu stoji pri dnu da ne odvlaci pozornost s
+    // grafova (napomena o zumiranju korisna je tek kad se graf vidi).
+    var main = document.getElementById('quarto-document-content');
+    if (main) main.appendChild(hint);
+    hint.style.display = '';
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+<!--
+  Pojmovnik: chatbot s UNAPRIJED DEFINIRANIM odgovorima.
+  Bez AI-a, bez vanjskih poziva, bez biblioteka, bez localStorage.
+  Fiksni parovi pitanje/odgovor u POJMOVNIK polju (lako za dopunu).
+  Gumb u donjem desnom kutu (slobodan; cookie banner je na bottom:84px).
+  Stil preko --cs tokena, radi u svijetloj i tamnoj temi.
+-->
+<style>
+  .cs-pojmovnik-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2000;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--cs-ink, #1f2937);
+    background: var(--cs-surface, #fff);
+    border: 1px solid var(--cs-border, #d9d9d9);
+    border-radius: var(--cs-radius, 8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .cs-pojmovnik-fab:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+    transform: translateY(-1px);
+  }
+  .cs-pojmovnik-fab:focus-visible {
+    outline: 2px solid var(--cs-accent, #C00000);
+    outline-offset: 2px;
+  }
+  .cs-pojmovnik-fab__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--cs-accent, #C00000);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .cs-pojmovnik-panel {
+    position: fixed;
+    right: 18px;
+    bottom: 66px;
+    z-index: 2100;
+    width: 360px;
+    max-width: calc(100vw - 36px);
+    max-height: min(72vh, 560px);
+    display: flex;
+    flex-direction: column;
+    background: var(--cs-surface, #fff);
+    border: 1px solid var(--cs-border, #d9d9d9);
+    border-radius: var(--cs-radius, 8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+  }
+  .cs-pojmovnik-panel[hidden] { display: none; }
+
+  .cs-pojmovnik-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--cs-border, #d9d9d9);
+    background: var(--cs-bg-subtle, #f7f7f8);
+  }
+  .cs-pojmovnik-head__title {
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--cs-heading, #111827);
+  }
+  .cs-pojmovnik-head button {
+    background: none;
+    border: none;
+    padding: 3px 6px;
+    font-size: 0.75rem;
+    color: var(--cs-muted, #6B7280);
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .cs-pojmovnik-head button:hover {
+    color: var(--cs-ink, #1f2937);
+    background: var(--cs-bg, rgba(0, 0, 0, 0.05));
+  }
+  .cs-pojmovnik-head__close { font-size: 1.05rem !important; line-height: 1; }
+  .cs-pojmovnik-head__back[hidden] { display: none; }
+
+  .cs-pojmovnik-body {
+    overflow-y: auto;
+    padding: 6px;
+  }
+  .cs-pojmovnik-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cs-pojmovnik-list button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 9px 10px;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--cs-link, #1d4ed8);
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .cs-pojmovnik-list button:hover {
+    background: var(--cs-bg-subtle, #f2f4f6);
+    color: var(--cs-link-hover, #1e40af);
+  }
+  .cs-pojmovnik-answer { padding: 8px 10px 12px; }
+  .cs-pojmovnik-answer[hidden] { display: none; }
+  .cs-pojmovnik-answer__q {
+    margin: 0 0 8px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--cs-heading, #111827);
+  }
+  .cs-pojmovnik-answer__a {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--cs-ink, #374151);
+    /* Odgovori se umecu preko textContent; pre-line cuva prijelom odlomka
+       (\n\n) bez HTML-a u sadrzaju. */
+    white-space: pre-line;
+  }
+
+  @media (max-width: 480px) {
+    .cs-pojmovnik-panel { right: 12px; left: 12px; width: auto; bottom: 62px; }
+    .cs-pojmovnik-fab { right: 12px; bottom: 12px; }
+  }
+  /* Mobitel: gumb ne smije trajno prekrivati sadrzaj (grafove pri dnu).
+     Poluproziran u mirovanju, pun na dodir/fokus; JS ga sakriva pri skrolu. */
+  @media (max-width: 768px) {
+    .cs-pojmovnik-fab {
+      opacity: 0.5;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .cs-pojmovnik-fab:active,
+    .cs-pojmovnik-fab:focus { opacity: 1; }
+    .cs-pojmovnik-fab.is-scrolling {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+    }
+  }
+</style>
+
+<button type="button" class="cs-pojmovnik-fab" id="cs-pojmovnik-fab" aria-expanded="false" aria-controls="cs-pojmovnik-panel">
+  <span class="cs-pojmovnik-fab__icon" aria-hidden="true">?</span>
+  <span>Pojmovnik</span>
+</button>
+
+<div class="cs-pojmovnik-panel" id="cs-pojmovnik-panel" role="dialog" aria-label="Pojmovnik ekonomskih pojmova" hidden="">
+  <div class="cs-pojmovnik-head">
+    <button type="button" class="cs-pojmovnik-head__back" id="cs-pojmovnik-back" hidden="">← Natrag</button>
+    <span class="cs-pojmovnik-head__title" id="cs-pojmovnik-title">Pojmovnik</span>
+    <button type="button" class="cs-pojmovnik-head__close" id="cs-pojmovnik-close" aria-label="Zatvori">×</button>
+  </div>
+  <div class="cs-pojmovnik-body">
+    <ul class="cs-pojmovnik-list" id="cs-pojmovnik-list"></ul>
+    <div class="cs-pojmovnik-answer" id="cs-pojmovnik-answer" hidden="">
+      <p class="cs-pojmovnik-answer__q" id="cs-pojmovnik-q"></p>
+      <p class="cs-pojmovnik-answer__a" id="cs-pojmovnik-a"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Unaprijed definirani parovi pitanje/odgovor. Za dopunu dodajte objekt.
+  var POJMOVNIK = [
+    {
+      q: "Koja je razlika između EU-27 i Europodručja?",
+      a: "EU-27 obuhvaća svih 27 država članica Europske unije. Europodručje uži je skup država koje su uvele euro kao službenu valutu. Sve države Europodručja članice su EU-a, ali sve članice EU-a nisu u Europodručju. Hrvatska je članica i EU-a i Europodručja, budući da je euro uvela 2023. godine."
+    },
+    {
+      q: "Koja je razlika između IPC-a i HICP-a?",
+      a: "IPC je nacionalni indeks potrošačkih cijena, izračunat prema hrvatskoj metodologiji, a HICP je harmonizirani indeks izračunat po jedinstvenoj metodologiji EU-a, što omogućuje usporedbu inflacije među zemljama.\n\nGlavna razlika je u obuhvatu stanovništva. HICP uključuje ukupnu potrošnju na teritoriju, pa i potrošnju nerezidenata poput stranih turista te institucionalnih kućanstava, primjerice obrazovnih i zdravstvenih ustanova. IPC obuhvaća potrošnju rezidentnih kućanstava. Zbog toga se vrijednosti dvaju indeksa mogu razlikovati, a razlika najčešće proizlazi iz različitog doprinosa cijena usluga, iako pokazuju slično opće kretanje cijena."
+    },
+    {
+      q: "Što je temeljna inflacija?",
+      a: "Temeljna inflacija mjeri kretanje cijena bez cijena energije, hrane, alkohola i duhana, koje su podložne naglim i privremenim promjenama. Time se jasnije vidi trajniji pritisak na cijene. Ukupna inflacija obuhvaća sve kategorije, uključujući promjenjive."
+    },
+    {
+      q: "Koja je razlika između postotka i postotnog boda?",
+      a: "Postotak izražava relativnu promjenu, a postotni bod apsolutnu razliku između dviju postotnih vrijednosti. Ako inflacija poraste s 2 na 3 posto, to je porast od jednog postotnog boda, ali od 50 posto u relativnom iznosu. Na ovoj platformi postotni bodovi označeni su kraticom p.b."
+    },
+    {
+      q: "Što je HICP?",
+      a: "HICP je harmonizirani indeks potrošačkih cijena. Mjeri promjene cijena robe i usluga koje kupuju kućanstva, izračunat po jedinstvenoj metodologiji za sve države članice EU-a. Omogućuje usporedbu inflacije među zemljama."
+    },
+    {
+      q: "Što je tekući račun platne bilance?",
+      a: "Tekući račun bilježi transakcije zemlje s inozemstvom: razmjenu robe i usluga, dohotke te tekuće transfere. Suficit znači da zemlja više prima nego što plaća inozemstvu, a deficit da više plaća nego što prima. Pokazuje vanjsku ravnotežu gospodarstva."
+    },
+    {
+      q: "Koja je razlika između realnog i nominalnog BDP-a?",
+      a: "Nominalni BDP izražen je u tekućim cijenama pojedine godine. Realni BDP očišćen je od promjena cijena, izražen u stalnim cijenama bazne godine, pa pokazuje stvarnu promjenu proizvodnje bez učinka inflacije. Za praćenje rasta koristi se realni BDP."
+    },
+    {
+      q: "Što je BDP po stanovniku u PPS-u?",
+      a: "PPS je standard kupovne moći, umjetna valutna jedinica koja uklanja razlike u razinama cijena među zemljama. BDP po stanovniku u PPS-u omogućuje pravedniju usporedbu životnog standarda, jer ista svota u PPS-u kupuje jednaku količinu robe i usluga u svakoj zemlji."
+    },
+    {
+      q: "Što su CEE zemlje?",
+      a: "CEE je kratica za zemlje srednje i istočne Europe. U kontekstu ove platforme obuhvaća članice EU-a iz te regije, među kojima je i Hrvatska. Usporedba s CEE skupinom smješta hrvatsko gospodarstvo u kontekst zemalja sličnog razvojnog puta."
+    },
+    {
+      q: "Što je proračunski saldo?",
+      a: "Proračunski saldo razlika je između prihoda i rashoda države u godini. Suficit znači da su prihodi veći od rashoda, a deficit obrnuto. Prema pravilima EU-a, deficit opće države ne bi trebao prelaziti 3 posto BDP-a."
+    },
+    {
+      q: "Što je javni dug?",
+      a: "Javni dug ukupna je zaduženost opće države. Izražava se u odnosu na BDP, čime se mjeri prema veličini gospodarstva. Prema pravilima EU-a, javni dug ne bi trebao prelaziti 60 posto BDP-a."
+    },
+    {
+      q: "Što je porezni klin?",
+      a: "Porezni klin razlika je između ukupnog troška rada koji snosi poslodavac i neto plaće koju radnik primi. Obuhvaća poreze na dohodak i doprinose. Pokazuje koliki dio troška rada odlazi državi, a koliki ostaje radniku."
+    },
+    {
+      q: "Kako se računa priuštivost stanovanja na ovoj platformi?",
+      a: "Priuštivost se izražava kao broj godišnjih neto plaća potrebnih za kupnju stana od 50 kvadratnih metara u pojedinoj županiji. Veća vrijednost znači manje priuštivo stanovanje. Izračun povezuje medijalnu cijenu kvadratnog metra i prosječnu godišnju neto plaću u županiji."
+    },
+    {
+      q: "Što su HPI i PTIR?",
+      a: "HPI je indeks cijena stambenih nekretnina, koji mjeri promjene cijena stanova i kuća kroz vrijeme. PTIR je omjer cijena nekretnina i dohotka, koji pokazuje koliko je stanovanje priuštivo u odnosu na dohodak kućanstava. Viši PTIR znači manje priuštivo stanovanje."
+    },
+    {
+      q: "Što znači sezonski prilagođeno?",
+      a: "Sezonska prilagodba uklanja redovite sezonske obrasce iz podataka, primjerice veću potrošnju u prosincu ili sezonske radove ljeti. Time se jasnije vidi temeljni trend, neovisno o dobu godine, i omogućuje usporedba uzastopnih razdoblja."
+    },
+    {
+      q: "Što je energetska ovisnost o uvozu?",
+      a: "Energetska ovisnost pokazuje koliki udio energije koju zemlja troši dolazi iz uvoza. Viša vrijednost znači veću oslonjenost na inozemne izvore energije, što utječe na energetsku sigurnost. Izračunava se kao neto uvoz podijeljen ukupnom potrošnjom energije."
+    }
+  ];
+
+  function init() {
+    var fab    = document.getElementById("cs-pojmovnik-fab");
+    var panel  = document.getElementById("cs-pojmovnik-panel");
+    var list   = document.getElementById("cs-pojmovnik-list");
+    var answer = document.getElementById("cs-pojmovnik-answer");
+    var qEl    = document.getElementById("cs-pojmovnik-q");
+    var aEl    = document.getElementById("cs-pojmovnik-a");
+    var back   = document.getElementById("cs-pojmovnik-back");
+    var close  = document.getElementById("cs-pojmovnik-close");
+    var title  = document.getElementById("cs-pojmovnik-title");
+    if (!fab || !panel || !list) return;
+
+    // Popis pitanja (textContent, bez HTML injekcije)
+    POJMOVNIK.forEach(function (item, i) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = item.q;
+      btn.addEventListener("click", function () { showAnswer(i); });
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+
+    function showList() {
+      answer.hidden = true;
+      list.hidden = false;
+      back.hidden = true;
+      title.textContent = "Pojmovnik";
+    }
+    function showAnswer(i) {
+      qEl.textContent = POJMOVNIK[i].q;
+      aEl.textContent = POJMOVNIK[i].a;
+      list.hidden = true;
+      answer.hidden = false;
+      back.hidden = false;
+      title.textContent = "Odgovor";
+      panel.querySelector(".cs-pojmovnik-body").scrollTop = 0;
+    }
+    function openPanel() {
+      panel.hidden = false;
+      fab.setAttribute("aria-expanded", "true");
+      showList();
+    }
+    function closePanel() {
+      panel.hidden = true;
+      fab.setAttribute("aria-expanded", "false");
+    }
+
+    fab.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (panel.hidden) { openPanel(); } else { closePanel(); }
+    });
+    close.addEventListener("click", closePanel);
+    back.addEventListener("click", showList);
+    panel.addEventListener("click", function (e) { e.stopPropagation(); });
+
+    // Zatvori klikom izvan panela i tipkom Esc
+    document.addEventListener("click", function () {
+      if (!panel.hidden) closePanel();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) closePanel();
+    });
+
+    showList();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<script>
+// Mobitel: sakrij gumb dok korisnik skrola (da ne prekriva grafove/sadrzaj),
+// vrati ga kratko nakon prestanka skrola.
+(function () {
+  if (!(window.matchMedia && window.matchMedia("(max-width: 768px)").matches)) return;
+  var fab = document.querySelector(".cs-pojmovnik-fab");
+  if (!fab) return;
+  var t;
+  window.addEventListener("scroll", function () {
+    fab.classList.add("is-scrolling");
+    clearTimeout(t);
+    t = setTimeout(function () { fab.classList.remove("is-scrolling"); }, 600);
+  }, { passive: true });
+})();
+</script>
+<footer class="cs-footer-main">
+  <div class="cs-footer-cols">
+    <div class="cs-footer-col">
+      <div class="cs-footer-title">Kontakt i pravno</div>
+      <p>
+        Kontakt: <a href="mailto:contact@cro-stat.com">contact@cro-stat.com</a>
+      </p>
+      <p>
+        <a href="./uvjeti-koristenja">Uvjeti korištenja</a>
+        <span class="cs-sep">|</span>
+        <a href="./politika-privatnosti">Politika privatnosti</a>
+        <span class="cs-sep">|</span>
+        <a href="./pravila-povrata">Pravila povrata</a>
+      </p>
+    </div>
+  </div>
+  <div class="cs-footer-bottom">
+    <div class="cs-footer-copy">© 2026 OpenMacro. Sva prava pridržana.</div>
+    <div class="cs-footer-note">
+      Neovlaštena distribucija nije dozvoljena. Prilikom dijeljenja molimo
+      navedite izvor: <strong>cro-stat.com</strong>
+    </div>
+  </div>
+</footer>
+<!-- PWA: registracija servisnog radnika + vidljiva oznaka offline prikaza. -->
+<div id="cs-offline-bar" role="status" aria-live="polite" hidden="">
+  <span class="cs-offline-dot" aria-hidden="true"></span>
+  Offline prikaz — podaci možda nisu najnoviji.
+</div>
+<script>
+(function () {
+  var bar = document.getElementById('cs-offline-bar');
+  function pokazi() { if (bar) bar.hidden = false; }
+  function sakrij() { if (bar) bar.hidden = true; }
+
+  // Servisni radnik ubaci ovu oznaku kad stranicu posluzi iz predmemorije
+  // (mreza je pala) — tada su podaci mozda zastarjeli.
+  var izPredmemorije = document.documentElement.getAttribute('data-cs-offline') === '1';
+
+  if (izPredmemorije) {
+    pokazi();
+  } else {
+    // Svjeza stranica: prati zivi gubitak/povratak mreze.
+    if (!navigator.onLine) pokazi();
+    window.addEventListener('offline', pokazi);
+    window.addEventListener('online', sakrij);
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function () {});
+    });
+  }
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cro-stat\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

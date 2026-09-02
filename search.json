@@ -1,0 +1,912 @@
+[
+  {
+    "objectID": "zaposlenost",
+    "href": "zaposlenost",
+    "title": "Zaposlenost i nezaposlenost",
+    "section": "",
+    "text": "Stopa zaposlenosti\nStopa zaposlenosti mjeri udio zaposlenih osoba u radno sposobnom stanovništvu (20-64 godine). Ovaj pokazatelj je ključan za ocjenu korištenja radnog potencijala gospodarstva.\n\n\nStopa zaposlenosti u EU27\n\nUsporedba stopa zaposlenosti (20-64 godine) u državama članicama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (lfsi_emp_a, indic_em = EMP_LFS, sex = T, age = Y20-64, unit = PC_POP, freq = A, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje stope zaposlenosti\n\nKretanje stope zaposlenosti (20-64 godine) za Hrvatsku i EU27 prosjek od 2015. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (lfsi_emp_a, indic_em = EMP_LFS, sex = T, age = Y20-64, unit = PC_POP, freq = A, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n\nStopa nezaposlenosti\nStopa nezaposlenosti mjeri udio nezaposlenih osoba u aktivnoj radnoj snazi (15-74 godine). Nezaposlenom se smatra osoba koja je bez posla, aktivno traži posao i spremna je početi raditi.\n\n\nStopa nezaposlenosti u EU27\n\nUsporedba stopa nezaposlenosti (15-74 godine) u državama članicama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (une_rt_a, age = Y15-74, sex = T, unit = PC_ACT, freq = A, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje stope nezaposlenosti\n\nKretanje stope nezaposlenosti (15-74 godine) za Hrvatsku i EU27 prosjek od 2015. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (une_rt_a, age = Y15-74, sex = T, unit = PC_ACT, freq = A, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Tržište rada"
+  },
+  {
+    "objectID": "usluge",
+    "href": "usluge",
+    "title": "Preusmjeravanje",
+    "section": "",
+    "text": "Preusmjeravanje kreće automatski. Ako se to ne dogodi, otvorite naslovnicu."
+  },
+  {
+    "objectID": "trziste-rada#stranice-u-skupini",
+    "href": "trziste-rada#stranice-u-skupini",
+    "title": "Tržište rada",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nZaposlenost i nezaposlenost\nStopa zaposlenosti i stopa nezaposlenosti kroz vrijeme i u usporedbi sa zemljama Europske unije. Mjesečno · tromjesečno\n\n\nPlaće\nMjesečni prosjek i medijan, plaće po županijama te troškovi rada u europskoj usporedbi. Mjesečno\n\n\n\n\nPorezni klin\nRazlika između ukupnog troška rada za poslodavca i neto plaće, po tipovima kućanstava, uz europsku usporedbu. Godišnje"
+  },
+  {
+    "objectID": "suradnja",
+    "href": "suradnja",
+    "title": "Preusmjeravanje",
+    "section": "",
+    "text": "Preusmjeravanje kreće automatski. Ako se to ne dogodi, otvorite naslovnicu."
+  },
+  {
+    "objectID": "produktivnost",
+    "href": "produktivnost",
+    "title": "Produktivnost",
+    "section": "",
+    "text": "Nominalna produktivnost\n\n\nProduktivnost rada u EU27\n\nUsporedba nominalne produktivnosti rada po zaposlenom (% EU-27 prosjeka) u državama članicama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nama_10_lp_ulc, na_item = NLPR_PER, unit = PC_EU27_2020_MPPS_CP, geo = EU27); obrada cro-stat.com\n\n\n\nNominalna produktivnost kroz vrijeme\n\nKretanje nominalne produktivnosti rada po zaposlenom (% EU-27, u PPS) za Hrvatsku, Europodručje i CEE prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nEuropodručje ovdje označava ponderirani prosjek 20 država članica, isključujući Bugarsku (Eurostatov agregat EA20). Bugarska je euro uvela 1. siječnja 2026., pa će biti uključena kad Eurostat objavi godišnje podatke za 2026. i uvede agregat EA21. Tada će se i povijesna serija revidirati.\n\n\nIzvor: Eurostat (nama_10_lp_ulc, na_item = NLPR_PER, unit = PC_EU27_2020_MPPS_CP, geo = HR, EA20, CEE); obrada cro-stat.com\n\n\n\n\n\nRealna produktivnost\n\n\nRealna produktivnost rada\n\nKretanje realne produktivnosti rada po zaposlenom (indeks 2020=100) za Hrvatsku, EU27 i CEE prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nEuropodručje ovdje označava ponderirani prosjek 20 država članica, isključujući Bugarsku (Eurostatov agregat EA20). Bugarska je euro uvela 1. siječnja 2026., pa će biti uključena kad Eurostat objavi godišnje podatke za 2026. i uvede agregat EA21. Tada će se i povijesna serija revidirati.\n\n\nIzvor: Eurostat (nama_10_lp_ulc, na_item = RLPR_PER, unit = I20, geo = HR, EU27_2020, EA20, CEE); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "prinosi-obveznica",
+    "href": "prinosi-obveznica",
+    "title": "Prinosi obveznica",
+    "section": "",
+    "text": "Prinos na državne obveznice mjera je povjerenja u državne financije: što je viši, to ulagači traže veću naknadu za rizik. Prikazana je harmonizirana dugoročna kamatna stopa (kriterij konvergencije, otprilike desetogodišnji rok), usporediva za sve članice Europske unije, mjesečno."
+  },
+  {
+    "objectID": "prinosi-obveznica#kretanje-prinosa-i-premija-rizika",
+    "href": "prinosi-obveznica#kretanje-prinosa-i-premija-rizika",
+    "title": "Prinosi obveznica",
+    "section": "Kretanje prinosa i premija rizika",
+    "text": "Kretanje prinosa i premija rizika\n\n\nKretanje prinosa (Hrvatska i Njemačka)\n\nDugoročni prinos na državne obveznice Hrvatske, uz Njemačku kao referentnu (najniži rizik u europodručju), mjesečno.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (irt_lt_mcby_m — dugoročne kamatne stope za ocjenu konvergencije); obrada cro-stat.com\n\n\n\nRazlika prema Njemačkoj (premija rizika)\n\nRazlika hrvatskog i njemačkog prinosa, u postotnim bodovima. Veća razlika znači veću premiju rizika koju ulagači traže na hrvatski dug.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (irt_lt_mcby_m), vlastiti izračun; obrada cro-stat.com"
+  },
+  {
+    "objectID": "prinosi-obveznica#usporedba-sa-zemljama",
+    "href": "prinosi-obveznica#usporedba-sa-zemljama",
+    "title": "Prinosi obveznica",
+    "section": "Usporedba sa zemljama",
+    "text": "Usporedba sa zemljama\n\n\nPrinosi u regiji\n\nHrvatska u odnosu na susjedne i slične zemlje: Sloveniju, Mađarsku, Rumunjsku i Bugarsku.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (irt_lt_mcby_m); obrada cro-stat.com\n\n\n\nPrinosi — rang zemalja EU\n\nPrinos po zemljama Europske unije, s istaknutom Hrvatskom, za posljednji dostupni mjesec.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (irt_lt_mcby_m); obrada cro-stat.com"
+  },
+  {
+    "objectID": "prinosi-obveznica#prinos-i-javni-dug",
+    "href": "prinosi-obveznica#prinos-i-javni-dug",
+    "title": "Prinosi obveznica",
+    "section": "Prinos i javni dug",
+    "text": "Prinos i javni dug\n\nPrinos i razina javnog duga\n\nSvaka točka je jedna zemlja EU: na vodoravnoj osi javni dug u postotku BDP-a, na okomitoj prinos na obveznice. Veza postoji, ali nije jednostavna — na prinos utječu i članstvo u euru, kreditni rejting i percepcija rizika.\n\n\n\n\n\n\n\n\nIzvor: Eurostat — prinosi (irt_lt_mcby_m, zadnji mjesec) i javni dug opće države (gov_10dd_edpt1, % BDP-a, zadnja godina); obrada cro-stat.com\n\n\n\n\n\n\n\n\nNapomenaIzvor i metodologija\n\n\n\n\n\n\nIzvor: Eurostat, dugoročne kamatne stope za ocjenu konvergencije (irt_lt_mcby_m, pokazatelj MCBY). Riječ je o harmoniziranoj seriji koja je usporediva za sve članice EU, temeljenoj na prinosu do dospijeća državnih obveznica približno desetogodišnjeg roka na sekundarnom tržištu.\nFrekvencija: mjesečno, objava sredinom sljedećeg mjeseca.\nPremija rizika: razlika hrvatskog i njemačkog prinosa (vlastiti izračun). Njemačka služi kao referenca jer nosi najniži rizik u europodručju.\nJavni dug: dug opće države (gov_10dd_edpt1, sektor S13, bruto dug, % BDP-a), posljednja dostupna godina.\n\n\n\n\n\n← Natrag na pregled: Novac i tržišta"
+  },
+  {
+    "objectID": "pretplata",
+    "href": "pretplata",
+    "title": "Pretplata",
+    "section": "",
+    "text": "Dio sadržaja cro-stat.com besplatan je i otvoren svima. Pretplata otvara detaljne tematske stranice s pokazateljima, u tri razine pristupa.\nPretplata obuhvaća isključivo pristup sadržajima platforme — grafikonima, podacima i pripadajućim stranicama. Ne uključuje usluge po narudžbi, savjetovanje ni izradu sadržaja na zahtjev."
+  },
+  {
+    "objectID": "pretplata#što-ostaje-besplatno",
+    "href": "pretplata#što-ostaje-besplatno",
+    "title": "Pretplata",
+    "section": "Što ostaje besplatno",
+    "text": "Što ostaje besplatno\nBez pretplate ostaju otvoreni naslovnica s najnovijim podacima, kalendar objava, kviz, stranica o projektu te pravne stranice.\n\nUvjeti korištenja · Pravila povrata · Politika privatnosti"
+  },
+  {
+    "objectID": "pravila-povrata#kratak-pregled",
+    "href": "pravila-povrata#kratak-pregled",
+    "title": "Pravila povrata",
+    "section": "Kratak pregled",
+    "text": "Kratak pregled\nPrije kupnje dostupno je besplatno probno razdoblje od sedam dana, bez unosa podataka o kartici. Preporučujemo da se prije plaćanja iskoristi probno razdoblje.\nNakon kupnje naknade za pretplatu u pravilu se ne vraćaju, ni za djelomično iskorištena razdoblja.\nPretplata se može otkazati u svakom trenutku. Otkazivanjem prestaju buduće naplate, a pristup traje do isteka plaćenog razdoblja.\nPovrat se odobrava u iznimnim slučajevima opisanima u nastavku, kao i kada je to propisano prisilnim propisima o zaštiti potrošača."
+  },
+  {
+    "objectID": "pravila-povrata#besplatno-probno-razdoblje",
+    "href": "pravila-povrata#besplatno-probno-razdoblje",
+    "title": "Pravila povrata",
+    "section": "1. Besplatno probno razdoblje",
+    "text": "1. Besplatno probno razdoblje\nNovim korisnicima dostupno je jednokratno besplatno probno razdoblje u trajanju od sedam dana.\nZa pokretanje probnog razdoblja ne traže se podaci o kartici i naplata se ne provodi.\nIstekom probnog razdoblja pristup se automatski vraća na besplatnu razinu. Za plaćenu pretplatu korisnik mora sam pokrenuti kupnju.\nProbno razdoblje dostupno je samo jednom po korisniku."
+  },
+  {
+    "objectID": "pravila-povrata#otkazivanje-pretplate",
+    "href": "pravila-povrata#otkazivanje-pretplate",
+    "title": "Pravila povrata",
+    "section": "2. Otkazivanje pretplate",
+    "text": "2. Otkazivanje pretplate\nPretplata se može otkazati u svakom trenutku, putem postavki korisničkog računa ili putem poveznice za upravljanje pretplatom iz potvrde o kupnji.\nOtkazivanjem prestaju buduće naplate. Pristup plaćenim sadržajima traje do isteka tekućeg plaćenog razdoblja i ne prekida se odmah.\nZa neiskorišteno vrijeme do isteka plaćenog razdoblja povrat se ne odobrava, osim ako prisilni propisi ne određuju drukčije."
+  },
+  {
+    "objectID": "pravila-povrata#kada-se-povrat-odobrava",
+    "href": "pravila-povrata#kada-se-povrat-odobrava",
+    "title": "Pravila povrata",
+    "section": "3. Kada se povrat odobrava",
+    "text": "3. Kada se povrat odobrava\nPovrat se odobrava u sljedećim slučajevima.\nDvostruka ili pogrešna naplata. Ako je isti iznos naplaćen više puta ili je naplaćen pogrešan iznos, razlika se vraća u cijelosti.\nTehnička nemogućnost pristupa. Ako zbog tehničkog problema na našoj strani pristup plaćenim sadržajima nije bio moguć tijekom duljeg razdoblja, a problem nije otklonjen u razumnom roku nakon prijave, odobrava se povrat razmjeran razdoblju nedostupnosti ili povrat u cijelosti, ovisno o trajanju.\nNeovlaštena naplata. Ako je pretplata naplaćena bez znanja i pristanka vlasnika sredstva plaćanja, povrat se odobrava nakon provjere.\nNaplata nakon otkazivanja. Ako je pretplata naplaćena unatoč pravodobno provedenom otkazivanju, iznos se vraća u cijelosti."
+  },
+  {
+    "objectID": "pravila-povrata#kada-se-povrat-ne-odobrava",
+    "href": "pravila-povrata#kada-se-povrat-ne-odobrava",
+    "title": "Pravila povrata",
+    "section": "4. Kada se povrat ne odobrava",
+    "text": "4. Kada se povrat ne odobrava\nPovrat se u pravilu ne odobrava u sljedećim slučajevima.\nKorisnik je zaboravio otkazati pretplatu prije automatske obnove, a obnova je provedena u skladu s uvjetima i uz prethodnu obavijest.\nKorisnik nije koristio Uslugu tijekom plaćenog razdoblja.\nKorisnik nije zadovoljan opsegom sadržaja koji je bio opisan na stranici s pregledom pretplata prije kupnje i dostupan tijekom probnog razdoblja.\nPojedini pokazatelj privremeno nije dostupan jer izvorni statistički izvor kasni s objavom, promijenio je strukturu podataka ili je prestao objavljivati seriju. Ovisnost o vanjskim izvorima opisana je u Uvjetima korištenja.\nPristup je uskraćen zbog povrede Uvjeta korištenja."
+  },
+  {
+    "objectID": "pravila-povrata#pravo-potrošača-na-jednostrani-raskid",
+    "href": "pravila-povrata#pravo-potrošača-na-jednostrani-raskid",
+    "title": "Pravila povrata",
+    "section": "5. Pravo potrošača na jednostrani raskid",
+    "text": "5. Pravo potrošača na jednostrani raskid\nPotrošač u Europskoj uniji u pravilu ima pravo jednostrano raskinuti ugovor sklopljen na daljinu u roku od 14 dana od sklapanja, bez navođenja razloga.\nKod digitalnog sadržaja koji se isporučuje odmah to pravo prestaje kada je usluga u cijelosti izvršena, uz prethodnu izričitu suglasnost potrošača i njegovu potvrdu da je s time upoznat.\nPri kupnji pretplate tražit će se ta izričita suglasnost, kako bi pristup plaćenim sadržajima bio omogućen odmah. Potrošač koji tu suglasnost ne da može ostvariti pravo na jednostrani raskid u roku od 14 dana, pri čemu pristup počinje tek istekom tog roka.\nOva odredba ne utječe na prava koja potrošač ima prema prisilnim propisima države svog boravišta."
+  },
+  {
+    "objectID": "pravila-povrata#kako-zatražiti-povrat",
+    "href": "pravila-povrata#kako-zatražiti-povrat",
+    "title": "Pravila povrata",
+    "section": "6. Kako zatražiti povrat",
+    "text": "6. Kako zatražiti povrat\nPlaćanja obrađuje Paddle.com Market Limited, koji nastupa kao prodavatelj u vlastito ime i provodi povrate.\nZahtjev za povrat podnosi se na jedan od dva načina.\nPrema uputama iz potvrde o kupnji koju je poslao Paddle, gdje postoji poveznica na njihovu korisničku podršku.\nIli upitom na contact@cro-stat.com, nakon čega ćemo zahtjev proslijediti ili uputiti na odgovarajući kanal.\nU zahtjevu je potrebno navesti adresu elektroničke pošte s kojom je pretplata kupljena, približan datum kupnje i razlog zahtjeva."
+  },
+  {
+    "objectID": "pravila-povrata#rokovi",
+    "href": "pravila-povrata#rokovi",
+    "title": "Pravila povrata",
+    "section": "7. Rokovi",
+    "text": "7. Rokovi\nNa zahtjev za povrat odgovaramo najkasnije u roku od 15 dana od zaprimanja, u skladu s rokom koji Zakon o zaštiti potrošača propisuje za odgovor na pisani prigovor potrošača.\nOdobreni povrat provodi Paddle na isto sredstvo plaćanja kojim je kupnja obavljena. Vrijeme do vidljivosti sredstava ovisi o izdavatelju kartice ili pružatelju usluge plaćanja i u pravilu iznosi nekoliko radnih dana."
+  },
+  {
+    "objectID": "pravila-povrata#promjena-cijena",
+    "href": "pravila-povrata#promjena-cijena",
+    "title": "Pravila povrata",
+    "section": "8. Promjena cijena",
+    "text": "8. Promjena cijena\nCijene pretplate mogu se mijenjati. O promjeni koja utječe na postojeću pretplatu obavještavamo elektroničkom poštom prije sljedeće obnove.\nKorisnik koji se s novom cijenom ne slaže može otkazati pretplatu prije stupanja promjene na snagu i neće mu biti naplaćena nova cijena."
+  },
+  {
+    "objectID": "pravila-povrata#kontakt",
+    "href": "pravila-povrata#kontakt",
+    "title": "Pravila povrata",
+    "section": "9. Kontakt",
+    "text": "9. Kontakt\nOpenMacro, obrt za informacijske usluge, vl. Leonarda Srdelić Šibenska ulica 4 10000 Zagreb Hrvatska\nElektronička pošta: contact@cro-stat.com\nOva Pravila povrata čine sastavni dio Uvjeta korištenja."
+  },
+  {
+    "objectID": "porezni-prihodi",
+    "href": "porezni-prihodi",
+    "title": "Porezni prihodi",
+    "section": "",
+    "text": "Porezni prihodi - razina i udio u BDP-u\n\n\nHrvatska\n\n\n\n\n\n\n\n\nNapomena: Ukupni porezni prihodi (porezi + socijalni doprinosi) u mlrd. EUR i kao udio u BDP-u.\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, na_item = D2_D5_D91_D61_M_D995, unit = MIO_EUR i PC_GDP, geo = HR); obrada cro-stat.com\n\n\n\n\nEU-27\n\n\n\n\n\n\n\n\nNapomena: Ukupni porezni prihodi (porezi + socijalni doprinosi) u mlrd. EUR i kao udio u BDP-u.\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, na_item = D2_D5_D91_D61_M_D995, unit = MIO_EUR i PC_GDP, geo = EU27_2020); obrada cro-stat.com\n\n\n\n\n\n\nIndeksirani porezni prihodi\nUsporedba dinamike rasta poreznih prihoda Hrvatske i EU-27 (baza: 2020 = 100):\n\n\n\n\n\n\n\n\nNapomena: Indeks prikazuje relativnu promjenu u odnosu na 2020. godinu. Vrijednost 120 znači da su porezni prihodi 20% veći nego 2020.\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, na_item = D2_D5_D91_D61_M_D995, unit = MIO_EUR, geo = HR, EU27_2020; indeks 2020 = 100); obrada cro-stat.com\n\n\n\n\nRast poreza vs rast BDP-a\nUsporedba godišnje stope promjene poreznih prihoda i nominalnog BDP-a za zemlje EU (2024/2023):\n\n\n\n\n\n\n\n\nNapomena: Hrvatska označena crvenom bojom. Trend linija prikazuje prosječni odnos rasta poreza i BDP-a u EU.\n\n\nIzvor: Eurostat (gov_10a_taxag: sector = S13, na_item = D2_D5_D91_D61_M_D995, unit = MIO_EUR; nama_10_gdp: na_item = B1GQ, unit = CP_MEUR; geo = zemlje EU, stopa 2024./2023.); obrada cro-stat.com\n\n\n\n\nDoprinosi rastu poreznih prihoda\n\n\nHrvatska\n\n\n\n\n\n\n\n\nNapomena: Godišnja stopa promjene poreznih prihoda i doprinosi pojedinih komponenti (u postotnim bodovima).\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, unit = MIO_EUR, na_item = D2_D5_D91_D61_M_D995 ukupno te D211, D51B, D51A, D61 komponente, geo = HR); obrada cro-stat.com\n\n\n\n\nEU-27\n\n\n\n\n\n\n\n\nNapomena: Godišnja stopa promjene poreznih prihoda i doprinosi pojedinih komponenti (u postotnim bodovima).\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, unit = MIO_EUR, na_item = D2_D5_D91_D61_M_D995 ukupno te D211, D51B, D51A, D61 komponente, geo = EU27_2020); obrada cro-stat.com\n\n\n\n\n\n\nStruktura poreza\n\nStruktura poreznih prihoda - Hrvatska\n\nUdio pojedinih vrsta poreza u ukupnim poreznim prihodima opće države.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_taxag, sector = S13, unit = PC_TOT, na_item = D211, D51A, D51B, D61, geo = HR); obrada cro-stat.com\n\n\n← Natrag na pregled: Javne financije"
+  },
+  {
+    "objectID": "politika-privatnosti#voditelj-obrade",
+    "href": "politika-privatnosti#voditelj-obrade",
+    "title": "Politika privatnosti",
+    "section": "1. Voditelj obrade",
+    "text": "1. Voditelj obrade\nVoditelj obrade osobnih podataka je OpenMacro, obrt za informacijske usluge, vl. Leonarda Srdelić, sa sjedištem u Zagrebu, Šibenska ulica 4, OIB 40871947444, matični broj obrta 98731025.\nKontakt za pitanja o zaštiti osobnih podataka: contact@cro-stat.com.\nOva Politika privatnosti objašnjava koje osobne podatke prikupljamo pri korištenju internetske stranice cro-stat.com, zašto ih prikupljamo, koliko ih dugo čuvamo i koja prava korisnik ima."
+  },
+  {
+    "objectID": "politika-privatnosti#podaci-koje-prikupljamo",
+    "href": "politika-privatnosti#podaci-koje-prikupljamo",
+    "title": "Politika privatnosti",
+    "section": "2. Podaci koje prikupljamo",
+    "text": "2. Podaci koje prikupljamo\n\nPosjet stranici bez registracije\nZa korištenje besplatnog dijela stranice registracija nije potrebna i ne traže se osobni podaci.\nPri posjetu se, uz privolu za analitičke kolačiće, prikupljaju podaci o korištenju stranice, i to posjećene stranice, vrijeme zadržavanja, približna lokacija na razini države ili grada, vrsta uređaja i preglednika te izvor s kojeg je posjetitelj došao. Ti se podaci prikupljaju u agregiranom obliku i IP adresa se anonimizira.\nBez privole za analitičke kolačiće ti se podaci ne prikupljaju.\n\n\nRegistracija i korisnički račun\nPri otvaranju korisničkog računa prikupljaju se adresa elektroničke pošte i lozinka u kriptiranom obliku.\nUz račun se bilježe i podaci o razini pretplate, datumu početka i isteka pretplate te o iskorištenom probnom razdoblju.\n\n\nPretplata i plaćanje\nPodatke o plaćanju, uključujući podatke o kartici, ne prikupljamo i nemamo im pristup. Plaćanja obrađuje Paddle.com Market Limited, koji nastupa kao prodavatelj u vlastito ime i samostalni voditelj obrade za podatke o plaćanju.\nOd Paddlea primamo podatke potrebne za vođenje pretplate, i to adresu elektroničke pošte, status pretplate, razinu pretplate i datume obračunskog razdoblja.\nPaddleova politika privatnosti dostupna je na njihovim stranicama i primjenjuje se na obradu podataka o plaćanju.\n\n\nObavijesti o objavama\nAko se korisnik prijavi na obavijesti o novim statističkim objavama, prikuplja se adresa elektroničke pošte i podatak o odabranim pokazateljima.\n\n\nPreuzimanje grafičkih prikaza\nPri preuzimanju grafičkog prikaza bilježi se, uz privolu za analitičke kolačiće, podatak o tome koji je prikaz preuzet, s koje stranice i na kojoj širini zaslona. Ti podaci ne sadrže osobne podatke i koriste se isključivo za razumijevanje koji su sadržaji korisnicima najkorisniji."
+  },
+  {
+    "objectID": "politika-privatnosti#svrhe-i-pravne-osnove-obrade",
+    "href": "politika-privatnosti#svrhe-i-pravne-osnove-obrade",
+    "title": "Politika privatnosti",
+    "section": "3. Svrhe i pravne osnove obrade",
+    "text": "3. Svrhe i pravne osnove obrade\n\n\n\n\n\n\n\n\nSvrha\nPodaci\nPravna osnova\n\n\n\n\nVođenje korisničkog računa i omogućavanje pristupa\nadresa elektroničke pošte, lozinka, status pretplate\nizvršenje ugovora\n\n\nNaplata i vođenje pretplate\npodaci primljeni od Paddlea\nizvršenje ugovora\n\n\nIspunjavanje računovodstvenih i poreznih obveza\npodaci o transakcijama\nzakonska obveza\n\n\nObavijesti o novim objavama\nadresa elektroničke pošte\nprivola\n\n\nAnalitika korištenja stranice\nagregirani podaci o posjetu\nprivola\n\n\nSigurnost i sprječavanje zloupotrebe\ntehnički zapisi pristupa\nlegitimni interes\n\n\n\nPrivola se može povući u svakom trenutku, bez utjecaja na zakonitost obrade prije povlačenja."
+  },
+  {
+    "objectID": "politika-privatnosti#primatelji-podataka",
+    "href": "politika-privatnosti#primatelji-podataka",
+    "title": "Politika privatnosti",
+    "section": "4. Primatelji podataka",
+    "text": "4. Primatelji podataka\nOsobni podaci ne prodaju se niti ustupaju trećim stranama u marketinške svrhe.\nPodaci se dijele isključivo s pružateljima usluga koji su nužni za rad stranice, i to\n\nPaddle.com Market Limited, obrada plaćanja i naplata pretplate\nCloudflare, isporuka sadržaja i zaštita pristupa\nGitHub, smještaj programskog koda i objava stranice\nGoogle, analitika korištenja stranice uz privolu\nCloudflare Email Routing, prosljeđivanje elektroničke pošte s adrese na domeni\n\nPodaci se mogu otkriti nadležnim tijelima kada je to propisano zakonom."
+  },
+  {
+    "objectID": "politika-privatnosti#prijenos-podataka-izvan-europske-unije",
+    "href": "politika-privatnosti#prijenos-podataka-izvan-europske-unije",
+    "title": "Politika privatnosti",
+    "section": "5. Prijenos podataka izvan Europske unije",
+    "text": "5. Prijenos podataka izvan Europske unije\nNeki od navedenih pružatelja usluga imaju sjedište izvan Europskog gospodarskog prostora. U tim slučajevima prijenos se temelji na standardnim ugovornim klauzulama Europske komisije ili na odluci o primjerenosti zaštite, ovisno o pružatelju."
+  },
+  {
+    "objectID": "politika-privatnosti#razdoblje-čuvanja",
+    "href": "politika-privatnosti#razdoblje-čuvanja",
+    "title": "Politika privatnosti",
+    "section": "6. Razdoblje čuvanja",
+    "text": "6. Razdoblje čuvanja\nPodaci korisničkog računa čuvaju se dok račun postoji. Nakon brisanja računa podaci se brišu, osim onih koje smo dužni čuvati prema računovodstvenim i poreznim propisima.\nPodaci o transakcijama čuvaju se 11 godina, u skladu sa Zakonom o računovodstvu. Rok počinje teći zadnjeg dana poslovne godine na koju se odnose poslovne knjige u koje su isprave unesene.\nAdresa elektroničke pošte za obavijesti čuva se do odjave.\nAnalitički podaci čuvaju se prema postavkama usluge Google Analytics, i to podaci o događajima 2 mjeseca, a podaci o korisnicima 14 mjeseci od posljednje aktivnosti.\nPodatak o iskorištenom probnom razdoblju čuva se i nakon brisanja računa, u obliku koji omogućuje sprječavanje ponovljenog korištenja, a najdulje 3 godine od isteka probnog razdoblja."
+  },
+  {
+    "objectID": "politika-privatnosti#prava-korisnika",
+    "href": "politika-privatnosti#prava-korisnika",
+    "title": "Politika privatnosti",
+    "section": "7. Prava korisnika",
+    "text": "7. Prava korisnika\nKorisnik ima pravo\n\nzatražiti pristup svojim osobnim podacima i njihovu presliku\nzatražiti ispravak netočnih podataka\nzatražiti brisanje podataka, osim onih koje smo dužni čuvati po zakonu\nzatražiti ograničenje obrade\nuložiti prigovor na obradu koja se temelji na legitimnom interesu\nzatražiti prenosivost podataka\npovući privolu u svakom trenutku\npodnijeti pritužbu Agenciji za zaštitu osobnih podataka\n\nZahtjevi se podnose na contact@cro-stat.com. Odgovor slijedi u roku od mjesec dana od zaprimanja zahtjeva."
+  },
+  {
+    "objectID": "politika-privatnosti#kolačići",
+    "href": "politika-privatnosti#kolačići",
+    "title": "Politika privatnosti",
+    "section": "8. Kolačići",
+    "text": "8. Kolačići\nStranica koristi nužne kolačiće, koji omogućuju osnovno funkcioniranje i prijavu korisnika, te analitičke kolačiće, koji se postavljaju samo uz privolu.\nPrivola se traži pri prvom posjetu i može se promijeniti u svakom trenutku putem postavki kolačića na stranici.\nNužni kolačići uključuju kolačić prijave i kolačić s odabirom o privoli. Analitički kolačići postavljaju se putem usluge Google Analytics."
+  },
+  {
+    "objectID": "politika-privatnosti#sigurnost",
+    "href": "politika-privatnosti#sigurnost",
+    "title": "Politika privatnosti",
+    "section": "9. Sigurnost",
+    "text": "9. Sigurnost\nPrimjenjuju se razumne tehničke i organizacijske mjere zaštite, uključujući šifriranu vezu, kriptirano pohranjivanje lozinki i ograničen pristup podacima.\nNijedan sustav nije potpuno siguran, pa se apsolutna sigurnost ne može jamčiti. U slučaju povrede osobnih podataka koja može prouzročiti visok rizik za prava korisnika, korisnici i nadležno tijelo obavijestit će se u skladu s propisima."
+  },
+  {
+    "objectID": "politika-privatnosti#djeca",
+    "href": "politika-privatnosti#djeca",
+    "title": "Politika privatnosti",
+    "section": "10. Djeca",
+    "text": "10. Djeca\nUsluga nije namijenjena osobama mlađima od 16 godina i njihovi se podaci ne prikupljaju svjesno."
+  },
+  {
+    "objectID": "politika-privatnosti#izmjene-politike-privatnosti",
+    "href": "politika-privatnosti#izmjene-politike-privatnosti",
+    "title": "Politika privatnosti",
+    "section": "11. Izmjene Politike privatnosti",
+    "text": "11. Izmjene Politike privatnosti\nOva Politika može se mijenjati. O bitnim izmjenama registrirani korisnici obavijestit će se elektroničkom poštom ili obavijesti na stranici. Datum posljednjeg ažuriranja uvijek odražava važeću verziju."
+  },
+  {
+    "objectID": "politika-privatnosti#kontakt",
+    "href": "politika-privatnosti#kontakt",
+    "title": "Politika privatnosti",
+    "section": "12. Kontakt",
+    "text": "12. Kontakt\nOpenMacro, obrt za informacijske usluge, vl. Leonarda Srdelić Šibenska ulica 4 10000 Zagreb Hrvatska\nElektronička pošta: contact@cro-stat.com\nNadzorno tijelo: Agencija za zaštitu osobnih podataka, Selska cesta 136, 10000 Zagreb."
+  },
+  {
+    "objectID": "platna-bilanca-bpm6",
+    "href": "platna-bilanca-bpm6",
+    "title": "Odnosi s inozemstvom (BPM6)",
+    "section": "",
+    "text": "Platna bilanca prikazuje sve ekonomske transakcije između rezidenata Hrvatske i ostatka svijeta. Tekući račun, kao ključna komponenta, obuhvaća robnu razmjenu, usluge, primarni dohodak (plaće, dividende, kamate) i sekundarni dohodak (transferi).\n\nStruktura tekućeg računa\n\n\nGodišnja struktura\n\nSaldo i komponente po godinama (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju komponente tekućeg računa (roba, usluge, primarni i sekundarni dohodak), dijamant prikazuje saldo, a crveni kružići na desnoj osi saldo kao udio u BDP-u. Udio u BDP-u računa se kao godišnji saldo podijeljen godišnjim BDP-om (Eurostatov nominalni BDP).\n\n\nIzvor: Hrvatska narodna banka (Platna bilanca, tablica H1) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\nTromjesečna struktura\n\nSaldo i komponente po tromjesečjima (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju komponente tekućeg računa (roba, usluge, primarni i sekundarni dohodak), dijamant prikazuje saldo, a crveni kružići na desnoj osi saldo kao udio u BDP-u. Udio u BDP-u računa se kao zbroj posljednja četiri tromjesečja u brojniku i nazivniku (kotrljajuća godišnja vrijednost), prema Eurostatovu nominalnom BDP-u.\n\n\nIzvor: Hrvatska narodna banka (Platna bilanca, tablica H1) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\n\n\nStruktura financijskog računa\nFinancijski račun prikazuje transakcije rezidenata Hrvatske s inozemstvom u financijskoj imovini i obvezama. Sastoji se od izravnih ulaganja, međunarodnih pričuva te portfeljnih i ostalih ulaganja, čiji zbroj daje saldo.\n\n\nGodišnja struktura\n\nSaldo i komponente po godinama (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju komponente financijskog računa, dijamant prikazuje saldo, a crveni kružići na desnoj osi saldo kao udio u BDP-u. Predznaci prate metodologiju BPM6, pa pozitivna vrijednost znači neto odljev financijske imovine. Međunarodne pričuve ovdje su prikazane kao tok, odnosno kao transakcije unutar financijskog računa, a ne kao razina pričuva (razina je prikazana u sljedećem odjeljku). Udio u BDP-u računa se kao godišnji saldo podijeljen godišnjim BDP-om, prema Eurostatovu nominalnom BDP-u, pa se može neznatno razlikovati od objave Hrvatske narodne banke, koja koristi BDP Državnog zavoda za statistiku.\n\n\nIzvor: Hrvatska narodna banka (Platna bilanca, tablica H1) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\nTromjesečna struktura\n\nSaldo i komponente po tromjesečjima (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju komponente financijskog računa, dijamant prikazuje saldo, a crveni kružići na desnoj osi saldo kao udio u BDP-u. Predznaci prate metodologiju BPM6, pa pozitivna vrijednost znači neto odljev financijske imovine. Međunarodne pričuve ovdje su prikazane kao tok, odnosno kao transakcije unutar financijskog računa, a ne kao razina pričuva (razina je prikazana u sljedećem odjeljku). Udio u BDP-u računa se kao zbroj posljednja četiri tromjesečja u brojniku i nazivniku, prema Eurostatovu nominalnom BDP-u, pa se može neznatno razlikovati od objave Hrvatske narodne banke, koja koristi BDP Državnog zavoda za statistiku.\n\n\nIzvor: Hrvatska narodna banka (Platna bilanca, tablica H1) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\n\n\nStanje međunarodnih ulaganja\nZa razliku od platne bilance, koja bilježi transakcije u razdoblju, stanje međunarodnih ulaganja pokazuje razinu inozemne imovine i obveza na kraju razdoblja. Riječ je o zasebnoj statistici Hrvatske narodne banke.\n\n\nGodišnje stanje\n\nNeto stanje na kraju godine, po komponentama (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: stanje neto međunarodnih ulaganja jednako je razlici između inozemne imovine i inozemnih obveza domaćih sektora na kraju razdoblja. Negativna vrijednost pokazuje da su inozemne obveze veće od inozemne imovine. Crna linija prikazuje neto stanje, a isprekidana crvena linija na desnoj osi neto stanje kao udio u BDP-u. Ostala ulaganja obuhvaćaju valutu i depozite, kredite, trgovinske kredite, ostala vlasnička ulaganja te ostalu imovinu i obveze; pridružene su im i financijske izvedenice, koje su premale da bi se prikazale zasebno. Znatan pad međunarodnih pričuva od 2023. posljedica je uvođenja eura, čime je dio dotadašnje devizne imovine prestao biti inozemna imovina. Budući da je stanje razina na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno godišnjim BDP-om.\n\n\nIzvor: Hrvatska narodna banka (Stanje međunarodnih ulaganja, tablica H16) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\nTromjesečno stanje\n\nNeto stanje na kraju tromjesečja, po komponentama (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: stanje neto međunarodnih ulaganja jednako je razlici između inozemne imovine i inozemnih obveza domaćih sektora na kraju razdoblja. Negativna vrijednost pokazuje da su inozemne obveze veće od inozemne imovine. Crna linija prikazuje neto stanje, a isprekidana crvena linija na desnoj osi neto stanje kao udio u BDP-u. Ostala ulaganja obuhvaćaju valutu i depozite, kredite, trgovinske kredite, ostala vlasnička ulaganja te ostalu imovinu i obveze; pridružene su im i financijske izvedenice, koje su premale da bi se prikazale zasebno. Znatan pad međunarodnih pričuva od 2023. posljedica je uvođenja eura, čime je dio dotadašnje devizne imovine prestao biti inozemna imovina. Budući da je stanje razina na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno zbrojem posljednja četiri tromjesečja BDP-a.\n\n\nIzvor: Hrvatska narodna banka (Stanje međunarodnih ulaganja, tablica H16) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\n\n\nStanje međunarodnih ulaganja prema vrsti\nIsto stanje, prikazano prema vrsti ulaganja umjesto prema instrumentu, i izraženo u odnosu na BDP. Podjela na vlasnička i dužnička ulaganja pokazuje odakle proizlazi neto položaj prema inozemstvu.\n\n\nGodišnje stanje\n\nVlasnička i dužnička ulaganja na kraju godine (u % BDP-a).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: prikaz dijeli stanje međunarodnih ulaganja na vlasnička i dužnička ulaganja u odnosu na BDP. Vlasnička ulaganja obuhvaćaju vlasničke udjele u izravnim i portfeljnim ulaganjima te ostala vlasnička ulaganja. Dužnička ulaganja obuhvaćaju dužničke instrumente izravnih ulaganja, dužničke vrijednosne papire, kredite, depozite i ostale dužničke stavke; međunarodne pričuve i financijske izvedenice uključene su u dužnička ulaganja, jer su pričuve prema metodologiji BPM6 dužnički instrumenti. Negativna vrijednost pokazuje neto obveze prema inozemstvu; budući da stupci imaju suprotne predznake, njihov se zbroj ne vidi kao vrh stupca, pa je neto stanje prikazano i kao crna linija. Neto dužnička pozicija Hrvatske pozitivna je, što znači da negativni ukupni položaj proizlazi iz vlasničkih ulaganja, odnosno iz zaliha izravnih stranih ulaganja. Budući da je stanje razina na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno godišnjim BDP-om.\n\n\nIzvor: Hrvatska narodna banka (Stanje međunarodnih ulaganja, tablice H16 i H17) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\nTromjesečno stanje\n\nVlasnička i dužnička ulaganja na kraju tromjesečja (u % BDP-a).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: prikaz dijeli stanje međunarodnih ulaganja na vlasnička i dužnička ulaganja u odnosu na BDP. Vlasnička ulaganja obuhvaćaju vlasničke udjele u izravnim i portfeljnim ulaganjima te ostala vlasnička ulaganja. Dužnička ulaganja obuhvaćaju dužničke instrumente izravnih ulaganja, dužničke vrijednosne papire, kredite, depozite i ostale dužničke stavke; međunarodne pričuve i financijske izvedenice uključene su u dužnička ulaganja, jer su pričuve prema metodologiji BPM6 dužnički instrumenti. Negativna vrijednost pokazuje neto obveze prema inozemstvu; budući da stupci imaju suprotne predznake, njihov se zbroj ne vidi kao vrh stupca, pa je neto stanje prikazano i kao crna linija. Neto dužnička pozicija Hrvatske pozitivna je, što znači da negativni ukupni položaj proizlazi iz vlasničkih ulaganja, odnosno iz zaliha izravnih stranih ulaganja. Budući da je stanje razina na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno zbrojem posljednja četiri tromjesečja BDP-a.\n\n\nIzvor: Hrvatska narodna banka (Stanje međunarodnih ulaganja, tablice H16 i H17) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\n\n\nStanje bruto inozemnog duga\nBruto inozemni dug obuhvaća sve dužničke obveze rezidenata prema nerezidentima, prikazane prema domaćim sektorima koji ih drže.\n\n\nGodišnje stanje\n\nDug po sektorima na kraju godine (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju bruto inozemni dug prema domaćim sektorima koji ga drže: opća država, središnja banka, druge monetarne financijske institucije (banke), ostali domaći sektori te dužničke obveze iz izravnih ulaganja. Isprekidane linije na desnoj osi prikazuju dug kao udio u BDP-u. Crvena linija prikazuje ukupan dug, a tamna dug bez središnje banke; ta druga mjera isključuje obveze Hrvatske narodne banke, koje su uglavnom obveze prema Eurosustavu nastale nakon uvođenja eura 2023. godine, pa razlika između dviju linija raste iako te obveze nisu zaduženje u uobičajenom smislu. Budući da je dug stanje na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno godišnjim BDP-om.\n\n\nIzvor: Hrvatska narodna banka (Bruto inozemni dug, tablica H12) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\nTromjesečno stanje\n\nDug po sektorima na kraju tromjesečja (u mlrd. EUR).\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: složeni stupci prikazuju bruto inozemni dug prema domaćim sektorima koji ga drže: opća država, središnja banka, druge monetarne financijske institucije (banke), ostali domaći sektori te dužničke obveze iz izravnih ulaganja. Isprekidane linije na desnoj osi prikazuju dug kao udio u BDP-u. Crvena linija prikazuje ukupan dug, a tamna dug bez središnje banke; ta druga mjera isključuje obveze Hrvatske narodne banke, koje su uglavnom obveze prema Eurosustavu nastale nakon uvođenja eura 2023. godine, pa razlika između dviju linija raste iako te obveze nisu zaduženje u uobičajenom smislu. Budući da je dug stanje na kraju razdoblja, a ne tok, udio u BDP-u računa se kao stanje podijeljeno zbrojem posljednja četiri tromjesečja BDP-a.\n\n\nIzvor: Hrvatska narodna banka (Bruto inozemni dug, tablica H12) i Eurostat (BDP, namq_10_gdp); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "place-zupanije",
+    "href": "place-zupanije",
+    "title": "Plaće po županijama",
+    "section": "",
+    "text": "Stranica Plaće po županijama spojena je sa stranicom Plaće, koja sada objedinjuje najnovije mjesečne podatke za Hrvatsku i podatke po županijama.\nPreusmjeravanje kreće automatski. Ako se to ne dogodi, otvorite Plaće."
+  },
+  {
+    "objectID": "nekretnine#stranice-u-skupini",
+    "href": "nekretnine#stranice-u-skupini",
+    "title": "Nekretnine i stanovanje",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nPriuštivo stanovanje\nIndeks cijena stambenih nekretnina, omjer cijena i dohotka te priuštivost po županijama. Tromjesečno · godišnje\n\n\nKarta cijena stanova\nMedijalne cijene stanova po županijama i gradovima, iz podataka o stvarnim transakcijama. Godišnje"
+  },
+  {
+    "objectID": "monetarni-agregati",
+    "href": "monetarni-agregati",
+    "title": "Monetarni agregati",
+    "section": "",
+    "text": "Krediti i depoziti kućanstava i poduzeća te struktura kreditiranja, prema bilanci monetarnih institucija u Hrvatskoj, mjesečno. Od uvođenja eura (2023.) Hrvatska nema zaseban nacionalni monetarni agregat (M1, M3) — njezin je novac dio agregata europodručja — pa se prati bilanca banaka: koliko kreditiraju i koliko im povjeravamo na štednju."
+  },
+  {
+    "objectID": "monetarni-agregati#krediti-kućanstvima-i-poduzećima",
+    "href": "monetarni-agregati#krediti-kućanstvima-i-poduzećima",
+    "title": "Monetarni agregati",
+    "section": "Krediti kućanstvima i poduzećima",
+    "text": "Krediti kućanstvima i poduzećima\n\n\nKrediti po sektorima\n\nStanje kredita kućanstvima i nefinancijskim poduzećima, u milijardama eura, mjesečno.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (BSI — bilanca monetarnih institucija), stanja, mil. EUR; obrada cro-stat.com\n\n\n\nGodišnja stopa rasta kredita\n\nPromjena stanja kredita u odnosu na isti mjesec prethodne godine, po sektorima.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (BSI), vlastiti izračun; obrada cro-stat.com"
+  },
+  {
+    "objectID": "monetarni-agregati#depoziti-i-likvidnost",
+    "href": "monetarni-agregati#depoziti-i-likvidnost",
+    "title": "Monetarni agregati",
+    "section": "Depoziti i likvidnost",
+    "text": "Depoziti i likvidnost\n\n\nDepoziti kućanstava po vrsti\n\nPrekonoćni (odmah raspoloživi, najlikvidniji „novac”) i oročeni depoziti kućanstava, složeno, u milijardama eura.\n\n\n\n\n\n\n\n\nNapomena: Prekonoćni depoziti najbliži su pojmu „novca” u širem smislu. U Hrvatskoj su nakon uvođenja eura naglo porasli, a oročena štednja pala, jer su kamate na štednju dugo bile niske.\n\n\nIzvor: Europska središnja banka (BSI), stanja, mil. EUR; obrada cro-stat.com\n\n\n\nOmjer kredita i depozita\n\nUkupni krediti (kućanstva i poduzeća) podijeljeni s ukupnim depozitima. Vrijednost ispod 100 % znači da banke imaju više depozita nego kredita. Vlastiti izračun.\n\n\n\n\n\n\n\n\nNapomena: Niži omjer znači likvidniji bankovni sustav: krediti su dobrim dijelom pokriveni domaćim depozitima, a ne inozemnim zaduživanjem.\n\n\nIzvor: Europska središnja banka (BSI), vlastiti izračun; obrada cro-stat.com"
+  },
+  {
+    "objectID": "monetarni-agregati#struktura-kreditiranja-kućanstava",
+    "href": "monetarni-agregati#struktura-kreditiranja-kućanstava",
+    "title": "Monetarni agregati",
+    "section": "Struktura kreditiranja kućanstava",
+    "text": "Struktura kreditiranja kućanstava\n\nStruktura kredita kućanstvima\n\nStanje kredita kućanstvima razdvojeno na stambene i ostale kredite (potrošački i drugi), složeno, u milijardama eura.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (BSI), stanja, mil. EUR; obrada cro-stat.com (ostalo = ukupni krediti kućanstvima umanjeni za stambene)\n\n\n\n\n\n\n\n\nNapomenaIzvor i metodologija\n\n\n\n\n\n\nIzvor: Europska središnja banka, bilanca monetarnih institucija (BSI — MFI balance sheet items), dohvaćena s ECB Data Portala. Stanja (outstanding amounts) na kraju mjeseca, u milijunima eura.\nSektori: kućanstva (uključujući neprofitne ustanove koje im služe) i nefinancijska poduzeća.\nNema nacionalnog M1/M3: od pristupanja europodručju (1. siječnja 2023.) hrvatski je novac dio monetarnih agregata europodručja; zaseban hrvatski M1/M3 više se ne objavljuje. Zato se prate stavke bilance banaka, koje ostaju nacionalno mjerljive.\nPrekonoćni depoziti približna su nacionalna mjera najlikvidnijeg novca (glavna sastavnica M1).\nOmjer kredita i depozita i struktura kredita vlastiti su izračuni iz gornjih serija.\n\n\n\n\n\n← Natrag na pregled: Novac i tržišta"
+  },
+  {
+    "objectID": "kamatne-stope",
+    "href": "kamatne-stope",
+    "title": "Kamatne stope",
+    "section": "",
+    "text": "Prosječne kamatne stope na nove kredite i depozite kućanstava i poduzeća u Hrvatskoj, prema statistici kamatnih stopa monetarnih financijskih institucija Europske središnje banke, uz usporedbu s europodručjem. Prikazane su stope na novoodobrene poslove (nova proizvodnja), mjesečno."
+  },
+  {
+    "objectID": "kamatne-stope#krediti-i-depoziti-kućanstava-i-poduzeća",
+    "href": "kamatne-stope#krediti-i-depoziti-kućanstava-i-poduzeća",
+    "title": "Kamatne stope",
+    "section": "Krediti i depoziti kućanstava i poduzeća",
+    "text": "Krediti i depoziti kućanstava i poduzeća\n\n\nKamatne stope na nove kredite kućanstvima\n\nProsječna stopa na novoodobrene stambene i potrošačke kredite kućanstvima, mjesečno.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (MIR — MFI interest rate statistics), nova proizvodnja, EUR; obrada cro-stat.com\n\n\n\nKamatne stope na nove kredite poduzećima\n\nProsječna stopa na novoodobrene kredite nefinancijskim poduzećima, po veličini kredita.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (MIR), nova proizvodnja, EUR; obrada cro-stat.com\n\n\n\n\n\nStambeni krediti — Hrvatska i europodručje\n\nProsječna stopa na nove stambene kredite kućanstvima u Hrvatskoj u odnosu na prosjek europodručja.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (MIR); obrada cro-stat.com\n\n\n\nKamatne stope na depozite\n\nProsječna stopa na nove oročene depozite kućanstava i poduzeća, mjesečno.\n\n\n\n\n\n\n\n\nIzvor: Europska središnja banka (MIR), nova proizvodnja, oročeni depoziti, EUR; obrada cro-stat.com"
+  },
+  {
+    "objectID": "kamatne-stope#kamatna-marža-i-usporedba-po-zemljama",
+    "href": "kamatne-stope#kamatna-marža-i-usporedba-po-zemljama",
+    "title": "Kamatne stope",
+    "section": "Kamatna marža i usporedba po zemljama",
+    "text": "Kamatna marža i usporedba po zemljama\n\n\nKamatna marža (stambeni krediti − depoziti kućanstava)\n\nRazlika između stope na nove stambene kredite i stope na nove depozite kućanstava. Vlastiti izračun.\n\n\n\n\n\n\n\n\nNapomena: Marža je gruba mjera raspona između cijene kredita i naknade na štednju; ne odražava trošak rizika ni operativni trošak banaka.\n\n\nIzvor: Europska središnja banka (MIR), vlastiti izračun; obrada cro-stat.com\n\n\n\nStambeni krediti — rang europodručja\n\nProsječna stopa na nove stambene kredite po zemljama europodručja, s istaknutom Hrvatskom, za posljednji dostupni mjesec.\n\n\n\n\n\n\n\n\nNapomena: Prikazane su zemlje europodručja, ne cijela EU. Statistika MIR obuhvaća samo članice eura, a i inače je usporedba unutar zajedničke monetarne politike smislenija — zemljama izvan eura vrijedi vlastita monetarna politika i tečaj.\n\n\nIzvor: Europska središnja banka (MIR), nova proizvodnja, EUR; obrada cro-stat.com\n\n\n\n\n\n\n\n\n\nNapomenaIzvor i metodologija\n\n\n\n\n\n\nIzvor: Europska središnja banka, statistika kamatnih stopa monetarnih financijskih institucija (MIR), dohvaćena s ECB Data Portala (data-api.ecb.europa.eu, dataflow MIR).\nNova proizvodnja: prikazane su stope na novoodobrene poslove u mjesecu (ne na cijeli stanjeni portfelj), pa brže odražavaju promjene tržišnih uvjeta.\nValuta i povijest: serije su u eurima i teku neprekidno od 2011. Hrvatski krediti bili su i prije uvođenja eura (1. siječnja 2023.) dominantno EUR-indeksirani, pa je EUR serija usporediva kroz cijelo razdoblje; datum uvođenja eura označen je okomitom crtom. Zasebne kunske serije (manji dio tržišta) nisu prikazane jer nisu izravno usporedive.\nRang: unutar europodručja — MIR ne pokriva zemlje izvan eura.\nReferentna stopa ESB-a: kamatna stopa na stalno raspoloživu mogućnost deponiranja (deposit facility rate), koja od 2019. usmjerava kratkoročne tržišne stope.\nKamatna marža: vlastiti izračun, stopa na stambene kredite umanjena za stopu na depozite kućanstava.\n\n\n\n\n\n← Natrag na pregled: Novac i tržišta"
+  },
+  {
+    "objectID": "javni-dug",
+    "href": "javni-dug",
+    "title": "Javni dug",
+    "section": "",
+    "text": "Javni dug u EU27\n\n\nRanking EU27 - javni dug\n\nVisina javnog duga (% BDP-a) u državama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10dd_edpt1, na_item = GD, sector = S13, unit = PC_GDP, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje javnog duga\n\nKretanje javnog duga (% BDP-a) za Hrvatsku i EU27 prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10dd_edpt1, na_item = GD, sector = S13, unit = PC_GDP, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Javne financije"
+  },
+  {
+    "objectID": "info#što-je-crostat",
+    "href": "info#što-je-crostat",
+    "title": "O projektu",
+    "section": "Što je CroStat",
+    "text": "Što je CroStat\nCroStat je specijalizirani makroekonomski servis usmjeren na praćenje hrvatskog i europskog gospodarstva s naglaskom na realnu aktivnost, tržište rada, cijene, financijske uvjete te energiju i klimu.\nServis objedinjuje javno dostupne podatke iz više izvora u dosljedan skup vremenskih serija, uz dodatnu obradu, sezonsku prilagodbu i vizualizaciju. Cilj je profesionalnim korisnicima pružiti jasan okvir za praćenje gospodarske dinamike."
+  },
+  {
+    "objectID": "info#opis-metodologije",
+    "href": "info#opis-metodologije",
+    "title": "O projektu",
+    "section": "Metodologija i izvori podataka",
+    "text": "Metodologija i izvori podataka\nCroStat se oslanja na javno dostupne statističke izvore, prije svega:\n\nDržavni zavod za statistiku\nHrvatska narodna banka\nEurostat\nEuropska središnja banka\nEuropska komisija\nEuropska agencija za okoliš i povezane klimatske baze podataka\nrelevantne energetske i tržišne reference za cijene energije i CO₂\n\nPodaci se preuzimaju, gdje je to moguće, u najdetaljnijoj i vremenski najfrekventnijoj verziji. Primjenjuje se standardna sezonska prilagodba i dosljedno označavanje jedinica, definicija i referentnih razdoblja. Posebna se pažnja posvećuje kontinuitetu serija kroz metodološke promjene te jasnom razlikovanju službeno prilagođenih i neprilagođenih podataka.\nMetodološke napomene uz pojedine pokazatelje prikazuju se na pripadajućim podstranicama."
+  },
+  {
+    "objectID": "info#pristup",
+    "href": "info#pristup",
+    "title": "O projektu",
+    "section": "Pristup",
+    "text": "Pristup\nServis je razvijen na temelju iskustva u istraživanjima i statistici, makroekonomskoj analizi i klimatskim rizicima. Pristup je sličan onome koji se koristi u središnjim bankama i međunarodnim institucijama: naglasak je na jasno definiranim podacima, transparentnoj metodologiji i prikazu koji ističe vidljive obrasce, a ne kratkoročni šum u podacima.\nKrajnji je cilj korisnicima pružiti dosljedne i ažurne serije za praćenje gospodarstva i tranzicijskih procesa."
+  },
+  {
+    "objectID": "",
+    "href": "",
+    "title": "Godišnji monitor",
+    "section": "",
+    "text": "Stanovništvo\nu milijunima\n\n\n3,87\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBDP\nrealna godišnja stopa promjene (u %)\n\n\n3,4\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBDP\nrealni u mlrd. EUR\n\n\n68,3\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBDP po stanovniku\nnominalni u tis. EUR\n\n\n24,0\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZaposlenost\nstopa zaposlenosti (20-64, u %)\n\n\n74,4\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNezaposlenost\nstopa nezaposlenosti (15-74, u %)\n\n\n4,9\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProsječna neto plaća\nu EUR mjesečno\n\n\n1 438\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProduktivnost rada\nu % EU-27 prosjeka\n\n\n82,4\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInflacija (HICP)\nprosječna godišnja stopa promjene (%)\n\n\n4,4\n2025.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCijene nekretnina\nindeks HPI (2015. = 100)\n\n\n227,1\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavni dug\nopća država (u % BDP-a)\n\n\n56,3\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProračunski saldo\nopća država (u % BDP-a)\n\n\n-3,0\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTekući račun\nsaldo (mlrd. EUR)\n\n\n-3,3\n-3,5% BDP-a\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFinancijski račun\nsaldo (mlrd. EUR)\n\n\n-2,6\n-2,8% BDP-a\n2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnergetska ovisnost\nuvoz u bruto energiji (u %)\n\n\n59,9\n2024"
+  },
+  {
+    "objectID": "gospodarstvo#stranice-u-skupini",
+    "href": "gospodarstvo#stranice-u-skupini",
+    "title": "Gospodarstvo",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nBruto domaći proizvod\nKretanje, struktura po rashodnoj strani i doprinosi rastu, uz usporedbu s prosjekom EU-a. Tromjesečno\n\n\nPotrošnja kućanstava\nOsobna potrošnja kućanstava, struktura po namjeni i usporedba s prosjekom Europske unije. Tromjesečno\n\n\n\n\nIndikatori gospodarske aktivnosti\nEkonomski sentiment te povjerenje potrošača i poslovnog sektora iz anketa Europske komisije. Mjesečno\n\n\nProduktivnost\nNominalna produktivnost prema prosjeku EU-a i realno kretanje po zaposlenom i po satu rada. Godišnje\n\n\n\n\nOdnosi s inozemstvom (BPM6)\nTekući i financijski račun, stanje međunarodnih ulaganja i bruto inozemni dug, prema HNB-u. Tromjesečno\n\n\nRobna razmjena\nIzvoz, uvoz i trgovinski saldo, struktura po vrstama proizvoda i najveći trgovinski partneri. Mjesečno\n\n\n\n\nUsluge i turizam\nIzvoz usluga po vrsti i udio u BDP-u te dolasci i noćenja turista i promet na granicama. Mjesečno"
+  },
+  {
+    "objectID": "energija/ovisnost",
+    "href": "energija/ovisnost",
+    "title": "Ovisnost o uvozu energije",
+    "section": "",
+    "text": "Energija i klima / Ovisnost o uvozu energije\nPrikazana je ovisnost Hrvatske o uvozu energije: stopa energetske ovisnosti, struktura uvoza nafte i prirodnog plina po zemljama partnerima te koncentracija uvoza."
+  },
+  {
+    "objectID": "energija/ovisnost#stopa-ovisnosti-i-koncentracija-uvoza",
+    "href": "energija/ovisnost#stopa-ovisnosti-i-koncentracija-uvoza",
+    "title": "Ovisnost o uvozu energije",
+    "section": "Stopa ovisnosti i koncentracija uvoza",
+    "text": "Stopa ovisnosti i koncentracija uvoza\n\n\nStopa energetske ovisnosti\n\nUdio neto uvoza u bruto raspoloživoj energiji. Viša vrijednost znači veću ovisnost o uvozu.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_ind_id, siec = TOTAL, unit = PC, geo = HR, EU27_2020, DE, IT, SI, HU, AT); obrada cro-stat.com\n\n\n\nKoncentracija uvoza (HHI)\n\nHerfindahl-Hirschman indeks koncentracije uvoza po partnerskim zemljama. Viša vrijednost znači veću ovisnost o malom broju partnera (maksimum 10000 = jedan partner).\n\n\n\n\n\n\n\n\nIzvor: vlastiti izračun (HHI = Σ udjela², %) iz Eurostat nrg_ti_oil, nrg_ti_gas. Fizički tokovi; najmanji partneri grupirani u „Ostalo”; obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/ovisnost#struktura-uvoza-nafte-i-prirodnog-plina-po-partneru",
+    "href": "energija/ovisnost#struktura-uvoza-nafte-i-prirodnog-plina-po-partneru",
+    "title": "Ovisnost o uvozu energije",
+    "section": "Struktura uvoza nafte i prirodnog plina po partneru",
+    "text": "Struktura uvoza nafte i prirodnog plina po partneru\nSvaki stupac prikazuje 100 posto uvoza te godine, a boje pokazuju udio pojedine zemlje podrijetla; viši udio jedne zemlje znači veću ovisnost o tom dobavljaču. Prekidačem birate energent. Kod plina je vidljiv zaokret nakon 2020.: do tada dominira uvoz iz Mađarske, a od 2021. raste udio SAD-a (LNG preko terminala na Krku). Najmanji partneri grupirani su u “Ostalo”.\n\n\nEnergentNaftaPrirodni plin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nafta: nrg_ti_oil; plin: nrg_ti_gas; unit = THS_T, partner ≠ TOTAL, geo = HR; udjeli po partneru, fizički tokovi); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije",
+    "href": "energija/emisije",
+    "title": "Emisije",
+    "section": "",
+    "text": "Energija i klima / Emisije\nPrikazane su emisije stakleničkih plinova u Hrvatskoj: struktura po sektorima, intenzitet emisija u odnosu na gospodarsku aktivnost te emisije po stanovniku."
+  },
+  {
+    "objectID": "energija/emisije#struktura-emisija-po-sektorima-hrvatska",
+    "href": "energija/emisije#struktura-emisija-po-sektorima-hrvatska",
+    "title": "Emisije",
+    "section": "Struktura emisija po sektorima (Hrvatska)",
+    "text": "Struktura emisija po sektorima (Hrvatska)\nEmisije stakleničkih plinova po sektorima inventara (CRF/IPCC), u milijunima tona ekvivalenta CO2. Prekidačem birate razinu: glavni sektori ili energetika razložena na podsektore (energetske transformacije, industrija i graditeljstvo, promet, opća potrošnja, fugitivne emisije). Trake iznad nule su izvori, zelena traka ispod nule su ponori (LULUCF), a dvije linije su ukupno sa i bez ponora. Pređite mišem za vrijednosti i udio u ukupnim emisijama bez LULUCF.\n\n\nRazinaGlavni sektoriPodsektori energetike\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (env_air_gge, airpol = GHG, unit = THS_T, geo = HR; glavni sektori: src_crf = CRF1/CRF2/CRF3/CRF5 + CRF4 (LULUCF, negativno); podsektori: energetika razložena na CRF1A1-A5/CRF1B; MtCO2eq); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije#emisije-po-stanovniku-i-ugljični-intenzitet-mreže",
+    "href": "energija/emisije#emisije-po-stanovniku-i-ugljični-intenzitet-mreže",
+    "title": "Emisije",
+    "section": "Emisije po stanovniku i ugljični intenzitet mreže",
+    "text": "Emisije po stanovniku i ugljični intenzitet mreže\n\n\nEmisije po stanovniku\n\nUkupne emisije stakleničkih plinova (bez LULUCF) po stanovniku, tone ekvivalenta CO2.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (env_air_gge, airpol = GHG, src_crf = TOTX4_MEMO, unit = THS_T + tps00001 (populacija); geo = HR, EU27_2020, DE, IT, SI, HU, AT); obrada cro-stat.com\n\n\n\nUgljični intenzitet električne mreže\n\nProcjena emisija CO2 po kWh proizvedene struje iz miksa proizvodnje. Hrvatska ima nizak intenzitet zbog hidroenergije; pad pokazuje rast obnovljivih.\n\n\n\n\n\n\n\n\nIzvor: procjena iz Eurostat nrg_bal_c (nrg_bal = GEP, unit = GWH) s faktorima emisija fosilnih izvora (ugljen 950, nafta 700, plin 400 gCO2/kWh); geo = HR i susjedne; obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije#intenzitet-i-produktivnost-emisija",
+    "href": "energija/emisije#intenzitet-i-produktivnost-emisija",
+    "title": "Emisije",
+    "section": "Intenzitet i produktivnost emisija",
+    "text": "Intenzitet i produktivnost emisija\nEnergetski CO2 (gorenje goriva, CRF1) u odnosu na realni BDP. Prekidačem birate prikaz: intenzitet (kg CO2 po euru, niže je bolje) ili njegovu obrnutu vrijednost, produktivnost (euri po kg CO2, više je bolje).\n\n\nPrikazIntenzitet (kg CO2/EUR)Produktivnost (EUR/kg CO2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (env_air_gge: airpol = CO2, src_crf = CRF1, unit = THS_T + nama_10_gdp: na_item = B1GQ, unit = CLV20_MEUR; kg CO2/EUR odnosno EUR/kg CO2; geo = HR, EU27_2020, DE, IT, SI, HU, AT); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije#kaya-dekompozicija-promjene-emisija-hrvatska",
+    "href": "energija/emisije#kaya-dekompozicija-promjene-emisija-hrvatska",
+    "title": "Emisije",
+    "section": "Kaya dekompozicija promjene emisija (Hrvatska)",
+    "text": "Kaya dekompozicija promjene emisija (Hrvatska)\nPromjena emisija razložena na četiri čimbenika prema Kaya identitetu: stanovništvo, BDP po stanovniku, energetski intenzitet (energija po BDP-u) i ugljični intenzitet (CO2 po jedinici energije). Pozitivan stupac gura emisije gore, negativan dolje; zbroj je neto promjena u razdoblju.\n\n\n\n\n\n\n\nIzvor: vlastiti izračun (LMDI) iz Eurostat env_air_gge, nrg_bal_c, nama_10_gdp, tps00001; geo = HR; obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije#karta-postrojenja-eu-ets-industrije-hrvatska",
+    "href": "energija/emisije#karta-postrojenja-eu-ets-industrije-hrvatska",
+    "title": "Emisije",
+    "section": "Karta postrojenja EU ETS industrije (Hrvatska)",
+    "text": "Karta postrojenja EU ETS industrije (Hrvatska)\nLokacije postrojenja hrvatske industrije obuhvaćene sustavom EU ETS, obojane po sektoru djelatnosti. Pređite mišem za naziv operatera i postrojenja.\n\n\n\n\n\n\n\nIzvor: EU ETS / EUTL (EEA); geokodirano OpenStreetMap Nominatim; obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/emisije#eu-ets-zračni-i-pomorski-promet-hrvatska",
+    "href": "energija/emisije#eu-ets-zračni-i-pomorski-promet-hrvatska",
+    "title": "Emisije",
+    "section": "EU ETS: zračni i pomorski promet (Hrvatska)",
+    "text": "EU ETS: zračni i pomorski promet (Hrvatska)\nKarta iznad prikazuje samo stacionarna postrojenja. EU ETS od 2024. obuhvaća i pomorski promet, a zračni promet već od 2012. Zrakoplovni operateri i brodari nemaju fiksnu lokaciju pa se ne prikazuju na karti, nego u tablici verificiranih emisija po segmentu. Riječ je o agregatima za Hrvatsku (kao administrativnu državu), ne o popisu pojedinih operatera.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSegment (verificirane emisije, kt CO2)\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nStacionarna postrojenja\n7 324\n6 997\n6 455\n6 567\n5 513\n5 740\n\n\nZračni promet\n75\n109\n166\n174\n177\n185\n\n\nPomorski promet\n–\n–\n–\n–\n250\n244\n\n\n\n\n\nOznaka “–” znači da segment u toj godini nije bio obuhvaćen ETS-om (pomorski promet ulazi tek 2024.). Najnovija godina može biti podložna naknadnim ispravcima.\n\nIzvor: EEA EU ETS data viewer (Union Registry / EUTL) — verificirane emisije po segmentu (stacionarna postrojenja, zračni od 2012., pomorski od 2024.), HR kao administrativna država; obrada cro-stat.com\n\n\n\n\n\n\n\nNapomenaMetodologija\n\n\n\n\n\n\nKarta EU ETS postrojenja: popis operatera i postrojenja (stacionarnih) obuhvaćenih EU ETS-om u RH (43 postrojenja, 29 operatera). Adrese su geokodirane preko OpenStreetMap Nominatima, sektor prema NKD djelatnosti operatera. Veličina točaka je trenutno jednolična; razvrstavanje po verificiranim emisijama (EUTL) je sljedeći korak.\nTablica zračni i pomorski promet: verificirane emisije po glavnoj djelatnosti i godini, za Hrvatsku kao administrativnu državu. Segmenti: stacionarna postrojenja (šifre 20-99), zračni promet (šifra 10, od 2012.), pomorski promet (šifra 50, od 2024.). Vrijednosti su agregati po segmentu, ne popis pojedinih operatera.\nKaya dekompozicija: LMDI metoda (log-mean Divisia indeks) na četiri čimbenika: emisije, energija (gruba domaća potrošnja, GIC), realni BDP i stanovništvo.\nIntenzitet i produktivnost emisija: energetski CO2 (airpol CO2, izvor CRF1 = gorenje goriva) u odnosu na realni BDP. Intenzitet je kg CO2 po euru, produktivnost je njegova obrnuta vrijednost (euri po kg CO2).\nUgljični intenzitet mreže: procjena iz miksa proizvodnje. Emisije fosilnih izvora (faktori: ugljen 950, nafta 700, plin 400 gCO2/kWh) podijeljene su ukupnom proizvodnjom; ostali izvori (hidro, vjetar, solar, biomasa, nuklearno) računaju se kao nula. Riječ je o približnoj procjeni, ne o službenom inventaru.\nStruktura emisija po sektorima i podsektorima: IPCC/CRF okvir. Glavni sektori: Energetika (CRF1), Industrijski procesi (CRF2), Poljoprivreda (CRF3), Otpad (CRF5), Ponori LULUCF (CRF4, prikazani negativno). Podsektori energetike: Energetske transformacije (CRF1A1), Industrija i graditeljstvo (CRF1A2), Promet (CRF1A3), Sektor opće potrošnje (CRF1A4), Fugitivne emisije (CRF1B). Ukupne linije: bez LULUCF (TOTX4_MEMO) i s LULUCF (TOTXMEMO). Udio u tooltipu računat je u odnosu na ukupno bez LULUCF.\nEmisije po stanovniku: ukupne bez LULUCF (TOTX4_MEMO), podijeljene populacijom.\nEmisije se prijavljuju s odmakom od oko dvije godine."
+  },
+  {
+    "objectID": "cijene#stranice-u-skupini",
+    "href": "cijene#stranice-u-skupini",
+    "title": "Cijene",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nIPC i HICP\nNacionalni indeks potrošačkih cijena i harmonizirani HICP, godišnje i mjesečne stope te usporedba s EU-om. Mjesečno\n\n\nCijene energenata\nCijene električne energije i plina za poduzeća, s udjelom poreza i naknada, u usporedbi s Europskom unijom. Polugodišnje\n\n\n\n\nCijene hrane\nInflacija hrane po skupinama proizvoda i usporedba s ukupnom inflacijom. Mjesečno"
+  },
+  {
+    "objectID": "cijene-energenata",
+    "href": "cijene-energenata",
+    "title": "Cijene energenata",
+    "section": "",
+    "text": "Ova stranica prikazuje cijene električne energije i prirodnog plina za ne-kućanstva (poduzeća) u Hrvatskoj i EU. Podaci se objavljuju polugodišnje (1. i 2. polugodište). Cijene su izražene prema X_VAT metodologiji - uključuju sve poreze i naknade osim PDV-a, što je relevantno za poduzeća koja mogu odbiti PDV."
+  },
+  {
+    "objectID": "cijene-energenata#cijene-po-razredima-potrošnje-hrvatska",
+    "href": "cijene-energenata#cijene-po-razredima-potrošnje-hrvatska",
+    "title": "Cijene energenata",
+    "section": "Cijene po razredima potrošnje (Hrvatska)",
+    "text": "Cijene po razredima potrošnje (Hrvatska)\n\nCijene struje - svi razredi potrošnje\n\nCijene električne energije za ne-kućanstva u Hrvatskoj po razredima godišnje potrošnje (IA-IG). Razredi označavaju veličinu poduzeća prema potrošnji.\n\n\n\n\n\n\n\n\nNapomena: Cijene uključuju sve poreze i naknade osim PDV-a (X_VAT metodologija). Razredi potrošnje označavaju godišnju potrošnju energije - manji razredi (IA) su tipično mala poduzeća, veći razredi (IG) su veliki industrijski potrošači. Od 2022-2.pol. neki razredi (posebno IF) nisu prikazani zbog zaštite povjerljivosti podataka.\n\n\nIzvor: Eurostat (nrg_pc_205, unit = KWH, currency = EUR, tax = X_VAT, nrg_cons = razredi MWH, geo = HR); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-energenata#usporedba-s-eu---električna-energija",
+    "href": "cijene-energenata#usporedba-s-eu---električna-energija",
+    "title": "Cijene energenata",
+    "section": "Usporedba s EU - električna energija",
+    "text": "Usporedba s EU - električna energija\n\nHR vs EU27/EA/CEE po razredu potrošnje\n\nUsporedba cijena električne energije za ne-kućanstva u Hrvatskoj s prosjekom EU27, Europodručja i CEE zemalja. Razred potrošnje i valutu (EUR ili kupovna moć PPS) odaberite izbornicima iznad grafa.\n\n\n\n\nRazred potrošnjeMali (IB): 20-499 MWhSrednji (ID): 2.000-19.999 MWhVeliki (IE): 20.000-69.999 MWh\nValutaEUR (nominalno)PPS (kupovna moc)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZa ove nizove Eurostat ne objavljuje agregat europodručja s nepromjenjivim sastavom — postoji samo oznaka EA, koja mijenja sastav kroz vrijeme pa niz nije usporediv sam sa sobom. Prosjek europodručja zato nije prikazan.\n\n\nIzvor: Eurostat (nrg_pc_205, unit = KWH, tax = X_VAT, currency = EUR/PPS, nrg_cons = razred, geo = HR, EU27_2020, CEE); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-energenata#ranking-eu27---električna-energija",
+    "href": "cijene-energenata#ranking-eu27---električna-energija",
+    "title": "Cijene energenata",
+    "section": "Ranking EU27 - električna energija",
+    "text": "Ranking EU27 - električna energija\n\nCijene struje u EU27 po razredu potrošnje\n\nUsporedba cijena električne energije za ne-kućanstva po državama EU27. Hrvatska je označena crvenom bojom. Razred potrošnje i valutu (EUR ili kupovna moć PPS) odaberite izbornicima iznad grafa.\n\n\n\n\nRazred potrošnjeMali (IB): 20-499 MWhSrednji (ID): 2.000-19.999 MWh\nValutaEUR (nominalno)PPS (kupovna moc)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_pc_205, unit = KWH, tax = X_VAT, currency = EUR/PPS, nrg_cons = razred, geo = države EU27; zadnje polugodište); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-energenata#cijene-po-razredima-potrošnje-hrvatska-1",
+    "href": "cijene-energenata#cijene-po-razredima-potrošnje-hrvatska-1",
+    "title": "Cijene energenata",
+    "section": "Cijene po razredima potrošnje (Hrvatska)",
+    "text": "Cijene po razredima potrošnje (Hrvatska)\n\nCijene plina - svi razredi potrošnje\n\nCijene prirodnog plina za ne-kućanstva u Hrvatskoj po razredima godišnje potrošnje (I1-I6).\n\n\n\n\n\n\n\n\nNapomena: Cijene uključuju sve poreze i naknade osim PDV-a (X_VAT metodologija). Razredi potrošnje označavaju godišnju potrošnju energije - manji razredi (I1) su tipično mala poduzeća, veći razredi (I6) su veliki industrijski potrošači.\n\n\nIzvor: Eurostat (nrg_pc_203, unit = KWH, currency = EUR, tax = X_VAT, nrg_cons = razredi GJ, geo = HR); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-energenata#usporedba-s-eu---prirodni-plin",
+    "href": "cijene-energenata#usporedba-s-eu---prirodni-plin",
+    "title": "Cijene energenata",
+    "section": "Usporedba s EU - prirodni plin",
+    "text": "Usporedba s EU - prirodni plin\n\nHR vs EU27/EA/CEE po razredu potrošnje\n\nUsporedba cijena prirodnog plina za ne-kućanstva u Hrvatskoj s prosjekom EU27, Europodručja i CEE zemalja. Razred potrošnje i valutu (EUR ili kupovna moć PPS) odaberite izbornicima iznad grafa.\n\n\n\n\nRazred potrošnjeMali (I2): 1.000-9.999 GJSrednji (I3): 10.000-99.999 GJVeliki (I4): 100.000-999.999 GJ\nValutaEUR (nominalno)PPS (kupovna moc)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZa ove nizove Eurostat ne objavljuje agregat europodručja s nepromjenjivim sastavom — postoji samo oznaka EA, koja mijenja sastav kroz vrijeme pa niz nije usporediv sam sa sobom. Prosjek europodručja zato nije prikazan.\n\n\nIzvor: Eurostat (nrg_pc_203, unit = KWH, tax = X_VAT, currency = EUR/PPS, nrg_cons = razred, geo = HR, EU27_2020, CEE); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-energenata#ranking-eu27---prirodni-plin",
+    "href": "cijene-energenata#ranking-eu27---prirodni-plin",
+    "title": "Cijene energenata",
+    "section": "Ranking EU27 - prirodni plin",
+    "text": "Ranking EU27 - prirodni plin\n\nCijene plina u EU27 po razredu potrošnje\n\nUsporedba cijena prirodnog plina za ne-kućanstva po državama EU27. Hrvatska je označena crvenom bojom. Razred potrošnje i valutu (EUR ili kupovna moć PPS) odaberite izbornicima iznad grafa.\n\n\n\n\nRazred potrošnjeMali (I2): 1.000-9.999 GJSrednji (I3): 10.000-99.999 GJ\nValutaEUR (nominalno)PPS (kupovna moc)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_pc_203, unit = KWH, tax = X_VAT, currency = EUR/PPS, nrg_cons = razred, geo = države EU27; zadnje polugodište). CEE = neponderirani prosjek (BG, CZ, EE, HU, LT, LV, PL, RO, SI, SK); obrada cro-stat.com\n\n\n\n← Natrag na pregled: Cijene"
+  },
+  {
+    "objectID": "BDP#po-skupinama-zemalja",
+    "href": "BDP#po-skupinama-zemalja",
+    "title": "Bruto domaći proizvod",
+    "section": "Po skupinama zemalja",
+    "text": "Po skupinama zemalja\n\n\nIndeks realnog BDP-a\n\nIndeks realnog BDP-a za Hrvatsku i odabranu skupinu zemalja.\n\n\n\nSkupinaCEE zemljeEuropska unija (EU-27)Europodručje (EA)\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\n\n\n\nGodišnje stope promjene realnog BDP-a\n\nGodišnje stope promjene realnog BDP-a za Hrvatsku i odabranu skupinu.\n\n\n\nSkupinaCEE zemljeEuropska unija (EU-27)Europodručje (EA)\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\nIzvor: Eurostat (nama_10_gdp, na_item = B1GQ, unit = CLV20_MEUR); obrada cro-stat.com\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomenaMetodologija\n\n\n\n\n\n\nCEE (Srednja i Istočna Europa): neponderirani (jednostavni aritmetički) prosjek za Bugarsku, Češku, Estoniju, Mađarsku, Litvu, Latviju, Poljsku, Rumunjsku, Sloveniju i Slovačku. EU-27 i Europodručje (EA) službeni su ponderirani prosjeci s Eurostata.\nRealni BDP izražen je u lančanim vrijednostima (uklonjen je učinak promjene cijena); tromjesečni pokazatelji su sezonski i kalendarski prilagođeni.\n\n\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "cijene-hrane",
+    "href": "cijene-hrane",
+    "title": "Cijene hrane",
+    "section": "",
+    "text": "Cijene hrane prate se u više faza opskrbnog lanca: od svjetskih cijena sirovina (FAO) preko proizvodnih cijena poljoprivrednika (FAOSTAT) do maloprodajnih cijena za potrošače (Eurostat). Prikazana je i razina cijena hrane u Hrvatskoj u odnosu na prosjek Europske unije."
+  },
+  {
+    "objectID": "cijene-hrane#svjetske-cijene-hrane-fao-indeks",
+    "href": "cijene-hrane#svjetske-cijene-hrane-fao-indeks",
+    "title": "Cijene hrane",
+    "section": "Svjetske cijene hrane (FAO indeks)",
+    "text": "Svjetske cijene hrane (FAO indeks)\n\nFAO indeks svjetskih cijena hrane prati mjesečne promjene cijena pet glavnih grupa prehrambenih sirovina na globalnim tržištima (žitarice, ulja i masti, mliječni proizvodi, meso, šećer). Indeks je baziran na razdoblju 2014-2016 = 100.\n\n\n\n\n\n\n\n\nIzvor: FAO, Food Price Index (mjesečno, 2014-2016 = 100; žitarice, ulja, mliječni, meso, šećer); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-hrane#proizvodne-cijene-poljoprivrednika-u-hrvatskoj-faostat",
+    "href": "cijene-hrane#proizvodne-cijene-poljoprivrednika-u-hrvatskoj-faostat",
+    "title": "Cijene hrane",
+    "section": "Proizvodne cijene poljoprivrednika u Hrvatskoj (FAOSTAT)",
+    "text": "Proizvodne cijene poljoprivrednika u Hrvatskoj (FAOSTAT)\n\nIndeks proizvodnih cijena (Producer Price Index) — cijene koje primaju hrvatski poljoprivrednici za svoje proizvode po glavnim kategorijama. Indeks je baziran na razdoblju 2014-2016 = 100. Razlika u odnosu na maloprodajne cijene: ovo su cijene na poljoprivrednom gospodarstvu, prije marže prerađivača, distributera i trgovine.\n\n\n\n\n\n\n\n\nIzvor: FAOSTAT, Producer Prices (Croatia, Producer Price Index 2014-2016 = 100; rebazirano 2020 = 100); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-hrane#indeks-cijena-hrane-u-hrvatskoj-2020.-100",
+    "href": "cijene-hrane#indeks-cijena-hrane-u-hrvatskoj-2020.-100",
+    "title": "Cijene hrane",
+    "section": "Indeks cijena hrane u Hrvatskoj, 2020. = 100",
+    "text": "Indeks cijena hrane u Hrvatskoj, 2020. = 100\n\nMaloprodajne cijene hrane u Hrvatskoj prema COICOP klasifikaciji. Za razliku od FAO indeksa (sirovine na svjetskim tržištima), ovo prikazuje cijene koje plaćaju krajnji potrošači.\n\n\n\n\n\n\nŽitarice\n\n132,7\n07/2026\n\n\n\n\n\n\n\nTjestenina\n\n154,1\n07/2026\n\n\n\n\n\n\n\nGovedina\n\n177,6\n07/2026\n\n\n\n\n\n\n\nSvinjetina\n\n122,5\n07/2026\n\n\n\n\n\n\n\nPerad\n\n131,6\n07/2026\n\n\n\n\n\n\n\nRiba i morski plodovi\n\n152,2\n07/2026\n\n\n\n\n\n\n\nMlijeko\n\n131,0\n07/2026\n\n\n\n\n\n\n\nSir\n\n140,8\n07/2026\n\n\n\n\n\n\n\nJogurt\n\n140,0\n07/2026\n\n\n\n\n\n\n\nJaja\n\n175,3\n07/2026\n\n\n\n\n\n\n\nBiljna ulja\n\n148,7\n07/2026\n\n\n\n\n\n\n\nMaslac\n\n112,3\n07/2026\n\n\n\n\n\n\n\nVoće\n\n138,9\n07/2026\n\n\n\n\n\n\n\nPovrće\n\n131,3\n07/2026\n\n\n\n\n\n\n\nŠećer\n\n142,8\n07/2026\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (prc_fpmt_m, indx = HICP, unit = I25, freq = M, geo = HR; rebazirano 2020 = 100); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-hrane#razina-cijena-hrane-u-hrvatskoj-vs.-eu-prosjek-pli",
+    "href": "cijene-hrane#razina-cijena-hrane-u-hrvatskoj-vs.-eu-prosjek-pli",
+    "title": "Cijene hrane",
+    "section": "Razina cijena hrane u Hrvatskoj vs. EU prosjek (PLI)",
+    "text": "Razina cijena hrane u Hrvatskoj vs. EU prosjek (PLI)\n\nIndeks razine cijena (Price Level Index, PLI) pokazuje koliko su prosječne cijene određene kategorije proizvoda u Hrvatskoj iznad ili ispod prosjeka EU27 u istoj godini. PLI iznad 100 znači da je kategorija skuplja od EU prosjeka, ispod 100 da je jeftinija. Za razliku od HICP-a (koji prati promjenu u vremenu), PLI je trenutni cross-section snimak razine cijena.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (prc_ppp_ind, na_item = PLI_EU27_2020, freq = A, geo = HR; EU27 = 100); obrada cro-stat.com"
+  },
+  {
+    "objectID": "cijene-hrane#usporedba-proizvodne-vs.-potrošačke-cijene-hrane-hr",
+    "href": "cijene-hrane#usporedba-proizvodne-vs.-potrošačke-cijene-hrane-hr",
+    "title": "Cijene hrane",
+    "section": "Usporedba: proizvodne vs. potrošačke cijene hrane (HR)",
+    "text": "Usporedba: proizvodne vs. potrošačke cijene hrane (HR)\n\nUsporedba kretanja cijena u dvije faze opskrbnog lanca: proizvodne cijene (koje primaju poljoprivrednici, FAOSTAT) i potrošačke cijene (koje plaćaju kupci u trgovinama, Eurostat HICP CP01 – Hrana i bezalkoholna pića). Oba indeksa su rebazirana na 2020 = 100 i prikazuju godišnji prosjek.\n\n\n\n\n\n\n\n\nNapomena: Usporedba nije savršena jer FAOSTAT mjeri cijene sirovina na gospodarstvu (sirovo mlijeko, žito, voće), a Eurostat HICP cijene prerađenih proizvoda u trgovinama (mlijeko u kartonu, kruh, jogurt). Razlika uključuje sve troškove i marže između proizvođača i potrošača.\n\n\nIzvor: Eurostat (prc_hicp_minr, coicop18 = CP01, unit = I15, freq = M, geo = HR) + FAOSTAT (Producer Prices, HR); oba rebazirana 2020 = 100; obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/cijene",
+    "href": "energija/cijene",
+    "title": "Cijene i konkurentnost",
+    "section": "",
+    "text": "Energija i klima / Cijene i konkurentnost\nCijene struje i plina za industriju u Hrvatskoj, udio poreza u cijeni i usporedba s EU."
+  },
+  {
+    "objectID": "energija/cijene#cijena-energije-za-srednje-firme",
+    "href": "energija/cijene#cijena-energije-za-srednje-firme",
+    "title": "Cijene i konkurentnost",
+    "section": "Cijena energije za srednje firme",
+    "text": "Cijena energije za srednje firme\nCijena za srednje velike industrijske potrošače, bez PDV-a. Prekidačem birate struju (500–2000 MWh/god.) ili plin (10.000–100.000 GJ/god.).\n\n\nEnergentElektrična energijaPrirodni plin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (struja: nrg_pc_205, skupina 500-2000 MWh; plin: nrg_pc_203, skupina ≈ 10000-100000 GJ; tax = X_VAT (bez PDV-a), currency = EUR, geo = HR i susjedne); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/cijene#udio-poreza-i-nameta-u-cijeni-struje",
+    "href": "energija/cijene#udio-poreza-i-nameta-u-cijeni-struje",
+    "title": "Cijene i konkurentnost",
+    "section": "Udio poreza i nameta u cijeni struje",
+    "text": "Udio poreza i nameta u cijeni struje\nUdio poreza i nameta u ukupnoj cijeni struje za srednje firme (zadnja dostupna godina). Viši udio znači da veći dio računa otpada na poreze.\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_pc_205, razlika I_TAX (s porezima) i X_TAX (bez poreza) kao % od I_TAX, skupina ≈ 500 MWh, unit = KWH, currency = EUR, geo = HR i susjedne); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/",
+    "href": "energija/",
+    "title": "Energija i klima",
+    "section": "",
+    "text": "Pregled ključnih pokazatelja energetike i klime za Hrvatsku u usporedbi s Europskom unijom: ovisnost o uvozu energije, udio obnovljivih izvora, emisije stakleničkih plinova i cijene energije. Pojedini stupovi razrađeni su na povezanim stranicama.\nU 2024. stopa energetske ovisnosti Hrvatske iznosila je 59,9%, što je iznad prosjeka Europske unije od 57,3%. Udio obnovljivih izvora u proizvodnji električne energije dosegnuo je 58,0%, čime se Hrvatska svrstava među države članice s najvišim udjelima, ponajprije zahvaljujući značajnom doprinosu hidroelektrana. Emisije stakleničkih plinova po stanovniku u 2023. iznosile su 6,6 tona ekvivalenta CO₂. Cijena električne energije za srednje velika poduzeća (bez PDV-a) u 2025. iznosila je 164 EUR/MWh. Detaljniji prikazi po pojedinim stupovima izloženi su na sljedećim stranicama."
+  },
+  {
+    "objectID": "energija/#stupovi",
+    "href": "energija/#stupovi",
+    "title": "Energija i klima",
+    "section": "Stupovi",
+    "text": "Stupovi\n\n\n\nOvisnost o uvozu energije\nKoliko Hrvatska ovisi o uvozu energije, struktura uvoza nafte i plina po partnerima te koncentracija uvoza.\n\n\nTranzicija i proizvodnja\nStruktura proizvodnje električne energije, udio obnovljivih izvora i instalirani kapaciteti.\n\n\n\n\nEmisije\nStaklenički plinovi po sektoru, intenzitet emisija i emisije po stanovniku.\n\n\nCijene i konkurentnost\nCijene struje i plina za industriju, udio poreza i usporedba s EU.\n\n\n\n\n\n\n\n\n\nNapomenaIzvor i metodologija\n\n\n\n\n\nIzvor: Eurostat (nrg_ind_id, nrg_ind_ren, env_air_gge, tps00001, nrg_pc_205)\nGlavni izvor za EU usporedbe je Eurostat. Pokazatelji se osvježavaju kad pipeline (R/energija-*.R) povuče nove podatke.\n\nEnergetska ovisnost: Eurostat nrg_ind_id.\nUdio obnovljivih: Eurostat nrg_ind_ren.\nEmisije po stanovniku: Eurostat env_air_gge (ukupne emisije bez LULUCF) podijeljeno s populacijom (tps00001).\nCijena struje: Eurostat nrg_pc_205, srednja potrošačka skupina, bez PDV-a.\n\nSekcija slijedi narativ ECB Occasional Paper No 388 “Energy security and industrial competitiveness” (2026.), s fokusom na Hrvatsku i usporedbom s EU."
+  },
+  {
+    "objectID": "energija/tranzicija",
+    "href": "energija/tranzicija",
+    "title": "Tranzicija i proizvodnja",
+    "section": "",
+    "text": "Energija i klima / Tranzicija i proizvodnja\nPrikazana je energetska tranzicija u Hrvatskoj: struktura proizvodnje električne energije po izvorima i udio obnovljivih izvora u ukupnoj potrošnji."
+  },
+  {
+    "objectID": "energija/tranzicija#proizvodnja-i-instalirani-kapacitet-električne-energije-hrvatska",
+    "href": "energija/tranzicija#proizvodnja-i-instalirani-kapacitet-električne-energije-hrvatska",
+    "title": "Tranzicija i proizvodnja",
+    "section": "Proizvodnja i instalirani kapacitet električne energije (Hrvatska)",
+    "text": "Proizvodnja i instalirani kapacitet električne energije (Hrvatska)\n\n\nProizvodnja po izvoru\n\nBruto proizvodnja električne energije po izvoru, GWh. Velik udio hidroenergije uz rast vjetra i solara.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_bal_c, nrg_bal = GEP, unit = GWH, siec = po izvoru, geo = HR); obrada cro-stat.com\n\n\n\nInstalirani kapacitet po tehnologiji\n\nNeto instalirani kapacitet elektrana po tehnologiji, MW. Rast vjetra i solara uz stabilnu hidro osnovicu.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_inf_epc, unit = MW, operator = TOTAL, plant_tec = TOTAL, siec = po tehnologiji, geo = HR); obrada cro-stat.com"
+  },
+  {
+    "objectID": "energija/tranzicija#udio-obnovljivih-izvora",
+    "href": "energija/tranzicija#udio-obnovljivih-izvora",
+    "title": "Tranzicija i proizvodnja",
+    "section": "Udio obnovljivih izvora",
+    "text": "Udio obnovljivih izvora\nUdio energije iz obnovljivih izvora. Prekidačem birate mjeru: udio u bruto finalnoj potrošnji (isprekidana linija = okvirni EU cilj za 2030.) ili udio u električnoj energiji (Hrvatska ima visok udio zbog hidroelektrana).\n\n\nMjeraBruto finalna potrošnjaElektrična energija\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (nrg_ind_ren; finalna: nrg_bal = REN, referentna linija = EU cilj 2030. (42,5%); električna: nrg_bal = REN_ELC; geo = HR, EU27_2020, DE, IT, SI, HU, AT); obrada cro-stat.com"
+  },
+  {
+    "objectID": "hicp",
+    "href": "hicp",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "",
+    "text": "Izvori: prvi odlomak Državni zavod za statistiku (prva procjena; usporedba sa srpnjem koristi razrađeni podatak iz PC-Axis baze), drugi odlomak Eurostat (prc_hicp_minr, coicop18 = TOTAL, unit = RCH_A; usporedba unutar europodručja, agregat EA21 koji uključuje Bugarsku, članicu od 1. siječnja 2026.) — isti nizovi iz kojih se crtaju grafovi na ovoj stranici."
+  },
+  {
+    "objectID": "hicp#nacionalni-indeks-potrošačkih-cijena-ipc",
+    "href": "hicp#nacionalni-indeks-potrošačkih-cijena-ipc",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "Nacionalni indeks potrošačkih cijena (IPC)",
+    "text": "Nacionalni indeks potrošačkih cijena (IPC)\nNacionalni IPC službena je mjera inflacije u Hrvatskoj i računa se na obuhvatu rezidentnih kućanstava. Harmonizirani HICP obuhvaća ukupnu potrošnju na teritoriju, pa dva pokazatelja nisu zamjenjiva. Usporedba s europodručjem moguća je samo na harmoniziranom indeksu i nalazi se niže na stranici.\n\n\n\n\n\n\nNacionalni IPC\nstopa promjene (%), Hrvatska, od 2020.\n\n\n4,1 %\nkolovoz 2026. (prva procjena)\n\n\nStopaGodišnja stopaMjesečna stopa\n\n\n\n\n\n\n\n\n\n\n\nNapomena: puna linija prikazuje razrađenu seriju iz PC-Axis baze DZS-a. Posljednja točka je prva procjena, koju DZS objavljuje krajem mjeseca, i zato je crtana isprekidano. Pri sljedećoj objavi zamjenjuje je razrađeni podatak, koji se može neznatno razlikovati od procjene.\nIzvor: Državni zavod za statistiku (PC-Axis, ME_PS09 — Indeksi potrošačkih cijena prema ECOICOP, ver. 2; posebni agregati PA1002/PA1007/PA1008/PA1009) te priopćenje o prvoj procjeni; obrada cro-stat.com\n\n\n\n\n\n\n\n\n\n\nNacionalni IPC po skupinama\ngodišnja stopa promjene (%), posebni agregati DZS-a, od 2020.\n\n\n17,4 %\nkolovoz 2026. (prva procjena)\n\n\nSkupinaEnergijaUslugeHrana, piće i duhanIndustrijski neprehrambeni bez energije\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: puna linija prikazuje razrađenu seriju iz PC-Axis baze DZS-a. Posljednja točka je prva procjena, koju DZS objavljuje krajem mjeseca, i zato je crtana isprekidano. Pri sljedećoj objavi zamjenjuje je razrađeni podatak, koji se može neznatno razlikovati od procjene. Skupine su posebni agregati DZS-a. Nazivima odgovaraju skupinama harmoniziranog indeksa, ali su računate na nacionalnom obuhvatu stanovništva, pa brojke nisu izravno usporedive s HICP-om.\nIzvor: Državni zavod za statistiku (PC-Axis, ME_PS09 — Indeksi potrošačkih cijena prema ECOICOP, ver. 2; posebni agregati PA1002/PA1007/PA1008/PA1009) te priopćenje o prvoj procjeni; obrada cro-stat.com"
+  },
+  {
+    "objectID": "hicp#harmonizirani-indeks-potrošačkih-cijena-hicp",
+    "href": "hicp#harmonizirani-indeks-potrošačkih-cijena-hicp",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "Harmonizirani indeks potrošačkih cijena (HICP)",
+    "text": "Harmonizirani indeks potrošačkih cijena (HICP)\nDosad je bila riječ o nacionalnom pokazatelju; slijedi harmonizirani. Oba se računaju na istoj košarici, a razlikuju se po tome čiju potrošnju obuhvaćaju: harmonizirani uz domaća kućanstva uključuje i nerezidente, prije svega strane turiste, te institucionalna kućanstva — zbog čega je usporediv s ostalim članicama Europske unije.\n\n\n\n\n\n\nNapomenaSaznajte više o razlici\n\n\n\n\n\nIndeks potrošačkih cijena (IPC) koristi se kao opća mjera inflacije u Republici Hrvatskoj, a odražava promjene u razini cijena dobara i usluga koje u tijeku vremena nabavlja, koristi se njima ili ih plaća referentno stanovništvo (privatna kućanstva) radi potrošnje.\nHarmonizirani indeks potrošačkih cijena (HICP) čini skupinu europskih indeksa potrošačkih cijena izračunatih prema harmoniziranom pristupu i posebnom setu definicija koji omogućuje usporedivu mjeru inflacije u području eura, EU-a, Europskome ekonomskom području te za zemlje kandidatkinje.\nIzvor: DZS.\nZašto se nacionalna i harmonizirana inflacija razlikuju\nNacionalni indeks potrošačkih cijena i harmonizirani indeks mjere isto, kretanje cijena, ali se povremeno razilaze. Uzrok leži u obuhvatu potrošnje. Harmonizirani indeks uključuje potrošnju nerezidenata na teritoriju, prije svega stranih turista, dok nacionalni indeks obuhvaća potrošnju domaćih kućanstava.\nZa gospodarstvo s izraženim turizmom ta razlika nije zanemariva. Turistička potrošnja usmjerena je na usluge, osobito smještaj i ugostiteljstvo, pa te kategorije nose veću težinu u harmoniziranom indeksu. Kada cijene usluga rastu brže od ostalih, harmonizirani indeks to jače odražava.\nZbog toga se razlika između dvaju pokazatelja mijenja kroz vrijeme. U razdobljima snažnog rasta cijena usluga harmonizirana inflacija može nadmašiti nacionalnu, dok se u drugim razdobljima odnos može obrnuti. Hrvatska narodna banka navodi da razlika uglavnom proizlazi iz različitog doprinosa cijena usluga ukupnoj inflaciji.\nPraćenje obaju pokazatelja stoga daje potpuniju sliku. Nacionalni indeks bliži je iskustvu domaćih kućanstava, dok harmonizirani omogućuje usporedbu s drugim članicama Europske unije."
+  },
+  {
+    "objectID": "hicp#podaci-na-mjesečnoj-razini",
+    "href": "hicp#podaci-na-mjesečnoj-razini",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "Podaci na mjesečnoj razini",
+    "text": "Podaci na mjesečnoj razini\n\n\n\n\n\n\n\nHICP yoy\ngodišnja stopa promjene (%)\n\n\n3,7\nkolovoz 2026\n\n\n\n\n\n\nEuropodručje označava ponderirani prosjek 21 države članice, uz Bugarsku koja je euro uvela 1. siječnja 2026. (Eurostatov agregat EA21).\nIzvor: Eurostat (prc_hicp_minr, coicop18 = TOTAL, unit = RCH_A, freq = M, geo = HR, EU27_2020, EA21)\n\n\n\n\n\n\n\n\n\n\nHICP m/m\nmjesečna stopa promjene (%)\n\n\n0,3\nkolovoz 2026\n\n\n\n\n\n\nEuropodručje označava ponderirani prosjek 21 države članice, uz Bugarsku koja je euro uvela 1. siječnja 2026. (Eurostatov agregat EA21).\nIzvor: Eurostat (prc_hicp_minr, coicop18 = TOTAL, unit = RCH_M, freq = M, geo = HR, EU27_2020, EA21)\n\n\n\n\n\n\n\n\n\n\nNacionalni IPC i harmonizirani HICP\nHrvatska, stopa promjene (%)\n\n\nOba indeksa mjere kretanje potrošačkih cijena, ali se razlikuju u obuhvatu stanovništva. Harmonizirani indeks (HICP) obuhvaća ukupnu potrošnju na teritoriju, uključujući potrošnju nerezidenata poput stranih turista te institucionalnih kućanstava. Nacionalni indeks (IPC) obuhvaća potrošnju rezidentnih kućanstava. Sivo područje pokazuje razliku između dvaju indeksa.\nStopaGodišnja stopaMjesečna stopa\n\n\n\n\n\n\n\n\n\n\n\nNapomena: razlika najčešće proizlazi iz različitog doprinosa cijena usluga, na koje utječe potrošnja nerezidenata. Nacionalni indeks (IPC) dolazi iz PC-Axis baze Državnog zavoda za statistiku i objavljuje se s jednomjesečnim odmakom u odnosu na harmonizirani indeks (HICP), pa crvena linija završava mjesec dana ranije.\nIzvor: Državni zavod za statistiku (IPC, PC-Axis baza, tablica ME_PS09, ECOICOP ver. 2, ukupno) i Eurostat (HICP, prc_hicp_minr, coicop18 = TOTAL, unit = RCH_A, geo = HR)\n\n\n\n\n\n\n\n\n\n\nInflacija (HICP)\ngodišnja stopa promjene (%) — izaberi mjesec za preuzimanje slike\n\n\n\nMjesec:\nkolovoz 2026srpanj 2026lipanj 2026svibanj 2026travanj 2026ozujak 2026veljaca 2026sijecanj 2026prosinac 2025studeni 2025listopad 2025rujan 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEuropodručje označava ponderirani prosjek 21 države članice, uz Bugarsku koja je euro uvela 1. siječnja 2026. (Eurostatov agregat EA21).\nIzvor: Eurostat (prc_hicp_minr, coicop18 = TOTAL, unit = RCH_A, freq = M, geo = EU27_2020, EA21 + 27 država)\n\n\n\n\n\n\n\n\n\n\nHICP doprinosi (agregirano), Hrvatska\ndoprinosi godišnjoj stopi (pp), ukupna i temeljna inflacija (%)\n\n\n\n\n\n\n\n\n\nNapomena: Temeljna inflacija mjerena isključuje cijene energije, hrane, alkohola i duhana.\n\n\nIzvor: Eurostat (doprinosi = prc_hicp_minr, coicop18 = TOTAL/TOT_X_NRG_FOOD/CP01-12, unit = RCH_A, freq = M; ponderi = prc_hicp_inw, freq = A; geo = HR); obrada cro-stat.com\n\n\n\n\n\n\n\n\n\nHICP doprinosi, Hrvatska\ndoprinosi godišnjoj stopi (pp) i ukupna inflacija (%)\n\n\n\n\nIzvor: Eurostat (doprinosi = prc_hicp_minr, coicop18 = TOTAL + CP01-CP12, unit = RCH_A, freq = M; ponderi = prc_hicp_inw, freq = A; geo = HR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHICP indeks (EU27)\n2020 = 100, ukupno (HICP), mjesečno od 2020\n\n\n\n\nIzvor: Eurostat (prc_hicp_minr, coicop18 = TOTAL, unit = I15, freq = M, geo = EU27_2020 + 27 država; 2020 = 100)\n\n\n\n\n\n\n  HR    EU 27    Ostale zemlje članice \n\n\n\n\n\n\n\nHICP po skupinama: Hrvatska i europodručje\ngodišnja stopa promjene (%), od 2020.\n\n\n16,9 %\nHrvatska, kolovoz 2026.\n\n\nSkupinaEnergijaUslugeHrana, piće i duhanIndustrijski neprehrambeni bez energije\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: prikazuje kretanje odabrane skupine u Hrvatskoj u odnosu na europodručje, dakle je li pojedina skupina poskupljivala brže ili sporije. Oba niza su harmonizirani indeks (HICP), pa su izravno usporedivi; nacionalni IPC nije usporediv s europodručjem zbog drugog obuhvata stanovništva. Europodručje označava ponderirani prosjek 21 države članice, uz Bugarsku koja je euro uvela 1. siječnja 2026. (Eurostatov agregat EA21).\nIzvor: Eurostat (prc_hicp_minr, coicop18 = NRG, SERV, FOOD, IGD_NNRG; unit = RCH_A, freq = M, geo = HR, EA21); obrada cro-stat.com"
+  },
+  {
+    "objectID": "hicp#struktura-potrošačke-košare-ponderi-hicp",
+    "href": "hicp#struktura-potrošačke-košare-ponderi-hicp",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "Struktura potrošačke košare (ponderi HICP)",
+    "text": "Struktura potrošačke košare (ponderi HICP)\n\n\n\n\n\n\n\nStruktura košarice\nponderi HICP po glavnim kategorijama (% ukupne košare), HR vs EU 27\n\n\n\n\n\n\n\n\n\n\nNapomena: Ponderi pokazuju relativnu važnost pojedine kategorije u prosječnoj potrošnji kućanstva. Hrvatska ima veći udio hrane i energije, te manji udio usluga u odnosu na EU prosjek.\n\n\nIzvor: Eurostat (prc_hicp_inw, coicop = FOOD/NRG/IGD_NNRG/SERV, freq = A, geo = HR, EU27_2020); obrada cro-stat.com"
+  },
+  {
+    "objectID": "hicp#podaci-na-godišnjoj-razini",
+    "href": "hicp#podaci-na-godišnjoj-razini",
+    "title": "Indeks potrošačkih cijena (IPC) i harmonizirani indeks potrošačkih cijena (HICP)",
+    "section": "Podaci na godišnjoj razini",
+    "text": "Podaci na godišnjoj razini\n\n\n\n\n\n\n\nInflacija (HICP)\nprosječna godišnja stopa promjene (%)\n\n\n4,4\n2025.\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (prc_hicp_aind, coicop = CP00, unit = RCH_A_AVG, freq = A + prc_hicp_minr, coicop18 = TOT_X_NRG_FOOD, unit = RCH_A, freq = M, geo = HR); obrada cro-stat.com\n\n\n\n\n\n\n\n\nInflacija (HICP)\nprosječna godišnja stopa promjene (%)\n\n\nGodina2025.2024.2023.2022.2021.2020.2019.2018.2017.2016.2015.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEuropodručje ovdje označava ponderirani prosjek 20 država članica, isključujući Bugarsku (Eurostatov agregat EA20). Bugarska je euro uvela 1. siječnja 2026., pa će biti uključena kad Eurostat objavi godišnje podatke za 2026. i uvede agregat EA21. Tada će se i povijesna serija revidirati.\nIzvor: Eurostat (prc_hicp_aind, coicop = CP00, unit = RCH_A_AVG, geo = EU27_2020, EA20 + 27 država)\n\n\n\n\n\n\n← Natrag na pregled: Cijene"
+  },
+  {
+    "objectID": "indikatori-gospodarske-aktivnosti",
+    "href": "indikatori-gospodarske-aktivnosti",
+    "title": "Indikatori gospodarske aktivnosti",
+    "section": "",
+    "text": "Ekonomski sentiment (ESI)\n\nIndeks ekonomskog sentimenta (ESI)\n\nESI je kompozitni indeks koji kombinira povjerenje u industriji, uslugama, građevinarstvu, maloprodaji i kod potrošača. Indeks je centriran na 100, što odgovara dugoročnom prosjeku. Vrijednosti iznad 100 upućuju na optimizam i očekivanja iznad prosjeka, a vrijednosti ispod 100 na pesimizam i očekivanja ispod prosjeka.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (ei_bssi_m_r2, indic = BS-ESI-I, s_adj = SA, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\nSektorski indikatori povjerenja\n\nPovjerenje po pokazatelju\n\nUsporedba Hrvatske s prosjekom EU27. Vrijednosti predstavljaju saldo, razliku između udjela pozitivnih i negativnih odgovora ispitanika. Vrijednosti iznad nule upućuju na prevagu optimizma, a ispod nule na prevagu pesimizma, pri čemu je nula neutralna razina. Pokazatelj (industrija, građevinarstvo, maloprodaja, usluge ili potrošači) odaberite izbornikom iznad grafa.\n\n\n\nPokazateljIndustrijaGrađevinarstvoMaloprodajaUslugePotrošači\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Eurostat (ei_bssi_m_r2, indic = BS-ICI-BAL / BS-CCI-BAL / BS-RCI-BAL / BS-SCI-BAL / BS-CSMCI-BAL prema odabiru, s_adj = SA, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "javne-financije#stranice-u-skupini",
+    "href": "javne-financije#stranice-u-skupini",
+    "title": "Javne financije",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nPorezni prihodi\nUkupno porezno opterećenje prema BDP-u, struktura po vrstama poreza i usporedba s Europskom unijom. Godišnje\n\n\nRashodi opće države\nUkupna razina rashoda kao postotak BDP-a, struktura po namjeni i usporedba sa zemljama EU-a. Godišnje\n\n\n\n\nSaldo proračuna\nUkupni i primarni saldo opće države prema BDP-u te maastrichtski kriterij od tri posto. Godišnje\n\n\nJavni dug\nKretanje javnog duga prema BDP-u, maastrichtski kriterij i usporedba sa zemljama Europske unije. Tromjesečno"
+  },
+  {
+    "objectID": "kalendar-objava",
+    "href": "kalendar-objava",
+    "title": "Kalendar objava",
+    "section": "",
+    "text": "Posljednje ažurirano\nZadnje promjene objavljenih podataka na cro-stat.com, prema seriji i razdoblju na koje se odnose.\n\n\n\n\nSerija\nRazdoblje\nZabilježeno\n\n\n\n\nBruto domaći proizvod\nQ2 2026\n02.09.2026.\n\n\nInflacija (IPC)\nsrpanj 2026.\n02.09.2026.\n\n\nKamatne stope\nlipanj 2026.\n02.09.2026.\n\n\nMonetarni agregati\nsrpanj 2026.\n02.09.2026.\n\n\nPlaće (mjesečne)\nlipanj 2026.\n02.09.2026.\n\n\nPlaće po županijama\nQ2 2026.\n02.09.2026.\n\n\nPrinosi obveznica\nsrpanj 2026.\n02.09.2026.\n\n\nPromet na granicama\n30.08.2026.\n02.09.2026.\n\n\n\n\n\n\nEurostat – nadolazeće objave\n\n\n\n\n\n\n\n\n\nDatum\nOpis\n\n\n\n\n07.09.2026\nGDP main aggregates and employment\n\n\n07.09.2026\nLabour productivity\n\n\n17.09.2026\nInflation (HICP)\n\n\n18.09.2026\nBalance of payments\n\n\n01.10.2026\nHouse price index\n\n\n01.10.2026\nHouse sales\n\n\n01.10.2026\nOwner-occupied house price index\n\n\n02.10.2026\nBalance of payments\n\n\n02.10.2026\nFirst release sector accounts (households and businesses)\n\n\n02.10.2026\nFlash estimate inflation euro area\n\n\n12.10.2026\n(Autumn) FIGARO in previous year’s prices\n\n\n16.10.2026\nInflation (HICP)\n\n\n20.10.2026\nBalance of payments\n\n\n20.10.2026\nGDP main aggregates and employment - update\n\n\n21.10.2026\nExcessive deficit procedure and annual Government finance statistics\n\n\n21.10.2026\nGeneral government deficit and debt\n\n\n21.10.2026\nGovernment finance statistics, financial accounts\n\n\n21.10.2026\nQuarterly government debt\n\n\n21.10.2026\nQuarterly government deficit\n\n\n28.10.2026\nSecond release sector accounts (households)\n\n\n29.10.2026\nTaxation\n\n\n30.10.2026\nAnnual financial accounts (T+9)\n\n\n30.10.2026\nPreliminary flash estimate GDP - EU and euro area\n\n\n02.11.2026\nAnnual non-financial sector accounts\n\n\n04.11.2026\nFlash estimate inflation euro area\n\n\n05.11.2026\nForeign Direct Investments\n\n\n06.11.2026\nAverage full time adjusted salary per employee\n\n\n10.11.2026\nStatistics related to the Recovery and Resilience Facility\n\n\n11.11.2026\nForeign direct investments by the ultimate counterpart\n\n\n13.11.2026\nEU/EA aggregates for COICOP breakdowns\n\n\n13.11.2026\nFlash estimate GDP and employment - EU and euro area\n\n\n18.11.2026\nInflation (HICP)\n\n\n19.11.2026\nBalance of payments\n\n\n20.11.2026\nEU/EA aggregates for detailed GDP and employment breakdowns by industry\n\n\n20.11.2026\nStructure of government debt\n\n\n01.12.2026\nFlash estimate inflation euro area\n\n\n01.12.2026\nPersonal transfers and compensation of employees\n\n\n07.12.2026\nGDP main aggregates and employment\n\n\n17.12.2026\nInflation (HICP)\n\n\n17.12.2026\nPurchasing power parities results for\n\n\n18.12.2026\nBalance of payments\n\n\n\n\n\n\n\nDZS – nadolazeće objave (makro)\nMakro-relevantne objave Državnog zavoda za statistiku: BDP, plaće, tržište rada, cijene, industrija, robna razmjena i turizam. Izvor: DZS, Kalendar objavljivanja statističkih podataka.\n\n\n\n\n\n\n\n\n\n\nDatum\nTema\nOpis\n\n\n\n\n03.09.2026\nIndustrija\nIndeks obujma industrijske proizvodnje te indeksi zaliha,\n\n\n08.09.2026\nRobna razmjena\nRobna razmjena Republike Hrvatske s inozemstvom\n\n\n09.09.2026\nTržište rada\nAktivno stanovništvo u Republici Hrvatskoj\n\n\n09.09.2026\nTurizam\nDolasci i noćenja turista u komercijalnom smještaju u 2026.\n\n\n10.09.2026\nCijene\nIndeks proizvođačkih cijena industrije u 2026.\n\n\n15.09.2026\nCijene\nIndeksi potrošačkih cijena u 2026.\n\n\n22.09.2026\nPlaće\nProsječne mjesečne neto i bruto plaće zaposlenih u 2026.\n\n\n22.09.2026\nTržište rada\nZaposleni prema djelatnostima u 2026.\n\n\n30.09.2026\nIndustrija\nIndeks obujma industrijske proizvodnje te indeksi zaliha,\n\n\n02.10.2026\nCijene\nIndeksi potrošačkih cijena u 2026. – prva procjena\n\n\n08.10.2026\nCijene\nIndeks proizvođačkih cijena industrije u 2026.\n\n\n09.10.2026\nRobna razmjena\nRobna razmjena Republike Hrvatske s inozemstvom\n\n\n09.10.2026\nTurizam\nDolasci i noćenja turista u komercijalnom smještaju u 2026.\n\n\n15.10.2026\nCijene\nIndeksi potrošačkih cijena u 2026.\n\n\n16.10.2026\nBDP\nGodišnji bruto domaći proizvod za razdoblje 1995. – 2025.\n\n\n19.10.2026\nBDP\nGodišnji bruto domaći proizvod za razdoblje 1995. – 2025.\n\n\n21.10.2026\nPlaće\nProsječne mjesečne neto i bruto plaće zaposlenih u 2026.\n\n\n21.10.2026\nTržište rada\nZaposleni prema djelatnostima u 2026.\n\n\n28.10.2026\nTržište rada\nZaposleni prema spolu po županijama u 2026.\n\n\n29.10.2026\nIndustrija\nIndeks obujma industrijske proizvodnje te indeksi zaliha,\n\n\n04.11.2026\nCijene\nIndeksi potrošačkih cijena u 2026. – prva procjena\n\n\n06.11.2026\nTurizam\nDolasci i noćenja turista u komercijalnom smještaju u 2026.\n\n\n09.11.2026\nRobna razmjena\nRobna razmjena Republike Hrvatske s inozemstvom\n\n\n11.11.2026\nCijene\nIndeks proizvođačkih cijena industrije u 2026.\n\n\n11.11.2026\nTržište rada\nZaposleni u obrtu i djelatnostima slobodnih profesija u 2026.\n\n\n16.11.2026\nCijene\nIndeksi potrošačkih cijena u 2026.\n\n\n23.11.2026\nPlaće\nProsječne mjesečne neto i bruto plaće zaposlenih u 2026.\n\n\n23.11.2026\nPlaće\nProsječne mjesečne neto i bruto plaće zaposlenih\n\n\n23.11.2026\nTržište rada\nZaposleni prema djelatnostima u 2026.\n\n\n27.11.2026\nBDP\nPrva procjena tromjesečnog bruto domaćeg proizvoda\n\n\n30.11.2026\nIndustrija\nIndeks obujma industrijske proizvodnje te indeksi zaliha,\n\n\n30.11.2026\nPlaće\nProsječne mjesečne neto i bruto plaće zaposlenih\n\n\n01.12.2026\nCijene\nIndeksi potrošačkih cijena u 2026. – prva procjena\n\n\n\n\n\n\n\nHNB – nadolazeće objave (procjena)\nProcjena sljedećih objava Hrvatske narodne banke za tromjesečne statistike odnosa s inozemstvom.\n\n\n\n\n\n\n\n\n\n\nDatum\nTema\nOpis\n\n\n\n\n30.09.2026\nOdnosi s inozemstvom\nStanje međunarodnih ulaganja, Q2 2026.\n\n\n30.09.2026\nOdnosi s inozemstvom\nFinancijski račun po sektorima, Q2 2026.\n\n\n30.09.2026\nPlatna bilanca\nTekući i financijski račun (BPM6), Q2 2026.\n\n\n\n\n\nNapomena: navedeni datumi su procjena temeljena na uobičajenoj periodici objava, a ne na službenom kalendaru Hrvatske narodne banke. Tromjesečne statistike odnosa s inozemstvom objavljuju se približno tri mjeseca nakon kraja izvještajnog kvartala. Za točan raspored vidjeti kalendar objava HNB-a."
+  },
+  {
+    "objectID": "kviz",
+    "href": "kviz",
+    "title": "Kviz: koliko poznajete ekonomske pojmove i hrvatsko gospodarstvo?",
+    "section": "",
+    "text": "Proučili ste grafove i pojmovnik? Provjerite svoje znanje. Deset pitanja o hrvatskom gospodarstvu i ekonomskim pojmovima.\n\n\n\n  \n    \n\n    \n      \n      \n      Točni odgovori označeni su zelenom, a netočni crvenom bojom uz svako pitanje.\n    \n\n    \n      Provjeri rezultat\n      Pokušaj ponovno"
+  },
+  {
+    "objectID": "nekretnine-karta",
+    "href": "nekretnine-karta",
+    "title": "Karta cijena stanova",
+    "section": "",
+    "text": "Kupoprodajne cijene stanova i apartmana, pregledno po županijama te detaljno po jedinicama lokalne samouprave i po katastarskim općinama Grada Zagreba. Podaci se temelje na ostvarenim transakcijama iz sustava eNekretnine Ministarstva prostornoga uređenja, graditeljstva i državne imovine.\n\nŽupanijeCijela Hrvatska (JLS)Grad Zagreb po katastarskim općinama\n\n\n\n\n\n\n\n\n\nPregledna razina, čitljiva i na mobitelu. Cijena po županiji je transakcijski ponderirani prosjek medijalnih cijena po jedinicama lokalne samouprave. Za detalj po općinama i gradovima otvorite karticu „Cijela Hrvatska (JLS)“.\n\n\nIzvor: MPGI (sustav eNekretnine) — cijena stana/apartmana EUR/m² po županijama (transakcijski ponderirani agregat JLS razine); obrada cro-stat.com\n\n\n\n\n\n\n\n\n\n\nIzvor: MPGI (sustav eNekretnine) — medijalna kupoprodajna cijena stana/apartmana EUR/m² po JLS-u (level = jls, property_type = stan_apartman, statistic = median); obrada cro-stat.com\n\n\n\n\n\n\n\n\n\n\nNapomena: Katastarske općine su geodetska podjela. Ne preklapaju se uvijek s gradskim četvrtima (“kvartovima”) koje koristi Grad Zagreb (npr. Maksimir postoji kao katastarska općina i kao gradska četvrt, ali granice se razlikuju). MPGI cijene objavljuje na razini katastarske općine. Dostupne godine: 2021., 2023., 2024., 2025. (2022. nije strojno čitljiva u izvoru, a 2012. do 2020. MPGI ne objavljuje na razini katastarske općine). Sitnije katastarske općine iz izvora agregirane su na 50 jedinica geometrije, medijan ponderiran brojem transakcija.\n\n\nIzvor: MPGI (sustav eNekretnine) — medijalna cijena stana/apartmana EUR/m² po katastarskim općinama Grada Zagreba (level = ko, statistic = median); ostvarene kupoprodajne cijene; obrada cro-stat.com\n\n\n\n\n\n\n\n\n\n\nNapomenaMetodologija\n\n\n\n\n\n\nŽupanijska razina (zadano): cijena po županiji je transakcijski ponderirani prosjek medijalnih cijena po JLS-u unutar županije (sve županije imaju podatak svake godine), 2012. do 2025.\nJLS razina: medijalne cijene po jedinicama lokalne samouprave iz Excel priloga Pregleda tržišta nekretnina, 2012. do 2025.\nKO razina (Grad Zagreb): tablice iz PDF-a Pregleda tržišta (izdanja 2021., 2023., 2024., 2025.). Cijene 2021. preračunate su iz kuna u euro po fiksnom tečaju. Izvor koristi sitniju katastarsku podjelu (do 59 KO) nego dostupna geometrija (50 KO); sitnije KO agregirane su transakcijski ponderiranim medijanom (suma transakcija; percentili se ne agregiraju i nisu dostupni na KO razini).\nSive površine: jedinice s manje od 10 transakcija (zaštita povjerljivosti), bez transakcija, ili vrijednosti izvan očekivanog raspona (medijan ispod 100 EUR/m²).\nGeometrija: vlastiti shapefile-ovi (CRS HTRS96/TM, EPSG:3765), reprojicirani u WGS84.\n\nPrikazane cijene su ostvarene kupoprodajne cijene, ne tražene cijene iz oglasnika.\n\n\n\n\n\n← Natrag na pregled: Nekretnine i stanovanje"
+  },
+  {
+    "objectID": "novac-trziste#stranice-u-skupini",
+    "href": "novac-trziste#stranice-u-skupini",
+    "title": "Novac i tržišta",
+    "section": "Stranice u skupini",
+    "text": "Stranice u skupini\n\n\n\nKamatne stope\nStope na kredite i depozite kućanstava i poduzeća, kamatna marža te usporedba s prosjekom europodručja. Mjesečno\n\n\nPrinosi obveznica\nPrinos na državne obveznice, premija rizika prema Njemačkoj i veza s razinom javnog duga. Mjesečno\n\n\n\n\nMonetarni agregati\nKrediti i depoziti banaka, struktura kreditiranja kućanstava te likvidnost bankovnog sustava. Mjesečno\n\n\n\n\n\n\n\n\n\nNapomenaIzvori\n\n\n\n\n\n\nKamatne stope: Europska središnja banka, statistika kamatnih stopa monetarnih financijskih institucija (MIR).\nPrinosi obveznica: Eurostat, dugoročne kamatne stope za ocjenu konvergencije (irt_lt_mcby_m).\nMonetarni agregati: Europska središnja banka, bilanca monetarnih institucija (BSI).\n\nSvi se pokazatelji prate mjesečno i uspoređuju s europodručjem odnosno Europskom unijom."
+  },
+  {
+    "objectID": "place#mjesečne-plaće-po-županijama-od-2021.",
+    "href": "place#mjesečne-plaće-po-županijama-od-2021.",
+    "title": "Plaće",
+    "section": "Mjesečne plaće po županijama (od 2021.)",
+    "text": "Mjesečne plaće po županijama (od 2021.)\nMjesečne prosječne neto plaće po županijama. Karta ima klizač po mjesecima (skala se prilagođava svakom mjesecu), a linijski grafikon prikazuje kretanje svih županija; pojedine se mogu uključiti ili isključiti u legendi. Vrijednosti za 2021. i 2022. preračunate su iz kuna u euro po fiksnom tečaju.\n\nKarta po mjesecimaVremenska serija\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Državni zavod za statistiku (kvartalna priopćenja RAD, mjesečne vrijednosti po županiji; prema mjestu prebivališta/boravišta, JOPPD; 2021.–2022. preračunato iz kuna po fiksnom tečaju 7,53450); obrada cro-stat.com"
+  },
+  {
+    "objectID": "place#godišnje-plaće-po-županijama",
+    "href": "place#godišnje-plaće-po-županijama",
+    "title": "Plaće",
+    "section": "Godišnje plaće po županijama",
+    "text": "Godišnje plaće po županijama\nProsječne mjesečne neto i bruto plaće po županijama, prikazane kroz vrijeme. Klizač ispod karte mijenja godinu.\n\nNeto plaćaBruto plaćaRast neto plaće (od 2012.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIzvor: Državni zavod za statistiku (priopćenja „Zaposlenost i plaće”, prema mjestu prebivališta/boravišta, JOPPD; godišnje 2000.–2023. iz zbirne tablice, 2024.–2025. prosjek kvartalnih priopćenja RAD); obrada cro-stat.com"
+  },
+  {
+    "objectID": "policy",
+    "href": "policy",
+    "title": "Preusmjeravanje",
+    "section": "",
+    "text": "Sadržaj o kolačićima i privatnosti premješten je u Politiku privatnosti, a pravne napomene u Uvjete korištenja.\nPreusmjeravanje kreće automatski. Ako se to ne dogodi, otvorite Politiku privatnosti."
+  },
+  {
+    "objectID": "porezni-klin",
+    "href": "porezni-klin",
+    "title": "Porezni klin",
+    "section": "",
+    "text": "Porezni klin po tipu kućanstva\nOdaberite tip kućanstva za prikaz poreznog klina u zemljama EU:\n\nviewof selectedType = Inputs.select(\n  [\"S1\", \"S2\", \"S3\", \"S4\", \"S5\", \"S6\", \"S7\", \"S8\", \"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\", \"P7\", \"P8\"],\n  {\n    value: \"S2\",\n    label: \"Tip kućanstva:\",\n    format: x =&gt; {\n      const labels = {\n        \"S1\": \"S1: Samac 67% PBP\",\n        \"S2\": \"S2: Samac 100% PBP\",\n        \"S3\": \"S3: Samac 167% PBP\",\n        \"S4\": \"S4: Samac 400% PBP\",\n        \"S5\": \"S5: Samac s djecom 67%\",\n        \"S6\": \"S6: Samac s djecom 100%\",\n        \"S7\": \"S7: Mladi samac 100%\",\n        \"S8\": \"S8: Samac 28 god. 100%\",\n        \"P1\": \"P1: Par bez djece 100/67%\",\n        \"P2\": \"P2: Par s djecom 100/67%\",\n        \"P3\": \"P3: Par s djecom 100/100%\",\n        \"P4\": \"P4: Par s djecom 100/167%\",\n        \"P5\": \"P5: Par s djecom 100/400%\",\n        \"P6\": \"P6: Par 1 hranitelj 67/0%\",\n        \"P7\": \"P7: Par 1 hranitelj 100/0%\",\n        \"P8\": \"P8: Mladi par 100/67%\"\n      };\n      return labels[x] || x;\n    }\n  }\n)\n\n\n\n\n\n\n\n{\n  const descriptions = {\n    \"S1\": \"Samac (40 god.), bez djece, 67% prosječne bruto plaće\",\n    \"S2\": \"Samac (40 god.), bez djece, 100% prosječne bruto plaće\",\n    \"S3\": \"Samac (40 god.), bez djece, 167% prosječne bruto plaće\",\n    \"S4\": \"Samac (40 god.), bez djece, 400% prosječne bruto plaće\",\n    \"S5\": \"Samac (40 god.), 2 djeteta, 67% prosječne bruto plaće\",\n    \"S6\": \"Samac (40 god.), 2 djeteta (13 i 7 god.), 100% prosječne bruto plaće\",\n    \"S7\": \"Samac (23 god.), bez djece, 100% prosječne bruto plaće\",\n    \"S8\": \"Samac (28 god.), bez djece, 100% prosječne bruto plaće\",\n    \"P1\": \"Par (40/40 god.), bez djece, 100%/67% prosječne bruto plaće\",\n    \"P2\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 100%/67% prosječne bruto plaće\",\n    \"P3\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 100%/100% prosječne bruto plaće\",\n    \"P4\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 100%/167% prosječne bruto plaće\",\n    \"P5\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 100%/400% prosječne bruto plaće\",\n    \"P6\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 67%/0% prosječne bruto plaće\",\n    \"P7\": \"Par (40/40 god.), 2 djeteta (13 i 7 god.), 100%/0% prosječne bruto plaće\",\n    \"P8\": \"Par (28/28 god.), 2 djeteta (4 i 1 god.), 100%/67% prosječne bruto plaće\"\n  };\n  return html`&lt;div style=\"font-size: 13px; color: #666; margin-bottom: 15px; padding: 8px 12px; background: #f5f5f5; border-radius: 4px;\"&gt;\n    &lt;strong&gt;Opis:&lt;/strong&gt; ${descriptions[selectedType]}\n  &lt;/div&gt;`;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  // Čekaj da se DOM elementi učitaju\n  await Promises.delay(200);\n\n  // Sakrij sve grafikone\n  const allCharts = document.querySelectorAll('.tax-wedge-chart');\n  allCharts.forEach(chart =&gt; {\n    chart.style.display = 'none';\n  });\n\n  // Prikaži odabrani grafikon\n  const selectedChart = document.getElementById('chart-' + selectedType);\n  if (selectedChart) {\n    selectedChart.style.display = 'block';\n\n    // Resize echarts ako postoji\n    const echartsContainer = selectedChart.querySelector('[_echarts_instance_]');\n    if (echartsContainer && window.echarts) {\n      const instance = echarts.getInstanceByDom(echartsContainer);\n      if (instance) {\n        instance.resize();\n      }\n    }\n  }\n}\n\n\n\n\n\n\n\n\nNapomena: Podaci za 2024. godinu. Hrvatska označena crvenom bojom. Iscrtkana linija prikazuje prosjek EU-27.\n\n\nIzvor: Porezna uprava, Ministarstvo financija; obrada cro-stat.com\n\n\n\n\nPorezni klin u Hrvatskoj po tipovima kućanstva\nUsporedba poreznog klina za različite tipove kućanstava u Hrvatskoj, sortirana od najvišeg do najnižeg:\n\n\n\n\n\n\n\n\nNapomena: Podaci za 2024. godinu. PBP = prosječna bruto plaća.\n\n\nIzvor: Porezna uprava, Ministarstvo financija; obrada cro-stat.com\n\n\n\n\nPorezni klin u EU (Tip S2)\nStandardna usporedba za samca bez djece s prosječnom plaćom:\n\n\n\n\n\n\n\n\nNapomena: Podaci za 2024. godinu, tip S2 (samac bez djece, 100% prosječne plaće). Hrvatska označena s HR.\n\n\nIzvor: Porezna uprava, Ministarstvo financija; obrada cro-stat.com\n\n\n\n\nPromjena poreznog klina 2024/2023\nPromjena poreznog klina u postotnim bodovima između 2023. i 2024. godine za tip S2 (samac bez djece, 100% prosječne plaće):\n\n\n\n\n\n\n\n\nNapomena: Tip S2 - samac bez djece s prosječnom bruto plaćom. Zelena boja označava smanjenje, crvena povećanje poreznog klina. Hrvatska je istaknuta crvenom bojom.\n\n\nIzvor: Porezna uprava, Ministarstvo financija; obrada cro-stat.com\n\n\n\n\nStruktura poreznog klina\n\n\nKomponente - Hrvatska\n\nStruktura poreznog klina za samca s prosječnom plaćom (tip S2) u Hrvatskoj.\n\n\n\n\n\n\n\n\nIzvor: Porezna uprava, Ministarstvo financija (struktura poreznog klina, tip S2, HR); obrada cro-stat.com\n\n\n\nKomponente - EU27 prosjek\n\nStruktura poreznog klina za samca s prosječnom plaćom (tip S2) - EU27 prosjek.\n\n\n\n\n\n\n\n\nIzvor: Porezna uprava, Ministarstvo financija (struktura poreznog klina, tip S2, EU27 prosjek); obrada cro-stat.com\n\n\n\n\n\nKretanje poreznog klina kroz vrijeme\nPorezni klin za tip S2 (samac, 100% prosječne plaće) od 2011. do 2024. godine:\n\n\n\n\n\n\n\n\nNapomena: Tip S2 - samac bez djece s prosječnom bruto plaćom. CEE = prosjek zemalja Srednje i Istočne Europe.\n\n\nIzvor: Porezna uprava, Ministarstvo financija; obrada cro-stat.com\n\n\n\n← Natrag na pregled: Tržište rada"
+  },
+  {
+    "objectID": "potrosnja-kucanstava#realna-potrošnja-kućanstava-po-stanovniku",
+    "href": "potrosnja-kucanstava#realna-potrošnja-kućanstava-po-stanovniku",
+    "title": "Potrošnja kućanstava",
+    "section": "Realna potrošnja kućanstava po stanovniku",
+    "text": "Realna potrošnja kućanstava po stanovniku\n\n\n\n\n\n\n\n\nNapomena: Finalna potrošnja kućanstava i NPISH, indeks 2015. = 100, po stanovniku. CEE je neponderirani prosjek: BG, CZ, EE, HR, HU, LT, LV, PL, RO, SI, SK.\n\n\nEuropodručje ovdje označava ponderirani prosjek 20 država članica, isključujući Bugarsku (Eurostatov agregat EA20); Bugarska je euro uvela 1. siječnja 2026. i bit će uključena kad Eurostat objavi godišnje podatke za 2026.\n\n\n\nIzvor: Eurostat (nama_10_pc, na_item = P31_S14_S15, unit = CLV_I15_HAB, geo = HR, EU27_2020, EA20, CEE); obrada cro-stat.com"
+  },
+  {
+    "objectID": "potrosnja-kucanstava#realna-potrošnja-kućanstava-kvartalno",
+    "href": "potrosnja-kucanstava#realna-potrošnja-kućanstava-kvartalno",
+    "title": "Potrošnja kućanstava",
+    "section": "Realna potrošnja kućanstava (kvartalno)",
+    "text": "Realna potrošnja kućanstava (kvartalno)\n\n\n\n\n\n\n\n\nNapomena: Finalna potrošnja kućanstava, indeks 2015. = 100, sezonski i kalendarski prilagođeno. CEE je neponderirani prosjek: BG, CZ, EE, HR, HU, LT, LV, PL, RO, SI, SK.\n\n\nEuropodručje označava ponderirani prosjek 21 države članice, uz Bugarsku koja je euro uvela 1. siječnja 2026. (Eurostatov agregat EA21).\n\n\n\nIzvor: Eurostat (namq_10_gdp, na_item = P31_S14_S15, unit = CLV_I15, s_adj = SCA, geo = HR, EU27_2020, EA21, CEE); obrada cro-stat.com"
+  },
+  {
+    "objectID": "premium/",
+    "href": "premium/",
+    "title": "Premium",
+    "section": "",
+    "text": "Premium sadržaj nije dostupan na ovoj lokalnoj verziji. Ako ste očekivali preusmjeravanje, otvorite javnu produkcijsku domenu."
+  },
+  {
+    "objectID": "primarni-saldo",
+    "href": "primarni-saldo",
+    "title": "Saldo proračuna",
+    "section": "",
+    "text": "Saldo proračuna u EU27\n\n\nRanking EU27 - saldo proračuna\n\nSaldo proračuna opće države (% BDP-a) u državama EU27. Negativne vrijednosti označavaju deficit, pozitivne suficit. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = B9, sector = S13, unit = PC_GDP, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje salda proračuna\n\nKretanje salda proračuna (% BDP-a) za Hrvatsku i EU27 prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = B9, sector = S13, unit = PC_GDP, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Javne financije"
+  },
+  {
+    "objectID": "priustivo-stanovanje#indeks-cijena-stambenih-nekretnina-hpi",
+    "href": "priustivo-stanovanje#indeks-cijena-stambenih-nekretnina-hpi",
+    "title": "Priuštivo stanovanje",
+    "section": "Indeks cijena stambenih nekretnina (HPI)",
+    "text": "Indeks cijena stambenih nekretnina (HPI)\n\n\n\n\n\n\n\n\nNapomena: Indeks cijena stambenih nekretnina (HPI) mjeri promjene cijena stambenih nekretnina koje kupuju kućanstva. Bazna godina je 2015. (2015 = 100).\n\n\n\nIzvor: Eurostat (prc_hpi_a, purchase = TOTAL, unit = I15_A_AVG, freq = A, geo = HR, EU27_2020 + zemlje EU); obrada cro-stat.com"
+  },
+  {
+    "objectID": "priustivo-stanovanje#omjer-cijena-stanova-i-dohotka",
+    "href": "priustivo-stanovanje#omjer-cijena-stanova-i-dohotka",
+    "title": "Priuštivo stanovanje",
+    "section": "Omjer cijena stanova i dohotka",
+    "text": "Omjer cijena stanova i dohotka\n\n\n\n\n\n\n\n\nNapomena: Omjer cijena i dohotka (PTIR) prikazuje odnos između indeksa cijena stambenih nekretnina i raspoloživog dohotka kućanstava. Viša vrijednost ukazuje na manju priuštivost stanovanja.\n\n\n\nIzvor: Eurostat (tipsho60, unit = PTIR_I15, freq = A, geo = EU27_2020 + zemlje EU); obrada cro-stat.com"
+  },
+  {
+    "objectID": "priustivo-stanovanje#indeks-priuštivosti-po-županijama-hrvatska",
+    "href": "priustivo-stanovanje#indeks-priuštivosti-po-županijama-hrvatska",
+    "title": "Priuštivo stanovanje",
+    "section": "Indeks priuštivosti po županijama (Hrvatska)",
+    "text": "Indeks priuštivosti po županijama (Hrvatska)\nIndeks pokazuje koliko je godišnjih neto plaća u prosjeku potrebno za kupnju stana od 50 m² u pojedinoj županiji. Veća vrijednost znači manje priuštivo stanovanje. Cijena je medijalna cijena stana po županiji (ponderirana brojem transakcija), izvor MPGI, a neto plaća je prosječna godišnja neto plaća po županiji, izvor DZS. Klizač mijenja godinu.\n\n\n\n\n\n\n\nIzvor: MPGI (eNekretnine) cijene EUR/m² + DZS neto plaće; omjer = (EUR/m² × 50) / godišnja neto plaća; obrada cro-stat.com\n\n\n\n\n\n\n\n\nIzvor: MPGI (eNekretnine) cijene EUR/m² + DZS neto plaće; omjer = (EUR/m² × 50) / godišnja neto plaća (broj godišnjih neto plaća za stan od 50 m²); obrada cro-stat.com"
+  },
+  {
+    "objectID": "priustivo-stanovanje#cijene-po-tipu-objekta-i-po-regijama",
+    "href": "priustivo-stanovanje#cijene-po-tipu-objekta-i-po-regijama",
+    "title": "Priuštivo stanovanje",
+    "section": "Cijene po tipu objekta i po regijama",
+    "text": "Cijene po tipu objekta i po regijama\n\n\nNovi i postojeći objekti (Hrvatska)\n\nIndeks cijena razdvojen na nove i na postojeće stambene objekte, kvartalno (2015 = 100).\n\n\n\n\n\n\n\n\nNapomena: dvije skupine ne prate isti ritam. Cijene postojećih objekata osjetljivije su na kretanje potražnje, dok cijene novih objekata slijede i troškove gradnje, pa se u pojedinim razdobljima razilaze. Serije za nove i postojeće objekte počinju u četvrtom tromjesečju 2007., dok ukupni indeks seže dalje unatrag. Podjela na nove i postojeće objekte dostupna je samo na nacionalnoj razini, bez razrade po regijama.\n\n\nIzvor: Eurostat (prc_hpi_q); obrada cro-stat.com\n\n\n\nTri regije (Hrvatska)\n\nIndeks cijena po trima makroregijama Državnog zavoda za statistiku, kvartalno (2015 = 100).\n\n\n\n\n\n\n\n\nNapomena: Ostalo obuhvaća sve osim Grada Zagreba i jadranskih županija. Prikazana je razina indeksa, ne cijena u eurima po četvornom metru. Podjele na nove i postojeće objekte ovdje nema, jer izvor taj presjek ne objavljuje, pa ovo nije razrada grafa s novim i postojećim objektima, nego zaseban prikaz. Državni zavod za statistiku od 2026. objavljuje indeks s baznom godinom 2025. (2025 = 100). Serija je ovdje prebazirana na 2015. = 100, radi usporedivosti s ostalim grafovima na stranici. Prebaziranje je omjer prema prosjeku četiriju tromjesečja 2015. i ne mijenja dinamiku serije, nego samo razinu na kojoj se čita.\n\n\nIzvor: Državni zavod za statistiku, indeksi cijena stambenih objekata; obrada cro-stat.com"
+  },
+  {
+    "objectID": "priustivo-stanovanje#doprinosi-godišnjoj-stopi-promjene-cijena",
+    "href": "priustivo-stanovanje#doprinosi-godišnjoj-stopi-promjene-cijena",
+    "title": "Priuštivo stanovanje",
+    "section": "Doprinosi godišnjoj stopi promjene cijena",
+    "text": "Doprinosi godišnjoj stopi promjene cijena\nUkupna godišnja stopa promjene cijena razložena je na doprinos novih i doprinos postojećih objekata. Doprinos je umnožak pondera pojedine skupine i njezine godišnje stope, pa se dva stupca zbrajaju u ukupnu stopu. Postojeći objekti nose gotovo tri četvrtine pondera, pa i najveći dio ukupne promjene, dok novi objekti povremeno pojačaju ili priguše rast unatoč manjem udjelu.\n\n\nStupci prikazuju doprinose u postotnim bodovima, crna linija stvarnu godišnju stopu ukupnog indeksa.\n\n\n\n\n\n\n\n\nNapomena: doprinos se računa kao ponder skupine pomnožen njezinom godišnjom stopom promjene. Ponderi nisu izvedeni iz indeksa, nego su preuzeti iz Eurostatova skupa ponderā indeksa cijena stambenih nekretnina, koji ih objavljuje godišnje u promilima (zbroj je točno tisuću). Ponderi se mijenjaju: udio novih objekata pao je s 36 posto (2008.) na 12 posto (2016.), pa narastao na 28 posto (2026.). Indeks cijena je lančani, pa zbroj dvaju doprinosa ne mora savršeno pogoditi ukupnu stopu. Provjereno na cijeloj seriji od sedamdeset tromjesečja: prosječno odstupanje iznosi 0,06 postotnih bodova, a najveće 0,39, nikada iznad 0,5. Linija ukupne stope zato je nacrtana iz stvarnog podatka, a ne kao zbroj stupaca, pa je eventualno odstupanje vidljivo, a ne skriveno.\n\n\nIzvor: Eurostat (prc_hpi_q, prc_hpi_inw); obrada cro-stat.com"
+  },
+  {
+    "objectID": "priustivo-stanovanje#opterećenje-troškovima-stanovanja",
+    "href": "priustivo-stanovanje#opterećenje-troškovima-stanovanja",
+    "title": "Priuštivo stanovanje",
+    "section": "Opterećenje troškovima stanovanja",
+    "text": "Opterećenje troškovima stanovanja\n\n\nUdio stanovništva u kućanstvima čiji troškovi stanovanja prelaze 40 posto raspoloživog dohotka. Prekidačem birate kretanje Hrvatske i EU-a kroz vrijeme ili usporedbu zemalja.\n\n\n\nPrikazHrvatska i EU kroz vrijemeUsporedba zemalja\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: Pokazatelj mjeri udio stanovništva u kućanstvima čiji troškovi stanovanja prelaze 40 posto raspoloživog dohotka. Viši postotak znači više preopterećenih kućanstava. Hrvatska je među zemljama s najnižom stopom u Europi, a stopa se kroz vrijeme smanjuje. To se može činiti proturječnim rastu cijena nekretnina, no pokazatelj mjeri tekuće troškove stanovanja postojećih kućanstava. Zbog visokog udjela vlasništva nad nekretninama u Hrvatskoj, gdje velik dio kućanstava živi u vlastitom stanu bez stambenoga kredita, tekući troškovi stanovanja niski su za većinu. Rast cijena prvenstveno pogađa one koji tek ulaze na tržište, kupce i najmoprimce, što ovaj pokazatelj ne obuhvaća izravno.\n\n\nIzvor: Eurostat (tespm140); obrada cro-stat.com\n\n\n\nStatus stanovanja po zemljama\n\n\nRaspodjela stanovništva prema statusu stanovanja, zadnja godina, poredano po udjelu vlasnika bez kredita. Zbroj četiriju kategorija čini sto posto.\n\n\n\n\n\n\n\n\nNapomena: Prikaz dijeli stanovništvo prema statusu stanovanja: vlasnik bez stambenog kredita, vlasnik sa stambenim kreditom, najam po tržišnoj cijeni i najam po sniženoj cijeni ili besplatno. Visok udio vlasnika bez kredita u Hrvatskoj (više od četiri petine kućanstava) objašnjava nisku stopu prekomjernog opterećenja troškovima stanovanja s prethodnog grafa: kućanstva bez najamnine i bez rate kredita imaju niske tekuće troškove stanovanja.\n\n\nIzvor: Eurostat (ilc_lvho02); obrada cro-stat.com\n\n\n\n\n\n\n\n\nNapomenaMetodologija\n\n\n\n\n\nZašto “novi i postojeći”, a ne “novogradnja i starogradnja”\n\nNazivi su preuzeti iz izvora. Državni zavod za statistiku kategorije zove “Novi stambeni objekti” i “Postojeći stambeni objekti”, a Eurostat “Purchases of newly built dwellings” i “Purchases of existing dwellings”. Nijedan izvor ne koristi riječi novogradnja i starogradnja, jer su one kolokvijalne i nisu statističke kategorije.\nRazlika nije samo u riječima. Statistika dijeli objekte prema tome kupuje li se objekt prvi put ili se preprodaje, a ne prema starosti zgrade. Novoizgrađen stan koji je već jednom prodan pa se preprodaje ulazi u skupinu postojećih objekata, iako bi ga tržište i dalje zvalo novogradnjom. Zbog toga bi kolokvijalni nazivi ovdje značili nešto drugo od onoga što podatak mjeri.\n\nZašto su nov i postojeći te regije dva odvojena grafa\n\nPodjela na nove i postojeće stambene objekte objavljuje se samo na nacionalnoj razini.\nRegionalna podjela objavljuje se samo kao tri makroregije (Grad Zagreb, Jadran, Ostalo), i to bez podjele na nove i postojeće objekte.\nTe se dvije dimenzije u javno dostupnim podacima ne mogu križati: ni Eurostat ni Državni zavod za statistiku ne objavljuju presjek tipa objekta i regije. Zato su ovo dva zasebna grafa iz dvaju izvora. Pripisivanje nacionalnog omjera novih i postojećih objekata pojedinoj regiji bilo bi izmišljanje podatka, a ne njegova obrada, pa se ovdje namjerno ne radi.\n\nIndeks cijena i priuštivost (Eurostat)\n\nHPI (House Price Index): harmonizirani indeks cijena stambenih nekretnina mjeri promjene cijena svih stambenih nekretnina koje kupuju kućanstva (stanovi, kuće, nova gradnja i postojeće nekretnine), neovisno o prethodnom vlasniku ili namjeni korištenja.\nPTIR (Price to Income Ratio): omjer indeksa cijena stambenih nekretnina i indeksa nominalnog raspoloživog dohotka kućanstava. Indeks s baznom godinom 2015 = 100. Rast indeksa ukazuje na smanjenje priuštivosti stanovanja (cijene rastu brže od dohotka).\nPodaci su usporedivi među zemljama EU prema harmoniziranoj metodologiji Eurostata.\n\nIndeks priuštivosti po županijama (MPGI, DZS)\n\nDefinicija: indeks = (medijalna cijena stana EUR/m² × 50) / prosječna godišnja neto plaća u županiji. Prikazana vrijednost je broj godišnjih neto plaća potreban za stan od 50 m². Veća vrijednost znači manje priuštivo stanovanje. Referentna površina od 50 m² je parametar (pipeline računa i varijantu od 70 m²).\nBrojnik (cijena): MPGI, medijalna cijena stana po jedinici lokalne samouprave, agregirana na razinu županije kao prosjek ponderiran brojem transakcija. Koriste se samo jedinice s dovoljnim brojem transakcija.\nNazivnik (plaća): DZS, prosječna mjesečna neto plaća po županiji, pretvorena u godišnju (× 12).\nPokrivenost: 2012. do 2023. godine. Za 2024. i 2025. cijene postoje, ali županijske neto plaće u godišnjem pregledu DZS-a još nisu objavljene, pa se indeks za te godine ne prikazuje.\nOgraničenja: plaće se prema metodologiji DZS-a iskazuju prema mjestu prebivališta/boravišta zaposlenika, ne prema mjestu rada. MPGI također objavljuje vlastiti indeks priuštivosti (drukčije skaliran), koji je korišten za kontrolu reda veličine.\n\n\n\n\n\n← Natrag na pregled: Nekretnine i stanovanje"
+  },
+  {
+    "objectID": "rashodi-opce-drzave",
+    "href": "rashodi-opce-drzave",
+    "title": "Rashodi opće države",
+    "section": "",
+    "text": "Ukupni rashodi opće države\n\n\nRanking EU27 - ukupni rashodi\n\nUkupni rashodi opće države (% BDP-a) u državama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = TE, sector = S13, unit = PC_GDP, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje ukupnih rashoda\n\nKretanje ukupnih rashoda opće države (% BDP-a) za Hrvatsku i EU27 prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = TE, sector = S13, unit = PC_GDP, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n\nPlaće u javnom sektoru\n\n\nRanking EU27 - plaće javnog sektora\n\nNaknade zaposlenicima u javnom sektoru (% BDP-a) u državama EU27. Hrvatska označena crvenom bojom.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = D1PAY, sector = S13, unit = PC_GDP, geo = EU27); obrada cro-stat.com\n\n\n\nKretanje plaća javnog sektora\n\nKretanje naknada zaposlenicima u javnom sektoru (% BDP-a) za Hrvatsku i EU27 prosjek od 2000. godine.\n\n\n\n\n\n\n\n\nIzvor: Eurostat (gov_10a_main, na_item = D1PAY, sector = S13, unit = PC_GDP, geo = HR, EU27_2020); obrada cro-stat.com\n\n\n\n\n← Natrag na pregled: Javne financije"
+  },
+  {
+    "objectID": "trgovina-izvoz",
+    "href": "trgovina-izvoz",
+    "title": "Robna razmjena",
+    "section": "",
+    "text": "Hrvatska trajno uvozi znatno više robe nego što izvozi, pa je robni saldo negativan. To nije nužno znak neravnoteže, jer se manjak u razmjeni robom velikim dijelom nadoknađuje viškom u razmjeni uslugama, prije svega turizmom.\n\nIzvoz, uvoz i saldo\n\n\nRazina razmjene\n\nGodišnji izvoz i uvoz robe u milijardama eura. Prekidačem birate razine sa saldom ili pokrivenost uvoza izvozom.\n\n\n\nPrikazIzvoz, uvoz i saldoPokrivenost uvoza izvozom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: uvoz je nacrtan prema dolje, kao zrcalna slika izvoza, pa je saldo višak jednoga stupca nad drugim. Uvoz nije negativan, negativan je samo njegov prikaz. Pokrivenost je omjer izvoza i uvoza. Sto posto značilo bi uravnoteženu razmjenu; Hrvatska je trajno ispod te razine.\n\n\nIzvor: Državni zavod za statistiku; obrada cro-stat.com\n\n\n\nU odnosu na BDP\n\nIzvoz i uvoz kao postotak nominalnog BDP-a. Prekidačem birate udjele ili otvorenost, koja zbraja oba smjera.\n\n\n\nPrikazIzvoz, uvoz i saldoOtvorenost\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: razine u eurima rastu i zbog inflacije, pa ne govore mijenja li se važnost razmjene. Omjer prema BDP-u to rješava: otvorenost je s 52 posto (2010.) narasla na 76 posto. Otvorenost može prijeći sto posto, kao 2022. tijekom poskupljenja energenata. To nije pogreška: izvoz i uvoz bruto su tokovi robe, a BDP je dodana vrijednost.\n\n\nIzvor: Državni zavod za statistiku i Eurostat; obrada cro-stat.com\n\n\n\nPrikazuju se samo potpune kalendarske godine. Državni zavod za statistiku ovu bazu ne objavljuje mjesečno ni tromjesečno, pa se tekuća godina, koja postoji samo kao kumulativ, ne prikazuje.\n\n\nStruktura po vrstama proizvoda\n\n\nDvanaest najvećih poglavlja robe i njihov udjel u ukupnom izvozu odnosno uvozu, danas i prije deset godina. Prekidačem birate smjer.\n\n\n\nSmjerIzvozUvoz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: tamni stup je današnji udjel, svijetli udjel prije deset godina, pa se odmah vidi što raste, a što pada. U izvozu najbrže rastu električni strojevi, a pada udjel namještaja i strojeva. U uvozu najviše rastu cestovna vozila. Mineralna goriva vodeća su stavka u oba smjera, ali s različitim značenjem: Hrvatska sirovu naftu i plin uvozi, a prerađene naftne proizvode izvozi. Razmjena nije koncentrirana: najveće poglavlje nosi tek oko dvanaest posto, pa prikazanih dvanaest poglavlja ne doseže sto posto.\n\n\nIzvor: Državni zavod za statistiku; obrada cro-stat.com\n\n\n\n\nTrgovinski partneri\n\n\nPetnaest najvećih partnera u posljednjoj objavljenoj godini. Prekidačem birate ukupnu razmjenu, izvoz ili uvoz.\n\n\n\nMjeraUkupna razmjenaIzvozUvoz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: poredak se mijenja s obzirom na smjer. Bosna i Hercegovina te Srbija tržišta su na kojima Hrvatska više prodaje nego što kupuje, dok je Kina gotovo isključivo uvozno tržište. Udjeli se računaju prema ukupnoj razmjeni sa svim zemljama, pa prikazanih petnaest partnera ne doseže sto posto.\n\n\nIzvor: Državni zavod za statistiku; obrada cro-stat.com\n\n\n\n\nČime trgujemo s pojedinom zemljom\n\n\nNajveća poglavlja robe u razmjeni s odabranom zemljom. Izvoz je prikazan desno, uvoz lijevo. Padajućim izbornikom birate zemlju.\n\n\n\nZemljaNjemačkaItalijaSlovenijaMađarskaBosna i HercegovinaAustrijaPoljskaSrbijaNizozemskaFrancuskaKinaSlovačkaSAD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: poglavlja su poredana prema zbroju izvoza i uvoza, pa se vide i proizvodi koje s tom zemljom uglavnom uvozimo. Izvoz ide desno, uvoz lijevo, pa se odmah vidi je li Hrvatska u tom proizvodu neto izvoznik ili neto uvoznik. U izborniku su dvanaest najvećih partnera te Sjedinjene Američke Države i Kina, koje su izvan tog kruga.\n\n\nIzvor: Državni zavod za statistiku; obrada cro-stat.com\n\n\n\n\n\n\n\n\nNapomenaMetodologija\n\n\n\n\n\nŠto ovi podaci jesu\n\nRiječ je o statistici robne razmjene s inozemstvom, koju Državni zavod za statistiku sastavlja iz carinske i Intrastat evidencije. Mjere se bruto tokovi robe preko granice. Izvor je PxWeb baza Državnog zavoda za statistiku.\nFrekvencija je godišnja, serija počinje 2010. Mjesečnih ni tromjesečnih podataka u toj bazi nema. Tekuća godina objavljuje se kao kumulativ od početka godine i ne prikazuje se, jer nije usporediva s punom godinom.\nVrijednosti su u eurima kroz cijelo razdoblje. Za godine prije uvođenja eura postoji i preračun po fiksnom tečaju, koji se ne koristi, jer ga u novijim tablicama nema, pa bi serija pukla na sredini. Razlika je najviše 1,6 posto (2019.).\nDo 2012. koristi se Carinska tarifa, a od 2013. Kombinirana nomenklatura. Na razini poglavlja obje se podudaraju, pa je serija usporediva.\n\nNazivi poglavlja\n\nDržavni zavod za statistiku poglavlja objavljuje samo kao brojeve, bez naziva. Nazivi uz brojeve skraćeni su nazivi poglavlja Harmoniziranog sustava i naša su dopuna radi čitljivosti, a ne doslovan citat. Broj poglavlja uvijek stoji uz naziv, pa se svaka stavka može provjeriti u izvoru.\n\nRazlika prema platnoj bilanci\n\nRoba u platnoj bilanci (Hrvatska narodna banka, stranica odnosa s inozemstvom) vodi se prema promjeni vlasništva između rezidenata i nerezidenata, a ne prema prelasku granice, te se drukčije vrednuje.\nRobni saldo iz platne bilance i robni saldo odavde zato se ne poklapaju. Dvije se brojke ne smiju zbrajati niti međusobno zamjenjivati. Obje su točne, ali odgovaraju na različita pitanja.\n\nKontrola podataka\n\nPri svakom dohvatu provjerava se da zbroj poglavlja daje objavljeni ukupni iznos, da zbroj zemalja daje isti taj iznos, te da unutar svake zemlje zbroj poglavlja daje njezin ukupni iznos. Ako identitet ne zatvori, dohvat se prekida i zadržava se posljednji ispravan snimak, umjesto da se prikažu netočne brojke.\nUdjel prema BDP-u računa se prema nominalnom BDP-u u tekućim cijenama (Eurostat), istom nazivniku koji se koristi za udjele u platnoj bilanci i uslugama.\n\n\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "usluge-turizam#vodeće-zemlje-po-prihodima-od-usluga",
+    "href": "usluge-turizam#vodeće-zemlje-po-prihodima-od-usluga",
+    "title": "Usluge i turizam",
+    "section": "Vodeće zemlje po prihodima od usluga",
+    "text": "Vodeće zemlje po prihodima od usluga\n\n\nDeset vodećih zemalja po prihodima od izvoza usluga, 2025. (u mlrd. EUR). Prekidačem birate vrstu usluge.\n\n\n\nVrsta uslugeSve uslugePutovanja (turizam)Usluge prijevozaTelekomunikacijske i informacijske usluge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: graf prikazuje deset vodećih zemalja partnera po prihodima od izvoza usluga u 2025. godini. Prekidačem se bira vrsta usluge, jer se vodeći partneri razlikuju od vrste do vrste. Kod putovanja to su glavna emitivna turistička tržišta, dok kod telekomunikacijskih i informacijskih usluga do izražaja dolaze druge zemlje. Prikazane su samo pojedinačne zemlje. Zbirne stavke koje Hrvatska narodna banka objavljuje uz njih, odnosno ostale i nepoznate zemlje, izostavljene su iz poretka, jer nisu zemlje i kao zbroj mnogih tržišta lako bi istisnule stvarne partnere.\n\n\nIzvor: Hrvatska narodna banka (Razmjena usluga s inozemstvom, tablica R1); obrada cro-stat.com"
+  },
+  {
+    "objectID": "usluge-turizam#dnevni-promet-2025.-i-2026.",
+    "href": "usluge-turizam#dnevni-promet-2025.-i-2026.",
+    "title": "Usluge i turizam",
+    "section": "Dnevni promet, 2025. i 2026.",
+    "text": "Dnevni promet, 2025. i 2026.\n\n\nDnevni broj ulazaka stranih državljana, usporedba tekuće i prethodne godine. Prekidačem birate vrstu prijelaza.\n\n\n\nVrsta prijelazaUkupnoCestovniZračniPomorskiRiječniŽeljeznički\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNapomena: Dnevni broj ulazaka stranih državljana na vanjskim granicama, usporedba tekuće i prethodne godine. Linija 2026. ide do zadnjeg dostupnog dana. Prikazan je sedmodnevni pomični prosjek radi ublažavanja dnevnih oscilacija (vikendi, praznici). Male vrste, poput riječnoga i željezničkoga prometa, i uz prosjek ostaju nazubljene, jer je taj promet stvarno povremen. Riječ je o prijelazima, ne jedinstvenim osobama, i o prometu s trećim zemljama nakon ulaska u schengenski prostor 2023.\n\n\nIzvor: Ministarstvo unutarnjih poslova (granični promet, ulazak stranih državljana); obrada cro-stat.com\n\n\n\n← Natrag na pregled: Gospodarstvo"
+  },
+  {
+    "objectID": "uvjeti-koristenja#prihvaćanje-uvjeta",
+    "href": "uvjeti-koristenja#prihvaćanje-uvjeta",
+    "title": "Uvjeti korištenja",
+    "section": "Prihvaćanje uvjeta",
+    "text": "Prihvaćanje uvjeta\nPružatelj usluge je OpenMacro, obrt za informacijske usluge, vl. Leonarda Srdelić, sa sjedištem u Zagrebu, Šibenska ulica 4, OIB 40871947444, matični broj obrta 98731025.\nPružatelj upravlja internetskom stranicom cro-stat.com i svim povezanim uslugama, u daljnjem tekstu Usluga.\nCro-stat.com je platforma koja objavljuje makroekonomske pokazatelje za Hrvatsku, temeljene na službenim statističkim izvorima, uz vlastitu obradu i grafički prikaz. Usluga uključuje besplatnu razinu, dostupnu svima bez registracije, te plaćene razine dostupne registriranim korisnicima s važećom pretplatom.\nOvi Uvjeti korištenja predstavljaju pravno obvezujući ugovor između korisnika i pružatelja usluge. Pristupanjem Usluzi korisnik potvrđuje da je Uvjete pročitao, razumio i prihvatio. Korisnik koji se s Uvjetima ne slaže ne smije koristiti Uslugu.\nPružatelj može mijenjati ove Uvjete. O bitnim izmjenama registrirani korisnici obavijestit će se unaprijed, elektroničkom poštom ili obavijesti na stranici, uz primjeren rok prije stupanja na snagu. Korisnik koji se s izmjenama ne slaže može prestati koristiti Uslugu ili otkazati pretplatu prije nego izmjene stupe na snagu. Datum posljednjeg ažuriranja uvijek odražava važeću verziju, a nastavak korištenja nakon stupanja izmjena na snagu znači njihovo prihvaćanje.\nUsluga je namijenjena osobama starijim od 16 godina.\nKontakt: contact@cro-stat.com, Šibenska ulica 4, 10000 Zagreb."
+  },
+  {
+    "objectID": "uvjeti-koristenja#prava-korištenja-i-intelektualno-vlasništvo",
+    "href": "uvjeti-koristenja#prava-korištenja-i-intelektualno-vlasništvo",
+    "title": "Uvjeti korištenja",
+    "section": "1. Prava korištenja i intelektualno vlasništvo",
+    "text": "1. Prava korištenja i intelektualno vlasništvo\nPodaci i njihovi izvori. Podaci prikazani na cro-stat.com preuzeti su iz službenih statističkih izvora, prije svega Državnog zavoda za statistiku, Eurostata, Hrvatske narodne banke i nadležnih ministarstava. Pružatelj usluge nije nositelj prava na tim podacima. Uvjeti korištenja izvornih podataka određeni su pravilima objavitelja i korisnik ih je dužan poštovati.\nObrada, prikaz i programski kod. Pružatelj usluge je nositelj prava na vlastitoj obradi podataka, izračunima, izvedenim pokazateljima, grafičkim prikazima, vizualnom identitetu, tekstovima, dizajnu i programskom kodu stranice. Ti su sadržaji zaštićeni propisima o autorskom pravu.\nPravo korištenja. Uz poštovanje ovih Uvjeta, korisniku se odobrava neisključivo, neprenosivo i opozivo pravo pristupa Usluzi te preuzimanja i ispisa dijelova sadržaja kojima je uredno pristupio, isključivo za osobne, nekomercijalne potrebe ili za internu upotrebu unutar vlastite organizacije.\nNavođenje izvora. Pri svakom prikazivanju ili dijeljenju grafičkih prikaza i izvedenih podataka korisnik je dužan navesti cro-stat.com kao izvor obrade, uz navođenje izvornog statističkog izvora.\nOgraničenja. Bez izričitog prethodnog pisanog odobrenja nijedan dio Usluge ne smije se umnožavati, ponovno objavljivati, distribuirati, prodavati, licencirati ni na drugi način iskorištavati u komercijalne svrhe. Zahtjevi za odobrenje šalju se na contact@cro-stat.com."
+  },
+  {
+    "objectID": "uvjeti-koristenja#obveze-korisnika-i-zabranjene-radnje",
+    "href": "uvjeti-koristenja#obveze-korisnika-i-zabranjene-radnje",
+    "title": "Uvjeti korištenja",
+    "section": "2. Obveze korisnika i zabranjene radnje",
+    "text": "2. Obveze korisnika i zabranjene radnje\nKorištenjem Usluge korisnik izjavljuje i jamči da su podaci koje je naveo pri registraciji istiniti, točni i potpuni te da će ih održavati ažurnima, da ima poslovnu sposobnost i prihvaća ove Uvjete, da je stariji od 16 godina, te da Uslugu neće koristiti u nezakonite ili neovlaštene svrhe.\nKorisnik se obvezuje da neće\n\nsustavno preuzimati, prikupljati automatiziranim putem ili dalje distribuirati podatke i sadržaje s Usluge, niti ih uključivati u vlastite zbirke ili baze podataka, bez prethodnog pisanog odobrenja\nkoristiti Uslugu ili podatke dobivene putem nje u komercijalne svrhe bez izričitog dogovora s pružateljem usluge, uključujući preprodaju, podlicenciranje ili ustupanje plaćenog sadržaja trećim osobama\nzaobilaziti, onemogućavati ni ometati sigurnosne mehanizme Usluge ni mjere koje ograničavaju pristup sadržaju, niti pristupati Usluzi neovlaštenim automatiziranim alatima, osim uobičajenog rada tražilica i internetskih preglednika\ndijeliti podatke za prijavu s trećim osobama niti omogućavati pristup plaćenom sadržaju osobama koje nemaju vlastitu pretplatu\nprenositi zlonamjerni kod ni sadržaj koji ometa rad Usluge ili nerazmjerno opterećuje infrastrukturu\npokušavati dekompilirati, rastavljati ni na drugi način analizirati izvorni kod Usluge, osim u opsegu dopuštenom prisilnim propisima\nuklanjati oznake autorstva ni druge oznake prava sa sadržaja\npredstavljati se kao pružatelj usluge ni dovoditi druge u zabludu o povezanosti s njim\n\nPovreda ovih obveza predstavlja bitnu povredu Uvjeta i može dovesti do privremenog ili trajnog uskraćivanja prava korištenja Usluge."
+  },
+  {
+    "objectID": "uvjeti-koristenja#registracija-i-korisnički-račun",
+    "href": "uvjeti-koristenja#registracija-i-korisnički-račun",
+    "title": "Uvjeti korištenja",
+    "section": "3. Registracija i korisnički račun",
+    "text": "3. Registracija i korisnički račun\nZa pristup plaćenim razinama potrebna je registracija. Korisnik je dužan čuvati podatke za prijavu i odgovoran je za sve aktivnosti na svom računu. O svakoj sumnji na neovlašteno korištenje računa dužan je bez odgode obavijestiti pružatelja usluge.\nKupnja pretplate moguća je i bez prethodno otvorenog računa. Nakon uspješne uplate korisnik na navedenu adresu elektroničke pošte prima poveznicu za postavljanje lozinke.\nJedan korisnički račun namijenjen je jednoj osobi. Za pristup više korisnika unutar iste organizacije potreban je poseban dogovor."
+  },
+  {
+    "objectID": "uvjeti-koristenja#pretplata-plaćanje-i-paddle",
+    "href": "uvjeti-koristenja#pretplata-plaćanje-i-paddle",
+    "title": "Uvjeti korištenja",
+    "section": "4. Pretplata, plaćanje i Paddle",
+    "text": "4. Pretplata, plaćanje i Paddle\nRazine pristupa i cijene. Usluga se nudi u tri razine.\nOsnovni pristup, 50 eura godišnje, obuhvaća pokazatelje gospodarske aktivnosti i cijena.\nProšireni pristup, 75 eura godišnje, obuhvaća sve iz osnovnog pristupa te pokazatelje vanjskog sektora, nekretnina i priuštivosti stanovanja.\nPotpuni pristup, 100 eura godišnje, obuhvaća sve sadržaje Usluge, uključujući javne financije i energetiku.\nUz godišnje pretplate dostupna je i mjesečna pretplata s punim pristupom, po cijeni od 20 eura mjesečno.\nTočan opis sadržaja svake razine objavljen je na stranici s pregledom pretplata i čini sastavni dio ovih Uvjeta.\nNačini plaćanja. Prihvaćaju se kartice, PayPal, Apple Pay i Google Pay. Sva plaćanja obavljaju se u eurima.\nPaddle kao prodavatelj. Plaćanja pretplate obrađuje ovlašteni preprodavatelj Paddle.com Market Limited i povezana društva. Paddle nastupa kao prodavatelj u vlastito ime, što znači da obrađuje plaćanje i poreze, uključujući porez na dodanu vrijednost gdje je primjenjiv, te izdaje račune. Na bankovnom ili kartičnom izvatku može se pojaviti naziv Paddle.\nKorisnik je dužan navesti točne i potpune podatke za plaćanje te ih održavati ažurnima. Primjenjivi porezi dodaju se na cijenu.\nBesplatno probno razdoblje. Novim korisnicima dostupno je jednokratno besplatno probno razdoblje u trajanju od sedam dana. Probnim razdobljem upravlja pružatelj usluge unutar Usluge i ono se ne obrađuje putem Paddlea. Za pokretanje probnog razdoblja nije potrebno ostaviti podatke o kartici. Istekom probnog razdoblja pristup se automatski vraća na besplatnu razinu, a za plaćenu pretplatu korisnik mora sam pokrenuti kupnju. Probno razdoblje dostupno je samo jednom po korisniku, prema adresi elektroničke pošte, a pružatelj usluge može primijeniti razumne mjere sprječavanja ponovljenog korištenja.\nNaplata i obnova. Pretplata počinje odmah po potvrdi uspješne uplate i automatski se obnavlja na kraju svakog obračunskog razdoblja dok je korisnik ne otkaže, čime korisnik ovlašćuje ponavljajuću naplatu.\nOtkazivanje. Korisnik može otkazati obnovu u bilo kojem trenutku, putem postavki korisničkog računa ili putem Paddleovih mogućnosti upravljanja pretplatom. Otkazivanjem prestaju buduće obnove, a pristup plaćenim sadržajima traje do isteka tekućeg plaćenog razdoblja. Povrat za neiskorišteno vrijeme ne odobrava se, osim ako prisilni propisi ne određuju drukčije.\nNeuspjela naplata. Ako se naplata ne može provesti, primjerice zbog isteka kartice ili nedostatnih sredstava, pristup može privremeno ostati aktivan dok traju pokušaji ponovne naplate. Ako se plaćanje ne uspije naplatiti nakon više pokušaja, pretplata se automatski otkazuje. Ponovljene pokušaje naplate provodi Paddle.\nPromjena cijena. Pružatelj usluge može mijenjati cijene pretplate. O promjeni koja utječe na postojeću pretplatu korisnik se obavještava elektroničkom poštom prije sljedeće obnove, a promjena u pravilu stupa na snagu pri sljedećoj obnovi. Korisnik koji se s novom cijenom ne slaže može otkazati pretplatu prije stupanja promjene na snagu."
+  },
+  {
+    "objectID": "uvjeti-koristenja#povrat-i-pravo-na-jednostrani-raskid",
+    "href": "uvjeti-koristenja#povrat-i-pravo-na-jednostrani-raskid",
+    "title": "Uvjeti korištenja",
+    "section": "5. Povrat i pravo na jednostrani raskid",
+    "text": "5. Povrat i pravo na jednostrani raskid\nPovrat. Osim ako prisilni propisi ne određuju drukčije, naknade za pretplatu ne vraćaju se i ne odobrava se povrat za djelomično iskorištena razdoblja. U iznimnim slučajevima, primjerice pri dvostrukoj naplati ili dokazanom tehničkom problemu koji je onemogućio pristup, povrat se može odobriti prema procjeni pružatelja usluge.\nPravo na jednostrani raskid, potrošači u EU. Potrošač u Europskoj uniji u pravilu ima pravo jednostrano raskinuti ugovor sklopljen na daljinu u roku od 14 dana. Kada korisnik traži trenutačan pristup plaćenim sadržajima, pri kupnji se traži njegova izričita suglasnost za trenutačno izvršenje usluge te potvrda da gubi pravo na jednostrani raskid nakon što je usluga u cijelosti izvršena, u skladu s primjenjivim propisima.\nProvedba povrata. Povrate provodi Paddle. Zahtjev za povrat podnosi se prema uputama iz potvrde o kupnji ili upitom na contact@cro-stat.com."
+  },
+  {
+    "objectID": "uvjeti-koristenja#razine-pristupa-i-dostupnost-podataka",
+    "href": "uvjeti-koristenja#razine-pristupa-i-dostupnost-podataka",
+    "title": "Uvjeti korištenja",
+    "section": "6. Razine pristupa i dostupnost podataka",
+    "text": "6. Razine pristupa i dostupnost podataka\nPretplatnici ostvaruju pristup sadržajima opisanima na stranici s pregledom pretplata. Pružatelj usluge ulaže razumne napore u održavanje dostupnosti i kvalitete tih sadržaja, ali ne jamči njihovu neprekidnu dostupnost.\nSadržaji Usluge ovise o podacima trećih strana, prije svega o bazama i objavama Državnog zavoda za statistiku, Eurostata, Hrvatske narodne banke i nadležnih ministarstava. Ako neki izvor postane nedostupan, promijeni strukturu, kasni s objavom ili prestane postojati iz razloga izvan kontrole pružatelja usluge, pružatelj ne odgovara za posljedično ograničenje ili nedostupnost sadržaja koji o njemu ovise.\nPružatelj usluge ulaže razumne napore u pronalaženje zamjenskih izvora gdje je to izvedivo, u obavještavanje korisnika o duljim prekidima i u što skoriju uspostavu pune funkcionalnosti. Nedostupnost pojedinih izvora ili sadržaja ne daje pravo na povrat, odobrenje ni produljenje pretplate, osim ako prisilni propisi o zaštiti potrošača ne određuju drukčije."
+  },
+  {
+    "objectID": "uvjeti-koristenja#informativna-narav-podataka",
+    "href": "uvjeti-koristenja#informativna-narav-podataka",
+    "title": "Uvjeti korištenja",
+    "section": "7. Informativna narav podataka",
+    "text": "7. Informativna narav podataka\nUsluga se pruža isključivo u informativne svrhe.\nPodaci prikazani na cro-stat.com preuzeti su iz službenih statističkih izvora i podložni su naknadnim revizijama koje provode ti izvori. Pružatelj usluge ulaže razumne napore u točnost preuzimanja i obrade, ali ne jamči točnost, potpunost ni pravodobnost prikazanih podataka.\nZa službenu upotrebu, uključujući izvještajne, pravne i regulatorne svrhe, mjerodavni su podaci kako ih objavljuje izvorni objavitelj. Usluga ne zamjenjuje službene objave nadležnih tijela.\nIzvedeni pokazatelji, izračuni i grafički prikazi rezultat su obrade pružatelja usluge i ne predstavljaju službenu statistiku. Metodologija obrade opisana je na stranici s metodološkim objašnjenjima.\nSadržaj Usluge ne predstavlja financijski, investicijski, pravni ni porezni savjet i ne smije se koristiti kao jedina osnova za poslovne odluke."
+  },
+  {
+    "objectID": "uvjeti-koristenja#sadržaj-trećih-strana-i-poveznice",
+    "href": "uvjeti-koristenja#sadržaj-trećih-strana-i-poveznice",
+    "title": "Uvjeti korištenja",
+    "section": "8. Sadržaj trećih strana i poveznice",
+    "text": "8. Sadržaj trećih strana i poveznice\nUsluga može sadržavati poveznice na stranice trećih strana nad kojima pružatelj usluge nema kontrolu. Pružatelj ne odgovara za njihov sadržaj, postupanje s osobnim podacima ni za proizvode i usluge koje nude, a postojanje poveznice ne znači njihovo preporučivanje."
+  },
+  {
+    "objectID": "uvjeti-koristenja#upravljanje-uslugom-trajanje-i-prestanak",
+    "href": "uvjeti-koristenja#upravljanje-uslugom-trajanje-i-prestanak",
+    "title": "Uvjeti korištenja",
+    "section": "9. Upravljanje uslugom, trajanje i prestanak",
+    "text": "9. Upravljanje uslugom, trajanje i prestanak\nPružatelj usluge zadržava pravo, ali ne i obvezu, nadzirati Uslugu radi utvrđivanja povreda ovih Uvjeta te poduzeti odgovarajuće mjere, uključujući ograničavanje ili uskraćivanje pristupa.\nOvi Uvjeti ostaju na snazi dok korisnik koristi Uslugu. Pružatelj usluge može, postupajući razumno, ograničiti ili uskratiti pristup Usluzi ili obrisati korisnički račun, osobito u slučaju povrede Uvjeta ili primjenjivih propisa.\nNa zahtjev korisnika za brisanjem računa, ili pri uskraćivanju računa od strane pružatelja usluge, osobni podaci povezani s računom brišu se, osim ako je čuvanje propisano zakonom, primjerice zbog računovodstvenih ili poreznih obveza."
+  },
+  {
+    "objectID": "uvjeti-koristenja#izmjene-i-prekidi",
+    "href": "uvjeti-koristenja#izmjene-i-prekidi",
+    "title": "Uvjeti korištenja",
+    "section": "10. Izmjene i prekidi",
+    "text": "10. Izmjene i prekidi\nPružatelj usluge može mijenjati, dopunjavati ili uklanjati sadržaj Usluge u bilo kojem trenutku, bez obveze ažuriranja. U Usluzi se mogu pojaviti pogreške i nepotpunosti koje pružatelj može ispraviti bez prethodne obavijesti.\nNeprekinuta dostupnost Usluge ne jamči se. Prekidi, kašnjenja i pogreške mogući su zbog održavanja ili tehničkih poteškoća. Pružatelj usluge ne odgovara za štetu ni neugodnosti uzrokovane nedostupnošću Usluge tijekom takvih prekida."
+  },
+  {
+    "objectID": "uvjeti-koristenja#isključenje-jamstava",
+    "href": "uvjeti-koristenja#isključenje-jamstava",
+    "title": "Uvjeti korištenja",
+    "section": "11. Isključenje jamstava",
+    "text": "11. Isključenje jamstava\nUsluga se pruža takva kakva jest i prema dostupnosti, a korisnik je koristi na vlastitu odgovornost. U najvećoj mjeri dopuštenoj propisima isključuju se sva izričita i podrazumijevana jamstva u vezi s Uslugom."
+  },
+  {
+    "objectID": "uvjeti-koristenja#ograničenje-odgovornosti",
+    "href": "uvjeti-koristenja#ograničenje-odgovornosti",
+    "title": "Uvjeti korištenja",
+    "section": "12. Ograničenje odgovornosti",
+    "text": "12. Ograničenje odgovornosti\nU najvećoj mjeri dopuštenoj propisima pružatelj usluge ne odgovara za neizravnu, posljedičnu, slučajnu ni posebnu štetu, uključujući izmaklu dobit, prihod ili podatke, nastalu korištenjem Usluge. Ukupna odgovornost pružatelja usluge ograničena je na iznos koji je korisnik platio u razdoblju od šest mjeseci koje prethodi događaju iz kojeg odgovornost proizlazi.\nNišta u ovim Uvjetima ne isključuje ni ne ograničava odgovornost koja se prema prisilnim propisima ne može isključiti, uključujući odgovornost za namjeru i krajnju nepažnju te zakonska prava koja korisnik ima kao potrošač."
+  },
+  {
+    "objectID": "uvjeti-koristenja#mjerodavno-pravo-i-rješavanje-sporova",
+    "href": "uvjeti-koristenja#mjerodavno-pravo-i-rješavanje-sporova",
+    "title": "Uvjeti korištenja",
+    "section": "13. Mjerodavno pravo i rješavanje sporova",
+    "text": "13. Mjerodavno pravo i rješavanje sporova\nNa ove Uvjete primjenjuje se pravo Republike Hrvatske. Potrošač s uobičajenim boravištem u Europskoj uniji zadržava i zaštitu prisilnih propisa države svog boravišta.\nZa sporove su nadležni sudovi Republike Hrvatske, pri čemu potrošač svoja prava može ostvarivati i pred sudovima države članice u kojoj ima boravište.\nPrije pokretanja spora korisnik se može obratiti pružatelju usluge na contact@cro-stat.com radi sporazumnog rješavanja."
+  },
+  {
+    "objectID": "uvjeti-koristenja#privatnost-i-osobni-podaci",
+    "href": "uvjeti-koristenja#privatnost-i-osobni-podaci",
+    "title": "Uvjeti korištenja",
+    "section": "14. Privatnost i osobni podaci",
+    "text": "14. Privatnost i osobni podaci\nOsobni podaci obrađuju se u skladu s Politikom privatnosti, koja čini sastavni dio ovih Uvjeta."
+  },
+  {
+    "objectID": "uvjeti-koristenja#ostale-odredbe",
+    "href": "uvjeti-koristenja#ostale-odredbe",
+    "title": "Uvjeti korištenja",
+    "section": "15. Ostale odredbe",
+    "text": "15. Ostale odredbe\nOvi Uvjeti, zajedno s pravilima objavljenima u sklopu Usluge, čine cjelovit sporazum između korisnika i pružatelja usluge. Propust pružatelja usluge da ostvari neko pravo ne znači odricanje od tog prava. Ako se pojedina odredba utvrdi nezakonitom ili neprovedivom, izdvaja se, a preostale odredbe ostaju na snazi.\nPružatelj usluge ne odgovara za neispunjenje ni kašnjenje uzrokovano okolnostima izvan njegove razumne kontrole, uključujući prirodne nepogode, ratna djelovanja, kibernetičke napade, prekide infrastrukture i pandemije.\nPosjet Usluzi, slanje elektroničke pošte i ispunjavanje obrazaca predstavljaju elektroničku komunikaciju. Korisnik pristaje na primanje elektroničkih komunikacija i suglasan je da ugovori, obavijesti i drugi dokumenti dostavljeni elektroničkim putem zadovoljavaju svaki zakonski zahtjev pisanog oblika."
+  },
+  {
+    "objectID": "uvjeti-koristenja#kontakt",
+    "href": "uvjeti-koristenja#kontakt",
+    "title": "Uvjeti korištenja",
+    "section": "16. Kontakt",
+    "text": "16. Kontakt\nOpenMacro, obrt za informacijske usluge, vl. Leonarda Srdelić Šibenska ulica 4 10000 Zagreb Hrvatska\nElektronička pošta: contact@cro-stat.com"
+  }
+]

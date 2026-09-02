@@ -1,0 +1,872 @@
+/* ====================================================================
+   CroStat layout i komponente.
+   Boje, tipografija i razmaci dolaze iz tokena definiranih u
+   styles/custom.scss (var(--cs-*)). Ovdje je samo raspored i ponašanje.
+   ==================================================================== */
+
+/* ============================================
+   LAYOUT: iskorištavanje pune širine
+   ============================================ */
+:root {
+  --quarto-body-width: 100%;
+  --quarto-margin-width: 0px;
+  --quarto-body-padding-x: 0;
+}
+
+.page-content,
+.quarto-container.page-columns.page-navbar,
+#quarto-content,
+main.content {
+  max-width: var(--cs-content-max) !important;
+  width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.page-columns .content {
+  grid-column: page-start / page-end !important;
+}
+
+#quarto-sidebar,
+#TOC {
+  position: sticky;
+  top: 70px;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+
+/* ============================================
+   MREŽA GRAFOVA
+   ============================================ */
+.chart-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--cs-gap);
+  margin-bottom: 24px;
+}
+
+.chart-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--cs-gap);
+  margin-bottom: 24px;
+}
+
+.chart-item {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Samostalni graf: jedna kartica ograničene širine, centrirana.
+   Nasljeđuje okvir iz .chart-item (koristi se zajedno: .chart-item.chart-single),
+   ali nije razvučena preko pune širine kad jedan graf izgleda bolje u užoj mjeri. */
+.chart-single {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+/* Diskretna napomena o zumiranju ispod grafa (token boja, obje teme). */
+.chart-zoom-hint {
+  font-size: 0.78rem;
+  color: var(--cs-muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Tehnicki izvor ispod grafa (dataset, parametri). Mali sivi tekst,
+   token boja, obje teme. Jedinstven stil za sve grafove na sajtu. */
+.chart-source,
+.chart-note {
+  font-size: 0.6875rem;
+  color: var(--cs-source);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.chart-single .html-widget.echarts4r {
+  width: 100% !important;
+}
+
+/* Karta: kartica s okvirom, izvorna (uža) sirina, centrirana. Namjerno
+   NE koristi .chart-item da se ne primijeni prisilna visina grafa
+   (echarts karta ima vlastitu visinu i aspectScale). */
+.chart-map {
+  max-width: 752px;
+  margin: 0 auto 24px;
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+.chart-map h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--cs-heading);
+  border-bottom: none;
+}
+
+/* Prekidaci grafova (padajuci izbornici). Token boje, obje teme.
+   Standard za sve <select> prekidace na sajtu. */
+.cs-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 2px 0 12px;
+}
+.cs-selector-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.cs-selector-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cs-muted);
+}
+.cs-selector select {
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--cs-ink);
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+}
+.cs-selector select:focus {
+  outline: 2px solid var(--cs-primary);
+  outline-offset: 1px;
+  border-color: var(--cs-primary);
+}
+
+.chart-item h2,
+.chart-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--cs-heading);
+  border-bottom: none;
+}
+
+.chart-item .chart-desc {
+  font-size: 0.85rem;
+  color: var(--cs-muted);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  /* Kod parova (chart-grid-2/3) kartice su jednake visine; opis se rastegne
+     da gurne graf i izvor na dno, pa su gornji rub grafa i izvori u paru
+     poravnati bez obzira na razlicitu duljinu opisa. */
+  flex-grow: 1;
+}
+
+.chart-item .html-widget.echarts4r {
+  height: 320px !important;
+  width: 100% !important;
+}
+
+/* Parovi grafova razlicite prirodne visine (npr. rang-graf 520px uz normalni
+   320px): u chart-grid-2/3 grid izjednaci visine kartica (align-items:stretch),
+   pa kraci graf ostane fiksan a iznad njega zjapi praznina. Rjesenje: kraci se
+   graf RASTEGNE da popuni karticu, a okviri ostaju jednake visine i poravnati.
+   Lanac flex-grow vodi visak visine od .chart-item do echarts widgeta; postavljena
+   visina grafa (320px CSS ili npr. 520px inline iz R-a) ostaje kao flex-basis, a
+   grow puni ostatak. Opis se u paru vise NE rasteze (visak preuzima graf).
+   Vrijedi za sve parove; kod jednakih parova nema viska pa nema promjene. */
+.chart-grid-2 .chart-item .chart-desc,
+.chart-grid-3 .chart-item .chart-desc {
+  flex-grow: 0;
+}
+.chart-grid-2 .chart-item > .cell,
+.chart-grid-3 .chart-item > .cell,
+.chart-grid-2 .chart-item > .cell > .cell-output-display,
+.chart-grid-3 .chart-item > .cell > .cell-output-display,
+.chart-grid-2 .chart-item .cs-sel-charts,
+.chart-grid-3 .chart-item .cs-sel-charts {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.chart-grid-2 .chart-item .cs-sel-panel,
+.chart-grid-3 .chart-item .cs-sel-panel {
+  min-height: 0;
+}
+.chart-grid-2 .chart-item .cs-sel-panel[style*="display: block"],
+.chart-grid-3 .chart-item .cs-sel-panel[style*="display: block"] {
+  flex: 1 1 auto;
+  /* Inline style="display: block" panela pobjeduje obican display:flex, pa treba
+     !important da vidljivi panel bude flex-stupac i da se widget u njemu rastegne. */
+  display: flex !important;
+  flex-direction: column;
+}
+.chart-grid-2 .chart-item .html-widget.echarts4r,
+.chart-grid-3 .chart-item .html-widget.echarts4r {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Obrasci F (karte s roam) i G (dataZoom inside): na dodirnim ureajima
+   jednoprstni okomiti potez preko grafa MORA skrolati stranicu, a ne pomicati
+   graf ili kartu, inace se skrol zaglavi. touch-action: pan-y prepusta okomiti
+   pan pregledniku (skrol), dok pinch-zoom i vodoravni potezi i dalje idu grafu.
+   Vrijedi samo za dodir; misom na desktopu nema ucinka, pa je desktop
+   nepromijenjen. Rjesava sve zoom-grafove i karte odjednom, bez izmjena u R-u. */
+.html-widget.echarts4r,
+.html-widget.echarts4r canvas {
+  /* !important nadjacava touch-action: none koji zrender (echarts) postavi
+     runtime na zoomable grafove; bez toga bi taj inline stil pobijedio. */
+  touch-action: pan-y !important;
+}
+
+/* Iznimka: rang od 30 zemalja (prikaz "Usporedba zemalja" na grafu opterecenja
+   troskovima stanovanja) treba veliku visinu da svaki red bude citljiv. Cilja
+   se samo taj panel po data-value, pa linijski prikaz "vrijeme" u istom
+   prekidacu ostaje normalne visine. Vise specifican od pravila iznad, pa ga
+   nadjacava usprkos !important. */
+.chart-rang-visok .cs-sel-panel[data-value="zemlje"] .html-widget.echarts4r {
+  height: 640px !important;
+}
+/* Rang zemalja je uzi (stupci idu 0 do 100 posto). Suzava se samo taj panel,
+   pa linijski prikaz "vrijeme" u istom prekidacu ostaje pune sirine. */
+.chart-rang-visok .cs-sel-panel[data-value="zemlje"] {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Isto za status stanovanja: slozeni rang od 30 zemalja, nije u prekidacu nego
+   izravan graf, pa treba vlastitu iznimku od pravila iznad. Uzi od ostalih
+   grafova, jer stupci idu 0 do 100 posto pa ne trebaju punu sirinu. */
+.chart-single.chart-tenure {
+  max-width: 720px;
+}
+.chart-single.chart-tenure .html-widget.echarts4r {
+  height: 640px !important;
+}
+
+@media (max-width: 1200px) {
+  .chart-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chart-item .html-widget.echarts4r {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-grid-2,
+  .chart-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .chart-item .html-widget.echarts4r {
+    height: 280px !important;
+  }
+}
+
+/* ============================================
+   OKVIR NA SVAKOM GRAFU (ujednaceno, mobitel + desktop)
+   Goli chunkovi (npr. cs_select_chart, inline grafovi) nemaju okvir kao
+   .chart-item/.chart-map/.karta__platno/.monitor-card. Ovdje se okvir daje
+   SVAKOM grafu (echarts ili leaflet), a onda se makne tamo gdje kontejner
+   vec ima svoj okvir (da nema dvostrukog). Ne dira visinu grafa, pa je
+   sigurno i za full-width select-grafove. :has() podrzavaju svi moderni
+   preglednici; stariji jednostavno ne dobiju okvir (kao i dosad). */
+.cell:has(.html-widget.echarts4r),
+.cell:has(.leaflet-container),
+.ojs-cell:has(.html-widget.echarts4r),
+.tax-wedge-chart {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+/* Bez dvostrukog okvira: uokvireni kontejneri, kartice i karte (vlastiti okvir). */
+.chart-item .cell,
+.chart-map .cell,
+.cell:has(.monitor-card),
+.cell:has(.karta__platno) {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  margin-bottom: 0 !important;
+}
+
+/* NAPOMENA I IZVOR UNUTAR OKVIRA (uzrok "izvan okvira"): kad goli/auto-uokvireni
+   graf slijede .chart-note/.chart-source kao susjedni elementi, oni su dosad
+   padali IZVAN okvira. Ovdje se okvir produljuje na njih: graf gubi donji rub i
+   radius, note/izvor dobivaju bocne rubove, a POSLJEDNJI zatvara okvir donjim
+   rubom, radiusom i vanjskom marginom. Vrijedi za sve takve grafove odjednom. */
+.cell:has(.html-widget.echarts4r):has(+ .chart-note),
+.cell:has(.html-widget.echarts4r):has(+ .chart-source) {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+  padding-bottom: 6px;
+}
+.cell:has(.html-widget.echarts4r) + .chart-note,
+.cell:has(.html-widget.echarts4r) + .chart-source,
+.cell:has(.html-widget.echarts4r) + .chart-note + .chart-source {
+  background: var(--cs-surface);
+  border-left: 1px solid var(--cs-border);
+  border-right: 1px solid var(--cs-border);
+  padding-left: 16px;
+  padding-right: 16px;
+  /* margin-top: 0 zatvara 6px prazninu u kojoj su se bocni rubovi prekidali (pa je
+     okvir izgledao kao dvije kutije). Razmak od grafa se cuva PADDINGOM UNUTAR
+     okvira (ne marginom), pa bocni rubovi teku neprekinuto graf -> napomena -> izvor. */
+  margin-top: 0;
+  padding-top: 6px;
+  margin-bottom: 0;
+}
+/* Zadnji element u nizu (izvor, ili napomena ako izvora nema) zatvara okvir. */
+.cell:has(.html-widget.echarts4r) + .chart-source,
+.cell:has(.html-widget.echarts4r) + .chart-note + .chart-source,
+.cell:has(.html-widget.echarts4r) + .chart-note:last-child {
+  border-bottom: 1px solid var(--cs-border);
+  border-bottom-left-radius: var(--cs-radius);
+  border-bottom-right-radius: var(--cs-radius);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+/* PRODUZENJE OKVIRA VRIJEDI SAMO ZA GOLE GRAFOVE. Unutar kontejnera koji VEC ima
+   svoj okvir (.chart-item, .chart-map) napomena i izvor su OBICAN sadrzaj: bez
+   pozadine, obruba, radiusa i bocnog paddinga - inace nastaje ugnijezdeni okvir
+   (drugi, uzi rub unutar kartice). Okvir daje samo kontejner; napomena/izvor se
+   odvajaju RAZMAKOM i manjim, svjetlijim slovima (vec iz .chart-note/.chart-source).
+   Poravnati su s podrucjem crtanja (padding-left/right 0 = ista lijeva/desna linija
+   kao graf, koji je i sam padding 0 unutar .chart-item). */
+.chart-item .chart-note,
+.chart-item .chart-source,
+.chart-map .chart-note,
+.chart-map .chart-source {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Naslovi kartica se lome UNUTAR okvira (dugi naziv nikad ne izlazi van). */
+.monitor-card__header > div:first-child,
+.monitor-card__header > div:first-child > div,
+.chart-item h2,
+.chart-item h3,
+.chart-item .chart-desc {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* HICP (i drugi bespoke monitor-card grafovi): naslov, podnaslov i izvor UVIJEK
+   lome i nikad ne klipaju (dosad se podnaslov rezao desno, izvor lijevo). Kartica
+   ne smije preteći širinu (vodoravni preljev je gurao tekst izvan vidljivog). */
+.monitor-card__body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+.monitor-card__body .monitor-card__header,
+.monitor-card__body .monitor-card__header > div,
+.monitor-card__body .monitor-card__header > div > div {
+  min-width: 0;
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.monitor-card__body > .chart-source,
+.monitor-card__body > .chart-note {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   QUARTO KOLONE (poboljšane)
+   ============================================ */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cs-gap);
+  margin-bottom: 24px;
+}
+
+.columns .column {
+  flex: 1 1 400px;
+  min-width: 0;
+  padding: 0;
+}
+
+.columns .html-widget.echarts4r {
+  height: 340px !important;
+}
+
+/* Monitor kartice */
+.monitor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+  justify-content: flex-start;
+}
+.monitor-cards > div {
+  width: 100%;
+}
+.monitor-card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  background: var(--cs-surface);
+  display: flex;
+  flex-direction: column;
+}
+.monitor-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Fiksna visina CIJELOG zaglavlja (naslov + podnaslov): primi najdulji
+     slucaj (naslov 2 reda + podnaslov 2 reda), pa mini-graf u SVIM karticama
+     pocinje na istoj visini bez obzira lomi li se NASLOV ili podnaslov. */
+  min-height: 82px;
+  margin-bottom: 8px;
+}
+.monitor-card__header > div:first-child { min-width: 0; }
+.monitor-card__header > div:first-child > div:first-child { line-height: 1.2; }   /* naslov */
+.monitor-card__header > div:first-child > div:last-child  { line-height: 1.25; }  /* podnaslov */
+/* KPI broj (npr. "1 438") se NIKAD ne lomi i ne stlaci (uz nbsp u broju). */
+.monitor-card__header > div:last-child:not(:first-child) {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  padding-left: 10px;
+}
+.monitor-card__header > div:last-child:not(:first-child) > div { white-space: nowrap !important; }
+
+/* Navigacija je SAMO na zaglavlju (naslov + vrijednost), NE na grafu: dodir na
+   graf pokazuje tooltip i ne navigira; na detaljnu stranicu vodi zaglavlje.
+   Ruka (pointer) stoji samo nad zaglavljem. */
+.monitor-link[data-href] .monitor-card__header { cursor: pointer; }
+.monitor-link[data-href] .monitor-card {
+  position: relative;
+  transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+}
+.monitor-link[data-href]:hover .monitor-card {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+  border-color: var(--cs-link);
+}
+/* Naslov klikabilne kartice: boja poveznice (mirna navy) + TRAJNA strelica ↗
+   odmah uz naslov -> vidi se da je poveznica i bez hovera (mobitel).
+   Neklikabilna kartica (Stanovnistvo) nema ni obojen naslov ni strelicu, pa
+   se time razlikuje. */
+.monitor-link[data-href] .monitor-card__header > div:first-child > div:first-child {
+  color: var(--cs-link);
+}
+.monitor-link[data-href] .monitor-card__header > div:first-child > div:first-child::after {
+  content: "\00A0\2197";   /* nbsp + ↗ ; nbsp lijepi strelicu uz zadnju rijec */
+  font-weight: 700;
+  color: var(--cs-link);
+}
+/* Hover/fokus na zaglavlju: pojacana poveznica (svjetlija boja naslova; jaci
+   hover-signal je i plavi rub + podizanje cijele kartice, pravila iznad). */
+.monitor-link[data-href] .monitor-card__header:hover > div:first-child > div:first-child,
+.monitor-link[data-href] .monitor-card__header:focus-visible > div:first-child > div:first-child {
+  color: var(--cs-link-hover);
+}
+.monitor-link[data-href] .monitor-card__header:hover > div:first-child > div:first-child::after,
+.monitor-link[data-href] .monitor-card__header:focus-visible > div:first-child > div:first-child::after {
+  color: var(--cs-link-hover);
+}
+.monitor-link[data-href] .monitor-card__header:focus-visible {
+  outline: 2px solid var(--cs-link);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.monitor-card .html-widget.echarts4r {
+  height: 260px !important;
+}
+
+@media (max-width: 1100px) {
+  .html-widget.echarts4r {
+    height: 420px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .html-widget.echarts4r {
+    height: 360px !important;
+  }
+
+  .navbar .navbar-brand,
+  .navbar .navbar-title {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  #quarto-content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.cs-footer-main {
+  border-top: 1px solid var(--cs-border);
+  margin-top: 60px;
+  padding: 28px 16px 8px;
+  font-size: 13px;
+  color: var(--cs-muted);
+}
+.cs-footer-cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: var(--cs-content-max);
+  margin: 0 auto;
+}
+.cs-footer-col {
+  flex: 1 1 240px;
+  min-width: 220px;
+}
+.cs-footer-col p {
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+.cs-footer-title {
+  color: var(--cs-heading);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.cs-footer-main a {
+  color: var(--cs-link);
+  text-decoration: none;
+}
+.cs-footer-main a:hover {
+  color: var(--cs-link-hover);
+  text-decoration: underline;
+}
+.cs-footer-main .cs-sep {
+  color: var(--cs-muted);
+  margin: 0 4px;
+}
+.cs-footer-bottom {
+  max-width: var(--cs-content-max);
+  margin: 20px auto 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--cs-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+}
+.cs-footer-copy {
+  color: var(--cs-muted);
+  font-weight: 500;
+}
+.cs-footer-note {
+  color: var(--cs-muted);
+  flex: 1 1 320px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .cs-footer-bottom {
+    justify-content: center;
+  }
+  .cs-footer-note {
+    text-align: center;
+  }
+}
+
+/* Navbar logo */
+.navbar-brand-logo img,
+.navbar-brand-logo {
+  max-height: 72px;
+  width: auto !important;
+}
+/* Cjelina 8: nav-logo je sada KVADRATNA PWA ikona (isti znak kao aplikacija).
+   Stari logo bio je ne-kvadratni pa je width:auto davao pravilan omjer; kvadrat
+   treba fiksni kvadratni okvir + object-fit:contain da krug ostane krug (ne
+   elipsa). */
+.navbar-logo {
+  height: 50px !important;
+  width: 50px !important;
+  object-fit: contain !important;
+}
+
+/* Plutajući gumb za povratnu informaciju */
+.cs-feedback-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: var(--cs-accent);
+  color: #fff !important;
+  padding: 10px 14px;
+  border-radius: var(--cs-radius);
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  z-index: 2000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+.cs-feedback-fab:hover {
+  background: var(--cs-accent-600);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+.cs-feedback-fab:active {
+  transform: translateY(0);
+}
+
+/* Cookie banner */
+.cs-cookie-banner {
+  position: fixed;
+  bottom: 84px;
+  right: 16px;
+  max-width: 480px;
+  width: calc(100% - 32px);
+  background: var(--cs-bg-subtle);
+  padding: 15px;
+  font-size: 0.9em;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  z-index: 1600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  display: none;
+}
+.cs-cookie-button {
+  margin-left: 10px;
+}
+.cs-cookie-link {
+  margin-left: 10px;
+}
+@media (max-width: 768px) {
+  .cs-cookie-banner {
+    bottom: 84px;
+    right: 12px;
+    width: calc(100% - 24px);
+  }
+}
+
+/* AI sažetak blok u Analizi */
+.data-summary {
+  background: var(--cs-bg-subtle);
+  border: 1px solid var(--cs-border);
+  border-left: 3px solid var(--cs-primary);
+  border-radius: var(--cs-radius);
+  padding: 12px 14px;
+  margin: 8px 0 16px 0;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+.data-summary strong {
+  display: inline-block;
+  margin-right: 6px;
+}
+.data-summary.muted {
+  color: var(--cs-muted);
+}
+
+/* ECharts interaktivnost (tooltip, hover) */
+.html-widget.echarts4r,
+.html-widget.echarts4r canvas {
+  pointer-events: auto !important;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* ============================================
+   TOC: skriven radi pune širine
+   ============================================ */
+#quarto-margin-sidebar,
+.quarto-margin-sidebar,
+nav#TOC,
+.sidebar.toc-left {
+  display: none !important;
+}
+
+#quarto-content > main,
+#quarto-content .page-columns > .content,
+.page-columns .content {
+  max-width: 100% !important;
+  margin-right: 0 !important;
+}
+
+.chart-item,
+.chart-grid-2,
+.chart-grid-3 {
+  position: relative;
+  z-index: 200;
+}
+
+.echarts-tooltip,
+div[style*="echarts"] {
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+
+/* ============================================
+   TAMNA TEMA — samo za inline-stiliziran sadržaj
+   generiran u R-u (Monitor kartice), koji se ne
+   može tematizirati tokenima iz ove faze.
+   Ostale komponente prate var(--cs-*) automatski.
+   ============================================ */
+[data-bs-theme="dark"] .monitor-card__header div {
+  color: var(--cs-heading) !important;
+}
+
+[data-bs-theme="dark"] .monitor-card__header div[style*="color: #555"] {
+  color: var(--cs-muted) !important;
+}
+
+/* Klikabilan naslov zadrzava boju poveznice i u tamnoj temi (nadjacaj
+   genericko pravilo iznad koje SVE naslove kartica boji u --cs-heading). */
+[data-bs-theme="dark"] .monitor-link[data-href] .monitor-card__header > div:first-child > div:first-child {
+  color: var(--cs-link) !important;
+}
+[data-bs-theme="dark"] .monitor-link[data-href] .monitor-card__header:hover > div:first-child > div:first-child,
+[data-bs-theme="dark"] .monitor-link[data-href] .monitor-card__header:focus-visible > div:first-child > div:first-child {
+  color: var(--cs-link-hover) !important;
+}
+
+/* ============================================
+   USLUGE
+   ============================================ */
+.usluga {
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  background: var(--cs-surface);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.usluga h3 {
+  margin-top: 0;
+  color: var(--cs-heading);
+}
+.usluga-placanje {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: var(--cs-bg-subtle);
+  border: 1px dashed var(--cs-border);
+  border-radius: var(--cs-radius);
+  font-size: 13px;
+  color: var(--cs-muted);
+}
+
+/* ============================================
+   OBRAZAC ZA UPIT
+   ============================================ */
+.cs-form {
+  max-width: 640px;
+  margin: 16px 0 8px;
+}
+.cs-field {
+  margin-bottom: 14px;
+}
+.cs-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cs-heading);
+  margin-bottom: 4px;
+}
+.cs-form input,
+.cs-form select,
+.cs-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  font: inherit;
+  color: var(--cs-ink);
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+}
+.cs-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.cs-form input:focus,
+.cs-form select:focus,
+.cs-form textarea:focus {
+  outline: 2px solid var(--cs-primary);
+  outline-offset: 1px;
+  border-color: var(--cs-primary);
+}
+.cs-form-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 22px;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--cs-primary);
+  border-radius: var(--cs-radius);
+}
+.cs-form-btn:hover {
+  background: var(--cs-primary-700);
+}
+.cs-form-status {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 1.2em;
+}
+.cs-form-status-pending { color: var(--cs-muted); }
+.cs-form-status-ok      { color: var(--cs-primary); font-weight: 600; }
+.cs-form-status-err     { color: var(--cs-accent); font-weight: 600; }
+
+/* Diskretna GDPR napomena ispod obrasca (token boja, obje teme). */
+.cs-form-note {
+  max-width: 640px;
+  margin: 4px 0 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--cs-muted);
+}
+
+/* Napomena o zumiranju tipkom Shift vrijedi samo za desktop; na dodir je nakon
+   touch-action promjena netocna, pa se ispod prijelomne tocke ne prikazuje. */
+@media (max-width: 768px) {
+  .chart-zoom-hint-global { display: none !important; }
+}
+
+/* Dnevnik "Posljednje azurirano" (kalendar): nazivi serija se lome po RIJECIMA,
+   ne usred rijeci. overflow-wrap:normal tjera auto-raspored tablice da rezervira
+   sirinu za najduzu rijec, pa nestaje lom tipa "Promet na granicam a". */
+.azur-tablica td,
+.azur-tablica th,
+.azur-tablica a {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none;
+}
